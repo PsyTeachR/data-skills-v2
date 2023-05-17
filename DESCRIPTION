@@ -1,0 +1,26 @@
+Package: data-skills-v2
+Title: PsyTeachR Data Skills
+Version: 2.0
+Authors@R:
+  c(
+    person(
+        given = "Emily", 
+        family = "Nordmann", 
+        role = c("aut", "cre"), 
+        email = "emilynordmann@gmail.com", 
+        comment = c(ORCID = "0000-0002-0806-1081")
+    )
+  )
+Description: This book is the Level 1 Data Skills book in the psyTeachR series at the University of Glasgow School of Psychology and Neuroscience.
+License: CC BY 4.0 + LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Imports: 
+    webexercises,
+    glossary (>= 0.0.0.9001)
+Remotes: 
+    psyteachr/glossary
+Depends: 
+    tidyverse

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 1 Intro to R and RStudio | Data Skills</title>
+<meta name="author" content="Emily Nordmann">
+<meta name="generator" content="bookdown 0.25 with bs4_book()">
+<meta property="og:title" content="Chapter 1 Intro to R and RStudio | Data Skills">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/sec-intro.html">
+<meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 1 Intro to R and RStudio | Data Skills">
+<meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+<meta name="description" content="1.1 Intended Learning Outcomes By the end of this chapter you should be able to: Access R and RStudio through the server Create a new R Markdown document with code chunks Create objects by writing...">
+<meta property="og:description" content="1.1 Intended Learning Outcomes By the end of this chapter you should be able to: Access R and RStudio through the server Create a new R Markdown document with code chunks Create objects by writing...">
+<meta name="twitter:description" content="1.1 Intended Learning Outcomes By the end of this chapter you should be able to: Access R and RStudio through the server Create a new R Markdown document with code chunks Create objects by writing...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Skills</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="active" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Stroop effect</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/psyteachr/data-skills-v2">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="sec-intro" class="section level1" number="1">
+<h1>
+<span class="header-section-number">1</span> Intro to R and RStudio<a class="anchor" aria-label="anchor" href="#sec-intro"><i class="fas fa-link"></i></a>
+</h1>
+<div id="sec-ilo-intro" class="section level2" number="1.1">
+<h2>
+<span class="header-section-number">1.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#sec-ilo-intro"><i class="fas fa-link"></i></a>
+</h2>
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>Access R and RStudio through the server</li>
+<li>Create a new R Markdown document with code chunks</li>
+<li>Create objects by writing and running code in the console and in R Markdown</li>
+</ul>
+<div class="try">
+<p>If you're completely new to programming, you're unlikely to understand everything in the first few chapters the first time you work through it - and that's ok! Some of the beginning information we provide has a bit of a chicken-and-egg problem in that we need to give you it before you begin but until you've had some experience with R, it won't fully make sense. Take what you can from the chaptrs on the first attempt but also come back to them in a few weeks time and have another read through - you'll be surprised at how much you've learned in a short space of time.</p>
+</div>
+</div>
+<div id="sec-walkthrough-intro" class="section level2" number="1.2">
+<h2>
+<span class="header-section-number">1.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-intro"><i class="fas fa-link"></i></a>
+</h2>
+<p>There is a walkthrough video of this chapter available via <a href="https://echo360.org.uk/media/3861d902-df69-417d-8f27-259089f992b8/public">Echo360.</a> We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+</div>
+<div id="sec-intro-r" class="section level2" number="1.3">
+<h2>
+<span class="header-section-number">1.3</span> R and RStudio<a class="anchor" aria-label="anchor" href="#sec-intro-r"><i class="fas fa-link"></i></a>
+</h2>
+<p>R is a programming language that you will write code in. RStudio is an Integrated Development Environment (<a class="glossary" target="_blank" title="Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R." href="https://psyteachr.github.io/glossary/i#ide">IDE</a>). Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more.</p>
+<ul>
+<li>There's an <a href="https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf" download="">RStudio IDE Cheatsheet</a> you will find helpful to download and keep as a reference.</li>
+</ul>
+<p>You can install R and RStudio on your own computer if you like, however, through your student account you have access to an online version you use through your internet browser which we'll refer to as the <strong>R server</strong>. This semester, we'd like everyone to use the R server as it helps in the beginning to have you all working on the same version. In the second semester, you'll be given the option to install R and RStudio on your computer. If you're comfortable with programming and you want to install R on your own computer now, that's OK, but just remember the instructions in this book will only refer to the R server. Whilst the code is the same, file management and use of projects is different.</p>
+<p>For now, we'll concentrate on introducing you to RStudio's interface and getting it configured. Let's get started!</p>
+<div class="dangerous">
+<p>Whilst you can access the server through a browser and therefore it is technically possible to use it on a phone or tablet, we strongly discourage you from doing so. At minimum you will need a keyboard but in addition, all the instructions in this workbook will assume you are using a desktop computer or laptop and so you may find it more difficult to follow, particularly when it comes to file management. If you do not have a laptop, you can use any of the <a href="https://www.gla.ac.uk/myglasgow/it/studentclusters/">University computers</a> and there is also a <a href="https://www.gla.ac.uk/myglasgow/registry/finance/funds/laptoploan/">laptop loan scheme</a>.</p>
+</div>
+</div>
+<div id="r-server" class="section level2" number="1.4">
+<h2>
+<span class="header-section-number">1.4</span> R server<a class="anchor" aria-label="anchor" href="#r-server"><i class="fas fa-link"></i></a>
+</h2>
+<p>First, log on to the R server. The link for the R server can be found at the top of the Data Skills section on the Psych 1A Moodle page. The server is only for UofG students which is why we can't share the link here as this is a public book. We'd suggest saving the link to the server as a bookmark. Login to the sever using your GUID and password that you use to login to all other UofG systems.</p>
+<p>When you login to the server for the first time, you'll see the landing page that has two sections: <strong>Sessions</strong> and <strong>Projects</strong>.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-rserver-1"></span>
+<img src="images/intro/server-1.png" alt="RStudio server landing page" width="100%"><p class="caption">
+Figure 1.1: RStudio server landing page
+</p>
+</div>
+<p>A "session" refers to a single period of use with R. During this session, you can load data, write code, and create visualizations. All of the objects that you create and data that you import into R exist within the environment of this session.</p>
+<p>For example, if you create a variable in R, that variable is stored in memory for the duration of the session. If you end the session and then start a new one, that variable will no longer exist in your R environment unless you've saved your workspace or the object to a file.</p>
+<p>A "project" is a specific working directory (or folder) designated to contain all the files relevant to a particular set of analyses or a specific research study. Projects are a way of organizing your work in RStudio that makes it easier to keep track of all the different files associated with a particular line of work.</p>
+<p>We're going to use projects to help organise your data skills work for Psych 1A</p>
+</div>
+<div id="new-project" class="section level2" number="1.5">
+<h2>
+<span class="header-section-number">1.5</span> Activity 1: Create a new project<a class="anchor" aria-label="anchor" href="#new-project"><i class="fas fa-link"></i></a>
+</h2>
+<p>Do the following, in this order:</p>
+<ul>
+<li>Click on the "New project" button;</li>
+<li>Then, click on the first option in the list "New Directory"</li>
+<li>Then, click ""New Project"</li>
+<li>Then you are given the opportunity to name your project and select which folder it should be stored in. First in the "Directory name" box, type "Intro to R".</li>
+<li>Then, click "Browse" then "New folder" then in the popup box name the new folder "Psych 1A" and click "OK" then "Choose". This will store your new project called Psych 1A (and this folder is where you'll store all projects you create this semester).</li>
+<li>Finally, click "Create project".</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-rserver-2"></span>
+<img src="images/intro/new-project.gif" alt="Creating a new project" width="100%"><p class="caption">
+Figure 1.2: Creating a new project
+</p>
+</div>
+</div>
+<div id="rstudio-panes" class="section level2" number="1.6">
+<h2>
+<span class="header-section-number">1.6</span> RStudio panes<a class="anchor" aria-label="anchor" href="#rstudio-panes"><i class="fas fa-link"></i></a>
+</h2>
+<p>RStudio is arranged with four window <a class="glossary" target="_blank" title='RStudio is arranged with four window "panes".' href="https://psyteachr.github.io/glossary/p#panes">panes</a>. By default, the upper left pane is the <strong>source pane</strong>, where you view, write, and edit code from files and view data tables in a spreadsheet format. <strong>When you first open a new project this pane won't display until you open a document or load in some data</strong> -- don't worry, we'll get to that soon.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-rstudio"></span>
+<img src="images/intro/rstudio.png" alt="The RStudio IDE" width="100%"><p class="caption">
+Figure 1.3: The RStudio IDE
+</p>
+</div>
+<p>The lower left pane is the <strong>console pane</strong>, where you can type in commands and view output messages. You can write code in the console to test it out. The code will run and can create objects in the environment, but the code itself won't be saved. You need to write your code into a script in the source pane to save it, which we'll cover later in this chapter.</p>
+<div class="try">
+<p>Try using the console as a calculator - type <code>1 + 1</code> and press enter.</p>
+</div>
+<p>The right panes have several different tabs that show you information about your code. The most used tab in the upper right pane is the <strong>Environment</strong> tab. The Environment tab lists some information about the <a class="glossary" target="_blank" title="A word that identifies and stores the value of some data for later use." href="https://psyteachr.github.io/glossary/o#object">objects</a> that you have defined in your code.</p>
+<p>In the lower right pane, the most used tabs are the <strong>Files</strong> tab for directory structure, the <strong>Plots</strong> tab for plots, the <strong>Packages</strong> tab for managing add-on packages (we'll explain what these are in the next chapter), and the <strong>Viewer</strong> tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under <code>Tools &gt; Global Options... &gt; Pane Layout</code>. When you open a new project, the Files tab will be set to your project working directory and will show a file with the file extension <code>.Rproj</code> which is the file that has all the information about your project. Don't delete this file!</p>
+<div class="try">
+<p>In the environment tab, click on "Home" and then navigate back to your "Intro to R" project folder by clicking on "Psych 1A" then "Intro to R".</p>
+</div>
+</div>
+<div id="activity-2-settings" class="section level2" number="1.7">
+<h2>
+<span class="header-section-number">1.7</span> Activity 2: Settings<a class="anchor" aria-label="anchor" href="#activity-2-settings"><i class="fas fa-link"></i></a>
+</h2>
+<p>Before we start writing code, we're going to change a few settings to make things easier for us in the long-run.</p>
+<div id="themes-and-accessiblilty" class="section level3" number="1.7.1">
+<h3>
+<span class="header-section-number">1.7.1</span> Themes and accessiblilty<a class="anchor" aria-label="anchor" href="#themes-and-accessiblilty"><i class="fas fa-link"></i></a>
+</h3>
+<p>You can customise how RStudio looks to make it work for you.</p>
+<ul>
+<li>Click <code>Tools &gt; Global Options &gt; Appearance</code>. You can change the default font, font size, and general appearance of R Studio by applying a theme, including using dark mode.</li>
+</ul>
+<p>Play around with the settings and see what you prefer - you're going to spend a lot of time with R, it might as well look how you like it!</p>
+</div>
+<div id="settings-for-reproducibility" class="section level3" number="1.7.2">
+<h3>
+<span class="header-section-number">1.7.2</span> Settings for Reproducibility<a class="anchor" aria-label="anchor" href="#settings-for-reproducibility"><i class="fas fa-link"></i></a>
+</h3>
+<p>One of the reasons you're going to learn R is so that any quantitative data analysis and research you do is <strong>reproducible</strong>. If your work is reproducible, it means that you (or someone else) can take your data and get the same result you got. This is easier to do with code because you have a written record of everything you did, compared to using point-and-click software where there is no record and you just have to remember what you did.</p>
+<p>To help ensure your work is reproducible, there are a few settings you should change in RStudio. If you keep stuff around in your workspace, things can get messy and you can accidentially end up using the wrong dataset or object. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit - the only thing you want to save are your scripts.</p>
+<ul>
+<li>Go to <code>Tools &gt; Global Options</code>
+</li>
+<li>In the General tab, uncheck the box that says <code>Restore .RData into workspace at startup</code>.<br>
+</li>
+<li>Additionally, set the "Save workspace to .RData on exit" to <code>Never</code>.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:fig-settings"></span>
+<img src="images/intro/settings.png" alt="RStudio settings" width="100%"><p class="caption">
+Figure 1.4: RStudio settings
+</p>
+</div>
+</div>
+</div>
+<div id="activity-3-writing-code" class="section level2" number="1.8">
+<h2>
+<span class="header-section-number">1.8</span> Activity 3: Writing code<a class="anchor" aria-label="anchor" href="#activity-3-writing-code"><i class="fas fa-link"></i></a>
+</h2>
+<p>Ok, let's write some code! We're going to open a script very shortly but first let's show you how to write code and create objects in the console.</p>
+<div id="sec-objects" class="section level3" number="1.8.1">
+<h3>
+<span class="header-section-number">1.8.1</span> Objects<a class="anchor" aria-label="anchor" href="#sec-objects"><i class="fas fa-link"></i></a>
+</h3>
+<p>A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using <code>&lt;-</code>.</p>
+<p>Run the following code in the console, but change the values of <code>name</code>, <code>age</code> and <code>birthday</code> to your own details (<code>birthday</code> should be the date of your next birthday). Press enter after you type each line.</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span>
+<span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">38</span>
+<span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">birthday</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2024-07-11"</span><span class="op">)</span></code></pre></div>
+<p>You'll see that four objects now appear in the environment pane:</p>
+<ul>
+<li>
+<code>name</code> is <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a> (text) data. In order for R to recognise it as text, it <strong>must</strong> be enclosed in double quotation marks <code>" "</code>.</li>
+<li>
+<code>age</code> is <a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a> data. In order for R to recognise this as a number, it <strong>must not</strong> be enclosed in quotation marks. Every year I have to update my age in this book and I am confronted with my own mortality getting ever closer.</li>
+<li>
+<code>today</code> stores the result of the function <code><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date()</a></code>. This function returns your computer system's date. Unlike <code>name</code> and <code>age</code>, which are hard-coded (i.e., they will always return the values you enter), the contents of the object <code>today</code> will change dynamically with the date. That is, if you run that function tomorrow, it will update the date to tomorrow's date.</li>
+<li>
+<code>birthday</code> is also a date but it's hard-coded as a specific date. It's wrapped within the <code><a href="https://rdrr.io/r/base/as.Date.html">as.Date()</a></code> function that tells R to interpret the character string you provide as a date rather than text.</li>
+</ul>
+<div class="callout-note try">
+<p>To print the contents of an object, type the object's name in the console and press enter. Try printing all four objects now.</p>
+</div>
+</div>
+<div id="removing-objects" class="section level3" number="1.8.2">
+<h3>
+<span class="header-section-number">1.8.2</span> Removing objects<a class="anchor" aria-label="anchor" href="#removing-objects"><i class="fas fa-link"></i></a>
+</h3>
+<p>To clear objects from the environment you can remove them individually:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></code></pre></div>
+<p>Or you can remove them all at once by clicking on the brush icon at the topof the environment pane.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:rm-brush"></span>
+<img src="images/intro/rm-brush.png" alt="Removing objects" width="100%"><p class="caption">
+Figure 1.5: Removing objects
+</p>
+</div>
+</div>
+</div>
+<div id="activity-4-r-markdown" class="section level2" number="1.9">
+<h2>
+<span class="header-section-number">1.9</span> Activity 4: R Markdown<a class="anchor" aria-label="anchor" href="#activity-4-r-markdown"><i class="fas fa-link"></i></a>
+</h2>
+<p>The problem with writing code in the console is that it doesn't save it anywhere, and the whole point of writing code is so that you can save it and use it again. We're going to write our code in a document format called <strong>R Markdown</strong> (abbreviated as Rmd).</p>
+<p>R Markdown documents are a great way to create dynamic documents with embedded chunks of code and we'll use R Markdown to do all your data skills work including the homework.</p>
+<p>For more information about R Markdown feel free to have a look at their main webpage <a href="http://rmarkdown.rstudio.com" class="uri">http://rmarkdown.rstudio.com</a>. The key advantage of R Markdown is that it allows you to write code into a document, along with regular text, and then <strong>knit</strong> it using the package <code>knitr</code> to create your document as either a webpage (HTML), a PDF, or Word document (.docx).</p>
+<div id="create-a-new-r-markdown" class="section level3" number="1.9.1">
+<h3>
+<span class="header-section-number">1.9.1</span> Create a new R Markdown<a class="anchor" aria-label="anchor" href="#create-a-new-r-markdown"><i class="fas fa-link"></i></a>
+</h3>
+<p>To open a new R Markdown document click the 'New File' icon (it's a white document with a green plus sign just under the "File" menu) and then click 'R Markdown'. You will be prompted to give it a title, call it "Intro to R". Also, change the author name to your GUID as this will be good practice for the homework. Keep the output format as HTML.</p>
+<p>Once you've opened a new document be sure to save it by clicking <code>File</code> -&gt; <code>Save</code>. You should also name this file "Intro to R". If you've set the working directory correctly, you should now see this file appear in your file viewer pane.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-new-markdown"></span>
+<img src="images/intro/new-markdown.gif" alt="Opening a new R Markdown document" width="100%"><p class="caption">
+Figure 1.6: Opening a new R Markdown document
+</p>
+</div>
+<div class="info">
+<p>One of the great things about using projects in RStudio is that your files will automatically save into your project working directory by default. This makes it easy to keep everything organised so make sure you have followed the steps to set up your project carefully!</p>
+</div>
+</div>
+<div id="creating-code-chunks" class="section level3" number="1.9.2">
+<h3>
+<span class="header-section-number">1.9.2</span> Creating code chunks<a class="anchor" aria-label="anchor" href="#creating-code-chunks"><i class="fas fa-link"></i></a>
+</h3>
+<p>When you first open a new R Markdown document you will see a bunch of welcome text and code. This will appear every time you open a new R Markdown document.</p>
+<p>Do the following steps in this order:</p>
+<ul>
+<li>Delete <strong>everything</strong> from line 8 onwards<br>
+</li>
+<li>On line 8, type "About me" and press enter to move the cursor down to line 9</li>
+<li>Click the code chunk button at the top of your Markdown document (it's a green square with a C and a plus sign) then click <code>R</code> to insert a new R code chunk.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-new-chunk"></span>
+<img src="images/intro/new-chunk.gif" alt="Creating a new R chunk" width="100%"><p class="caption">
+Figure 1.7: Creating a new R chunk
+</p>
+</div>
+<p>What you have created is a <strong>code chunk</strong>. In R Markdown, anything written in the white space is regarded as normal text, and anything written in a grey code chunk is assumed to be code. This makes it easy to combine both text and code in one document.</p>
+<div class="warning">
+<p>When you create a new code chunk you should notice that the grey box starts and ends with three back ticks ```. One common mistake is to accidentally delete these back ticks. Remember, code chunks are grey and text entry is white - if the colour of certain parts of your Markdown doesn't look right, check that you haven't deleted the back ticks.</p>
+</div>
+</div>
+<div id="adding-code" class="section level3" number="1.9.3">
+<h3>
+<span class="header-section-number">1.9.3</span> Adding code<a class="anchor" aria-label="anchor" href="#adding-code"><i class="fas fa-link"></i></a>
+</h3>
+<p>Now we're going to add in the code we used earlier to our R Markdown document so that we can save it.</p>
+<ul>
+<li>In your code chunk write the below code (but again, replace the values of name/age/birthday with your own details).<br>
+</li>
+<li>Remember that text values and dates need to be contained in quotation marks but numerical values do not. Missing and/or unnecessary quotation marks are a common cause of code not working - remember this!</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span> 
+<span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">38</span>
+<span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>
+<span class="va">birthday</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2021-07-11"</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="sec-run-code" class="section level3" number="1.9.4">
+<h3>
+<span class="header-section-number">1.9.4</span> Running code<a class="anchor" aria-label="anchor" href="#sec-run-code"><i class="fas fa-link"></i></a>
+</h3>
+<p>When you're working in an R Markdown document, there are several ways to run your lines of code.</p>
+<p>The best way to run a single line of code is to use a keyboard shortcut. Make sure that the cursor is in the line of code you want to run (it can be anywhere) and press <code>Ctrl + enter</code> or <code>Cmd + enter</code> if you're on a Mac. This will run the line of code and move your cursor to the next line.</p>
+<ul>
+<li>Run each line of code to create the objects using the above method.</li>
+<li>Then, clear all the objects from the environment either using <code><a href="https://rdrr.io/r/base/rm.html">rm()</a></code> on each object or click the brush icon to get rid of them all at once.</li>
+</ul>
+<p>Now, let's try running all the code in the chunk at once rather than one line at a time. You have two options:</p>
+<ul>
+<li>Put your cursor somewhere in the code chunk and press <code>Ctrl + shift + enter</code>
+</li>
+<li>Or, press the green "play" button at the top-right of the code chunk and this will run <strong>all</strong> lines of code in that chunk.</li>
+</ul>
+<div class="info">
+<p>Whilst you're working through this book, use the white space to add notes. For example, if you figure something out or you manage to fix an error, make a note of it in your Markdown document.</p>
+</div>
+</div>
+</div>
+<div id="activity-5-inline-code" class="section level2" number="1.10">
+<h2>
+<span class="header-section-number">1.10</span> Activity 5: Inline code<a class="anchor" aria-label="anchor" href="#activity-5-inline-code"><i class="fas fa-link"></i></a>
+</h2>
+<p>An incredibly useful feature of R Markdown is that R can insert values into your writing using <strong>inline code</strong>. If you've ever had to copy and paste a value or text from one file to another, you'll know how easy it can be to make mistakes. Inline code avoids this. It's easier to show you what inline code does rather than to explain it so let's have a go.</p>
+<ul>
+<li>First, copy and paste this text exactly (do not change anything) to the <strong>white space</strong> underneath your code chunk.</li>
+</ul>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="sec-intro.html#cb4-1" aria-hidden="true" tabindex="-1"></a>My name is <span class="st">`</span><span class="at">r name</span><span class="st">`</span> and I am <span class="st">`</span><span class="at">r age</span><span class="st">`</span> years old. It is <span class="st">`</span><span class="at">r birthday - today</span><span class="st">`</span> days until my birthday.</span></code></pre></div>
+<ul>
+<li>Now, we're going to "knit" our file. This simply means that we're going to compile our code into a document that is more presentable. To do this click <code>Knit</code> -&gt; <code>Knit to HMTL</code>. R Markdown will create a new HTML document and it will automatically save this file in your project working directory.</li>
+</ul>
+<p>As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
+<p><strong>My name is Emily and I am 38 years old. It is -675 days until my birthday.</strong></p>
+<p>We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it!</p>
+<p>There are a few final things to note about knitting that will be useful for the homework:</p>
+<ul>
+<li>R Markdown will only knit if your code works, otherwise it will throw an error. Knitting your file is therefore a good way of checking for the homework assignments whether you've written legal code!<br>
+</li>
+<li>The order of what's in your Markdown document matters. When the file knits, it starts at the beginning. This means that if you want to use any values in inline code, the code that creates these values must come before the inline code that calls upon it.</li>
+<li>You can choose to knit to a Word or PDF document rather than HTML. This can be useful for e.g., sharing the document with others, however, it may lose some functionality and it probably won't look as good so we'd recommend always knitting to HTML.</li>
+<li>R will automatically open the knitted file in the viewer, however, you can also navigate to the Files tab and open the HTML file in your web browser (e.g., Chrome or Firefox).</li>
+</ul>
+</div>
+<div id="activity-6-saving-and-quitting-the-session" class="section level2" number="1.11">
+<h2>
+<span class="header-section-number">1.11</span> Activity 6: Saving and quitting the session<a class="anchor" aria-label="anchor" href="#activity-6-saving-and-quitting-the-session"><i class="fas fa-link"></i></a>
+</h2>
+<p>We're done with all the coding activities for this chapter and whilst it might be tempting to just <del>run away from R</del> close your browser window, ensuring you save and quit the session properly can save you a lot of time and problems in the long-run.</p>
+<ul>
+<li>First, make sure your R Markdown is saved. If there are any unsaved changes then the save icon will be in blue, if it's greyed out it means there are no unsaved changes. But just to be safe, always hit <code>Ctrl + s</code> or click <code>File - Save</code> which will save your file.</li>
+<li>Then, hit the "Quit the current R session" button in the top right corner.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-quit"></span>
+<img src="images/intro/quit.png" alt="Quitting your session" width="100%"><p class="caption">
+Figure 1.8: Quitting your session
+</p>
+</div>
+<p>You'll be taken back to the landing page and now you'll see your "Intro to R" project in the Project list. If you wanted to go back in and work with these files, you can just click on the project and it'll take you back to where you were.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-savedproject"></span>
+<img src="images/intro/saved-project.png" alt="Saved project list" width="100%"><p class="caption">
+Figure 1.9: Saved project list
+</p>
+</div>
+</div>
+<div id="finished" class="section level2" number="1.12">
+<h2>
+<span class="header-section-number">1.12</span> Finished!<a class="anchor" aria-label="anchor" href="#finished"><i class="fas fa-link"></i></a>
+</h2>
+<p>And you're done! On your very first time using R you've not only written functioning code but you've written a reproducible output! You could send someone else your R Markdown document and they would be able to produce exactly the same HTML document as you, just by pressing knit.</p>
+<p>The key thing we want you to take away from this chapter is that R isn't scary. It might be very new to a lot of you, but we're going to take you through it step-by-step. You'll be amazed at how quickly you can start producing professional-looking data visualisations and analysis.</p>
+</div>
+<div id="sec-glossary-intro" class="section level2" number="1.13">
+<h2>
+<span class="header-section-number">1.13</span> Glossary<a class="anchor" aria-label="anchor" href="#sec-glossary-intro"><i class="fas fa-link"></i></a>
+</h2>
+<p>The glossary at the end of each chapter defines common jargon you might encounter while learning R. This specialised vocabulary can help you to communicate more efficiently and to search for solutions to problems. The terms below link to our <a href="https://psyteachr.github.io/glossary/">PsyTeachR glossary</a>, which contains further information and examples.</p>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+term
+</th>
+<th style="text-align:left;">
+definition
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/c.html#character" class="glossary" target="_blank">character</a>
+</td>
+<td style="text-align:left;">
+A data type representing strings of text.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/i.html#ide" class="glossary" target="_blank">ide</a>
+</td>
+<td style="text-align:left;">
+Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/n.html#numeric" class="glossary" target="_blank">numeric</a>
+</td>
+<td style="text-align:left;">
+A data type representing a real decimal number or integer.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/o.html#object" class="glossary" target="_blank">object</a>
+</td>
+<td style="text-align:left;">
+A word that identifies and stores the value of some data for later use.
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+<a href="https://psyteachr.github.io/glossary/p.html#panes" class="glossary" target="_blank">panes</a>
+</td>
+<td style="text-align:left;">
+RStudio is arranged with four window "panes".
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="index.html">Overview</a></div>
+<div class="next"><a href="stroop.html"><span class="header-section-number">2</span> Stroop effect</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sec-intro"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
+<li><a class="nav-link" href="#sec-ilo-intro"><span class="header-section-number">1.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#sec-walkthrough-intro"><span class="header-section-number">1.2</span> Walkthrough video</a></li>
+<li><a class="nav-link" href="#sec-intro-r"><span class="header-section-number">1.3</span> R and RStudio</a></li>
+<li><a class="nav-link" href="#r-server"><span class="header-section-number">1.4</span> R server</a></li>
+<li><a class="nav-link" href="#new-project"><span class="header-section-number">1.5</span> Activity 1: Create a new project</a></li>
+<li><a class="nav-link" href="#rstudio-panes"><span class="header-section-number">1.6</span> RStudio panes</a></li>
+<li>
+<a class="nav-link" href="#activity-2-settings"><span class="header-section-number">1.7</span> Activity 2: Settings</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#themes-and-accessiblilty"><span class="header-section-number">1.7.1</span> Themes and accessiblilty</a></li>
+<li><a class="nav-link" href="#settings-for-reproducibility"><span class="header-section-number">1.7.2</span> Settings for Reproducibility</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#activity-3-writing-code"><span class="header-section-number">1.8</span> Activity 3: Writing code</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sec-objects"><span class="header-section-number">1.8.1</span> Objects</a></li>
+<li><a class="nav-link" href="#removing-objects"><span class="header-section-number">1.8.2</span> Removing objects</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#activity-4-r-markdown"><span class="header-section-number">1.9</span> Activity 4: R Markdown</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#create-a-new-r-markdown"><span class="header-section-number">1.9.1</span> Create a new R Markdown</a></li>
+<li><a class="nav-link" href="#creating-code-chunks"><span class="header-section-number">1.9.2</span> Creating code chunks</a></li>
+<li><a class="nav-link" href="#adding-code"><span class="header-section-number">1.9.3</span> Adding code</a></li>
+<li><a class="nav-link" href="#sec-run-code"><span class="header-section-number">1.9.4</span> Running code</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#activity-5-inline-code"><span class="header-section-number">1.10</span> Activity 5: Inline code</a></li>
+<li><a class="nav-link" href="#activity-6-saving-and-quitting-the-session"><span class="header-section-number">1.11</span> Activity 6: Saving and quitting the session</a></li>
+<li><a class="nav-link" href="#finished"><span class="header-section-number">1.12</span> Finished!</a></li>
+<li><a class="nav-link" href="#sec-glossary-intro"><span class="header-section-number">1.13</span> Glossary</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/01-intro.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/01-intro.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-05-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

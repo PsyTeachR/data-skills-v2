@@ -1,0 +1,78 @@
+# Conventions
+
+This book will use the following conventions:
+
+* Generic code: `list(number = 1, letter = "A")`
+* Highlighted code: `r hl(dplyr::slice_max())`
+* File paths: `r path("data/sales.csv")`
+* R Packages: `r pkg("tidyverse")`
+* Functions: `r hl(paste())`
+* Strings: `r hl("psyTeachR")`
+* Numbers: `r hl(100)`, `r hl(3.14)`
+* Logical values: `r hl(TRUE)`, `r hl(FALSE)`
+* Glossary items: `r glossary("ordinal")`
+* Citations: @R-tidyverse
+* Internal links: Chapter\ \@ref(sec-intro)
+* External links: [R for Data Science](https://r4ds.had.co.nz/){target="_blank"}
+* Menu/interface options: **`New File...`**
+
+## Webexercises
+
+See [webexercises](https://psyteachr.github.io/webexercises/) for more details about how to use this in your materials.
+
+* Type an integer: `r fitb("^[0-9]{1}$", width = 1, regex = TRUE)`
+* I am going to learn a lot: `r mcq(c(answer = "TRUE", x = "FALSE"))`
+```{r, echo=FALSE, results='asis'}
+# https://psyteachr.github.io/webexercises/
+# epub rendering requires all options have a value, so just use x
+
+opts <- c(
+   x = "the probability that the null hypothesis is true",
+   answer = "the probability of the observed (or more extreme) data, under the assumption that the null-hypothesis is true",
+   x = "the probability of making an error in your conclusion"
+)
+cat("* What is a p-value?", longmcq(opts))
+```
+
+```{block, webex.hide="Hidden Text"}
+You found some hidden text!
+```
+
+```{r, webex.hide="Hidden Code"}
+print("You found some hidden code!")
+```
+
+## Alert boxes
+
+::: {.info data-latex=""}
+Informational asides.
+:::
+
+::: {.warning data-latex=""}
+Notes to warn you about something.
+:::
+
+::: {.dangerous data-latex=""}
+Notes about things that could cause serious errors.
+:::
+
+::: {.try data-latex=""}
+Try it yourself.
+:::
+
+## Code Chunks
+
+```{r}
+# code chunks
+paste("Applied", "Data", "Skills", 1, sep = " ")
+```
+
+
+```{r, eval=FALSE, verbatim='r setup, message = FALSE'}
+# code chunks with visible r headers
+library(tidyverse)
+```
+
+## Glossary
+
+`r glossary::glossary_table()`

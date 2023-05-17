@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 2 Stroop effect | Data Skills</title>
+<meta name="author" content="Emily Nordmann">
+<meta name="generator" content="bookdown 0.25 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Stroop effect | Data Skills">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/stroop.html">
+<meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 2 Stroop effect | Data Skills">
+<meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+<meta name="description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Understand how to use functions and arguments in R...">
+<meta property="og:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Understand how to use functions and arguments in R...">
+<meta name="twitter:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Understand how to use functions and arguments in R...">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Skills</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
+<li><a class="active" href="stroop.html"><span class="header-section-number">2</span> Stroop effect</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/psyteachr/data-skills-v2">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="stroop" class="section level1" number="2">
+<h1>
+<span class="header-section-number">2</span> Stroop effect<a class="anchor" aria-label="anchor" href="#stroop"><i class="fas fa-link"></i></a>
+</h1>
+<div id="sec-ilo-stroop" class="section level2" number="2.1">
+<h2>
+<span class="header-section-number">2.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#sec-ilo-stroop"><i class="fas fa-link"></i></a>
+</h2>
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>Explain what the Stroop effect is and how is it measured</li>
+<li>Understand how to use functions and arguments in R</li>
+<li>Understand what a package is and be able to load it</li>
+</ul>
+</div>
+<div id="sec-walkthrough-stroop" class="section level2" number="2.2">
+<h2>
+<span class="header-section-number">2.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-stroop"><i class="fas fa-link"></i></a>
+</h2>
+<p>There is a walkthrough video of this chapter available via <a href="https://echo360.org.uk/media/3861d902-df69-417d-8f27-259089f992b8/public">Echo360.</a> We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+</div>
+<div id="activity-1-the-stroop-effect" class="section level2" number="2.3">
+<h2>
+<span class="header-section-number">2.3</span> Activity 1: The Stroop Effect<a class="anchor" aria-label="anchor" href="#activity-1-the-stroop-effect"><i class="fas fa-link"></i></a>
+</h2>
+<p>In this chapter and the next chapter, we're going to develop your data skills by using data from one of the most famous experiments in psychology: The Stroop Effect.</p>
+<ul>
+<li>First, taken part in <a href="https://www.psytoolkit.org/experiment-library/experiment_stroop.html">this online version</a> of the Stroop test. It only takes a few minutes to complete. You need to be on a device with a keyboard.</li>
+<li>Second, read the <a href="https://en.wikipedia.org/wiki/Stroop_effect">Wikipedia summary</a> of the Stroop Effect and how it is used in psychological research.</li>
+<li>Finally, answer the following questions. Please note that your responses will not save in the browser - if you want to save them, make a note of them somewhere.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>What does the Stroop Effect primarily measure?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">Color perception</option>
+<option value="">Language comprehension</option>
+<option value="answer">Cognitive interference</option>
+<option value="">Reading speed</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The Stroop Effect primarily measures cognitive interference, which occurs when the processing of a specific stimulus feature impedes the simultaneous processing of a second stimulus attribute.</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>What is one possible explanation for the Stroop Effect?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">People are naturally slower at reading than identifying colors</option>
+<option value="answer">Reading is an automatic process that can interfere with color identification</option>
+<option value="">Color identification is an automatic process that can interfere with reading</option>
+<option value="">None of the above</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The Stroop Effect is often explained by the theory of automaticity, which suggests that reading—the task of recognizing words—has become an automatic process for most individuals, and this automatic reading process interferes with the task of naming the color.</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>In a typical Stroop test, <input class="webex-solveme nospaces ignorecase" size="9" data-answer='["congruent"]'> trials (where the color of the ink matches the word) are completed faster than <input class="webex-solveme nospaces ignorecase" size="11" data-answer='["incongruent"]'> trials (where the color of the ink does not match the word).</li>
+</ol>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>Answer: congruent, incongruent</p>
+<p>In a typical Stroop test, there are two types of tasks - congruent and incongruent.</p>
+<p>Congruent tasks are those where the color of the ink matches the word. For example, the word "BLUE" is printed in blue ink. In this case, the visual color and the semantic information (the meaning of the word) align or are "congruent."</p>
+<p>Incongruent tasks, on the other hand, are those where the color of the ink does not match the word. For example, the word "BLUE" might be printed in red ink. Here, the visual color and the semantic information are in conflict or are "incongruent."</p>
+<p>Participants in a Stroop test are typically asked to name the color of the ink, not the word. This is where the interference comes in. Reading words is such an automatic process for most literate adults that the participant's brain automatically reads the word before recognizing the color of the ink. This causes a delay in the response time for incongruent tasks, as the brain has to overcome the initial automatic response to read the word.</p>
+<p>Therefore, congruent tasks are typically completed faster than incongruent tasks in a Stroop test. The difference in response times is the measure of the Stroop effect, which demonstrates the nature of cognitive interference and the automatic process of reading.</p>
+</div>
+</div>
+<div id="activity-2-new-project" class="section level2" number="2.4">
+<h2>
+<span class="header-section-number">2.4</span> Activity 2: New project<a class="anchor" aria-label="anchor" href="#activity-2-new-project"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Log in to the to R sever using the link that's on Moodle (and if you haven't already, bookmark the link to make your life easier!).</li>
+</ul>
+<p>To help keep things organised, we'll make a new project for the Stroop experiment chapters (this week and next week). To make a new project, the steps are almost the same as what you did in the first chapter with the exception that you don't need to make the Psych 1A folder this time, you just need to find it:</p>
+<ul>
+<li>Click on the "New project" button;</li>
+<li>Then, click on the first option in the list "New Directory";</li>
+<li>Then, click "New Project";</li>
+<li>Then you are given the opportunity to name your project and select which folder it should be stored in. First in the "Directory name" box, type "Stroop Effect";</li>
+<li>The subdirectory should already be set to Psych 1A but if not, click browse and navigate to it then click "Choose";</li>
+<li>Finally, click "Create project".</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-rserver-2"></span>
+<img src="images/stroop/new-project.gif" alt="Creating a new project" width="100%"><p class="caption">
+Figure 1.2: Creating a new project
+</p>
+</div>
+</div>
+<div id="activity-2-setting-check" class="section level2" number="2.5">
+<h2>
+<span class="header-section-number">2.5</span> Activity 2: Setting check<a class="anchor" aria-label="anchor" href="#activity-2-setting-check"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now you need to download the data files we're going to use. Before you do, we need to check some settings on your browser because the biggest issue new students face with R is not learning to code, it's knowing where your files are.</p>
+<ul>
+<li>First, if you're not 100% sure, check your browser settings to make sure you know where files you download are going to go. If you're on Windows, there's a good chance the default will be the Downloads folder. However, this folder can sometimes end up a dumpster fire of files so it can be better to change your settings so that your browser asks you where to save each download to so that you have to consciously choose each time. <a href="https://www.computerhope.com/issues/ch002103.htm">This website</a> explains how to check and change these settings for all different browsers.</li>
+</ul>
+<p>We're going to ask you to download <strong>zip files</strong> which you will then upload to the server. A zip file is a folder that contains files that have been compressed to make the file size smaller (like vacuum packed food) and enables you to download multiple files at once.</p>
+<ul>
+<li>If you're on a Mac and using Safari as your browser, it has a very annoying default habit of unzipping files when you download them. It's trying to be useful but you need the zipped file to upload to the server so it actually causes problems by doing this. We'd strongly recommend just not using Safari at all because it seems to cause a few issues with R and using Chrome or Firefox instead but if you are particularly attached to it, <a href="https://apple.stackexchange.com/questions/961/how-to-stop-safari-from-unzipping-files-after-download">change the settings</a> to stop it unzipping files.</li>
+</ul>
+</div>
+<div id="activity-3-data-files" class="section level2" number="2.6">
+<h2>
+<span class="header-section-number">2.6</span> Activity 3: Data files<a class="anchor" aria-label="anchor" href="#activity-3-data-files"><i class="fas fa-link"></i></a>
+</h2>
+<p>Once you've done all this, it's time to download the files we need and then upload them to the server.</p>
+<ul>
+<li>First, download the <a href="files/data/stroop/stroop_data.zip" download>Stroop data zip file</a> to your computer and make sure you know which folder you saved it in.</li>
+<li>Then, on the server in the Files tab (bottom right), click <code>Upload &gt; Choose file</code> then navigate to the folder on your computer where the zip file is saved, select it, click <code>Open</code>, then <code>OK</code>.</li>
+</ul>
+<p>The server will automatically unzip the files for you into your chosen folder and in this case, it's helpful as it means they're now ready to use.</p>
+<p>The zip file contains three files:</p>
+<ul>
+<li>
+<code>stroop_stub.Rmd</code>: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.</li>
+<li>
+<code>participant_data.csv</code> is a data file that contains each participant's anonymous ID, age, and gender.</li>
+<li>
+<code>experiment_data.csv</code> is a data file that contains each participant's anonymous ID, mean reaction time for congruent and incongruent trials, and their accuracy.</li>
+</ul>
+<p>Before we load in and work with the data files we need to explain a few more things about how R works.</p>
+</div>
+<div id="sec-packages" class="section level2" number="2.7">
+<h2>
+<span class="header-section-number">2.7</span> Packages and functions<a class="anchor" aria-label="anchor" href="#sec-packages"><i class="fas fa-link"></i></a>
+</h2>
+<p>When you install R you will have access to a range of <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">functions</a> including options for <a class="glossary" target="_blank" title="The process of preparing data for visualisation and statistical analysis." href="https://psyteachr.github.io/glossary/d#data-wrangling">data wrangling</a> and statistical analysis. The functions that are included in the default installation are typically referred to as <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages." href="https://psyteachr.github.io/glossary/b#base-r">base R</a> and you can think of them like the default apps that come pre-loaded on your phone.</p>
+<p>One of the great things about R, however, is that it is <strong>user extensible</strong>: anyone can create a new add-on that extends its functionality. There are currently thousands of <a class="glossary" target="_blank" title="A group of R functions." href="https://psyteachr.github.io/glossary/p#package">packages</a> that R users have created to solve many different kinds of problems, or just simply to have fun. For example, there are packages for data visualisation, machine learning, interactive dashboards, web scraping, and playing games such as Sudoku.</p>
+<p>Add-on packages are not included with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone. The main repository where packages reside is called <a class="glossary" target="_blank" title="The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R." href="https://psyteachr.github.io/glossary/c#cran">CRAN</a>, the Comprehensive R Archive Network.</p>
+<p>There is an important distinction between <strong>installing</strong> a package and <strong>loading</strong> a package.</p>
+<div id="sec-install-package" class="section level3" number="2.7.1">
+<h3>
+<span class="header-section-number">2.7.1</span> Installing a package<a class="anchor" aria-label="anchor" href="#sec-install-package"><i class="fas fa-link"></i></a>
+</h3>
+<p>This is like installing an app on your phone: you only have to do it once and the app will remain installed until you remove it. For instance, if you want to use PokemonGo on your phone, you install it once from the App Store or Play Store; you don't have to re-install it each time you want to use it. Once you launch the app, it will run in the background until you close it or restart your phone. Likewise, when you install a package, the package will be available (but not <em>loaded</em>) every time you open up R.</p>
+<div class="warning">
+<p>The packages you need for this course are already installed on the server so we're not going to show you how to install packages this semester because if you reinstall them on the sever it can cause issues. If you have installed R on your own laptop you should be confident enough to look up how to do this yourself - if not, you can come to office hours (but also, we'd encourage you just to use the server as it will help you follow along with this workbook!).</p>
+</div>
+</div>
+<div id="loading-a-package" class="section level3" number="2.7.2">
+<h3>
+<span class="header-section-number">2.7.2</span> Loading a package<a class="anchor" aria-label="anchor" href="#loading-a-package"><i class="fas fa-link"></i></a>
+</h3>
+<p>This is done using the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function. This is like <strong>launching</strong> an app on your phone: the functionality is only there when the app is launched and remains there until you close the app or restart. For example, when you run <code><a href="https://rdrr.io/r/base/library.html">library(beepr)</a></code> within a session, the functions in the package <code>beepr</code> will be made available for your R session. The next time you start R, you will need to run <code><a href="https://rdrr.io/r/base/library.html">library(beepr)</a></code> again if you want to access that package.</p>
+</div>
+</div>
+<div id="activity-4-loading-and-usage-packages-and-function" class="section level2" number="2.8">
+<h2>
+<span class="header-section-number">2.8</span> Activity 4: Loading and usage packages and function<a class="anchor" aria-label="anchor" href="#activity-4-loading-and-usage-packages-and-function"><i class="fas fa-link"></i></a>
+</h2>
+<p>As an example, let's load the <code class="package">beepr</code> package which is already installed on the server. The <code class="package">beepr</code> package is mostly just for fun - it makes R play a short noise - but it's useful to show you how packages work. To load a package, you use the function <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> and include the name of the package you want to load in parentheses.</p>
+<ul>
+<li>In code chunk 1, type and run the below code to load the <code>beepr</code> package. If you can't remember how to run code, take a look back at Chapter <a href="sec-intro.html#sec-run-code">1.9.4</a>.</li>
+</ul>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">beepr</span><span class="op">)</span></code></pre></div>
+<p>You'll see <code><a href="https://rdrr.io/r/base/library.html">library(beepr)</a></code> appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.</p>
+<div id="using-a-function" class="section level3" number="2.8.1">
+<h3>
+<span class="header-section-number">2.8.1</span> Using a function<a class="anchor" aria-label="anchor" href="#using-a-function"><i class="fas fa-link"></i></a>
+</h3>
+<p>Now you can use the function <code><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep()</a></code>. A <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">function</a> is a name that refers to some code you can reuse.</p>
+<ul>
+<li>In code chunk 2, write and run the below code to use the function <code><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep()</a></code> (make sure you have your sound on).</li>
+</ul>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<p>After the function name, there is a pair of parentheses, which contain zero or more <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. These are options that you can set. In the example above, the <code>sound</code> argument has a <a class="glossary" target="_blank" title="A value that a function uses for an argument if it is skipped." href="https://psyteachr.github.io/glossary/d#default-value">default value</a> of <code>1</code>, which makes a "ping" sound.</p>
+<ul>
+<li>In code chunk 2, add the below code to use a different sound and try changing the argument to an integer (whole number) between 1 and 11.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span><span class="op">(</span>sound <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></code></pre></div>
+</div>
+<div id="sec-function-help" class="section level3" number="2.8.2">
+<h3>
+<span class="header-section-number">2.8.2</span> Function Help<a class="anchor" aria-label="anchor" href="#sec-function-help"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you want more information about what a function does or how to use it, you can look at the help document. If a <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">function</a> is in <a class="glossary" target="_blank" title="The set of R functions that come with a basic installation of R, before you add external packages." href="https://psyteachr.github.io/glossary/b#base-r">base R</a> or a package you have loaded, you can type <code>?function_name</code> in the console to access the help file. At the top of the help it will give you the function and package name.</p>
+<p>If the package isn't loaded, use <code>?package_name::function_name</code>. When you aren't sure what package the function is in, use the shortcut <code>??function_name</code> which will give you a list of all possible options.</p>
+<ul>
+<li>In the <strong>console</strong>, type and run the code for the different help options below. The reason you run the help code in the console not a code chunk is that you generally don't want to save this code in your script.</li>
+</ul>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># get help with a package</span>
+<span class="op">?</span><span class="va">beepr</span>
+
+<span class="co"># get help with a function if the package it's from is already loaded</span>
+<span class="op">?</span><span class="va">beep</span>
+
+<span class="co"># get help with a function whether or not the package is loaded</span>
+<span class="op">?</span><span class="fu">beepr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span>
+
+<span class="co"># shows a list of potentially matching functions</span>
+<span class="op">?</span><span class="op">?</span><span class="va">beep</span></code></pre></div>
+<div class="small_right" style="width: 50%; max-width: 400px;">
+<img src="images/stroop/function_help.png">
+</div>
+<p>Function help is always organised in the same way. For example, look at the help for <code><a href="https://rdrr.io/pkg/beepr/man/beep.html">?beepr::beep</a></code>. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The <strong>Usage</strong> section shows the function with all of its <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. If any of those arguments have default values, they will be shown like <code>function(arg = default)</code>. The <strong>Arguments</strong> section lists each argument with an explanation. There may be a <strong>Details</strong> section after this with even more detail about the functions. The <strong>Examples</strong> section is last, and shows examples that you can run in your console window to see how the function works.</p>
+<div class="callout-note try" style="clear: both;">
+<p>Use the help documentation to find the answers to these questions:</p>
+<ul>
+<li>What is the first argument to the <code>mean</code> function? <select class="webex-select"><option value="blank"></option>
+<option value="">trim</option>
+<option value="">na.rm</option>
+<option value="">mean</option>
+<option value="answer">x</option></select>
+</li>
+<li>What package is <code>read_excel</code> in? <select class="webex-select"><option value="blank"></option>
+<option value="">readr</option>
+<option value="answer">readxl</option>
+<option value="">base</option>
+<option value="">stats</option></select>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div id="activity-5-loading-data" class="section level2" number="2.9">
+<h2>
+<span class="header-section-number">2.9</span> Activity 5: Loading data<a class="anchor" aria-label="anchor" href="#activity-5-loading-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>OK, let's get back to looking at our data. In order to load and work with our Stroop data, we need to load another very important package.</p>
+<div id="sec-tidyverse" class="section level3" number="2.9.1">
+<h3>
+<span class="header-section-number">2.9.1</span> Load the Tidyverse<a class="anchor" aria-label="anchor" href="#sec-tidyverse"><i class="fas fa-link"></i></a>
+</h3>
+<p><code class="package">tidyverse</code> is a meta-package that loads several packages we'll be using in almost every chapter in this book:</p>
+<ul>
+<li>
+<code class="package">ggplot2</code>, for data visualisation</li>
+<li>
+<code class="package">readr</code>, for data import</li>
+<li>
+<code class="package">tibble</code>, for tables</li>
+<li>
+<code class="package">tidyr</code>, for data tidying</li>
+<li>
+<code class="package">dplyr</code>, for data manipulation</li>
+<li>
+<code class="package">stringr</code>, for <a class="glossary" target="_blank" title="A piece of text inside of quotes." href="https://psyteachr.github.io/glossary/s#string">strings</a>
+</li>
+<li>
+<code class="package">forcats</code>, for <a class="glossary" target="_blank" title="A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter" href="https://psyteachr.github.io/glossary/f#factor">factors</a>
+</li>
+<li>
+<code class="package">purrr</code>, for repeating things</li>
+</ul>
+<p>To use <code class="package">readr</code> to import the data, we need to load the <code class="package">tidyverse</code>.</p>
+<ul>
+<li>In code chunk 3, write and run the code to load the <code class="package">tidyverse</code>. When you run this code, you're going to get something that at first glance might look like an error but it's not, it's just telling you which packages it has loaded.</li>
+</ul>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-tidyverse"></span>
+<img src="images/stroop/tidyverse.png" alt="Tidyverse message when successfully loaded" width="100%"><p class="caption">
+Figure 2.1: Tidyverse message when successfully loaded
+</p>
+</div>
+</div>
+<div id="read-in-the-data" class="section level3" number="2.9.2">
+<h3>
+<span class="header-section-number">2.9.2</span> Read in the data<a class="anchor" aria-label="anchor" href="#read-in-the-data"><i class="fas fa-link"></i></a>
+</h3>
+<p>Now we can read in the data. To do this we will use the function <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code> that allows us to read in .csv files, which are a type of data file. There are also functions that allow you to read in .xlsx (Excel) files and other formats, however in this course we will only use .csv files.</p>
+<p>First, we will create an object called <code>dat</code> that contains the data in the <code>experiment_data.csv</code> file. Then, we will create an object called <code>ppt_info</code> that contains the data in the <code>participant_data.csv</code>.</p>
+<ul>
+<li>In code chunk 4, write and run the below code to load the data files.</li>
+</ul>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"experiment_data.csv"</span><span class="op">)</span>
+<span class="va">ppt_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"participant_data.csv"</span><span class="op">)</span></code></pre></div>
+<div class="info">
+<p>In order to load the file successfully, the name of the file needs to be in double quotation marks and it must have the file extension <code>.csv</code>. If you miss this out, you'll get the error message <code>...does not exist in current working directory</code>.</p>
+<p>Additionally, if you get the message <code>could not find function "read_csv()"</code> is means that you have not loaded the <code class="package">tidyverse</code> - a common error is to write the code but not run it!</p>
+</div>
+</div>
+</div>
+<div id="activity-6-check-your-data" class="section level2" number="2.10">
+<h2>
+<span class="header-section-number">2.10</span> Activity 6: Check your data<a class="anchor" aria-label="anchor" href="#activity-6-check-your-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>You should now see that the objects <code>dat</code> and <code>ppt_info</code> have appeared in the environment pane. Whenever you read data into R you should always do an initial check to see that your data looks like how you expected. There are several ways you can do this, try them all out to see how the results differ.</p>
+<ul>
+<li>In the environment pane, click on <code>dat</code> and <code>ppt_info</code>. This will open the data to give you a spreadsheet-like view (although you can't edit it like in Excel).</li>
+<li>In the environment pane, click the small blue play button to the left of <code>dat</code> and <code>ppt_info</code>. This will show you the structure of the object information including the names of all the variables in that object and what type they are.</li>
+<li>In code chunk 5, write and run <code>summary(ppt_info)</code> (and do the same for <code>dat</code>)</li>
+<li>In code chunk 5, write and run <code>str(ppt_info)</code> (and do the same for <code>dat</code>)</li>
+</ul>
+<p>What is the <strong>median</strong> congruent reaction time to 1 decimal place? <input class="webex-solveme nospaces" size="5" data-answer='["746.3"]'></p>
+<p>What is the <strong>mean</strong> incongruent reaction time to 1 decimal place? <input class="webex-solveme nospaces" size="5" data-answer='["891.3"]'></p>
+</div>
+<div id="activity-7-visualise-the-data" class="section level2" number="2.11">
+<h2>
+<span class="header-section-number">2.11</span> Activity 7: Visualise the data<a class="anchor" aria-label="anchor" href="#activity-7-visualise-the-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>As you're going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead.</p>
+<p>We're going to look at how to write the code to produce simple visualisations in a few weeks, for now, we want to focus on how to read and interpret different kinds of graphs. Please feel free to play around with the code and change <code>TRUE</code> to <code>FALSE</code> and adjust the values and labels and see what happens but <strong>do not worry about understanding this code</strong>. Just copy and paste it.</p>
+<ul>
+<li>Copy, paste and run the below code in code chunk 6 to produce a bar graph that shows the number of men, women, and non-binary participants in the dataset.</li>
+</ul>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ppt_info</span>, <span class="co"># data we're using</span>
+       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender</span>, <span class="co"># variable we want to show as bars</span>
+                     fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make bars different colours</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> <span class="co"># add bar plot &amp; turn off redundant legend</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Gender"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># edit x-axis label</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"D"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># colour-blind friendly</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Number of participants"</span><span class="op">)</span><span class="op">+</span> <span class="co"># edit y-axis label</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># add a theme</span></code></pre></div>
+<p>Are there more men, women, or non-binary participants in the sample? <select class="webex-select"><option value="blank"></option>
+<option value="">More men</option>
+<option value="answer">More women</option>
+<option value="">More non-binary participants</option></select></p>
+<ul>
+<li>Copy, paste, and run the below code in code chunk 7 to create violin-boxplots of happiness scores for each income group.</li>
+</ul>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="co"># create long-form data</span>
+<span class="va">dat_long</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">dat</span>, 
+                         cols <span class="op">=</span> <span class="va">congruent_time</span><span class="op">:</span><span class="va">incongruent_time</span>, 
+                         names_to <span class="op">=</span> <span class="st">"condition"</span>, 
+                         values_to <span class="op">=</span> <span class="st">"reaction_time"</span><span class="op">)</span>
+<span class="co"># make plot</span>
+<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat_long</span>, <span class="co"># data we're using</span>
+       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">condition</span>, <span class="co"># grouping variable (IV)</span>
+                     y <span class="op">=</span> <span class="va">reaction_time</span>, <span class="co"># measurement (DV)</span>
+                     fill <span class="op">=</span> <span class="va">condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make bars different colours</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span>show.legend <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># turn off redundant legend for colour</span>
+              alpha <span class="op">=</span> <span class="fl">.4</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make violin a bit transparent</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">.2</span>, <span class="co"># adjust size of boxplot</span>
+               show.legend <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># turn off redundant legend for colour</span>
+               alpha <span class="op">=</span> <span class="fl">.7</span><span class="op">)</span><span class="op">+</span> <span class="co"># make boxplots a little transparent</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Condition"</span>, <span class="co"># edit x-axis labels</span>
+                   labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Congruent"</span>, <span class="st">"Incongruent"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Reaction time (ms)"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># edit y-axis labels</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="co"># add a theme</span>
+  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"E"</span><span class="op">)</span> <span class="co"># colour-blind friendly colours</span></code></pre></div>
+<ul>
+<li>The violin (the wavy line) shows density. Basically, the fatter the wavy shape, the more data points there are at that point. It's called a violin plot because it very often looks (kinda) like a violin.</li>
+<li>The boxplot is the box in the middle. The black line shows the median score in each group. The median is calculated by arranging the scores in order from the smallest to the largest and then selecting the middle score.</li>
+<li>The other lines on the boxplot show the interquartile range. There is a really good explanation of <a href="https://medium.com/dayem-siddiqui/understanding-and-interpreting-box-plots-d07aab9d1b6c">how to read a boxplot here</a>.</li>
+</ul>
+<p>Which condition has the longest median reaction time? <select class="webex-select"><option value="blank"></option>
+<option value="">Congruent</option>
+<option value="answer">Incongruent</option></select></p>
+</div>
+<div id="finished-1" class="section level2" number="2.12">
+<h2>
+<span class="header-section-number">2.12</span> Finished<a class="anchor" aria-label="anchor" href="#finished-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Finally, try knitting the file to HTML. And that's it, well done! It's absolutely ok if you don't understand 100% of what you're doing at this point, we're going to repeat everything you've done with different datasets so you will get lots of practice and we're going to build it up very slowly. Also remember that you can attend GTA sessions and office hours for help with data skills - you don't have to have specific questions, some students just like to use the GTA sessions as the time to work through the data skills book so that if they need help, they're already there.</p>
+<p>Remember to make a note of any mistakes you made and how you fixed them, any other useful information you learned, save your Markdown, and quit your session on the server.</p>
+
+</div>
+</div>
+
+
+
+<div class="chapter-nav">
+<div class="prev"><a href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></div>
+<div class="next"><a href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#stroop"><span class="header-section-number">2</span> Stroop effect</a></li>
+<li><a class="nav-link" href="#sec-ilo-stroop"><span class="header-section-number">2.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#sec-walkthrough-stroop"><span class="header-section-number">2.2</span> Walkthrough video</a></li>
+<li><a class="nav-link" href="#activity-1-the-stroop-effect"><span class="header-section-number">2.3</span> Activity 1: The Stroop Effect</a></li>
+<li><a class="nav-link" href="#activity-2-new-project"><span class="header-section-number">2.4</span> Activity 2: New project</a></li>
+<li><a class="nav-link" href="#activity-2-setting-check"><span class="header-section-number">2.5</span> Activity 2: Setting check</a></li>
+<li><a class="nav-link" href="#activity-3-data-files"><span class="header-section-number">2.6</span> Activity 3: Data files</a></li>
+<li>
+<a class="nav-link" href="#sec-packages"><span class="header-section-number">2.7</span> Packages and functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sec-install-package"><span class="header-section-number">2.7.1</span> Installing a package</a></li>
+<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">2.7.2</span> Loading a package</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#activity-4-loading-and-usage-packages-and-function"><span class="header-section-number">2.8</span> Activity 4: Loading and usage packages and function</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#using-a-function"><span class="header-section-number">2.8.1</span> Using a function</a></li>
+<li><a class="nav-link" href="#sec-function-help"><span class="header-section-number">2.8.2</span> Function Help</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#activity-5-loading-data"><span class="header-section-number">2.9</span> Activity 5: Loading data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sec-tidyverse"><span class="header-section-number">2.9.1</span> Load the Tidyverse</a></li>
+<li><a class="nav-link" href="#read-in-the-data"><span class="header-section-number">2.9.2</span> Read in the data</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#activity-6-check-your-data"><span class="header-section-number">2.10</span> Activity 6: Check your data</a></li>
+<li><a class="nav-link" href="#activity-7-visualise-the-data"><span class="header-section-number">2.11</span> Activity 7: Visualise the data</a></li>
+<li><a class="nav-link" href="#finished-1"><span class="header-section-number">2.12</span> Finished</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/02-stroop.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/02-stroop.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script>
+
+</div>
+ <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-05-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,57 @@
+---
+title: "Intro to Stroop data"
+author: "GUID" # edit this to your GUID
+date: "2023-09-XX" # edit this to today's date
+output: html_document
+---
+
+You can write notes about anything up to Activity 4 in this space
+
+
+Activity 4
+
+```{r chunk1}
+# this is a comment. A comment is text that is added to a code chunk to help you remember what the code is doing and why. A comment starts with a hashtag # and R will ignore any comments when you run the code in that chunk. They're a useful way to add notes to yourself about your coding, we'll provide some comments for you but add your own!
+
+# In this code chunk, underneath these comments, write the code to load the package beepr and then run the code. Be careful to ensure the code is within the code chunk and that you don't actually delete the backticks that end the code chunk
+
+```
+
+
+```{r chunk2}
+# in this code chunk, write the code to use beep
+
+
+```
+
+
+```{r chunk3}
+# in this code chunk, write the code to load the tidyverse 
+
+```
+
+
+```{r chunk4}
+# in this code chunk, write the code to load the data files
+
+
+```
+
+
+```{r chunk5}
+# in this code chunk, write the code to check your data
+
+```
+
+
+```{r chunk6}
+# in this code chunk, copy the code to make the bar chart
+
+```
+
+
+```{r chunk7}
+# in this code chunk, copy the code to make the violin box-plots
+
+```
+
