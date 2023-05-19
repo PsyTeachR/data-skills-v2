@@ -6,17 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>D Glossary | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="generator" content="bookdown 0.25 with bs4_book()">
+<meta name="description" content="You can use the glossary() function to automatically link to a term in the psyTeachR glossary or make your own project-specific glossary. This will create a link to the glossary and include a...">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="D Glossary | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/glossary-1.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta property="og:description" content="You can use the glossary() function to automatically link to a term in the psyTeachR glossary or make your own project-specific glossary. This will create a link to the glossary and include a...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="D Glossary | Data Skills">
+<meta name="twitter:description" content="You can use the glossary() function to automatically link to a term in the psyTeachR glossary or make your own project-specific glossary. This will create a link to the glossary and include a...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -53,9 +56,6 @@
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/style.css">
-<meta name="description" content="You can use the glossary() function to automatically link to a term in the psyTeachR glossary or make your own project-specific glossary. This will create a link to the glossary and include a...">
-<meta property="og:description" content="You can use the glossary() function to automatically link to a term in the psyTeachR glossary or make your own project-specific glossary. This will create a link to the glossary and include a...">
-<meta name="twitter:description" content="You can use the glossary() function to automatically link to a term in the psyTeachR glossary or make your own project-specific glossary. This will create a link to the glossary and include a...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -79,7 +79,9 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Overview</a></li>
 <li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
-<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Stroop effect</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
+<li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
+<li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -94,24 +96,24 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="glossary-1" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="glossary-1" class="section level1" number="8">
 <h1>
 <span class="header-section-number">D</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-1"><i class="fas fa-link"></i></a>
 </h1>
 <p>You can use the <code>glossary()</code> function to automatically link to a term in the <a href="https://psyteachr.github.io/glossary/">psyTeachR glossary</a> or make your own project-specific glossary.</p>
 <p>This will create a link to the glossary and include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: <code>glossary("word")</code>. For example, common <a class="glossary" target="_blank" title="The kind of data represented by an object." href="https://psyteachr.github.io/glossary/d#data-type">data types</a> are <a class="glossary" target="_blank" title="A data type representing whole numbers." href="https://psyteachr.github.io/glossary/i#integer">integer</a>, <a class="glossary" target="_blank" title="A data type representing a real decimal number" href="https://psyteachr.github.io/glossary/d#double">double</a>, and <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a>.</p>
 <p>If you need to link to a definition, but are using a different form of the word, add the display version as the second argument (<code>display</code>). You can also override the automatic short definition by providing your own in the third argument (<code>def</code>). Add the argument <code>link = FALSE</code> if you just want the hover definition and not a link to the psyTeachR glossary.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">glossary</span><span class="op">(</span><span class="st">"data type"</span>, 
-         display <span class="op">=</span> <span class="st">"Data Types"</span>, 
-         def <span class="op">=</span> <span class="st">"My custom definition of data types"</span>, 
-         link <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">glossary</span><span class="op">(</span><span class="st">"data type"</span>, </span>
+<span>         display <span class="op">=</span> <span class="st">"Data Types"</span>, </span>
+<span>         def <span class="op">=</span> <span class="st">"My custom definition of data types"</span>, </span>
+<span>         link <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></code></pre></div>
 <p>[1] "<a class="glossary" title="My custom definition of data types">Data Types</a>"</p>
 <p>You can add a glossary table to the end of a chapter with the following code. It creates a table of all terms used in that chapter previous to the <code>glossary_table()</code> function. It uses <code>kableExtra()</code>, so if you use it in a code chunk, set <code>results='asis'</code>.</p>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r, echo=FALSE, results='asis'}</code></pre>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu">glossary_table</span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">glossary_table</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
 </div>
 <div class="inline-table"><table class="table" style="margin-left: auto; margin-right: auto;">
@@ -384,7 +386,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-05-17.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-05-19.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -4,19 +4,22 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 2 Stroop effect | Data Skills</title>
+<title>Chapter 2 Intro to Stroop effect | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="generator" content="bookdown 0.25 with bs4_book()">
-<meta property="og:title" content="Chapter 2 Stroop effect | Data Skills">
+<meta name="description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Load and use packages and functions in R Load and check...">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta property="og:title" content="Chapter 2 Intro to Stroop effect | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/stroop.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta property="og:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Load and use packages and functions in R Load and check...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 2 Stroop effect | Data Skills">
+<meta name="twitter:title" content="Chapter 2 Intro to Stroop effect | Data Skills">
+<meta name="twitter:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Load and use packages and functions in R Load and check...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -53,9 +56,6 @@
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/style.css">
-<meta name="description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Understand how to use functions and arguments in R...">
-<meta property="og:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Understand how to use functions and arguments in R...">
-<meta name="twitter:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Understand how to use functions and arguments in R...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -79,7 +79,9 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Overview</a></li>
 <li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
-<li><a class="active" href="stroop.html"><span class="header-section-number">2</span> Stroop effect</a></li>
+<li><a class="active" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
+<li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
+<li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -96,7 +98,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="stroop" class="section level1" number="2">
 <h1>
-<span class="header-section-number">2</span> Stroop effect<a class="anchor" aria-label="anchor" href="#stroop"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2</span> Intro to Stroop effect<a class="anchor" aria-label="anchor" href="#stroop"><i class="fas fa-link"></i></a>
 </h1>
 <div id="sec-ilo-stroop" class="section level2" number="2.1">
 <h2>
@@ -105,15 +107,15 @@
 <p>By the end of this chapter you should be able to:</p>
 <ul>
 <li>Explain what the Stroop effect is and how is it measured</li>
-<li>Understand how to use functions and arguments in R</li>
-<li>Understand what a package is and be able to load it</li>
+<li>Load and use packages and functions in R</li>
+<li>Load and check data</li>
 </ul>
 </div>
 <div id="sec-walkthrough-stroop" class="section level2" number="2.2">
 <h2>
 <span class="header-section-number">2.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-stroop"><i class="fas fa-link"></i></a>
 </h2>
-<p>There is a walkthrough video of this chapter available via <a href="https://echo360.org.uk/media/3861d902-df69-417d-8f27-259089f992b8/public">Echo360.</a> We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+<p>There is a walkthrough video of this chapter available via <a href="">Echo360.</a>) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
 </div>
 <div id="activity-1-the-stroop-effect" class="section level2" number="2.3">
 <h2>
@@ -214,15 +216,188 @@ Figure 1.2: Creating a new project
 <li>Then, on the server in the Files tab (bottom right), click <code>Upload &gt; Choose file</code> then navigate to the folder on your computer where the zip file is saved, select it, click <code>Open</code>, then <code>OK</code>.</li>
 </ul>
 <p>The server will automatically unzip the files for you into your chosen folder and in this case, it's helpful as it means they're now ready to use.</p>
-<p>The zip file contains three files:</p>
+<p>The zip file contains four files:</p>
 <ul>
 <li>
-<code>stroop_stub.Rmd</code>: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.</li>
+<code>stroop_stub1.Rmd</code> and <code>stroo_stub2.Rmd</code>: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the <code>stroop_sub1.Rmd</code> Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.</li>
 <li>
-<code>participant_data.csv</code> is a data file that contains each participant's anonymous ID, age, and gender.</li>
-<li>
-<code>experiment_data.csv</code> is a data file that contains each participant's anonymous ID, mean reaction time for congruent and incongruent trials, and their accuracy.</li>
+<code>participant_data.csv</code> is a data file that contains each participant's anonymous ID, age, and gender. This data is in <a class="glossary" target="_blank" title="A data format where all of the observations about one subject are in the same row" href="https://psyteachr.github.io/glossary/w#wide">wide-form</a> which means that all of the observations about one subject are in the same row. There are 270 participants, so there are 270 rows of data.</li>
 </ul>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ppt_info</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:right;">
+participant_id
+</th>
+<th style="text-align:left;">
+gender
+</th>
+<th style="text-align:right;">
+age
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+20
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+19
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+23
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+28
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<code>experiment_data.csv</code> is a data file that contains each participant's anonymous ID, and mean reaction time for all the congruent and incongruent trials they completed. This data is in <a class="glossary" target="_blank" title="A data format where each observation is on a separate row" href="https://psyteachr.github.io/glossary/l#long">long-form</a> where each observation is on a separate row so for the Stroop experiment, each participant has two rows because there are two observations (one for congruent trials and one for incongruent trials). So there are 270 participants, but 540 rows of data (270 * 2).</li>
+</ul>
+<p>You may be less familiar with this way of organising data, but for many functions in R your data must be stored this way. This semester, we'll provide you with the data in the format it needs to be in and next semester we'll show you how to transform it yourself.</p>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:right;">
+participant_id
+</th>
+<th style="text-align:left;">
+condition
+</th>
+<th style="text-align:right;">
+reaction_time
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+congruent
+</td>
+<td style="text-align:right;">
+847.0311
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+incongruent
+</td>
+<td style="text-align:right;">
+910.3084
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+congruent
+</td>
+<td style="text-align:right;">
+748.1366
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+incongruent
+</td>
+<td style="text-align:right;">
+967.4626
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+congruent
+</td>
+<td style="text-align:right;">
+786.2370
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+incongruent
+</td>
+<td style="text-align:right;">
+975.7407
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
 <p>Before we load in and work with the data files we need to explain a few more things about how R works.</p>
 </div>
 <div id="sec-packages" class="section level2" number="2.7">
@@ -249,16 +424,16 @@ Figure 1.2: Creating a new project
 <p>This is done using the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function. This is like <strong>launching</strong> an app on your phone: the functionality is only there when the app is launched and remains there until you close the app or restart. For example, when you run <code><a href="https://rdrr.io/r/base/library.html">library(beepr)</a></code> within a session, the functions in the package <code>beepr</code> will be made available for your R session. The next time you start R, you will need to run <code><a href="https://rdrr.io/r/base/library.html">library(beepr)</a></code> again if you want to access that package.</p>
 </div>
 </div>
-<div id="activity-4-loading-and-usage-packages-and-function" class="section level2" number="2.8">
+<div id="activity-4-packages-and-function" class="section level2" number="2.8">
 <h2>
-<span class="header-section-number">2.8</span> Activity 4: Loading and usage packages and function<a class="anchor" aria-label="anchor" href="#activity-4-loading-and-usage-packages-and-function"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.8</span> Activity 4: Packages and function<a class="anchor" aria-label="anchor" href="#activity-4-packages-and-function"><i class="fas fa-link"></i></a>
 </h2>
 <p>As an example, let's load the <code class="package">beepr</code> package which is already installed on the server. The <code class="package">beepr</code> package is mostly just for fun - it makes R play a short noise - but it's useful to show you how packages work. To load a package, you use the function <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> and include the name of the package you want to load in parentheses.</p>
 <ul>
 <li>In code chunk 1, type and run the below code to load the <code>beepr</code> package. If you can't remember how to run code, take a look back at Chapter <a href="sec-intro.html#sec-run-code">1.9.4</a>.</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">beepr</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">beepr</span><span class="op">)</span></span></code></pre></div>
 <p>You'll see <code><a href="https://rdrr.io/r/base/library.html">library(beepr)</a></code> appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.</p>
 <div id="using-a-function" class="section level3" number="2.8.1">
 <h3>
@@ -268,14 +443,14 @@ Figure 1.2: Creating a new project
 <ul>
 <li>In code chunk 2, write and run the below code to use the function <code><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep()</a></code> (make sure you have your sound on).</li>
 </ul>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span><span class="op">(</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>After the function name, there is a pair of parentheses, which contain zero or more <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. These are options that you can set. In the example above, the <code>sound</code> argument has a <a class="glossary" target="_blank" title="A value that a function uses for an argument if it is skipped." href="https://psyteachr.github.io/glossary/d#default-value">default value</a> of <code>1</code>, which makes a "ping" sound.</p>
 <ul>
 <li>In code chunk 2, add the below code to use a different sound and try changing the argument to an integer (whole number) between 1 and 11.</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span><span class="op">(</span>sound <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span><span class="op">(</span>sound <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="sec-function-help" class="section level3" number="2.8.2">
 <h3>
@@ -286,18 +461,18 @@ Figure 1.2: Creating a new project
 <ul>
 <li>In the <strong>console</strong>, type and run the code for the different help options below. The reason you run the help code in the console not a code chunk is that you generally don't want to save this code in your script.</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># get help with a package</span>
-<span class="op">?</span><span class="va">beepr</span>
-
-<span class="co"># get help with a function if the package it's from is already loaded</span>
-<span class="op">?</span><span class="va">beep</span>
-
-<span class="co"># get help with a function whether or not the package is loaded</span>
-<span class="op">?</span><span class="fu">beepr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span>
-
-<span class="co"># shows a list of potentially matching functions</span>
-<span class="op">?</span><span class="op">?</span><span class="va">beep</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># get help with a package</span></span>
+<span><span class="op">?</span><span class="va">beepr</span></span>
+<span></span>
+<span><span class="co"># get help with a function if the package it's from is already loaded</span></span>
+<span><span class="op">?</span><span class="va">beep</span></span>
+<span></span>
+<span><span class="co"># get help with a function whether or not the package is loaded</span></span>
+<span><span class="op">?</span><span class="fu">beepr</span><span class="fu">::</span><span class="va"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span></span>
+<span></span>
+<span><span class="co"># shows a list of potentially matching functions</span></span>
+<span><span class="op">?</span><span class="op">?</span><span class="va">beep</span></span></code></pre></div>
 <div class="small_right" style="width: 50%; max-width: 400px;">
 <img src="images/stroop/function_help.png">
 </div>
@@ -355,8 +530,8 @@ Figure 1.2: Creating a new project
 <ul>
 <li>In code chunk 3, write and run the code to load the <code class="package">tidyverse</code>. When you run this code, you're going to get something that at first glance might look like an error but it's not, it's just telling you which packages it has loaded.</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-tidyverse"></span>
 <img src="images/stroop/tidyverse.png" alt="Tidyverse message when successfully loaded" width="100%"><p class="caption">
@@ -364,21 +539,21 @@ Figure 2.1: Tidyverse message when successfully loaded
 </p>
 </div>
 </div>
-<div id="read-in-the-data" class="section level3" number="2.9.2">
+<div id="read-in-the-data-sec-read_csv" class="section level3" number="2.9.2">
 <h3>
-<span class="header-section-number">2.9.2</span> Read in the data<a class="anchor" aria-label="anchor" href="#read-in-the-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.9.2</span> Read in the data {sec-read_csv}<a class="anchor" aria-label="anchor" href="#read-in-the-data-sec-read_csv"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now we can read in the data. To do this we will use the function <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code> that allows us to read in .csv files, which are a type of data file. There are also functions that allow you to read in .xlsx (Excel) files and other formats, however in this course we will only use .csv files.</p>
 <p>First, we will create an object called <code>dat</code> that contains the data in the <code>experiment_data.csv</code> file. Then, we will create an object called <code>ppt_info</code> that contains the data in the <code>participant_data.csv</code>.</p>
 <ul>
 <li>In code chunk 4, write and run the below code to load the data files.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"experiment_data.csv"</span><span class="op">)</span>
-<span class="va">ppt_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"participant_data.csv"</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"experiment_data.csv"</span><span class="op">)</span></span>
+<span><span class="va">ppt_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"participant_data.csv"</span><span class="op">)</span></span></code></pre></div>
 <div class="info">
-<p>In order to load the file successfully, the name of the file needs to be in double quotation marks and it must have the file extension <code>.csv</code>. If you miss this out, you'll get the error message <code>...does not exist in current working directory</code>.</p>
-<p>Additionally, if you get the message <code>could not find function "read_csv()"</code> is means that you have not loaded the <code class="package">tidyverse</code> - a common error is to write the code but not run it!</p>
+<p>In order to load the file successfully, the name of the file needs to be in double quotation marks and it must have the file extension <code>.csv</code>. If you miss this out, you'll get the error message <code>...does not exist in current working directory</code>. To fix it, make sure you've spelled the name of the file right and included the file extension.</p>
+<p>Additionally, if you get the message <code>could not find function "read_csv()"</code> it means that you have not loaded the <code class="package">tidyverse</code> - a common error is to write the code but not run it! To fix it, run the code that loads the tidyverse. Another reason you might see this message is if you've made a typo in the name of the function, so check that you've spelled <code>read_csv</code> exactly right.</p>
 </div>
 </div>
 </div>
@@ -393,27 +568,33 @@ Figure 2.1: Tidyverse message when successfully loaded
 <li>In code chunk 5, write and run <code>summary(ppt_info)</code> (and do the same for <code>dat</code>)</li>
 <li>In code chunk 5, write and run <code>str(ppt_info)</code> (and do the same for <code>dat</code>)</li>
 </ul>
-<p>What is the <strong>median</strong> congruent reaction time to 1 decimal place? <input class="webex-solveme nospaces" size="5" data-answer='["746.3"]'></p>
-<p>What is the <strong>mean</strong> incongruent reaction time to 1 decimal place? <input class="webex-solveme nospaces" size="5" data-answer='["891.3"]'></p>
+<p>What is the <strong>mean</strong> age pf participants to 1 decimal place? <input class="webex-solveme nospaces" size="4" data-answer='["24.4"]'></p>
+<p>What is the <strong>mean</strong> overall reaction time to 1 decimal place? <input class="webex-solveme nospaces" size="3" data-answer='["821"]'></p>
 </div>
 <div id="activity-7-visualise-the-data" class="section level2" number="2.11">
 <h2>
 <span class="header-section-number">2.11</span> Activity 7: Visualise the data<a class="anchor" aria-label="anchor" href="#activity-7-visualise-the-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>As you're going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead.</p>
-<p>We're going to look at how to write the code to produce simple visualisations in a few weeks, for now, we want to focus on how to read and interpret different kinds of graphs. Please feel free to play around with the code and change <code>TRUE</code> to <code>FALSE</code> and adjust the values and labels and see what happens but <strong>do not worry about understanding this code</strong>. Just copy and paste it.</p>
+<p>We're going to look at how to write the code to produce simple visualisations in a few weeks, for now, we want to focus on how to read and interpret different kinds of graphs. Please feel free to play around with the code and change <code>TRUE</code> to <code>FALSE</code> and adjust the values and labels and see what happens but <strong>do not worry about understanding this code for now</strong>. Just copy and paste it.</p>
 <ul>
 <li>Copy, paste and run the below code in code chunk 6 to produce a bar graph that shows the number of men, women, and non-binary participants in the dataset.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ppt_info</span>, <span class="co"># data we're using</span>
-       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender</span>, <span class="co"># variable we want to show as bars</span>
-                     fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make bars different colours</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> <span class="co"># add bar plot &amp; turn off redundant legend</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Gender"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># edit x-axis label</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"D"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># colour-blind friendly</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Number of participants"</span><span class="op">)</span><span class="op">+</span> <span class="co"># edit y-axis label</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># add a theme</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ppt_info</span>, <span class="co"># data we're using</span></span>
+<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender</span>, <span class="co"># variable we want to show as bars</span></span>
+<span>                     fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make bars different colours</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span>show.legend <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">+</span> <span class="co"># add bar plot &amp; turn off redundant legend</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Gender"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># edit x-axis label</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"D"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># colour-blind friendly</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Number of participants"</span><span class="op">)</span><span class="op">+</span> <span class="co"># edit y-axis label</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="co"># add a theme</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-6"></span>
+<img src="02-stroop_files/figure-html/unnamed-chunk-6-1.png" alt="Number of participants by gender" width="100%"><p class="caption">
+Figure 2.2: Number of participants by gender
+</p>
+</div>
 <p>Are there more men, women, or non-binary participants in the sample? <select class="webex-select"><option value="blank"></option>
 <option value="">More men</option>
 <option value="answer">More women</option>
@@ -421,27 +602,28 @@ Figure 2.1: Tidyverse message when successfully loaded
 <ul>
 <li>Copy, paste, and run the below code in code chunk 7 to create violin-boxplots of happiness scores for each income group.</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="co"># create long-form data</span>
-<span class="va">dat_long</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span><span class="va">dat</span>, 
-                         cols <span class="op">=</span> <span class="va">congruent_time</span><span class="op">:</span><span class="va">incongruent_time</span>, 
-                         names_to <span class="op">=</span> <span class="st">"condition"</span>, 
-                         values_to <span class="op">=</span> <span class="st">"reaction_time"</span><span class="op">)</span>
-<span class="co"># make plot</span>
-<span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat_long</span>, <span class="co"># data we're using</span>
-       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">condition</span>, <span class="co"># grouping variable (IV)</span>
-                     y <span class="op">=</span> <span class="va">reaction_time</span>, <span class="co"># measurement (DV)</span>
-                     fill <span class="op">=</span> <span class="va">condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make bars different colours</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span>show.legend <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># turn off redundant legend for colour</span>
-              alpha <span class="op">=</span> <span class="fl">.4</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make violin a bit transparent</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">.2</span>, <span class="co"># adjust size of boxplot</span>
-               show.legend <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># turn off redundant legend for colour</span>
-               alpha <span class="op">=</span> <span class="fl">.7</span><span class="op">)</span><span class="op">+</span> <span class="co"># make boxplots a little transparent</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Condition"</span>, <span class="co"># edit x-axis labels</span>
-                   labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Congruent"</span>, <span class="st">"Incongruent"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Reaction time (ms)"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># edit y-axis labels</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="co"># add a theme</span>
-  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"E"</span><span class="op">)</span> <span class="co"># colour-blind friendly colours</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># make plot</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat</span>, <span class="co"># data we're using</span></span>
+<span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">condition</span>, <span class="co"># grouping variable (IV)</span></span>
+<span>                     y <span class="op">=</span> <span class="va">reaction_time</span>, <span class="co"># measurement (DV)</span></span>
+<span>                     fill <span class="op">=</span> <span class="va">condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make bars different colours</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span>show.legend <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># turn off redundant legend for colour</span></span>
+<span>              alpha <span class="op">=</span> <span class="fl">.4</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make violin a bit transparent</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">.2</span>, <span class="co"># adjust size of boxplot</span></span>
+<span>               show.legend <span class="op">=</span> <span class="cn">FALSE</span>, <span class="co"># turn off redundant legend for colour</span></span>
+<span>               alpha <span class="op">=</span> <span class="fl">.7</span><span class="op">)</span><span class="op">+</span> <span class="co"># make boxplots a little transparent</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_discrete.html">scale_x_discrete</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Condition"</span>, <span class="co"># edit x-axis labels</span></span>
+<span>                   labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Congruent"</span>, <span class="st">"Incongruent"</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Reaction time (ms)"</span><span class="op">)</span> <span class="op">+</span> <span class="co"># edit y-axis labels</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span> <span class="co"># add a theme</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"E"</span><span class="op">)</span> <span class="co"># colour-blind friendly colours</span></span></code></pre></div>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<img src="02-stroop_files/figure-html/unnamed-chunk-7-1.png" alt="Violin-boxplot of reaction times in each condition" width="100%"><p class="caption">
+Figure 2.3: Violin-boxplot of reaction times in each condition
+</p>
+</div>
 <ul>
 <li>The violin (the wavy line) shows density. Basically, the fatter the wavy shape, the more data points there are at that point. It's called a violin plot because it very often looks (kinda) like a violin.</li>
 <li>The boxplot is the box in the middle. The black line shows the median score in each group. The median is calculated by arranging the scores in order from the smallest to the largest and then selecting the middle score.</li>
@@ -458,54 +640,6 @@ Figure 2.1: Tidyverse message when successfully loaded
 <p>Finally, try knitting the file to HTML. And that's it, well done! It's absolutely ok if you don't understand 100% of what you're doing at this point, we're going to repeat everything you've done with different datasets so you will get lots of practice and we're going to build it up very slowly. Also remember that you can attend GTA sessions and office hours for help with data skills - you don't have to have specific questions, some students just like to use the GTA sessions as the time to work through the data skills book so that if they need help, they're already there.</p>
 <p>Remember to make a note of any mistakes you made and how you fixed them, any other useful information you learned, save your Markdown, and quit your session on the server.</p>
 
-</div>
-</div>
-
-
-
-<div class="chapter-nav">
-<div class="prev"><a href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></div>
-<div class="next"><a href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#stroop"><span class="header-section-number">2</span> Stroop effect</a></li>
-<li><a class="nav-link" href="#sec-ilo-stroop"><span class="header-section-number">2.1</span> Intended Learning Outcomes</a></li>
-<li><a class="nav-link" href="#sec-walkthrough-stroop"><span class="header-section-number">2.2</span> Walkthrough video</a></li>
-<li><a class="nav-link" href="#activity-1-the-stroop-effect"><span class="header-section-number">2.3</span> Activity 1: The Stroop Effect</a></li>
-<li><a class="nav-link" href="#activity-2-new-project"><span class="header-section-number">2.4</span> Activity 2: New project</a></li>
-<li><a class="nav-link" href="#activity-2-setting-check"><span class="header-section-number">2.5</span> Activity 2: Setting check</a></li>
-<li><a class="nav-link" href="#activity-3-data-files"><span class="header-section-number">2.6</span> Activity 3: Data files</a></li>
-<li>
-<a class="nav-link" href="#sec-packages"><span class="header-section-number">2.7</span> Packages and functions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#sec-install-package"><span class="header-section-number">2.7.1</span> Installing a package</a></li>
-<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">2.7.2</span> Loading a package</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#activity-4-loading-and-usage-packages-and-function"><span class="header-section-number">2.8</span> Activity 4: Loading and usage packages and function</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#using-a-function"><span class="header-section-number">2.8.1</span> Using a function</a></li>
-<li><a class="nav-link" href="#sec-function-help"><span class="header-section-number">2.8.2</span> Function Help</a></li>
-</ul>
-</li>
-<li>
-<a class="nav-link" href="#activity-5-loading-data"><span class="header-section-number">2.9</span> Activity 5: Loading data</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#sec-tidyverse"><span class="header-section-number">2.9.1</span> Load the Tidyverse</a></li>
-<li><a class="nav-link" href="#read-in-the-data"><span class="header-section-number">2.9.2</span> Read in the data</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#activity-6-check-your-data"><span class="header-section-number">2.10</span> Activity 6: Check your data</a></li>
-<li><a class="nav-link" href="#activity-7-visualise-the-data"><span class="header-section-number">2.11</span> Activity 7: Visualise the data</a></li>
-<li><a class="nav-link" href="#finished-1"><span class="header-section-number">2.12</span> Finished</a></li>
-</ul>
-
-      <div class="book-extra">
-        <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/02-stroop.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/02-stroop.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
-        </ul>
-</div>
-    </nav>
 </div>
 </div>
 <script>
@@ -709,15 +843,58 @@ $( document ).ready(function() {
   move_sidebar();
   window.onresize = move_sidebar;
 });
-</script>
+</script><div class="chapter-nav">
+<div class="prev"><a href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></div>
+<div class="next"><a href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#stroop"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
+<li><a class="nav-link" href="#sec-ilo-stroop"><span class="header-section-number">2.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#sec-walkthrough-stroop"><span class="header-section-number">2.2</span> Walkthrough video</a></li>
+<li><a class="nav-link" href="#activity-1-the-stroop-effect"><span class="header-section-number">2.3</span> Activity 1: The Stroop Effect</a></li>
+<li><a class="nav-link" href="#activity-2-new-project"><span class="header-section-number">2.4</span> Activity 2: New project</a></li>
+<li><a class="nav-link" href="#activity-2-setting-check"><span class="header-section-number">2.5</span> Activity 2: Setting check</a></li>
+<li><a class="nav-link" href="#activity-3-data-files"><span class="header-section-number">2.6</span> Activity 3: Data files</a></li>
+<li>
+<a class="nav-link" href="#sec-packages"><span class="header-section-number">2.7</span> Packages and functions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sec-install-package"><span class="header-section-number">2.7.1</span> Installing a package</a></li>
+<li><a class="nav-link" href="#loading-a-package"><span class="header-section-number">2.7.2</span> Loading a package</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#activity-4-packages-and-function"><span class="header-section-number">2.8</span> Activity 4: Packages and function</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#using-a-function"><span class="header-section-number">2.8.1</span> Using a function</a></li>
+<li><a class="nav-link" href="#sec-function-help"><span class="header-section-number">2.8.2</span> Function Help</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#activity-5-loading-data"><span class="header-section-number">2.9</span> Activity 5: Loading data</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#sec-tidyverse"><span class="header-section-number">2.9.1</span> Load the Tidyverse</a></li>
+<li><a class="nav-link" href="#read-in-the-data-sec-read_csv"><span class="header-section-number">2.9.2</span> Read in the data {sec-read_csv}</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#activity-6-check-your-data"><span class="header-section-number">2.10</span> Activity 6: Check your data</a></li>
+<li><a class="nav-link" href="#activity-7-visualise-the-data"><span class="header-section-number">2.11</span> Activity 7: Visualise the data</a></li>
+<li><a class="nav-link" href="#finished-1"><span class="header-section-number">2.12</span> Finished</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/02-stroop.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/02-stroop.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
 
 </div>
- <!-- .container -->
+</div> <!-- .container -->
 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-05-17.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-05-19.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

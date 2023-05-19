@@ -1,0 +1,47 @@
+---
+title: "Stroop analysis"
+author: "GUID" # replace with GUID
+date: "2023-XX-XX" # replace with today's date
+output: html_document
+---
+
+Remember to use your Markdown to keep notes!
+
+```{r chunk1}
+# write the code that loads the tidyverse and the data in this chunk
+
+
+```
+
+
+```{r chunk2}
+# use this code chunk to add all the code for the sample information and use comments of your own to make a note of what each bit of code is doing
+
+
+```
+
+```{r chunk3}
+# use this code chunk to add all the code for the experimental data
+
+
+```
+
+
+```{r chunk4}
+# boxplot code
+
+```
+
+
+```{r chunk5}
+# histogram code
+
+```
+
+
+```{r chunk6}
+# density plot code
+
+```
+
+

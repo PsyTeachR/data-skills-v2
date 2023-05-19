@@ -89,7 +89,7 @@ In the lower right pane, the most used tabs are the **Files** tab for directory 
 In the environment tab, click on "Home" and then navigate back to your "Intro to R" project folder by clicking on "Psych 1A" then "Intro to R".
 ::: 
 
-## Activity 2: Settings
+## Activity 2: Settings {#sec-rstudio-settings}
 
 Before we start writing code, we're going to change a few settings to make things easier for us in the long-run. 
 
@@ -101,7 +101,7 @@ You can customise how RStudio looks to make it work for you.
 
 Play around with the settings and see what you prefer - you're going to spend a lot of time with R, it might as well look how you like it!
 
-### Settings for Reproducibility
+### Settings for Reproducibility {sec-rstudio-settings}
 
 One of the reasons you're going to learn R is so that any quantitative data analysis and research you do is **reproducible**. If your work is reproducible, it means that you (or someone else) can take your data and get the same result you got. This is easier to do with code because you have a written record of everything you did, compared to using point-and-click software where there is no record and you just have to remember what you did.
 
@@ -210,7 +210,7 @@ When you create a new code chunk you should notice that the grey box starts and 
 
 Now we're going to add in the code we used earlier to our R Markdown document so that we can save it. 
 
-* In your code chunk write the below code (but again, replace the values of name/age/birthday with your own details).   
+* In your code chunk write the below code (but again, replace the values of name/age/next birthday with your own details).   
 * Remember that text values and dates need to be contained in quotation marks but numerical values do not. Missing and/or unnecessary quotation marks are a common cause of code not working - remember this!
 
 
@@ -218,7 +218,7 @@ Now we're going to add in the code we used earlier to our R Markdown document so
 name <- "Emily" 
 age <- 38
 today <- Sys.Date()
-birthday <- as.Date("2021-07-11")
+birthday <- as.Date("2024-07-11")
 ```
 
 ### Running code {#sec-run-code}
@@ -254,7 +254,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 38 years old. It is -675 days until my birthday.**
+**My name is Emily and I am 38 years old. It is 419 days until my birthday.**
 
 We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 

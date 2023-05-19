@@ -1,17 +1,21 @@
 
-# Stroop effect {#stroop}
+# Intro to Stroop effect {#stroop}
+
+
+
+
 
 ## Intended Learning Outcomes {#sec-ilo-stroop}
 
 By the end of this chapter you should be able to:
 
 * Explain what the Stroop effect is and how is it measured
-* Understand how to use functions and arguments in R
-* Understand what a package is and be able to load it
+* Load and use packages and functions in R
+* Load and check data
 
 ## Walkthrough video {#sec-walkthrough-stroop}
 
-There is a walkthrough video of this chapter available via [Echo360.](https://echo360.org.uk/media/3861d902-df69-417d-8f27-259089f992b8/public) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Echo360.]()) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: The Stroop Effect
 
@@ -104,11 +108,117 @@ The server will automatically unzip the files for you into your chosen folder an
 
 
 
-The zip file contains three files:
+The zip file contains four files:
 
-* `stroop_stub.Rmd`: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
-* `participant_data.csv` is a data file that contains each participant's anonymous ID, age, and gender.
-* `experiment_data.csv` is a data file that contains each participant's anonymous ID, mean reaction time for congruent and incongruent trials, and their accuracy.
+* `stroop_stub1.Rmd` and `stroo_stub2.Rmd`: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the `stroop_sub1.Rmd` Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
+* `participant_data.csv` is a data file that contains each participant's anonymous ID, age, and gender. This data is in <a class='glossary' target='_blank' title='A data format where all of the observations about one subject are in the same row' href='https://psyteachr.github.io/glossary/w#wide'>wide-form</a> which means that all of the observations about one subject are in the same row. There are 270 participants, so there are 270 rows of data.
+
+
+```r
+head(ppt_info)
+```
+
+<div class="kable-table">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> participant_id </th>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> Man </td>
+   <td style="text-align:right;"> 20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> Man </td>
+   <td style="text-align:right;"> 20 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> Man </td>
+   <td style="text-align:right;"> 27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 4 </td>
+   <td style="text-align:left;"> Man </td>
+   <td style="text-align:right;"> 19 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 5 </td>
+   <td style="text-align:left;"> Man </td>
+   <td style="text-align:right;"> 23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 6 </td>
+   <td style="text-align:left;"> Man </td>
+   <td style="text-align:right;"> 28 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
+
+
+* `experiment_data.csv` is a data file that contains each participant's anonymous ID, and mean reaction time for all the congruent and incongruent trials they completed. This data is in <a class='glossary' target='_blank' title='A data format where each observation is on a separate row' href='https://psyteachr.github.io/glossary/l#long'>long-form</a> where each observation is on a separate row so for the Stroop experiment, each participant has two rows because there are two observations (one for congruent trials and one for incongruent trials). So there are 270 participants, but 540 rows of data (270 * 2).
+
+You may be less familiar with this way of organising data, but for many functions in R your data must be stored this way. This semester, we'll provide you with the data in the format it needs to be in and next semester we'll show you how to transform it yourself.
+
+
+```r
+head(dat)
+```
+
+<div class="kable-table">
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> participant_id </th>
+   <th style="text-align:left;"> condition </th>
+   <th style="text-align:right;"> reaction_time </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> congruent </td>
+   <td style="text-align:right;"> 847.0311 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 1 </td>
+   <td style="text-align:left;"> incongruent </td>
+   <td style="text-align:right;"> 910.3084 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> congruent </td>
+   <td style="text-align:right;"> 748.1366 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 2 </td>
+   <td style="text-align:left;"> incongruent </td>
+   <td style="text-align:right;"> 967.4626 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> congruent </td>
+   <td style="text-align:right;"> 786.2370 </td>
+  </tr>
+  <tr>
+   <td style="text-align:right;"> 3 </td>
+   <td style="text-align:left;"> incongruent </td>
+   <td style="text-align:right;"> 975.7407 </td>
+  </tr>
+</tbody>
+</table>
+
+</div>
 
 Before we load in and work with the data files we need to explain a few more things about how R works.
 
@@ -134,7 +244,7 @@ The packages you need for this course are already installed on the server so we'
 
 This is done using the `library()` function. This is like **launching** an app on your phone: the functionality is only there when the app is launched and remains there until you close the app or restart. For example, when you run `library(beepr)` within a session, the functions in the package `beepr` will be made available for your R session. The next time you start R, you will need to run `library(beepr)` again if you want to access that package.
 
-## Activity 4: Loading and usage packages and function
+## Activity 4: Packages and function
 
 As an example, let's load the <code class='package'>beepr</code> package which is already installed on the server. The <code class='package'>beepr</code> package is mostly just for fun - it makes R play a short noise - but it's useful to show you how packages work. To load a package, you use the function `library()` and include the name of the package you want to load in parentheses.
 
@@ -233,7 +343,7 @@ library(tidyverse)
 <p class="caption">(\#fig:img-tidyverse)Tidyverse message when successfully loaded</p>
 </div>
 
-### Read in the data
+### Read in the data {sec-read_csv}
 
 Now we can read in the data. To do this we will use the function `read_csv()` that allows us to read in .csv files, which are a type of data file. There are also functions that allow you to read in .xlsx  (Excel) files and other formats, however in this course we will only use .csv files.
 
@@ -242,18 +352,15 @@ First, we will create an object called `dat` that contains the data in the `expe
 * In code chunk 4, write and run the below code to load the data files.
 
 
-
-
-
 ```r
 dat <- read_csv(file = "experiment_data.csv")
 ppt_info <- read_csv(file = "participant_data.csv")
 ```
 
 ::: {.info data-latex="Help with errors"}
-In order to load the file successfully, the name of the file needs to be in double quotation marks and it must have the file extension `.csv`. If you miss this out, you'll get the error message `...does not exist in current working directory`.
+In order to load the file successfully, the name of the file needs to be in double quotation marks and it must have the file extension `.csv`. If you miss this out, you'll get the error message `...does not exist in current working directory`. To fix it, make sure you've spelled the name of the file right and included the file extension.
 
-Additionally, if you get the message `could not find function "read_csv()"` is means that you have not loaded the <code class='package'>tidyverse</code> - a common error is to write the code but not run it!
+Additionally, if you get the message `could not find function "read_csv()"` it means that you have not loaded the <code class='package'>tidyverse</code> - a common error is to write the code but not run it! To fix it, run the code that loads the tidyverse. Another reason you might see this message is if you've made a typo in the name of the function, so check that you've spelled `read_csv` exactly right.
 :::
 
 ## Activity 6: Check your data
@@ -265,15 +372,15 @@ You should now see that the objects `dat` and `ppt_info` have appeared in the en
 * In code chunk 5, write and run `summary(ppt_info)` (and do the same for `dat`)
 * In code chunk 5, write and run `str(ppt_info)` (and do the same for `dat`)
 
-What is the **median** congruent reaction time to 1 decimal place? <input class='webex-solveme nospaces' size='5' data-answer='["746.3"]'/>
+What is the **mean** age pf participants to 1 decimal place? <input class='webex-solveme nospaces' size='4' data-answer='["24.4"]'/>
 
-What is the **mean** incongruent reaction time to 1 decimal place? <input class='webex-solveme nospaces' size='5' data-answer='["891.3"]'/>
+What is the **mean** overall reaction time to 1 decimal place? <input class='webex-solveme nospaces' size='3' data-answer='["821"]'/>
 
 ## Activity 7: Visualise the data
 
 As you're going to learn about more over this course, data visualisation is extremely important. Visualisations can be used to give you more information about your dataset, but they can also be used to mislead. 
 
-We're going to look at how to write the code to produce simple visualisations in a few weeks, for now, we want to focus on how to read and interpret different kinds of graphs. Please feel free to play around with the code and change `TRUE` to `FALSE` and adjust the values and labels and see what happens but **do not worry about understanding this code**. Just copy and paste it. 
+We're going to look at how to write the code to produce simple visualisations in a few weeks, for now, we want to focus on how to read and interpret different kinds of graphs. Please feel free to play around with the code and change `TRUE` to `FALSE` and adjust the values and labels and see what happens but **do not worry about understanding this code for now**. Just copy and paste it. 
 
 * Copy, paste and run the below code in code chunk 6 to produce a bar graph that shows the number of men, women, and non-binary participants in the dataset. 
 
@@ -289,19 +396,19 @@ ggplot(ppt_info, # data we're using
   theme_minimal() # add a theme
 ```
 
+<div class="figure" style="text-align: center">
+<img src="02-stroop_files/figure-html/unnamed-chunk-6-1.png" alt="Number of participants by gender" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-6)Number of participants by gender</p>
+</div>
+
 Are there more men, women, or non-binary participants in the sample? <select class='webex-select'><option value='blank'></option><option value=''>More men</option><option value='answer'>More women</option><option value=''>More non-binary participants</option></select>
 
 * Copy, paste, and run the below code  in code chunk 7 to create violin-boxplots of happiness scores for each income group.
 
 
 ```r
-# create long-form data
-dat_long <- pivot_longer(dat, 
-                         cols = congruent_time:incongruent_time, 
-                         names_to = "condition", 
-                         values_to = "reaction_time")
 # make plot
-ggplot(dat_long, # data we're using
+ggplot(dat, # data we're using
        aes(x = condition, # grouping variable (IV)
                      y = reaction_time, # measurement (DV)
                      fill = condition)) + # make bars different colours
@@ -316,6 +423,11 @@ ggplot(dat_long, # data we're using
   theme_minimal() + # add a theme
   scale_fill_viridis_d(option = "E") # colour-blind friendly colours
 ```
+
+<div class="figure" style="text-align: center">
+<img src="02-stroop_files/figure-html/unnamed-chunk-7-1.png" alt="Violin-boxplot of reaction times in each condition" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-7)Violin-boxplot of reaction times in each condition</p>
+</div>
 
 * The violin (the wavy line) shows density. Basically, the fatter the wavy shape, the more data points there are at that point. It's called a violin plot because it very often looks (kinda) like a violin. 
 * The boxplot is the box in the middle. The black line shows the median score in each group. The median is calculated by arranging the scores in order from the smallest to the largest and then selecting the middle score.

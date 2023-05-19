@@ -1,5 +1,5 @@
 # Load required libraries
-library(dplyr)
+library(tidyverse)
 
 # Define constants
 N_PARTICIPANTS <- 270
@@ -20,13 +20,13 @@ ppt_info <- data.frame(
 # Create dataframe for experiment results
 dat <- data.frame(
   participant_id = 1:N_PARTICIPANTS,
-  congruent_time = rnorm(N_PARTICIPANTS, mean = 750, sd = 100),
-  incongruent_time = rnorm(N_PARTICIPANTS, mean = 900, sd = 150),
-  congruent_accuracy = rbinom(N_PARTICIPANTS, size = 1, prob = 0.8),
-  incongruent_accuracy = rbinom(N_PARTICIPANTS, size = 1, prob = 0.6)
-)
-
+  congruent = rnorm(N_PARTICIPANTS, mean = 750, sd = 100),
+  incongruent = rnorm(N_PARTICIPANTS, mean = 900, sd = 150)
+) %>%
+  pivot_longer(cols = congruent:incongruent, 
+               names_to = "condition", 
+               values_to = "reaction_time")
 # write.csv
 
-write.csv(x = ppt_info, file = "book/data/stroop/participant-data.csv")
-write.csv(x = dat, file = "experiment_results.csv")
+#write.csv(x = ppt_info, file = "book/data/stroop/participant-data.csv")
+#write.csv(x = dat, file = "book/data/stroop/experiment_results.csv")

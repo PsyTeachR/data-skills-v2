@@ -6,17 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 1 Intro to R and RStudio | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="generator" content="bookdown 0.25 with bs4_book()">
+<meta name="description" content="1.1 Intended Learning Outcomes By the end of this chapter you should be able to: Access R and RStudio through the server Create a new R Markdown document with code chunks Create objects by writing...">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="Chapter 1 Intro to R and RStudio | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/sec-intro.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta property="og:description" content="1.1 Intended Learning Outcomes By the end of this chapter you should be able to: Access R and RStudio through the server Create a new R Markdown document with code chunks Create objects by writing...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 1 Intro to R and RStudio | Data Skills">
+<meta name="twitter:description" content="1.1 Intended Learning Outcomes By the end of this chapter you should be able to: Access R and RStudio through the server Create a new R Markdown document with code chunks Create objects by writing...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -53,9 +56,6 @@
 <link rel="stylesheet" href="include/psyteachr.css">
 <link rel="stylesheet" href="include/webex.css">
 <link rel="stylesheet" href="include/style.css">
-<meta name="description" content="1.1 Intended Learning Outcomes By the end of this chapter you should be able to: Access R and RStudio through the server Create a new R Markdown document with code chunks Create objects by writing...">
-<meta property="og:description" content="1.1 Intended Learning Outcomes By the end of this chapter you should be able to: Access R and RStudio through the server Create a new R Markdown document with code chunks Create objects by writing...">
-<meta name="twitter:description" content="1.1 Intended Learning Outcomes By the end of this chapter you should be able to: Access R and RStudio through the server Create a new R Markdown document with code chunks Create objects by writing...">
 </head>
 <body data-spy="scroll" data-target="#toc">
 
@@ -79,7 +79,9 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Overview</a></li>
 <li><a class="active" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
-<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Stroop effect</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
+<li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
+<li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -190,9 +192,9 @@ Figure 1.3: The RStudio IDE
 <p>In the environment tab, click on "Home" and then navigate back to your "Intro to R" project folder by clicking on "Psych 1A" then "Intro to R".</p>
 </div>
 </div>
-<div id="activity-2-settings" class="section level2" number="1.7">
+<div id="sec-rstudio-settings" class="section level2" number="1.7">
 <h2>
-<span class="header-section-number">1.7</span> Activity 2: Settings<a class="anchor" aria-label="anchor" href="#activity-2-settings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.7</span> Activity 2: Settings<a class="anchor" aria-label="anchor" href="#sec-rstudio-settings"><i class="fas fa-link"></i></a>
 </h2>
 <p>Before we start writing code, we're going to change a few settings to make things easier for us in the long-run.</p>
 <div id="themes-and-accessiblilty" class="section level3" number="1.7.1">
@@ -205,9 +207,9 @@ Figure 1.3: The RStudio IDE
 </ul>
 <p>Play around with the settings and see what you prefer - you're going to spend a lot of time with R, it might as well look how you like it!</p>
 </div>
-<div id="settings-for-reproducibility" class="section level3" number="1.7.2">
+<div id="settings-for-reproducibility-sec-rstudio-settings" class="section level3" number="1.7.2">
 <h3>
-<span class="header-section-number">1.7.2</span> Settings for Reproducibility<a class="anchor" aria-label="anchor" href="#settings-for-reproducibility"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.7.2</span> Settings for Reproducibility {sec-rstudio-settings}<a class="anchor" aria-label="anchor" href="#settings-for-reproducibility-sec-rstudio-settings"><i class="fas fa-link"></i></a>
 </h3>
 <p>One of the reasons you're going to learn R is so that any quantitative data analysis and research you do is <strong>reproducible</strong>. If your work is reproducible, it means that you (or someone else) can take your data and get the same result you got. This is easier to do with code because you have a written record of everything you did, compared to using point-and-click software where there is no record and you just have to remember what you did.</p>
 <p>To help ensure your work is reproducible, there are a few settings you should change in RStudio. If you keep stuff around in your workspace, things can get messy and you can accidentially end up using the wrong dataset or object. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit - the only thing you want to save are your scripts.</p>
@@ -238,10 +240,10 @@ Figure 1.4: RStudio settings
 <p>A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using <code>&lt;-</code>.</p>
 <p>Run the following code in the console, but change the values of <code>name</code>, <code>age</code> and <code>birthday</code> to your own details (<code>birthday</code> should be the date of your next birthday). Press enter after you type each line.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span>
-<span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">38</span>
-<span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">birthday</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2024-07-11"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span></span>
+<span><span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">38</span></span>
+<span><span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">birthday</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2024-07-11"</span><span class="op">)</span></span></code></pre></div>
 <p>You'll see that four objects now appear in the environment pane:</p>
 <ul>
 <li>
@@ -263,7 +265,7 @@ Figure 1.4: RStudio settings
 </h3>
 <p>To clear objects from the environment you can remove them individually:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span><span class="va">name</span><span class="op">)</span></span></code></pre></div>
 <p>Or you can remove them all at once by clicking on the brush icon at the topof the environment pane.</p>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:rm-brush"></span>
@@ -325,15 +327,15 @@ Figure 1.7: Creating a new R chunk
 </h3>
 <p>Now we're going to add in the code we used earlier to our R Markdown document so that we can save it.</p>
 <ul>
-<li>In your code chunk write the below code (but again, replace the values of name/age/birthday with your own details).<br>
+<li>In your code chunk write the below code (but again, replace the values of name/age/next birthday with your own details).<br>
 </li>
 <li>Remember that text values and dates need to be contained in quotation marks but numerical values do not. Missing and/or unnecessary quotation marks are a common cause of code not working - remember this!</li>
 </ul>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span> 
-<span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">38</span>
-<span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span>
-<span class="va">birthday</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2021-07-11"</span><span class="op">)</span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span> </span>
+<span><span class="va">age</span> <span class="op">&lt;-</span> <span class="fl">38</span></span>
+<span><span class="va">today</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">birthday</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html">as.Date</a></span><span class="op">(</span><span class="st">"2024-07-11"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="sec-run-code" class="section level3" number="1.9.4">
 <h3>
@@ -369,7 +371,7 @@ Figure 1.7: Creating a new R chunk
 <li>Now, we're going to "knit" our file. This simply means that we're going to compile our code into a document that is more presentable. To do this click <code>Knit</code> -&gt; <code>Knit to HMTL</code>. R Markdown will create a new HTML document and it will automatically save this file in your project working directory.</li>
 </ul>
 <p>As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
-<p><strong>My name is Emily and I am 38 years old. It is -675 days until my birthday.</strong></p>
+<p><strong>My name is Emily and I am 38 years old. It is 419 days until my birthday.</strong></p>
 <p>We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it!</p>
 <p>There are a few final things to note about knitting that will be useful for the homework:</p>
 <ul>
@@ -672,7 +674,7 @@ $( document ).ready(function() {
 });
 </script><div class="chapter-nav">
 <div class="prev"><a href="index.html">Overview</a></div>
-<div class="next"><a href="stroop.html"><span class="header-section-number">2</span> Stroop effect</a></div>
+<div class="next"><a href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -684,9 +686,9 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#new-project"><span class="header-section-number">1.5</span> Activity 1: Create a new project</a></li>
 <li><a class="nav-link" href="#rstudio-panes"><span class="header-section-number">1.6</span> RStudio panes</a></li>
 <li>
-<a class="nav-link" href="#activity-2-settings"><span class="header-section-number">1.7</span> Activity 2: Settings</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#sec-rstudio-settings"><span class="header-section-number">1.7</span> Activity 2: Settings</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#themes-and-accessiblilty"><span class="header-section-number">1.7.1</span> Themes and accessiblilty</a></li>
-<li><a class="nav-link" href="#settings-for-reproducibility"><span class="header-section-number">1.7.2</span> Settings for Reproducibility</a></li>
+<li><a class="nav-link" href="#settings-for-reproducibility-sec-rstudio-settings"><span class="header-section-number">1.7.2</span> Settings for Reproducibility {sec-rstudio-settings}</a></li>
 </ul>
 </li>
 <li>
@@ -724,7 +726,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-05-17.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-05-19.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
