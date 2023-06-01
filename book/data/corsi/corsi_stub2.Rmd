@@ -1,0 +1,58 @@
+---
+title: "corsi_stub2"
+author: "GUID"
+date: "2023-05-25"
+output: html_document
+---
+
+```{r chunk1}
+# load tidyverse, data, and join it together
+
+
+```
+
+
+```{r chunk2}
+# select columns (variables)
+
+
+```
+
+
+
+```{r chunk3}
+# filter rows (observations)
+
+
+```
+
+
+```{r chunk4}
+# summarise the scores by group
+
+
+```
+
+
+
+```{r chunk5}
+# make a boxplot
+
+
+```
+
+
+
+```{r chunk6}
+# add colours
+
+```
+
+
+
+```{r chunk7}
+# reorder the factors
+
+
+```
+

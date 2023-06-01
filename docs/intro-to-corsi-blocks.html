@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 5 Intro to Corsi Blocks | Data Skills</title>
+<meta name="author" content="Emily Nordmann">
+<meta name="description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Corsi Block Task is and what it measures Join two datasets together  5.2 Walkthrough video There...">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta property="og:title" content="Chapter 5 Intro to Corsi Blocks | Data Skills">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/intro-to-corsi-blocks.html">
+<meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta property="og:description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Corsi Block Task is and what it measures Join two datasets together  5.2 Walkthrough video There...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 5 Intro to Corsi Blocks | Data Skills">
+<meta name="twitter:description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Corsi Block Task is and what it measures Join two datasets together  5.2 Walkthrough video There...">
+<meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Skills</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
+<li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
+<li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
+<li><a class="active" href="intro-to-corsi-blocks.html"><span class="header-section-number">5</span> Intro to Corsi Blocks</a></li>
+<li><a class="" href="corsi-analysis.html"><span class="header-section-number">6</span> Corsi analysis</a></li>
+<li><a class="" href="who-knows.html"><span class="header-section-number">7</span> Who knows</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/psyteachr/data-skills-v2">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="intro-to-corsi-blocks" class="section level1" number="5">
+<h1>
+<span class="header-section-number">5</span> Intro to Corsi Blocks<a class="anchor" aria-label="anchor" href="#intro-to-corsi-blocks"><i class="fas fa-link"></i></a>
+</h1>
+<div id="sec-ilo-corsi" class="section level2" number="5.1">
+<h2>
+<span class="header-section-number">5.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#sec-ilo-corsi"><i class="fas fa-link"></i></a>
+</h2>
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>Explain what the Corsi Block Task is and what it measures</li>
+<li>Join two datasets together</li>
+</ul>
+</div>
+<div id="sec-walkthrough-corsi" class="section level2" number="5.2">
+<h2>
+<span class="header-section-number">5.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-corsi"><i class="fas fa-link"></i></a>
+</h2>
+<p>There is a walkthrough video of this chapter available via <a href="">Echo360.</a> We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+</div>
+<div id="activity-1-the-corsi-block-task" class="section level2" number="5.3">
+<h2>
+<span class="header-section-number">5.3</span> Activity 1: The Corsi Block Task<a class="anchor" aria-label="anchor" href="#activity-1-the-corsi-block-task"><i class="fas fa-link"></i></a>
+</h2>
+<p>For the next set of chapters we're going to use another classic experiment: Corsi Blocks.</p>
+<ul>
+<li>First, take part in <a href="https://www.psytoolkit.org/experiment-library/experiment_backward_corsi.html">this online version</a> of the Backwards Corsi Block task. It only takes a few minutes to complete. You need to be on a device with a mouse/touchscreen and speakers/headphones.</li>
+<li>Second, read the <a href="https://en.wikipedia.org/wiki/Corsi_block-tapping_test">Wikipedia summary</a> of the Corsi Block task and how and why it is used in psychological research.</li>
+<li>Finally, answer the following questions. Please note that your responses will not save in the browser - if you want to save them, make a note of them somewhere.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>What does the Corsi block task measure?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">Long-term memory</option>
+<option value=""> Sensory memory</option>
+<option value="answer">Spatial working memory</option>
+<option value="">Implicit memory</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The Corsi block task is designed to measure spatial working memory. The task requires the participant to reproduce a sequence of block-tapping in the same order (or in reverse order in some versions), which relies heavily on the spatial working memory.</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>In a typical Corsi block task, what does a higher score indicate?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">Poorer spatial memory</option>
+<option value="answer">Better spatial memory</option>
+<option value="">Poorer attention span</option>
+<option value="">Shorter reaction time</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>In the Corsi block task, a higher score represents a greater capacity for spatial working memory, as it indicates that the participant was able to accurately replicate a longer sequence of block taps.</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>In a sleep-deprivation study using the Corsi block task, which group would you expect to have lower scores?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">The group allowed to sleep for 8 hours</option>
+<option value="">The group allowed to sleep for 4 hours</option>
+<option value="answer">The sleep-deprived group</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The sleep-deprived group is expected to perform worse on the Corsi block task as lack of sleep has been found to affect cognitive performance including spatial working memory.</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>What would you expect a typical score to be on the Corsi Block task?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">1-2</option>
+<option value="">3-4</option>
+<option value="answer">5-6</option>
+<option value="">8-9</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The typical score on a Corsi Block Task is usually around 5 or 6. Scores between "8-9" would typically indicate an above-average performance on the task. Lower scores such as "1-2" or "3-4" would suggest difficulties with spatial working memory.</p>
+</div>
+</div>
+<div id="activity-2-new-project-1" class="section level2" number="5.4">
+<h2>
+<span class="header-section-number">5.4</span> Activity 2: New project<a class="anchor" aria-label="anchor" href="#activity-2-new-project-1"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Log in to the to R sever and make a new project for the Corsi Block chapters (this week and next week):</li>
+<li>Click on the "New project" button;</li>
+<li>Then, click on the first option in the list "New Directory";</li>
+<li>Then, click "New Project";</li>
+<li>Then you are given the opportunity to name your project and select which folder it should be stored in. First in the "Directory name" box, type "Corsi Blocks";</li>
+<li>The subdirectory should already be set to Psych 1A but if not, click browse and navigate to it then click "Choose";</li>
+<li>Finally, click "Create project".</li>
+</ul>
+</div>
+<div id="activity-3-data-files-1" class="section level2" number="5.5">
+<h2>
+<span class="header-section-number">5.5</span> Activity 3: Data files<a class="anchor" aria-label="anchor" href="#activity-3-data-files-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Once you've done all this, it's time to download the files we need and then upload them to the server.</p>
+<ul>
+<li>First, download the <a href="files/data/corsi/corsi_data.zip" download>Corsi data zip file</a> to your computer and make sure you know which folder you saved it in.</li>
+<li>Then, on the server in the Files tab (bottom right), click <code>Upload &gt; Choose file</code> then navigate to the folder on your computer where the zip file is saved, select it, click <code>Open</code>, then <code>OK</code>.</li>
+</ul>
+<p>The zip file contains four files:</p>
+<ul>
+<li>
+<code>corsi_stub1.Rmd</code> and <code>corsi_stub2.Rmd</code>, the stub files you'll complete for this chapter and the next one. Open <code>corsi_stub1.Rmd</code> by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.</li>
+<li>
+<code>demographic_data.csv</code> is a data file that contains each participant's anonymous ID, age, gender and which experimental condition they were in (8 hours sleep, 4 hours sleep, or sleep deprived). This data is in <a class="glossary" target="_blank" title="A data format where all of the observations about one subject are in the same row" href="https://psyteachr.github.io/glossary/w#wide">wide-form</a>. There are 600 participants, so there are 600 rows of data.</li>
+</ul>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:right;">
+Participant
+</th>
+<th style="text-align:left;">
+Gender
+</th>
+<th style="text-align:right;">
+Age
+</th>
+<th style="text-align:left;">
+Condition
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:left;">
+Woman
+</td>
+<td style="text-align:right;">
+48
+</td>
+<td style="text-align:left;">
+8 hours sleep
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+2
+</td>
+<td style="text-align:left;">
+Woman
+</td>
+<td style="text-align:right;">
+32
+</td>
+<td style="text-align:left;">
+8 hours sleep
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+3
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+31
+</td>
+<td style="text-align:left;">
+8 hours sleep
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+4
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+20
+</td>
+<td style="text-align:left;">
+8 hours sleep
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+5
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+59
+</td>
+<td style="text-align:left;">
+8 hours sleep
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+6
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+60
+</td>
+<td style="text-align:left;">
+8 hours sleep
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<ul>
+<li>
+<code>score_data.csv</code> is a data file that contains each participants ID and their score on the Corsi block task from 1-9.</li>
+</ul>
+<p>Now, we need to load the tidyverse and the data files so that we can use them.</p>
+<ul>
+<li>Add the following to code chunk 1 and run the code.</li>
+</ul>
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
+<span><span class="va">score_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"score_data.csv"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="activity-4-check-and-summarise-the-data" class="section level2" number="5.6">
+<h2>
+<span class="header-section-number">5.6</span> Activity 4: Check and summarise the data<a class="anchor" aria-label="anchor" href="#activity-4-check-and-summarise-the-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>As we did with the Stroop data, let's check the data and perform some summary statistics to make sure everything looks ok. First, we'll get the descriptive statistics we need about our sample to write up the study - total number of participants, number of each gender, and mean age and SD.</p>
+<ul>
+<li>In code chunk 2 add the below code to calculate the demographic information</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># count the total number of participants</span></span>
+<span><span class="va">total_participants</span> <span class="op">&lt;-</span> <span class="va">demographic_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># count the number of participants by each group of Gender</span></span>
+<span><span class="va">gender_count</span> <span class="op">&lt;-</span> <span class="va">demographic_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">Gender</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># calculate mean age and standard deviation</span></span>
+<span><span class="va">age_stats</span> <span class="op">&lt;-</span> <span class="va">demographic_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span>,</span>
+<span>            sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Age</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>How many men are there in the sample? <input class="webex-solveme nospaces" size="3" data-answer='["240"]'></p>
+<p>What is the mean age of the sample to 2 decimal places? <input class="webex-solveme nospaces" size="5" data-answer='["38.16"]'></p>
+<p>We also want to check how many participants were in each experimental condition.</p>
+<ul>
+<li>In code chunk 3, write the code that counts the number of participants in each condition and save this in an object named <code>condition_count</code>.</li>
+<li>Remember to try and figure it out yourself first, then use the hint, and only then look at the solution. This will take longer in the short-term but you'll learn more and faster in the long-term.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb44"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">grouping_variable</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb45"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">condition_count</span> <span class="op">&lt;-</span> <span class="va">demographic_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">Condition</span><span class="op">)</span></span></code></pre></div>
+</div>
+<p>How many participants are in each condition? <input class="webex-solveme nospaces" size="3" data-answer='["200"]'></p>
+</div>
+<div id="activity-5-summarise-and-visualise-the-scores" class="section level2" number="5.7">
+<h2>
+<span class="header-section-number">5.7</span> Activity 5: Summarise and visualise the scores<a class="anchor" aria-label="anchor" href="#activity-5-summarise-and-visualise-the-scores"><i class="fas fa-link"></i></a>
+</h2>
+<p>We're actually interested in how the scores for each sleep condition compare but before we do that, it's a good idea to check the scores as a whole.</p>
+<ul>
+<li>In code chunk 4, add the code to calculate the mean score and standard deviation and save this in an object named <code>overall_score</code>. The columns should be named <code>mean_score</code> and <code>sd_score</code> and you should use the data stored in <code>score_data</code> to start. You can look at the code that calculated the age mean and SD to help figure out how to do this.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb46"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">score_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>column_name1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">measure</span><span class="op">)</span>,</span>
+<span>            column_name2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">measure</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb47"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">overall_score</span> <span class="op">&lt;-</span> <span class="va">score_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span>,</span>
+<span>            sd_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<p>We can also produce a histogram to visualise the distribution of the scores so let's explain a little more how about the plot code works.</p>
+<ul>
+<li><p>The main function we use is <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> which is from the <code class="package">ggplot2</code> and is loaded as part of the <code class="package">tidyverse</code>. <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> works on a system of layers.</p></li>
+<li><p>The first layer sets up what data the plot will use and the "aesthetic mapping" (<code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code>) which means which variables should be represented on each axis. We want to produce a histogram of the Corsi block scores so we tell <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> to put the variable <code>Corsi_Score</code> on the x-axis.</p></li>
+<li><p>The next layer tells <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> what type of plot (or "geom") to use and here we specify <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>. There are two arguments added to <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>: <code>binwidth</code> changes the size of the bars (try changing this value to 2 or 3 and see happens) whilst <code>colour</code> changes the colour of the line around the bars (try changing "black").</p></li>
+<li><p><code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous()</a></code> controls the x-axis. <code>name</code> is the x-axis label and <code>breaks</code> updates the number labels on the x-axis. In this case we ask us to give us the sequence (<code>seq</code>) of numbers from 1 to 9, which is quicker than writing them all out.</p></li>
+<li><p>All the layer are connected with <code>+</code> and it's important that this comes at the end of the first line and not the start of the second line or it won't work.</p></li>
+<li><p>In code chunk 5, add the below code and run it to create the histogram</p></li>
+</ul>
+<div class="sourceCode" id="cb48"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span>data <span class="op">=</span> <span class="va">score_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">1</span>, colour <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Corsi block score"</span>,</span>
+<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="05-corsi_files/figure-html/unnamed-chunk-9-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="info">
+<p>If you get an error that says <code>object X not found</code>, double check you have spelled the object and variable names exactly right and remember that R is case sensitive which means that you have to have the capital and lower case letters exactly right.</p>
+</div>
+</div>
+<div id="activity-6-joining-the-datasets" class="section level2" number="5.8">
+<h2>
+<span class="header-section-number">5.8</span> Activity 6: Joining the datasets<a class="anchor" aria-label="anchor" href="#activity-6-joining-the-datasets"><i class="fas fa-link"></i></a>
+</h2>
+<p>We want to compare the scores for each sleep condition, however, the column that says what condition a participant is in a different dataset (<code>demographic_data</code>) to the column that has their scores (<code>score_data</code>). To fix this, we can perform a <a class="glossary" target="_blank" title="" href="https://psyteachr.github.io/glossary/j#join">joins</a>.There are lots of different types of joins you can do, but the one we want is an <a class="glossary" target="_blank" title="A mutating join that returns all the rows that have a match in the other table." href="https://psyteachr.github.io/glossary/i#inner-join">inner-join</a> which returns all the rows in one table that have a match in the other table.</p>
+<p>Before you run the code, think about what the final output is going to look like. <code>demographic_data</code> has 4 columns, <code>score_data</code> has 2 columns, but the column <code>Participant</code> is the same column.</p>
+<p>How many unique columns should there be if we join these two together? <input class="webex-solveme nospaces" size="1" data-answer='["5"]'></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The joined dataset will have 5 columns, Participant, Gender, Age, Condition, and Corsi_Score.</p>
+</div>
+<ul>
+<li>In code chunk 6, copy and paste the code code to join the two tables.</li>
+<li>
+<code>x</code> is the name of the first table you want to join. <code>y</code> is the name of the second table. You can only ever join two tables together at once.</li>
+<li>
+<code>by</code> is the name of the column the two tables have in common (i.e., the information that will be used to join them together). In this case, the column that is present in both datasets is <code>Participant</code>.</li>
+</ul>
+<div class="sourceCode" id="cb49"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demographic_data</span>,</span>
+<span>                       y <span class="op">=</span> <span class="va">score_data</span>,</span>
+<span>                       by <span class="op">=</span> <span class="st">"Participant"</span><span class="op">)</span></span></code></pre></div>
+<div id="argument-names" class="section level3" number="5.8.1">
+<h3>
+<span class="header-section-number">5.8.1</span> Argument names<a class="anchor" aria-label="anchor" href="#argument-names"><i class="fas fa-link"></i></a>
+</h3>
+<p>This gives us a good opportunity to explain argument names.</p>
+<p>In the above examples, we have written out the argument names in our code (e.g., <code>x</code>, <code>y</code>, <code>by</code>), however, this is not strictly necessary. The following two lines of code would both produce the same result:</p>
+<div class="sourceCode" id="cb50"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demographic_data</span>,</span>
+<span>                       y <span class="op">=</span> <span class="va">score_data</span>,</span>
+<span>                       by <span class="op">=</span> <span class="st">"Participant"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">full_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span><span class="va">demographic_data</span>,</span>
+<span>                       <span class="va">score_data</span>,</span>
+<span>                       <span class="st">"Participant"</span><span class="op">)</span></span></code></pre></div>
+<p>Importantly, if you do not write out the argument names, R will use the default order of arguments, that is for <code>inner_join</code> it will assume that the first name you enter is <code>x</code>. the second is <code>y</code> and the number is <code>by</code>.</p>
+<p>If you write out the argument names then you can write the arguments in whatever order you like:</p>
+<div class="sourceCode" id="cb51"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>by <span class="op">=</span> <span class="st">"Participant"</span>,</span>
+<span>                       y <span class="op">=</span> <span class="va">demographic_data</span>,</span>
+<span>                       x <span class="op">=</span> <span class="va">score_data</span><span class="op">)</span></span></code></pre></div>
+<p>When you are first learning R, you may find it useful to write out the argument names as it can help you remember and understand what each part of the function is doing. However, as your skills progress you may find it quicker to omit the argument names and you will also see examples of code online that do not use argument names so it is important to be able to understand which argument each bit of code is referring to (or look up the help documentation to check).</p>
+<p>In this course, we will always write out the argument names the first time we use each function, however, in subsequent uses they may be omitted.</p>
+</div>
+<div id="tab-auto-complete" class="section level3" number="5.8.2">
+<h3>
+<span class="header-section-number">5.8.2</span> Tab auto-complete<a class="anchor" aria-label="anchor" href="#tab-auto-complete"><i class="fas fa-link"></i></a>
+</h3>
+<p>One very useful feature of R Studio is the tab auto-complete for functions (see Figure <a href="intro-to-corsi-blocks.html#fig:img-autocomplete">5.1</a>). If you write the name of the function and then press the tab key, R Studio will show you the arguments that function takes along with a brief description. If you press enter on the argument name it will fill in the name for you, just like auto-complete on your phone. This is incredibly useful when you are first learning R and you should remember to use this feature frequently.</p>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-autocomplete"></span>
+<img src="images/corsi/autocomplete.png" alt="Tab auto-complete" width="100%"><p class="caption">
+Figure 5.1: Tab auto-complete
+</p>
+</div>
+</div>
+</div>
+<div id="activity-7-analysis-by-groups" class="section level2" number="5.9">
+<h2>
+<span class="header-section-number">5.9</span> Activity 7: Analysis by groups<a class="anchor" aria-label="anchor" href="#activity-7-analysis-by-groups"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now that we have both the condition data (<code>Condition</code>) and the participant's score (<code>Corsi_score</code>) in the same dataset, we can see how the scores compare by groups.</p>
+<ul>
+<li>In code chunk 7, use <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> to calculate the mean score and SD for each group and save this in an object named <code>group_scores</code>. The columns should be named <code>mean_score</code> and <code>sd_score</code>. Your starting dataset should be <code>full_dat</code>.</li>
+<li>You may want to look back at the code you used for the Stroop analysis to help you with this.</li>
+<li>Be careful with capital letters.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hide
+</button>
+<div class="sourceCode" id="cb52"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">grouping_variable</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>column_name1 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">measure</span><span class="op">)</span>,</span>
+<span>            column_name2 <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">measure</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb53"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">group_scores</span> <span class="op">&lt;-</span> <span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Condition</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span>,</span>
+<span>            sd_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<p>Which group has the lowest score? <select class="webex-select"><option value="blank"></option>
+<option value="">8 hours sleep</option>
+<option value="">4 hours sleep</option>
+<option value="answer">Sleep deprived</option></select></p>
+<div id="visuaise-the-groups" class="section level3" number="5.9.1">
+<h3>
+<span class="header-section-number">5.9.1</span> Visuaise the groups<a class="anchor" aria-label="anchor" href="#visuaise-the-groups"><i class="fas fa-link"></i></a>
+</h3>
+<p>Finally, we can also visualise the difference in score between groups.</p>
+<ul>
+<li>Add this code to code chunk 8 to create a boxplot of the scores in each group.</li>
+</ul>
+<div class="sourceCode" id="cb54"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">full_dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, y <span class="op">=</span> <span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Corsi block score"</span>,</span>
+<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="05-corsi_files/figure-html/unnamed-chunk-13-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>We can also create histograms for each condition.</p>
+<ul>
+<li>
+<code><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap()</a></code> creates a separate plot for each group of the variable you give it. You can read the <code>~</code> (tilde) symbol as <strong>by</strong>, i.e., facet the plot by Condition.</li>
+<li>
+<code>nrow</code> specifies we want the faceted plots to be spread over three rows. This makes it easier to compare the distributions than if they were side-by-side (try changing this to 1 to see the difference).</li>
+</ul>
+<div class="sourceCode" id="cb55"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">full_dat</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>binwidth <span class="op">=</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span><span class="va">Condition</span>, nrow <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">9</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="05-corsi_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>Based on the descriptive statistics and plot, is the hypothesis that sleep deprivation will negatively affect spatial working memory supported or rejected? <select class="webex-select"><option value="blank"></option>
+<option value="answer">Supported</option>
+<option value="">Rejected</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>If the descriptive statistics and the plot of the data show a difference in Corsi Block Task scores between sleep conditions with the sleep-deprived group performing worse, the hypothesis would be supported. Remember, in the context of experimental research, we can't definitively prove a hypothesis - we can only provide evidence that supports or fails to support it.</p>
+</div>
+</div>
+</div>
+<div id="finished-2" class="section level2" number="5.10">
+<h2>
+<span class="header-section-number">5.10</span> Finished<a class="anchor" aria-label="anchor" href="#finished-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Finally, try knitting the file to HTML and remember to make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></div>
+<div class="next"><a href="corsi-analysis.html"><span class="header-section-number">6</span> Corsi analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#intro-to-corsi-blocks"><span class="header-section-number">5</span> Intro to Corsi Blocks</a></li>
+<li><a class="nav-link" href="#sec-ilo-corsi"><span class="header-section-number">5.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#sec-walkthrough-corsi"><span class="header-section-number">5.2</span> Walkthrough video</a></li>
+<li><a class="nav-link" href="#activity-1-the-corsi-block-task"><span class="header-section-number">5.3</span> Activity 1: The Corsi Block Task</a></li>
+<li><a class="nav-link" href="#activity-2-new-project-1"><span class="header-section-number">5.4</span> Activity 2: New project</a></li>
+<li><a class="nav-link" href="#activity-3-data-files-1"><span class="header-section-number">5.5</span> Activity 3: Data files</a></li>
+<li><a class="nav-link" href="#activity-4-check-and-summarise-the-data"><span class="header-section-number">5.6</span> Activity 4: Check and summarise the data</a></li>
+<li><a class="nav-link" href="#activity-5-summarise-and-visualise-the-scores"><span class="header-section-number">5.7</span> Activity 5: Summarise and visualise the scores</a></li>
+<li>
+<a class="nav-link" href="#activity-6-joining-the-datasets"><span class="header-section-number">5.8</span> Activity 6: Joining the datasets</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#argument-names"><span class="header-section-number">5.8.1</span> Argument names</a></li>
+<li><a class="nav-link" href="#tab-auto-complete"><span class="header-section-number">5.8.2</span> Tab auto-complete</a></li>
+</ul>
+</li>
+<li>
+<a class="nav-link" href="#activity-7-analysis-by-groups"><span class="header-section-number">5.9</span> Activity 7: Analysis by groups</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#visuaise-the-groups"><span class="header-section-number">5.9.1</span> Visuaise the groups</a></li></ul>
+</li>
+<li><a class="nav-link" href="#finished-2"><span class="header-section-number">5.10</span> Finished</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/05-corsi.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/05-corsi.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-01.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</body>
+</html>

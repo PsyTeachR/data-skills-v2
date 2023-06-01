@@ -82,6 +82,9 @@
 <li><a class="" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
 <li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
 <li><a class="active" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
+<li><a class="" href="intro-to-corsi-blocks.html"><span class="header-section-number">5</span> Intro to Corsi Blocks</a></li>
+<li><a class="" href="corsi-analysis.html"><span class="header-section-number">6</span> Corsi analysis</a></li>
+<li><a class="" href="who-knows.html"><span class="header-section-number">7</span> Who knows</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -261,42 +264,6 @@ Figure 1.4: Renaming your file
 <p>The length of this chapter has made the homework sound much more complicated than it is but it's important to have all the info. If you ever have an issue with completing or submitting the homework in the future, remember to come back and review this page.</p>
 <p>Congrats on submitting the first assignment for Psych 1A!</p>
 
-</div>
-</div>
-
-
-
-<div class="chapter-nav">
-<div class="prev"><a href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></div>
-<div class="next"><a href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></div>
-</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
-    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
-      <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#homework-1"><span class="header-section-number">4</span> Homework 1</a></li>
-<li><a class="nav-link" href="#sec-ilo-homework"><span class="header-section-number">4.1</span> Intended Learning Outcomes</a></li>
-<li><a class="nav-link" href="#new-project-and-data-files"><span class="header-section-number">4.2</span> New project and data files</a></li>
-<li><a class="nav-link" href="#completing-the-homework-file"><span class="header-section-number">4.3</span> Completing the homework file</a></li>
-<li>
-<a class="nav-link" href="#types-of-questions"><span class="header-section-number">4.4</span> Types of questions</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#create-an-object"><span class="header-section-number">4.4.1</span> Create an object</a></li>
-<li><a class="nav-link" href="#provide-a-single-number"><span class="header-section-number">4.4.2</span> Provide a single number</a></li>
-<li><a class="nav-link" href="#multiple-choice"><span class="header-section-number">4.4.3</span> Multiple-choice</a></li>
-</ul>
-</li>
-<li><a class="nav-link" href="#knitting-your-file"><span class="header-section-number">4.5</span> Knitting your file</a></li>
-<li><a class="nav-link" href="#off-you-go"><span class="header-section-number">4.6</span> Off you go</a></li>
-<li><a class="nav-link" href="#saving-and-renaming-your-file"><span class="header-section-number">4.7</span> Saving and renaming your file</a></li>
-<li><a class="nav-link" href="#downloading-the-file-to-your-computer"><span class="header-section-number">4.8</span> Downloading the file to your computer</a></li>
-<li><a class="nav-link" href="#submitting-to-moodle"><span class="header-section-number">4.9</span> Submitting to Moodle</a></li>
-</ul>
-
-      <div class="book-extra">
-        <ul class="list-unstyled">
-<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/04-homework.Rmd">View source <i class="fab fa-github"></i></a></li>
-          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/04-homework.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
-        </ul>
-</div>
-    </nav>
 </div>
 </div>
 <script>
@@ -500,15 +467,46 @@ $( document ).ready(function() {
   move_sidebar();
   window.onresize = move_sidebar;
 });
-</script>
+</script><div class="chapter-nav">
+<div class="prev"><a href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></div>
+<div class="next"><a href="intro-to-corsi-blocks.html"><span class="header-section-number">5</span> Intro to Corsi Blocks</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#homework-1"><span class="header-section-number">4</span> Homework 1</a></li>
+<li><a class="nav-link" href="#sec-ilo-homework"><span class="header-section-number">4.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#new-project-and-data-files"><span class="header-section-number">4.2</span> New project and data files</a></li>
+<li><a class="nav-link" href="#completing-the-homework-file"><span class="header-section-number">4.3</span> Completing the homework file</a></li>
+<li>
+<a class="nav-link" href="#types-of-questions"><span class="header-section-number">4.4</span> Types of questions</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#create-an-object"><span class="header-section-number">4.4.1</span> Create an object</a></li>
+<li><a class="nav-link" href="#provide-a-single-number"><span class="header-section-number">4.4.2</span> Provide a single number</a></li>
+<li><a class="nav-link" href="#multiple-choice"><span class="header-section-number">4.4.3</span> Multiple-choice</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#knitting-your-file"><span class="header-section-number">4.5</span> Knitting your file</a></li>
+<li><a class="nav-link" href="#off-you-go"><span class="header-section-number">4.6</span> Off you go</a></li>
+<li><a class="nav-link" href="#saving-and-renaming-your-file"><span class="header-section-number">4.7</span> Saving and renaming your file</a></li>
+<li><a class="nav-link" href="#downloading-the-file-to-your-computer"><span class="header-section-number">4.8</span> Downloading the file to your computer</a></li>
+<li><a class="nav-link" href="#submitting-to-moodle"><span class="header-section-number">4.9</span> Submitting to Moodle</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/04-homework.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/04-homework.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
 
 </div>
- <!-- .container -->
+</div> <!-- .container -->
 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-05-19.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-01.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
