@@ -1,0 +1,46 @@
+---
+title: "belong_stub1"
+author: "GUID" # edit this
+date: "2023-06-07" # this this
+output: html_document
+---
+
+```{r chunk1}
+# load tidyverse and data files
+
+
+```
+
+
+
+```{r chunk2}
+# join the data files
+
+
+```
+
+
+```{r chunk3}
+# recode gender and redo the boxplot
+
+
+```
+
+```{r chunk4}
+# demographic info
+
+
+```
+
+```{r chunk5}
+# filter and select
+
+
+```
+
+```{r chunk6}
+# scatterplots
+
+
+```
+

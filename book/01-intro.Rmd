@@ -15,7 +15,7 @@ If you're completely new to programming, you're unlikely to understand everythin
 
 ## Walkthrough video {#sec-walkthrough-intro}
 
-There is a walkthrough video of this chapter available via [Echo360.](https://echo360.org.uk/media/3861d902-df69-417d-8f27-259089f992b8/public) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Echo360.]() (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## R and RStudio {#sec-intro-r}
 

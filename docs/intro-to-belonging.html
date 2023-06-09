@@ -1,0 +1,1008 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Intro to Belonging | Data Skills</title>
+<meta name="author" content="Emily Nordmann">
+<meta name="description" content="6.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what Belonging is and how it is measured Convert variables to factors Create scatterplots and grouped...">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Intro to Belonging | Data Skills">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/intro-to-belonging.html">
+<meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta property="og:description" content="6.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what Belonging is and how it is measured Convert variables to factors Create scatterplots and grouped...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Intro to Belonging | Data Skills">
+<meta name="twitter:description" content="6.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what Belonging is and how it is measured Convert variables to factors Create scatterplots and grouped...">
+<meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Skills</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
+<li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
+<li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
+<li><a class="" href="corsi-analysis.html"><span class="header-section-number">5</span> Corsi analysis</a></li>
+<li><a class="active" href="intro-to-belonging.html"><span class="header-section-number">6</span> Intro to Belonging</a></li>
+<li><a class="" href="belonging-analysis.html"><span class="header-section-number">7</span> Belonging analysis</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/psyteachr/data-skills-v2">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="intro-to-belonging" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Intro to Belonging<a class="anchor" aria-label="anchor" href="#intro-to-belonging"><i class="fas fa-link"></i></a>
+</h1>
+<div id="sec-ilo-belonging" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#sec-ilo-belonging"><i class="fas fa-link"></i></a>
+</h2>
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>Explain what Belonging is and how it is measured</li>
+<li>Convert variables to factors</li>
+<li>Create scatterplots and grouped scatterplots</li>
+</ul>
+</div>
+<div id="sec-walkthrough-belong" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-belong"><i class="fas fa-link"></i></a>
+</h2>
+<p>There is a walkthrough video of this chapter available via <a href="">Echo360.</a> (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+</div>
+<div id="activity-1-belonging-engagement-and-self-confidence" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Activity 1: Belonging, engagement, and self-confidence<a class="anchor" aria-label="anchor" href="#activity-1-belonging-engagement-and-self-confidence"><i class="fas fa-link"></i></a>
+</h2>
+<p>For the next set of chapters we're going to use data from a questionnaire that measures an important psychological construct, and one that is key to your success at university: belonging.</p>
+<ul>
+<li>First, take part in <a href="https://www.psytoolkit.org/cgi-bin/3.4.4/survey?s=Vj3mg">this online version</a> of the questionnaire. It only takes a few minutes to complete.<br>
+</li>
+<li>Second, read the <a href="https://www.psytoolkit.org/survey-library/bes.html">overview</a> of the scale you just completed, including what the scores mean.</li>
+<li>Third, read the introduction and discussion of the paper <a href="https://go.exlibris.link/cV2NR1GR">"A sense of belonging at university: student retention, motivation and enjoyment"</a>. You can read the method and the results if you're interested although we haven't yet learned about the statistics they use. Note that this paper uses a slightly different scale than the one you did above.</li>
+<li>Finally, answer the following questions. Please note that your responses will not save in the browser - if you want to save them, make a note of them somewhere.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>Which of the following best describes the concept of belongingness in the context of university students?</li>
+</ol>
+<div id="radio_SOEFIODXIH" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_SOEFIODXIH" value="answer"><span>The degree to which students feel accepted, valued, and included in their university community</span></label><label><input type="radio" autocomplete="off" name="radio_SOEFIODXIH" value=""><span>The students' ability to adhere to university policies and rules</span></label><label><input type="radio" autocomplete="off" name="radio_SOEFIODXIH" value=""><span>The physical presence of students on campus</span></label><label><input type="radio" autocomplete="off" name="radio_SOEFIODXIH" value=""><span>The level of students' academic achievement</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The concept of belongingness in the context of university students is best described as "The degree to which students feel accepted, valued, and included in their university community". This is because belongingness refers to the sense of being part of a community and feeling valued and accepted within that community. In a university setting, this includes feeling a part of the student body, feeling valued by faculty and peers, and feeling included in university activities and discussions.</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>According to research, why is fostering a sense of belonging crucial for first-year university students?</li>
+</ol>
+<div id="radio_GRJLKFKISS" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_GRJLKFKISS" value="answer"><span>It can enhance their academic engagement and reduce dropout rates</span></label><label><input type="radio" autocomplete="off" name="radio_GRJLKFKISS" value=""><span>It is a requirement for university accreditation</span></label><label><input type="radio" autocomplete="off" name="radio_GRJLKFKISS" value=""><span>It improves the reputation of the university</span></label><label><input type="radio" autocomplete="off" name="radio_GRJLKFKISS" value=""><span>It has no particular importance</span></label>
+</div>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>Fostering a sense of belonging is crucial for first-year university students because "It can enhance their academic engagement and reduce dropout rates". Research has shown that when students feel a sense of belonging at their university, they are more likely to be engaged with their studies and less likely to drop out. This is likely due to feeling more motivated and supported, and being more likely to seek help when needed.</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>According to the paper by Pedler et al., which group of students had lower belonging scores?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">Final year students</option>
+<option value="">Students who join clubs &amp; societies</option>
+<option value="answer">First generation students</option>
+<option value="">Students who enjoy the course</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>According to the paper by Pedler et al., first generation students (and those with just one parent who had attended university) had lower belonging scores. First generation students often face unique challenges that can affect their sense of belonging, such as lack of family understanding or support, financial difficulties, and feeling out of place among their peers.</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>If you wanted to try and increase your sense of belonging at university, what might help?</li>
+</ol>
+<p><select class="webex-select"><option value="blank"></option>
+<option value="">Joining a club or society</option>
+<option value="">Taking part in a study group</option>
+<option value="">Attending a social or extra-curricular event</option>
+<option value="answer">Any or all of the above</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>Sense of belonging at a university often comes from a combination of academic and social integration. Joining a club or society, participating in a study group, or attending a social or extra-curricular event can all contribute to the sense of belongingness by connecting individuals with others who have similar interests, challenges, or goals. These activities provide opportunities for interaction, mutual understanding, shared experiences, and the formation of supportive relationships. These connections can enhance a student's identification with and commitment to the university, thereby strengthening their sense of belonging. Additionally, being part of a group or a community can also provide emotional support and reduce feelings of isolation, both of which can further enhance a sense of belonging.</p>
+<p>I KNOW THIS CHAPTER ISN'T SUBTLE.</p>
+</div>
+</div>
+<div id="sec-new-project-belong" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Activity 2: New project<a class="anchor" aria-label="anchor" href="#sec-new-project-belong"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Log in to the to R sever and make a new project for the Belonging chapters (this week and next week):</li>
+</ul>
+<p>Activity 3: Data files {#sec-data-belong}</p>
+<p>Once you've done all this, it's time to download the files we need and then upload them to the server.</p>
+<ul>
+<li>First, download the <a href="files/data/belong/belong_data.zip" download>Belonging data zip file</a> to your computer and make sure you know which folder you saved it in.</li>
+<li>Then, on the server in the Files tab (bottom right), click <code>Upload &gt; Choose file</code> then navigate to the folder on your computer where the zip file is saved, select it, click <code>Open</code>, then <code>OK</code>.</li>
+</ul>
+<p>The zip file contains four files:</p>
+<ul>
+<li>
+<code>belong_stub1.Rmd</code> and <code>belong_stub2.Rmd</code>, the stub files you'll complete for this chapter and the next one. Open <code>belong_stub1.Rmd</code> by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.</li>
+<li>
+<code>demographic_data.csv</code> is a data file that contains each participant's anonymous ID, age, gender and level of study. Gender has been coded numerically where woman = 1, man = 2, and non-binary = 3.</li>
+<li>
+<code>questionnaire_data</code> is a data file that contains each participants ID, level of study, and their score on three components of the belonging scale (belonging, engagement, self-confidence).</li>
+</ul>
+<p>Now, we need to load the tidyverse and the data files so that we can use them.</p>
+<ul>
+<li>In code chunk 1, add the code that loads the tidyverse and then imports <code>demographic_data.csv</code> into an object named <code>demographic_data</code> and <code>questionnaire_data.csv</code> into a object named <code>questionnaire_data</code> using <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
+<span><span class="va">questionnaire_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"questionnaire_data.csv"</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="activity-3-check-the-data" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Activity 3: Check the data<a class="anchor" aria-label="anchor" href="#activity-3-check-the-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>As usual, once you've imported the data the first thing you should do is check it.</p>
+<ul>
+<li>Click on each object and view them in the viewing pane</li>
+<li>Then run <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> on each object in the console and answer the following questions:</li>
+</ul>
+<p>How are men coded in the variable gender? <input class="webex-solveme nospaces" size="1" data-answer='["2"]'><br>
+Which sub-scale has the highest mean score? <select class="webex-select"><option value="blank"></option>
+<option value="answer">belongingess</option>
+<option value="">engagement</option>
+<option value="">self_confidence</option></select><br>
+How old is the oldest participant in years? <input class="webex-solveme nospaces" size="2" data-answer='["25"]'><br>
+Which variables are included in both datasets (select all that apply)? <select class="webex-select"><option value="blank"></option>
+<option value="answer">participant</option>
+<option value="">gender</option>
+<option value="">age</option>
+<option value="answer">level</option>
+<option value="">belonginess</option>
+<option value="">enagagement</option>
+<option value="">self-confidence</option></select></p>
+</div>
+<div id="activity-4-join-the-datasets" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Activity 4: Join the datasets<a class="anchor" aria-label="anchor" href="#activity-4-join-the-datasets"><i class="fas fa-link"></i></a>
+</h2>
+<p>As we've done before, we want to join the two datasets together. However, because there are multiple columns that each dataset has in common, the code needs adapted.</p>
+<p>We need to list both <code>participant</code> and <code>level</code> in the <code>by</code> argument so that R knows that these columns are the same data in both objects. Because there's multiple values being passed to a single argument, we use the combine function <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> - if you don't use <code><a href="https://rdrr.io/r/base/c.html">c()</a></code>, it will only take the first variable into account and will create problems (try it and see what happens).</p>
+<ul>
+<li>In code chunk 2, add and run the below code to join the datasets.Try removing the <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> to see what happens to the table.</li>
+</ul>
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">full_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demographic_data</span>, <span class="co"># table 1</span></span>
+<span>                        y <span class="op">=</span> <span class="va">questionnaire_data</span>, <span class="co"># table 2</span></span>
+<span>                        by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"participant"</span>, <span class="st">"level"</span><span class="op">)</span><span class="op">)</span> <span class="co"># all common columns</span></span></code></pre></div>
+</div>
+<div id="activity-5-data-types" class="section level2" number="6.7">
+<h2>
+<span class="header-section-number">6.7</span> Activity 5: Data types<a class="anchor" aria-label="anchor" href="#activity-5-data-types"><i class="fas fa-link"></i></a>
+</h2>
+<p>Look carefully at the <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> output for <code>demographic_data</code>. Can you see a problem with <code>gender</code>?</p>
+<pre><code>##   participant         gender         age           level          
+##  Min.   :   1.0   Min.   :1.0   Min.   :17.00   Length:1000       
+##  1st Qu.: 250.8   1st Qu.:1.0   1st Qu.:19.00   Class :character  
+##  Median : 500.5   Median :2.0   Median :21.00   Mode  :character  
+##  Mean   : 500.5   Mean   :1.7   Mean   :21.16                     
+##  3rd Qu.: 750.2   3rd Qu.:2.0   3rd Qu.:23.00                     
+##  Max.   :1000.0   Max.   :3.0   Max.   :25.00</code></pre>
+<p>Because <code>gender</code> is coded numerically, R has assumed that the data in this column is numeric so it has calculated statistics as if it were a number but it's entirely meaningless (what does a mean gender of 1.7 mean?).</p>
+<div class="info">
+<p>There are several different <a class="glossary" target="_blank" title="The kind of data represented by an object." href="https://psyteachr.github.io/glossary/d#data-type">data types</a> in R and when you load data in, R will do it's best to guess which one each variable is:</p>
+<ul>
+<li>integer (whole numbers like 1L, -10L, 3000L)</li>
+<li>double (numbers like -0.223, 10.324, 1e4)</li>
+<li>character (letters or words like "I love R")</li>
+<li>factor (a specific set of values are stored with labels using categorical variables like gender or experimental condition)</li>
+<li>logical (TRUE or FALSE)</li>
+<li>complex (numbers with real and imaginary parts like 2i)</li>
+</ul>
+<p>Integers and doubles are both numeric.</p>
+</div>
+<div id="recoding-factors" class="section level3" number="6.7.1">
+<h3>
+<span class="header-section-number">6.7.1</span> Recoding factors<a class="anchor" aria-label="anchor" href="#recoding-factors"><i class="fas fa-link"></i></a>
+</h3>
+<p>If you try and use the data that's in <code>gender</code> as it is, it can cause some problems. For example, if you tried to plot a boxplot of the scores by gender, you'd get this mess because as far as R is concerned, you haven't given it a grouping variable, you've given it two continuous variables</p>
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">full_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender</span>, y <span class="op">=</span> <span class="va">belongingness</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## Warning: Continuous x aesthetic
+## i did you forget `aes(group = ...)`?</code></pre>
+<div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>Instead, we need to convert that data to a factor, using the <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code> functions. We could overwrite the existing <code>gender</code> variable or we could add a new variable - let's add a new one.</p>
+<ul>
+<li>
+<code>levels</code> specifies the original values in the variable, in the order you want to present them (think about how they'd look on a graph from left to right). We can use this to reorganise our variable so that "Man" will be presented first by stating the order as <code>2,1,3</code>.</li>
+<li>
+<code>labels</code> then specifies the labels you want to use instead of the original values and these <strong>must be in the same order as the levels</strong>. R will do exactly what you tell it to so if you accidentally tell it to give a label of "Man" to number 1, you'll end up getting your gender scores the wrong way round. This is one of the reasons why it can be safer to create a second variable when recoding so that you can more easily check that the values line up with what they're supposed to be.</li>
+<li>Add and run the below code to code chunk 3.</li>
+</ul>
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">full_data</span> <span class="op">&lt;-</span> <span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender_coded <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">gender</span>, </span>
+<span>                        levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">1</span>, <span class="fl">3</span><span class="op">)</span>,</span>
+<span>                        labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Man"</span>, <span class="st">"Woman"</span>, <span class="st">"Non-binary"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>Next, redo the boxplot we tried above but use the new variable <code>gender_coded</code> rather than the original variable <code>gender</code>.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">full_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender_coded</span>, y <span class="op">=</span> <span class="va">belongingness</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-7-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+<p>Activity 6: Demographic info</p>
+<p>As usual, let's get some demographic info about our participants. In code chunk 4:</p>
+<ul>
+<li>Calculate the number of participants of each gender</li>
+<li>Calculate the number of participants in each level of study</li>
+<li>Calculate the gender split in each level of study</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p><code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code></p>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">gender_coded</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">level</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">level</span>, <span class="va">gender_coded</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+gender_coded
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+500
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Woman
+</td>
+<td style="text-align:right;">
+400
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Non-binary
+</td>
+<td style="text-align:right;">
+100
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+level
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+First year
+</td>
+<td style="text-align:right;">
+920
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Second year
+</td>
+<td style="text-align:right;">
+80
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr>
+<th style="text-align:left;">
+level
+</th>
+<th style="text-align:left;">
+gender_coded
+</th>
+<th style="text-align:right;">
+n
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:left;">
+First year
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+457
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+First year
+</td>
+<td style="text-align:left;">
+Woman
+</td>
+<td style="text-align:right;">
+373
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+First year
+</td>
+<td style="text-align:left;">
+Non-binary
+</td>
+<td style="text-align:right;">
+90
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Second year
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+43
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Second year
+</td>
+<td style="text-align:left;">
+Woman
+</td>
+<td style="text-align:right;">
+27
+</td>
+</tr>
+<tr>
+<td style="text-align:left;">
+Second year
+</td>
+<td style="text-align:left;">
+Non-binary
+</td>
+<td style="text-align:right;">
+10
+</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<div id="activity-6-filter-and-select" class="section level2" number="6.8">
+<h2>
+<span class="header-section-number">6.8</span> Activity 6: Filter and select<a class="anchor" aria-label="anchor" href="#activity-6-filter-and-select"><i class="fas fa-link"></i></a>
+</h2>
+<p>The analysis we're going to do is going to focus on gender differences in belonging for first year students and as we can see from the demographic counts, we have some second year students in our sample that we need to get rid of.</p>
+<ul>
+<li>In code chunk 5, create an object named <code>first_year_data</code> that only contains the data from first year students. Your starting dataset should be <code>full_data</code>.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span>variable <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">first_year_data</span> <span class="op">&lt;-</span> <span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">level</span> <span class="op">==</span> <span class="st">"First year"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<p>We can also drop the numeric gender column and level as we don't need them anymore. This also gives us a good opportuntiy to show a useful feature of <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> which is that you can rename variables as well as reordering them.</p>
+<ul>
+<li>Add this code to code chunk 5. It will reorder the dataset, drop the original <code>gender</code> column and <code>level</code>, and rename <code>gender_coded</code> as <code>gender</code> to make it simpler to type.</li>
+<li>The <code>:</code> notation means that it will select all columns from <code>belonginess</code> to <code>self-confidence</code> so we don't have to type them all out.</li>
+</ul>
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">first_year_data</span> <span class="op">&lt;-</span> <span class="va">first_year_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">participant</span>, </span>
+<span>         <span class="st">"gender"</span> <span class="op">=</span> <span class="va">gender_coded</span>,</span>
+<span>         <span class="va">age</span>,</span>
+<span>         <span class="va">belongingness</span><span class="op">:</span><span class="va">self_confidence</span><span class="op">)</span> </span></code></pre></div>
+<p>Finally, see if you can string all this code together using pipes (<code>%&gt;%</code>) in one code chunk. You should start with <code>full_data</code> and save it all in an object named <code>first_year_data</code>.</p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">first_year_data</span> <span class="op">&lt;-</span> <span class="va">starting_dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="va">first_function</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="va">second_function</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">first_year_data</span> <span class="op">&lt;-</span> <span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">level</span> <span class="op">==</span> <span class="st">"First year"</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">participant</span>, </span>
+<span>         <span class="st">"gender"</span> <span class="op">=</span> <span class="va">gender_coded</span>,</span>
+<span>         <span class="va">age</span>,</span>
+<span>         <span class="va">belongingness</span><span class="op">:</span><span class="va">self_confidence</span><span class="op">)</span> </span></code></pre></div>
+</div>
+</div>
+<div id="activity-7-plots" class="section level2" number="6.9">
+<h2>
+<span class="header-section-number">6.9</span> Activity 7: Plots<a class="anchor" aria-label="anchor" href="#activity-7-plots"><i class="fas fa-link"></i></a>
+</h2>
+<p>For the final activity, let's make some plots and show you some additional options for how to make them look nice.</p>
+<div id="scatterplots" class="section level3" number="6.9.1">
+<h3>
+<span class="header-section-number">6.9.1</span> Scatterplots<a class="anchor" aria-label="anchor" href="#scatterplots"><i class="fas fa-link"></i></a>
+</h3>
+<p>To visualise two continuous variables we can use a scatterplot by calling <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>. To use <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> you need to specify an <code>x</code> and a <code>y</code> variable.</p>
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, y <span class="op">=</span> <span class="va">engagement</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-14-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>To add a line of best fit, add on a layer that calls <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> (instinctively you might expect to need <code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code>, this does something very different and will make your plot look mad, try it). You can specify different methods of drawing the line, for now, we'll choose <code>method = "lm"</code> which stands for "linear model" which basically means draw a straight line.</p>
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, y <span class="op">=</span> <span class="va">engagement</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = 'y ~ x'</code></pre>
+<div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>As belonginess scores increase, engagement scores <select class="webex-select"><option value="blank"></option>
+<option value="answer">increase</option>
+<option value="">decrease</option></select>. This is an example of a <select class="webex-select"><option value="blank"></option>
+<option value="answer">positive</option>
+<option value="">negative</option></select> correlation.</p>
+<div class="webex-solution">
+<button>
+Expain this answer
+</button>
+<p>In a scatterplot, a positive correlation is visually represented by an upward trend of the data points. This means that as one variable (belongingness, in this case) increases, the other variable (engagement, in this case) also tends to increase. A stronger positive correlation would show the data points clustering closely around a line that slopes upwards from left to right. In contrast, a negative correlation would be represented by a downward trend, meaning that as one variable increases, the other tends to decrease. The data points would cluster around a line sloping downwards from left to right.</p>
+</div>
+</div>
+<div id="grouped-scatterplots" class="section level3" number="6.9.2">
+<h3>
+<span class="header-section-number">6.9.2</span> Grouped scatterplots<a class="anchor" aria-label="anchor" href="#grouped-scatterplots"><i class="fas fa-link"></i></a>
+</h3>
+<p>We can also add in a grouping variable to our scatterplot code which will draw different coloured geoms (in this case points and lines) for each level of the grouping variable.</p>
+<ul>
+<li>
+<code>color</code> changes the outline (or the border) colour of the geom. It works with geoms like points, lines, and polygons (like the outlines of bars in a bar plot or histogram).</li>
+<li>
+<code>fill</code> changes the interior colour of the geom. It works with 'filled' geoms like bars, boxplots, or the interior of polygons.</li>
+<li>To use colour-blind friendly colours, you add on <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d()</a></code> - <code>colour</code> because it's mapped to <code>colour</code> and <code>d</code> because it's a discrete variable (gender is categorical).</li>
+</ul>
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
+<span>                            y <span class="op">=</span> <span class="va">engagement</span>,</span>
+<span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"D"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = 'y ~ x'</code></pre>
+<div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-16-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+<div id="adding-a-theme" class="section level3" number="6.9.3">
+<h3>
+<span class="header-section-number">6.9.3</span> Adding a theme<a class="anchor" aria-label="anchor" href="#adding-a-theme"><i class="fas fa-link"></i></a>
+</h3>
+<p>In addition to adding colour, you can also apply a theme to the entire plot which will apply a preset aesthetic style.</p>
+<ul>
+<li>The below code adds on <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal()</a></code> but try removing this line and then typing <code>theme_</code> to see all the options that are available with the auto-complete. Try a few and see which one your favourite is.</li>
+</ul>
+<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
+<span>                            y <span class="op">=</span> <span class="va">engagement</span>,</span>
+<span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"D"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="editing-axis-labels-and-breaks" class="section level3" number="6.9.4">
+<h3>
+<span class="header-section-number">6.9.4</span> Editing axis labels and breaks<a class="anchor" aria-label="anchor" href="#editing-axis-labels-and-breaks"><i class="fas fa-link"></i></a>
+</h3>
+<p>There's a couple of ways that you can edit axis labels and breaks. If you just want to edit the overall axis labels, the easiest way is to use the <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code> function:</p>
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
+<span>                            y <span class="op">=</span> <span class="va">engagement</span>,</span>
+<span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"D"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>x <span class="op">=</span> <span class="st">"Mean belonginess score"</span>,</span>
+<span>       y <span class="op">=</span> <span class="st">"Mean engagement score"</span>,</span>
+<span>       colour <span class="op">=</span> <span class="st">"Gender"</span>,</span>
+<span>       title <span class="op">=</span> <span class="st">"Relationship between belonging and engagement"</span>,</span>
+<span>       subtitle <span class="op">=</span> <span class="st">"First year students"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = 'y ~ x'</code></pre>
+<div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>However, if you want to make more fine-grained changes you may need to use the <code>scale_</code> functions.</p>
+<ul>
+<li>We don't need to add on another scale function for colour, we can just use the one that's alreeady there and add in the arguments <code>name</code> and <code>labels</code>.</li>
+<li>
+<code>breaks</code> changes the breaks of the axis, i.e., the numbers that are presented. We ask it for a sequence (<code>seq</code>) of all the numbers from ` to 7.</li>
+</ul>
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
+<span>                            y <span class="op">=</span> <span class="va">engagement</span>,</span>
+<span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Gender"</span>,</span>
+<span>                         labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Men"</span>, <span class="st">"Women"</span>, <span class="st">"Non-binary"</span><span class="op">)</span>,</span>
+<span>                         option <span class="op">=</span> <span class="st">"D"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Mean belonginess score"</span>,</span>
+<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Mean engagement score"</span>,</span>
+<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Relationship between belonging and engagement"</span>,</span>
+<span>       subtitle <span class="op">=</span> <span class="st">"First year students"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = 'y ~ x'</code></pre>
+<div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+<div id="make-your-own" class="section level3" number="6.9.5">
+<h3>
+<span class="header-section-number">6.9.5</span> Make your own<a class="anchor" aria-label="anchor" href="#make-your-own"><i class="fas fa-link"></i></a>
+</h3>
+<p>In the above example we made a scatterplot to visualise the relationship between belonging and engagement but there are two other relationships we can look at.</p>
+<ul>
+<li>In code chunk 6, create scatterplots to visualise the relationship between belonginess and self-confidence, and between engagment and self-confidence. Be careful to change all the axis labels as necessary.</li>
+</ul>
+<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># belonging and self-confidence</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
+<span>                            y <span class="op">=</span> <span class="va">self_confidence</span>,</span>
+<span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Gender"</span>,</span>
+<span>                         labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Men"</span>, <span class="st">"Women"</span>, <span class="st">"Non-binary"</span><span class="op">)</span>,</span>
+<span>                         option <span class="op">=</span> <span class="st">"D"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Mean belonginess score"</span>,</span>
+<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Mean self-confidence score"</span>,</span>
+<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Relationship between belonging and self-confidence"</span>,</span>
+<span>       subtitle <span class="op">=</span> <span class="st">"First year students"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = 'y ~ x'</code></pre>
+<div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># engagement and self-confidence</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">engagement</span>, </span>
+<span>                            y <span class="op">=</span> <span class="va">self_confidence</span>,</span>
+<span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Gender"</span>,</span>
+<span>                         labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Men"</span>, <span class="st">"Women"</span>, <span class="st">"Non-binary"</span><span class="op">)</span>,</span>
+<span>                         option <span class="op">=</span> <span class="st">"D"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Mean engagement score"</span>,</span>
+<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_y_continuous</a></span><span class="op">(</span>name <span class="op">=</span> <span class="st">"Mean self-confidence score"</span>,</span>
+<span>                     breaks <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs</a></span><span class="op">(</span>title <span class="op">=</span> <span class="st">"Relationship between engagement and self-confidence"</span>,</span>
+<span>       subtitle <span class="op">=</span> <span class="st">"First year students"</span><span class="op">)</span></span></code></pre></div>
+<pre><code>## `geom_smooth()` using formula = 'y ~ x'</code></pre>
+<div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-20-2.png" width="100%" style="display: block; margin: auto;"></div>
+<p>Which relationship appears to be the strongest? <select class="webex-select"><option value="blank"></option>
+<option value="">Belonging and engagement</option>
+<option value="">Belonging and self-confidence</option>
+<option value="answer">Engagment and self-confidence</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>In the context of scatterplots, the strength of the relationship between two variables is typically represented by how closely the points follow a clear trend (either linear or nonlinear). A tighter clustering of points along a line suggests a stronger relationship.</p>
+<p>In this case, the scatterplot for "Engagement and Self-confidence" would show the tightest clustering of points along a line or curve, indicating a strong correlation between these two variables. This could be because the more engaged students are in their learning activities, the more confident they feel about their ability to succeed in these tasks.</p>
+<p>In contrast, the scatterplots for "Belonging and Engagement" and "Belonging and Self-confidence" show a less tight clustering of points, indicating a weaker relationship (although it's still pretty strong). The points in these scatterplots would be more spread out and not as closely aligned with a trend line or curve.</p>
+<p>It's important to note that correlation doesn't imply causation, and these are just observed associations in the data. Further research would be necessary to understand the causal relationships between these variables.</p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+</div>
+</div>
+<div id="finished-4" class="section level2" number="6.10">
+<h2>
+<span class="header-section-number">6.10</span> Finished<a class="anchor" aria-label="anchor" href="#finished-4"><i class="fas fa-link"></i></a>
+</h2>
+<p>Finally, try knitting the file to HTML and remember to make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><div class="chapter-nav">
+<div class="prev"><a href="corsi-analysis.html"><span class="header-section-number">5</span> Corsi analysis</a></div>
+<div class="next"><a href="belonging-analysis.html"><span class="header-section-number">7</span> Belonging analysis</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#intro-to-belonging"><span class="header-section-number">6</span> Intro to Belonging</a></li>
+<li><a class="nav-link" href="#sec-ilo-belonging"><span class="header-section-number">6.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#sec-walkthrough-belong"><span class="header-section-number">6.2</span> Walkthrough video</a></li>
+<li><a class="nav-link" href="#activity-1-belonging-engagement-and-self-confidence"><span class="header-section-number">6.3</span> Activity 1: Belonging, engagement, and self-confidence</a></li>
+<li><a class="nav-link" href="#sec-new-project-belong"><span class="header-section-number">6.4</span> Activity 2: New project</a></li>
+<li><a class="nav-link" href="#activity-3-check-the-data"><span class="header-section-number">6.5</span> Activity 3: Check the data</a></li>
+<li><a class="nav-link" href="#activity-4-join-the-datasets"><span class="header-section-number">6.6</span> Activity 4: Join the datasets</a></li>
+<li>
+<a class="nav-link" href="#activity-5-data-types"><span class="header-section-number">6.7</span> Activity 5: Data types</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#recoding-factors"><span class="header-section-number">6.7.1</span> Recoding factors</a></li></ul>
+</li>
+<li><a class="nav-link" href="#activity-6-filter-and-select"><span class="header-section-number">6.8</span> Activity 6: Filter and select</a></li>
+<li>
+<a class="nav-link" href="#activity-7-plots"><span class="header-section-number">6.9</span> Activity 7: Plots</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#scatterplots"><span class="header-section-number">6.9.1</span> Scatterplots</a></li>
+<li><a class="nav-link" href="#grouped-scatterplots"><span class="header-section-number">6.9.2</span> Grouped scatterplots</a></li>
+<li><a class="nav-link" href="#adding-a-theme"><span class="header-section-number">6.9.3</span> Adding a theme</a></li>
+<li><a class="nav-link" href="#editing-axis-labels-and-breaks"><span class="header-section-number">6.9.4</span> Editing axis labels and breaks</a></li>
+<li><a class="nav-link" href="#make-your-own"><span class="header-section-number">6.9.5</span> Make your own</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#finished-4"><span class="header-section-number">6.10</span> Finished</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/07-belong.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/07-belong.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div>
+</div>
+</body>
+</html>

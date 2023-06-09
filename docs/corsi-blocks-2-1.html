@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 6 Corsi Blocks 2 | Data Skills</title>
+<meta name="author" content="Emily Nordmann">
+<meta name="description" content="6.1 Intended Learning Outcomes By the end of this chapter you should be able to: Select variables Filter observations by multiple criteria Make plots look nice  6.2 Walkthrough video There is a...">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta property="og:title" content="Chapter 6 Corsi Blocks 2 | Data Skills">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/corsi-blocks-2-1.html">
+<meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta property="og:description" content="6.1 Intended Learning Outcomes By the end of this chapter you should be able to: Select variables Filter observations by multiple criteria Make plots look nice  6.2 Walkthrough video There is a...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 6 Corsi Blocks 2 | Data Skills">
+<meta name="twitter:description" content="6.1 Intended Learning Outcomes By the end of this chapter you should be able to: Select variables Filter observations by multiple criteria Make plots look nice  6.2 Walkthrough video There is a...">
+<meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Skills</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Stroop 1</a></li>
+<li><a class="" href="stroop-2.html"><span class="header-section-number">3</span> Stroop 2</a></li>
+<li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
+<li><a class="" href="corsi-blocks-2.html"><span class="header-section-number">5</span> Corsi Blocks 2</a></li>
+<li><a class="active" href="corsi-blocks-2-1.html"><span class="header-section-number">6</span> Corsi Blocks 2</a></li>
+<li><a class="" href="belonging-1.html"><span class="header-section-number">7</span> Belonging 1</a></li>
+<li><a class="" href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="glossary-1.html"><span class="header-section-number">D</span> Glossary</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/psyteachr/data-skills-v2">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="corsi-blocks-2-1" class="section level1" number="6">
+<h1>
+<span class="header-section-number">6</span> Corsi Blocks 2<a class="anchor" aria-label="anchor" href="#corsi-blocks-2-1"><i class="fas fa-link"></i></a>
+</h1>
+<div id="sec-ilo-corsi-analysis" class="section level2" number="6.1">
+<h2>
+<span class="header-section-number">6.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#sec-ilo-corsi-analysis"><i class="fas fa-link"></i></a>
+</h2>
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>Select variables</li>
+<li>Filter observations by multiple criteria</li>
+<li>Make plots look nice</li>
+</ul>
+</div>
+<div id="sec-walkthrough-corsi-analysis" class="section level2" number="6.2">
+<h2>
+<span class="header-section-number">6.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-corsi-analysis"><i class="fas fa-link"></i></a>
+</h2>
+<p>There is a walkthrough video of this chapter available via <a href="">Echo360.</a> (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+</div>
+<div id="activity-1-set-up-1" class="section level2" number="6.3">
+<h2>
+<span class="header-section-number">6.3</span> Activity 1: Set-up<a class="anchor" aria-label="anchor" href="#activity-1-set-up-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Login to the server and then:</p>
+<ul>
+<li>Open your Corsi Block project;</li>
+<li>Open the <code>corsi_stub2.Rmd</code> Markdown file that we'll use for this chapter;</li>
+<li>Your environment should be clear but if there are objects in it, remove them by pressing the brush icon.</li>
+</ul>
+</div>
+<div id="activity-2-loading-the-data" class="section level2" number="6.4">
+<h2>
+<span class="header-section-number">6.4</span> Activity 2: Loading the data<a class="anchor" aria-label="anchor" href="#activity-2-loading-the-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>In code chunk 1, write and run the code that:</p>
+<ul>
+<li>Loads the <code class="package">tidyverse</code>
+</li>
+<li>Loads <code>demographic_data.csv</code> into an object named <code>demographic_data</code> using the function <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>
+</li>
+<li>Loads <code>score_data.csv</code> into an object named <code>score_data</code> using the function <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code>
+</li>
+<li>Joins the two datasets together using <code><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join()</a></code> by their common column (<code>Participant</code>) and saves it in an object named <code>full_dat</code>
+</li>
+</ul>
+<p>The final step might be a bit tricky to do from memory as you've only done it once but try and do the others without looking at the hint first.</p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb56"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">package_name</span><span class="op">)</span></span>
+<span><span class="va">object_name1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"file_name1.csv"</span><span class="op">)</span></span>
+<span><span class="va">object_name2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"file_name1.csv"</span><span class="op">)</span></span>
+<span><span class="va">object_name3</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">table1</span>, y <span class="op">=</span> <span class="va">table2</span>, by <span class="op">=</span> <span class="st">"common_columns"</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
+<span><span class="va">score_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"score_data.csv"</span><span class="op">)</span></span>
+<span><span class="va">full_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demographic_data</span>, </span>
+<span>                       y <span class="op">=</span> <span class="va">score_data</span>, </span>
+<span>                       by <span class="op">=</span> <span class="st">"Participant"</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="activity-3-selecting-variables" class="section level2" number="6.5">
+<h2>
+<span class="header-section-number">6.5</span> Activity 3: Selecting variables<a class="anchor" aria-label="anchor" href="#activity-3-selecting-variables"><i class="fas fa-link"></i></a>
+</h2>
+<p>Often you will have more variables (columns) that you need. For the analysis we're interested in, we really only need three columns, <code>Participant</code>, <code>Condition</code>, and <code>Corsi_Score</code>.</p>
+<p>You can create a new dataset with just the columns you want using the <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> function. You can either specify the columns you want to keep:</p>
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Participant</span>, <span class="va">Condition</span>, <span class="va">Corsi_Score</span><span class="op">)</span></span></code></pre></div>
+<p>Or you could specify which columns you want to drop using <code>-variable</code>:</p>
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Gender</span>, <span class="op">-</span><span class="va">Age</span><span class="op">)</span></span></code></pre></div>
+<p>Which method you use will depend on how many variables you have, sometimes it's quicker to specify that ones you want, sometimes it's quicker to specify the ones you don't want. Additionally, the columns in the object you create will be arranged in the order you state them so you can also use <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> to rearrange the order of your columns.</p>
+<ul>
+<li>In code chunk 2, use <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> to create a new object named <code>analysis_data</code> that just contains the columns <code>Participant</code>, <code>Condition</code>, <code>Age</code>, and <code>Corsi_Score</code> in that order. Your starting dataset should be <code>full_dat</code>.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">column1</span>, <span class="va">column2</span>, <span class="va">column3</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">analysis_data</span> <span class="op">&lt;-</span> <span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Participant</span>, <span class="va">Condition</span>, <span class="va">Age</span>, <span class="va">Corsi_Score</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="activity-4-filtering-observations" class="section level2" number="6.6">
+<h2>
+<span class="header-section-number">6.6</span> Activity 4: Filtering observations<a class="anchor" aria-label="anchor" href="#activity-4-filtering-observations"><i class="fas fa-link"></i></a>
+</h2>
+<p>Whilst <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> is used to pick and choose columns, <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> is used to pick which rows of data you want to keep based on one or more criteria.</p>
+<p><code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> is very powerful and can be used in a number of ways. For example, you can use it to select rows where one of the variables equals an exact value. If this value is text, it should be in quotation marks (e.g., <code>"man"</code>) but if it's a number it doesn't need to be. You do have to use the double equal sign in both though:</p>
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># only keep data from men</span></span>
+<span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Gender</span> <span class="op">==</span> <span class="st">"man"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># only keep data from ppts who are exactly 18</span></span>
+<span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">==</span> <span class="fl">18</span><span class="op">)</span></span></code></pre></div>
+<p>You can also use it to keep a range of values. For numerical values, you can do this by specifying criteria like more than or less than.</p>
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># only keep data from ppts whose Age is more than 18</span></span>
+<span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;</span> <span class="fl">18</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># only keep data from ppts whose Age is more than or equal to 18</span></span>
+<span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;=</span> <span class="fl">18</span><span class="op">)</span></span></code></pre></div>
+<p>You can also specify a range of values using some slightly weird notation <code>%in%</code> which will keep any row where the value equals one of the ones you specify. Whenever you have to enter multiple values to a single argument, you need to wrap them in <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> which stands for <strong>combine</strong>. A common error is to forget to use <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> when you've got multiple values - make a note of this!</p>
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># keep ppts whose Age equals 18, 25, or 30</span></span>
+<span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">18</span>,<span class="fl">25</span>,<span class="fl">30</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># keep pppts whose Gender equals man or woman</span></span>
+<span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Gender</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Man"</span>, <span class="st">"Woman"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Finally, you can also combine multiple criteria using <code>&amp;</code> (AND) or <code>|</code> (OR):</p>
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># keep data from men over 30</span></span>
+<span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">&amp;</span> <span class="va">Gender</span> <span class="op">==</span> <span class="st">"Man"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># keep data from men over 30 or non-binary under 25</span></span>
+<span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">&amp;</span> <span class="va">Gender</span> <span class="op">==</span> <span class="st">"Man"</span> <span class="op">|</span></span>
+<span>           <span class="va">Age</span> <span class="op">&lt;</span> <span class="fl">25</span> <span class="op">&amp;</span> <span class="va">Gender</span> <span class="op">==</span> <span class="st">"Non-Binary"</span><span class="op">)</span></span></code></pre></div>
+<div class="info">
+<p>The <code>|</code> symbol can be a little hard to find on the keyboard. Normally you can type it by pressing <code>Shift + \</code> . The key will likely show a symbol of a bar split in two which is slightly confusing.</p>
+</div>
+<p>Previous research (e.g., <a href="https://www.hesterlab.org/wp-content/uploads/publications/JINS-2004-Hester.pdf">Hester at el., 2004</a>)has found that age can affect performance on the Corsi block task.</p>
+<ul>
+<li>In code chunk 3, use <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> to create a new object named <code>age_control</code> that just has data from participants whose age is 20 or older but 30 or younger. Your starting dataset should be <code>analysis_data</code>
+</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">variable</span> <span class="op">&gt;=</span> <span class="fl">20</span> <span class="op">&amp;</span> <span class="va">variable</span> <span class="op">&lt;=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">age_control</span> <span class="op">&lt;-</span> <span class="va">analysis_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;=</span> <span class="fl">20</span> <span class="op">&amp;</span> <span class="va">Age</span> <span class="op">&lt;=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
+<p>How many participants are left in the sample after filtering for age? <input class="webex-solveme nospaces" size="3" data-answer='["163"]'></p>
+</div>
+<div id="activity-5-summarise" class="section level2" number="6.7">
+<h2>
+<span class="header-section-number">6.7</span> Activity 5: Summarise<a class="anchor" aria-label="anchor" href="#activity-5-summarise"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now we have reduced the dataset down to just the variables and observations we're interesting in, let's compute the descriptive statistics and visualise this reduced sample.</p>
+<ul>
+<li>In code chunk 4, calculate the mean score (<code>Corsi_Score</code>) and standard deviation for each group (<code>Condition</code>) using the data set <code>age_control</code>. Save it in an object named <code>group_stats</code> and call the column names <code>mean_score</code> and <code>sd_score</code>. You will need to use <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> to do this.</li>
+<li>You've done this a couple of times before now, try doing it from memory and talk it through with your group before you look at the hint or solution.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">grouping_variable</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>column_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">measurement</span><span class="op">)</span>,</span>
+<span>            column_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">measurement</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">group_stats</span> <span class="op">&lt;-</span> <span class="va">age_control</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Condition</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span>,</span>
+<span>            sd_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="activity-6-visualise" class="section level2" number="6.8">
+<h2>
+<span class="header-section-number">6.8</span> Activity 6: Visualise<a class="anchor" aria-label="anchor" href="#activity-6-visualise"><i class="fas fa-link"></i></a>
+</h2>
+<p>We also want to create a boxplot of the scores in each group.</p>
+<ul>
+<li>In code chunk 5, write and run the code that creates a boxplot of the <code>Corsi_Scores</code> for each <code>Condition</code>.</li>
+<li>Use <code>age_control</code> as your dataset.</li>
+<li>The grouping variable should be mapped to the <code>x</code> axis and the measurement should be mapped to the <code>y</code> axis.</li>
+<li>You've done this before, use the search function in the book to find an example.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">grouping_variable</span>, y <span class="op">=</span> <span class="va">measurement</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, y <span class="op">=</span> <span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+<p>Is the hypothesis that sleep deprivation will negatively affect spatial working memory supported in the 20-30 age group? <select class="webex-select"><option value="blank"></option>
+<option value="answer">Supported</option>
+<option value="">Rejected</option></select></p>
+</div>
+<div id="activity-7-make-it-look-nice" class="section level2" number="6.9">
+<h2>
+<span class="header-section-number">6.9</span> Activity 7: Make it look nice<a class="anchor" aria-label="anchor" href="#activity-7-make-it-look-nice"><i class="fas fa-link"></i></a>
+</h2>
+<div id="adding-colour" class="section level3" number="6.9.1">
+<h3>
+<span class="header-section-number">6.9.1</span> Adding colour<a class="anchor" aria-label="anchor" href="#adding-colour"><i class="fas fa-link"></i></a>
+</h3>
+<p><code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> gives you a huge amount of control over how your plots look. First, we can add colour by adding <code>fill</code> to the mapping. <code>fill</code> also takes the value <code>Condition</code> because we want a different colour for each level of condition.</p>
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, </span>
+<span>                        y <span class="op">=</span> <span class="va">Corsi_Score</span>, </span>
+<span>                        fill <span class="op">=</span> <span class="va">Condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>By default, any time you add in colour as a variable, <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> will produce a legend guide to tell you what the colours means. Sometimes this is necessary because you can't read the plot without knowing what the colours mean, but in this case, we already know what the colours mean because it's on the x-axis so all this legend is doing is taking up space. We can remove it by adding a layer and a call to <code><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides()</a></code>.</p>
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, </span>
+<span>                        y <span class="op">=</span> <span class="va">Corsi_Score</span>, </span>
+<span>                        fill <span class="op">=</span> <span class="va">Condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-19-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>For reasons that are unclear, the default colours in <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> are extremely unhelpful to most colour-blind people so it's best to change them from the default. Thankfully there are built-in colour scales we can use, here, let's try the <code>viridis</code> scale by adding on a layer of <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d()</a></code>.</p>
+<ul>
+<li>The viridis palette has 8 options, in code chunk 6, add the below code and try changing <code>option</code> from any letter from A to H and see which one your favourite is.</li>
+<li>Sometimes when you add in colour, it can make the black lines harder to read. One approach to this problem is to reduce the transparency of the colour fill by using the argument <code>alpha</code> which will take a value of 0 (completely transparent) to 1 (fully opaque). Try changing this value to see which value works best (sometimes it is trial-and-error):</li>
+</ul>
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, </span>
+<span>                        y <span class="op">=</span> <span class="va">Corsi_Score</span>, </span>
+<span>                        fill <span class="op">=</span> <span class="va">Condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"E"</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+<div id="reordering-factors" class="section level3" number="6.9.2">
+<h3>
+<span class="header-section-number">6.9.2</span> Reordering factors<a class="anchor" aria-label="anchor" href="#reordering-factors"><i class="fas fa-link"></i></a>
+</h3>
+<p>There are many different types of data but two important concepts are discrete and continuous variables.</p>
+<p><strong>Discrete variables</strong> are variables that can only take on specific values or categories. These values are often counted and are typically whole numbers or categories. In our dataset, condition is an example of a discrete variable.</p>
+<p>In contrast, <strong>continuous variables</strong> are those that can take on any value within a specific range or interval. These variables can be measured at different levels of precision and can include fractions or decimals. In our dataset, age is an example of a continuous variable.</p>
+<p>What type of variable is <code>corsi_score</code>? <select class="webex-select"><option value="blank"></option>
+<option value="">continuous</option>
+<option value="answer">discrete</option></select></p>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>A lot of the time, whether a variable is discrete or continuous is easy enough to spot by whether the data is text (probably discrete) or numeric (probably continuous), however, this isn't always the case. Whilst the corsi score is a number, it can only take on a specific and relatively set of values (the whole numbers 1-9). In other cases you might have a category coded as numbers (e.g., gender coded as 1, 2, 3)</p>
+</div>
+<p>In R, <strong>factors</strong> are a type of variable that represents categorical data with distinct levels or categories. It is similar to a discrete variable because both involve distinct values or categories. By default, R will order any factors alpha-numerically. Sometimes this is what you want but sometimes you'd prefer a different order, for example if we make a bar chart of the counts of how many participants of each gender there are it will look like this:</p>
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">demographic_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;"></div>
+<p>But you may prefer to reorder the factor levels using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code>. The function <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> is used to create new variables or over-write existing ones and we're going to use it a lot.</p>
+<p>Because we're overwriting the variables in an existing object rather than creating new ones, this code can seem a bit confusing but you can read it as "start with the dataset demographic data and then, overwrite the column Gender with Gender as a reordered factor and arrange the levels in the order woman, man, non-binary and save it all in the original object". Because we're passing multiple values to <code>levels</code> we to use <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> to combine them all.</p>
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="va">demographic_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">Gender</span>, </span>
+<span>                         levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Woman"</span>, <span class="st">"Man"</span>, <span class="st">"Non-Binary"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>If you run the plot code again, you'll see it has updated the order:</p>
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">demographic_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
+<div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;"></div>
+<ul>
+<li>In code chunk 7, use <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code>factor</code> to reorder the variable <code>Condition</code> in the dataset <code>age_control</code> so that the bars are in the order "Sleep deprived", "4 hours sleep", "8 hours sleep" and then run the box plot code again.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>variable_to_reorder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">variable_to_reorder</span>, </span>
+<span>                                      levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"condition1"</span>,  <span class="st">"condition2"</span>, <span class="st">"condition3"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># relevel the factor</span></span>
+<span><span class="va">age_control</span> <span class="op">&lt;-</span> <span class="va">age_control</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">Condition</span>, </span>
+<span>                            levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sleep deprived"</span>,  <span class="st">"4 hours sleep"</span>, <span class="st">"8 hours sleep"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># </span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, </span>
+<span>                        y <span class="op">=</span> <span class="va">Corsi_Score</span>, </span>
+<span>                        fill <span class="op">=</span> <span class="va">Condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">0.9</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"E"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-25-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
+</div>
+</div>
+<div id="finished-3" class="section level2" number="6.10">
+<h2>
+<span class="header-section-number">6.10</span> Finished<a class="anchor" aria-label="anchor" href="#finished-3"><i class="fas fa-link"></i></a>
+</h2>
+<p>Finally, try knitting the file to HTML and remember to make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script>
+
+</div>
+<div class="chapter-nav">
+<div class="prev"><a href="corsi-blocks-2.html"><span class="header-section-number">5</span> Corsi Blocks 2</a></div>
+<div class="next"><a href="belonging-1.html"><span class="header-section-number">7</span> Belonging 1</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#corsi-blocks-2-1"><span class="header-section-number">6</span> Corsi Blocks 2</a></li>
+<li><a class="nav-link" href="#sec-ilo-corsi-analysis"><span class="header-section-number">6.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#sec-walkthrough-corsi-analysis"><span class="header-section-number">6.2</span> Walkthrough video</a></li>
+<li><a class="nav-link" href="#activity-1-set-up-1"><span class="header-section-number">6.3</span> Activity 1: Set-up</a></li>
+<li><a class="nav-link" href="#activity-2-loading-the-data"><span class="header-section-number">6.4</span> Activity 2: Loading the data</a></li>
+<li><a class="nav-link" href="#activity-3-selecting-variables"><span class="header-section-number">6.5</span> Activity 3: Selecting variables</a></li>
+<li><a class="nav-link" href="#activity-4-filtering-observations"><span class="header-section-number">6.6</span> Activity 4: Filtering observations</a></li>
+<li><a class="nav-link" href="#activity-5-summarise"><span class="header-section-number">6.7</span> Activity 5: Summarise</a></li>
+<li><a class="nav-link" href="#activity-6-visualise"><span class="header-section-number">6.8</span> Activity 6: Visualise</a></li>
+<li>
+<a class="nav-link" href="#activity-7-make-it-look-nice"><span class="header-section-number">6.9</span> Activity 7: Make it look nice</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#adding-colour"><span class="header-section-number">6.9.1</span> Adding colour</a></li>
+<li><a class="nav-link" href="#reordering-factors"><span class="header-section-number">6.9.2</span> Reordering factors</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#finished-3"><span class="header-section-number">6.10</span> Finished</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/06-corsi-analysis.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/06-corsi-analysis.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-09.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</div>
+</body>
+</html>

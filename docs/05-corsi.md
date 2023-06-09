@@ -1,8 +1,8 @@
 
-# Intro to Corsi Blocks
 
 
 
+# Corsi Blocks 1
 
 ## Intended Learning Outcomes {#sec-ilo-corsi}
 
@@ -13,7 +13,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-corsi}
 
-There is a walkthrough video of this chapter available via [Echo360.]() We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Echo360.]() (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: The Corsi Block Task
 
@@ -250,6 +250,13 @@ overall_score <- score_data %>%
 
 
 We can also produce a histogram to visualise the distribution of the scores so let's explain a little more how about the plot code works.
+
+ggplot() builds plots by combining layers. If you're used to making plots in Excel this might seem a bit odd at first, however, it means that you can customise each layer and R is capable of making very complex and beautiful figures ([this website](https://www.data-to-viz.com/) gives you a good sense of what's possible).
+
+<div class="figure" style="text-align: center">
+<img src="images/corsi/layers.png" alt="ggplot Layers from Field et al. (2012)" width="100%" />
+<p class="caption">(\#fig:img-layers)ggplot Layers from Field et al. (2012)</p>
+</div>
 
 * The main function we use is `ggplot()` which is from the <code class='package'>ggplot2</code> and is loaded as part of the <code class='package'>tidyverse</code>. `ggplot()` works on a system of layers.
 * The first layer sets up what data the plot will use and the "aesthetic mapping" (`aes()`) which means which variables should be represented on each axis. We want to produce a histogram of the Corsi block scores so we tell `ggplot()` to put the variable `Corsi_Score` on the x-axis.

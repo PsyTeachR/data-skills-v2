@@ -79,12 +79,13 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Overview</a></li>
 <li><a class="active" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
-<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
-<li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Stroop 1</a></li>
+<li><a class="" href="stroop-2.html"><span class="header-section-number">3</span> Stroop 2</a></li>
 <li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
-<li><a class="" href="intro-to-corsi-blocks.html"><span class="header-section-number">5</span> Intro to Corsi Blocks</a></li>
-<li><a class="" href="corsi-analysis.html"><span class="header-section-number">6</span> Corsi analysis</a></li>
-<li><a class="" href="who-knows.html"><span class="header-section-number">7</span> Who knows</a></li>
+<li><a class="" href="corsi-blocks-1.html"><span class="header-section-number">5</span> Corsi Blocks 1</a></li>
+<li><a class="" href="corsi-blocks-2.html"><span class="header-section-number">6</span> Corsi Blocks 2</a></li>
+<li><a class="" href="belonging-1.html"><span class="header-section-number">7</span> Belonging 1</a></li>
+<li><a class="" href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -121,7 +122,7 @@
 <h2>
 <span class="header-section-number">1.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-intro"><i class="fas fa-link"></i></a>
 </h2>
-<p>There is a walkthrough video of this chapter available via <a href="https://echo360.org.uk/media/3861d902-df69-417d-8f27-259089f992b8/public">Echo360.</a> We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+<p>There is a walkthrough video of this chapter available via <a href="">Echo360.</a> (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
 </div>
 <div id="sec-intro-r" class="section level2" number="1.3">
 <h2>
@@ -369,12 +370,12 @@ Figure 1.7: Creating a new R chunk
 <ul>
 <li>First, copy and paste this text exactly (do not change anything) to the <strong>white space</strong> underneath your code chunk.</li>
 </ul>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="sec-intro.html#cb4-1" aria-hidden="true" tabindex="-1"></a>My name is <span class="st">`</span><span class="at">r name</span><span class="st">`</span> and I am <span class="st">`</span><span class="at">r age</span><span class="st">`</span> years old. It is <span class="st">`</span><span class="at">r birthday - today</span><span class="st">`</span> days until my birthday.</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="sec-intro.html#cb4-1" tabindex="-1"></a>My name is <span class="st">`</span><span class="at">r name</span><span class="st">`</span> and I am <span class="st">`</span><span class="at">r age</span><span class="st">`</span> years old. It is <span class="st">`</span><span class="at">r birthday - today</span><span class="st">`</span> days until my birthday.</span></code></pre></div>
 <ul>
 <li>Now, we're going to "knit" our file. This simply means that we're going to compile our code into a document that is more presentable. To do this click <code>Knit</code> -&gt; <code>Knit to HMTL</code>. R Markdown will create a new HTML document and it will automatically save this file in your project working directory.</li>
 </ul>
 <p>As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
-<p><strong>My name is Emily and I am 38 years old. It is 406 days until my birthday.</strong></p>
+<p><strong>My name is Emily and I am 38 years old. It is 398 days until my birthday.</strong></p>
 <p>We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it!</p>
 <p>There are a few final things to note about knitting that will be useful for the homework:</p>
 <ul>
@@ -677,7 +678,7 @@ $( document ).ready(function() {
 });
 </script><div class="chapter-nav">
 <div class="prev"><a href="index.html">Overview</a></div>
-<div class="next"><a href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></div>
+<div class="next"><a href="stroop.html"><span class="header-section-number">2</span> Stroop 1</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -729,7 +730,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-01.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-09.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

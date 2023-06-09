@@ -4,18 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 6 Corsi analysis | Data Skills</title>
+<title>Chapter 5 Corsi analysis | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="description" content="6.1 Intended Learning Outcomes By the end of this chapter you should be able to: Select variables Filter observations by multiple criteria Make plots look nice  6.2 Walkthrough video There is a...">
+<meta name="description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Select variables Filter observations by multiple criteria Make plots look nice  5.2 Walkthrough video There is a...">
 <meta name="generator" content="bookdown 0.34 with bs4_book()">
-<meta property="og:title" content="Chapter 6 Corsi analysis | Data Skills">
+<meta property="og:title" content="Chapter 5 Corsi analysis | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/corsi-analysis.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
-<meta property="og:description" content="6.1 Intended Learning Outcomes By the end of this chapter you should be able to: Select variables Filter observations by multiple criteria Make plots look nice  6.2 Walkthrough video There is a...">
+<meta property="og:description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Select variables Filter observations by multiple criteria Make plots look nice  5.2 Walkthrough video There is a...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 6 Corsi analysis | Data Skills">
-<meta name="twitter:description" content="6.1 Intended Learning Outcomes By the end of this chapter you should be able to: Select variables Filter observations by multiple criteria Make plots look nice  6.2 Walkthrough video There is a...">
+<meta name="twitter:title" content="Chapter 5 Corsi analysis | Data Skills">
+<meta name="twitter:description" content="5.1 Intended Learning Outcomes By the end of this chapter you should be able to: Select variables Filter observations by multiple criteria Make plots look nice  5.2 Walkthrough video There is a...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -82,9 +82,9 @@
 <li><a class="" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
 <li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
 <li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
-<li><a class="" href="intro-to-corsi-blocks.html"><span class="header-section-number">5</span> Intro to Corsi Blocks</a></li>
-<li><a class="active" href="corsi-analysis.html"><span class="header-section-number">6</span> Corsi analysis</a></li>
-<li><a class="" href="who-knows.html"><span class="header-section-number">7</span> Who knows</a></li>
+<li><a class="active" href="corsi-analysis.html"><span class="header-section-number">5</span> Corsi analysis</a></li>
+<li><a class="" href="intro-to-belonging.html"><span class="header-section-number">6</span> Intro to Belonging</a></li>
+<li><a class="" href="belonging-analysis.html"><span class="header-section-number">7</span> Belonging analysis</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -99,13 +99,13 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="corsi-analysis" class="section level1" number="6">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="corsi-analysis" class="section level1" number="5">
 <h1>
-<span class="header-section-number">6</span> Corsi analysis<a class="anchor" aria-label="anchor" href="#corsi-analysis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5</span> Corsi analysis<a class="anchor" aria-label="anchor" href="#corsi-analysis"><i class="fas fa-link"></i></a>
 </h1>
-<div id="sec-ilo-corsi-analysis" class="section level2" number="6.1">
+<div id="sec-ilo-corsi-analysis" class="section level2" number="5.1">
 <h2>
-<span class="header-section-number">6.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#sec-ilo-corsi-analysis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#sec-ilo-corsi-analysis"><i class="fas fa-link"></i></a>
 </h2>
 <p>By the end of this chapter you should be able to:</p>
 <ul>
@@ -114,15 +114,15 @@
 <li>Make plots look nice</li>
 </ul>
 </div>
-<div id="sec-walkthrough-corsi-analysis" class="section level2" number="6.2">
+<div id="sec-walkthrough-corsi-analysis" class="section level2" number="5.2">
 <h2>
-<span class="header-section-number">6.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-corsi-analysis"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-corsi-analysis"><i class="fas fa-link"></i></a>
 </h2>
 <p>There is a walkthrough video of this chapter available via <a href="">Echo360.</a> (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
 </div>
-<div id="activity-1-set-up-1" class="section level2" number="6.3">
+<div id="activity-1-set-up-1" class="section level2" number="5.3">
 <h2>
-<span class="header-section-number">6.3</span> Activity 1: Set-up<a class="anchor" aria-label="anchor" href="#activity-1-set-up-1"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.3</span> Activity 1: Set-up<a class="anchor" aria-label="anchor" href="#activity-1-set-up-1"><i class="fas fa-link"></i></a>
 </h2>
 <p>Login to the server and then:</p>
 <ul>
@@ -131,9 +131,9 @@
 <li>Your environment should be clear but if there are objects in it, remove them by pressing the brush icon.</li>
 </ul>
 </div>
-<div id="activity-2-loading-the-data" class="section level2" number="6.4">
+<div id="activity-2-loading-the-data" class="section level2" number="5.4">
 <h2>
-<span class="header-section-number">6.4</span> Activity 2: Loading the data<a class="anchor" aria-label="anchor" href="#activity-2-loading-the-data"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.4</span> Activity 2: Loading the data<a class="anchor" aria-label="anchor" href="#activity-2-loading-the-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>In code chunk 1, write and run the code that:</p>
 <ul>
@@ -170,9 +170,9 @@ Solution
 <span>                       by <span class="op">=</span> <span class="st">"Participant"</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
-<div id="activity-3-selecting-variables" class="section level2" number="6.5">
+<div id="activity-3-selecting-variables" class="section level2" number="5.5">
 <h2>
-<span class="header-section-number">6.5</span> Activity 3: Selecting variables<a class="anchor" aria-label="anchor" href="#activity-3-selecting-variables"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.5</span> Activity 3: Selecting variables<a class="anchor" aria-label="anchor" href="#activity-3-selecting-variables"><i class="fas fa-link"></i></a>
 </h2>
 <p>Often you will have more variables (columns) that you need. For the analysis we're interested in, we really only need three columns, <code>Participant</code>, <code>Condition</code>, and <code>Corsi_Score</code>.</p>
 <p>You can create a new dataset with just the columns you want using the <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> function. You can either specify the columns you want to keep:</p>
@@ -204,9 +204,9 @@ Solution
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Participant</span>, <span class="va">Condition</span>, <span class="va">Age</span>, <span class="va">Corsi_Score</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
-<div id="activity-4-filtering-observations" class="section level2" number="6.6">
+<div id="activity-4-filtering-observations" class="section level2" number="5.6">
 <h2>
-<span class="header-section-number">6.6</span> Activity 4: Filtering observations<a class="anchor" aria-label="anchor" href="#activity-4-filtering-observations"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.6</span> Activity 4: Filtering observations<a class="anchor" aria-label="anchor" href="#activity-4-filtering-observations"><i class="fas fa-link"></i></a>
 </h2>
 <p>Whilst <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> is used to pick and choose columns, <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> is used to pick which rows of data you want to keep based on one or more criteria.</p>
 <p><code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> is very powerful and can be used in a number of ways. For example, you can use it to select rows where one of the variables equals an exact value. If this value is text, it should be in quotation marks (e.g., <code>"man"</code>) but if it's a number it doesn't need to be. You do have to use the double equal sign in both though:</p>
@@ -271,9 +271,9 @@ Solution
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;=</span> <span class="fl">20</span> <span class="op">&amp;</span> <span class="va">Age</span> <span class="op">&lt;=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
 <p>How many participants are left in the sample after filtering for age? <input class="webex-solveme nospaces" size="3" data-answer='["163"]'></p>
 </div>
-<div id="activity-5-summarise" class="section level2" number="6.7">
+<div id="activity-5-summarise" class="section level2" number="5.7">
 <h2>
-<span class="header-section-number">6.7</span> Activity 5: Summarise<a class="anchor" aria-label="anchor" href="#activity-5-summarise"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.7</span> Activity 5: Summarise<a class="anchor" aria-label="anchor" href="#activity-5-summarise"><i class="fas fa-link"></i></a>
 </h2>
 <p>Now we have reduced the dataset down to just the variables and observations we're interesting in, let's compute the descriptive statistics and visualise this reduced sample.</p>
 <ul>
@@ -301,9 +301,9 @@ Solution
 <span>            sd_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
-<div id="activity-6-visualise" class="section level2" number="6.8">
+<div id="activity-6-visualise" class="section level2" number="5.8">
 <h2>
-<span class="header-section-number">6.8</span> Activity 6: Visualise<a class="anchor" aria-label="anchor" href="#activity-6-visualise"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.8</span> Activity 6: Visualise<a class="anchor" aria-label="anchor" href="#activity-6-visualise"><i class="fas fa-link"></i></a>
 </h2>
 <p>We also want to create a boxplot of the scores in each group.</p>
 <ul>
@@ -333,13 +333,13 @@ Solution
 <option value="answer">Supported</option>
 <option value="">Rejected</option></select></p>
 </div>
-<div id="activity-7-make-it-look-nice" class="section level2" number="6.9">
+<div id="activity-7-make-it-look-nice" class="section level2" number="5.9">
 <h2>
-<span class="header-section-number">6.9</span> Activity 7: Make it look nice<a class="anchor" aria-label="anchor" href="#activity-7-make-it-look-nice"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9</span> Activity 7: Make it look nice<a class="anchor" aria-label="anchor" href="#activity-7-make-it-look-nice"><i class="fas fa-link"></i></a>
 </h2>
-<div id="adding-colour" class="section level3" number="6.9.1">
+<div id="adding-colour" class="section level3" number="5.9.1">
 <h3>
-<span class="header-section-number">6.9.1</span> Adding colour<a class="anchor" aria-label="anchor" href="#adding-colour"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9.1</span> Adding colour<a class="anchor" aria-label="anchor" href="#adding-colour"><i class="fas fa-link"></i></a>
 </h3>
 <p><code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> gives you a huge amount of control over how your plots look. First, we can add colour by adding <code>fill</code> to the mapping. <code>fill</code> also takes the value <code>Condition</code> because we want a different colour for each level of condition.</p>
 <div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
@@ -370,9 +370,9 @@ Solution
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"E"</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-20-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="reordering-factors" class="section level3" number="6.9.2">
+<div id="reordering-factors" class="section level3" number="5.9.2">
 <h3>
-<span class="header-section-number">6.9.2</span> Reordering factors<a class="anchor" aria-label="anchor" href="#reordering-factors"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.9.2</span> Reordering factors<a class="anchor" aria-label="anchor" href="#reordering-factors"><i class="fas fa-link"></i></a>
 </h3>
 <p>There are many different types of data but two important concepts are discrete and continuous variables.</p>
 <p><strong>Discrete variables</strong> are variables that can only take on specific values or categories. These values are often counted and are typically whole numbers or categories. In our dataset, condition is an example of a discrete variable.</p>
@@ -391,18 +391,19 @@ Explain this answer
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">demographic_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
 <div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;"></div>
-<p>But you may prefer to reorder the factor levels using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code>fct_level()</code>. The function <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> is used to create new variables or over-write existing ones and we're going to use it a lot.</p>
-<p>Because we're overwriting the variables in an existing object rather than creating new ones, this code can seem a bit confusing but you can read it as "start with the dataset demographic data and then, overwrite the column Gender with Gender as a reordered factor and arrange the levels in the order woman, man, non-binary and save it all in the original object".</p>
+<p>But you may prefer to reorder the factor levels using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code>. The function <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> is used to create new variables or over-write existing ones and we're going to use it a lot.</p>
+<p>Because we're overwriting the variables in an existing object rather than creating new ones, this code can seem a bit confusing but you can read it as "start with the dataset demographic data and then, overwrite the column Gender with Gender as a reordered factor and arrange the levels in the order woman, man, non-binary and save it all in the original object". Because we're passing multiple values to <code>levels</code> we to use <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> to combine them all.</p>
 <div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="va">demographic_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Gender <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">Gender</span>, <span class="st">"Woman"</span>, <span class="st">"Man"</span>, <span class="st">"Non-Binary"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">Gender</span>, </span>
+<span>                         levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Woman"</span>, <span class="st">"Man"</span>, <span class="st">"Non-Binary"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>If you run the plot code again, you'll see it has updated the order:</p>
 <div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">demographic_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
 <div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;"></div>
 <ul>
-<li>In code chunk 7, use <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code>fct_level</code> to reorder the variable <code>Condition</code> in the dataset <code>age_control</code> so that the bars are in the order "Sleep deprived", "4 hours sleep", "8 hours sleep" and then run the box plot code again.</li>
+<li>In code chunk 7, use <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code>factor</code> to reorder the variable <code>Condition</code> in the dataset <code>age_control</code> so that the bars are in the order "Sleep deprived", "4 hours sleep", "8 hours sleep" and then run the box plot code again.</li>
 </ul>
 <div class="webex-solution">
 <button>
@@ -410,7 +411,8 @@ Hint
 </button>
 <div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>variable_to_reorder <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">variable_to_reorder</span>, <span class="st">"condition1"</span>,  <span class="st">"condition2"</span>, <span class="st">"condition3"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>variable_to_reorder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">variable_to_reorder</span>, </span>
+<span>                                      levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"condition1"</span>,  <span class="st">"condition2"</span>, <span class="st">"condition3"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
@@ -419,7 +421,8 @@ Solution
 <div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># relevel the factor</span></span>
 <span><span class="va">age_control</span> <span class="op">&lt;-</span> <span class="va">age_control</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Condition <span class="op">=</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html">fct_relevel</a></span><span class="op">(</span><span class="va">Condition</span>, <span class="st">"Sleep deprived"</span>,  <span class="st">"4 hours sleep"</span>, <span class="st">"8 hours sleep"</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">Condition</span>, </span>
+<span>                            levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Sleep deprived"</span>,  <span class="st">"4 hours sleep"</span>, <span class="st">"8 hours sleep"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># </span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, </span>
@@ -433,9 +436,9 @@ Solution
 </div>
 </div>
 </div>
-<div id="finished-3" class="section level2" number="6.10">
+<div id="finished-3" class="section level2" number="5.10">
 <h2>
-<span class="header-section-number">6.10</span> Finished<a class="anchor" aria-label="anchor" href="#finished-3"><i class="fas fa-link"></i></a>
+<span class="header-section-number">5.10</span> Finished<a class="anchor" aria-label="anchor" href="#finished-3"><i class="fas fa-link"></i></a>
 </h2>
 <p>Finally, try knitting the file to HTML and remember to make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server.</p>
 
@@ -646,27 +649,27 @@ $( document ).ready(function() {
 
 </div>
 <div class="chapter-nav">
-<div class="prev"><a href="intro-to-corsi-blocks.html"><span class="header-section-number">5</span> Intro to Corsi Blocks</a></div>
-<div class="next"><a href="who-knows.html"><span class="header-section-number">7</span> Who knows</a></div>
+<div class="prev"><a href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></div>
+<div class="next"><a href="intro-to-belonging.html"><span class="header-section-number">6</span> Intro to Belonging</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#corsi-analysis"><span class="header-section-number">6</span> Corsi analysis</a></li>
-<li><a class="nav-link" href="#sec-ilo-corsi-analysis"><span class="header-section-number">6.1</span> Intended Learning Outcomes</a></li>
-<li><a class="nav-link" href="#sec-walkthrough-corsi-analysis"><span class="header-section-number">6.2</span> Walkthrough video</a></li>
-<li><a class="nav-link" href="#activity-1-set-up-1"><span class="header-section-number">6.3</span> Activity 1: Set-up</a></li>
-<li><a class="nav-link" href="#activity-2-loading-the-data"><span class="header-section-number">6.4</span> Activity 2: Loading the data</a></li>
-<li><a class="nav-link" href="#activity-3-selecting-variables"><span class="header-section-number">6.5</span> Activity 3: Selecting variables</a></li>
-<li><a class="nav-link" href="#activity-4-filtering-observations"><span class="header-section-number">6.6</span> Activity 4: Filtering observations</a></li>
-<li><a class="nav-link" href="#activity-5-summarise"><span class="header-section-number">6.7</span> Activity 5: Summarise</a></li>
-<li><a class="nav-link" href="#activity-6-visualise"><span class="header-section-number">6.8</span> Activity 6: Visualise</a></li>
+<li><a class="nav-link" href="#corsi-analysis"><span class="header-section-number">5</span> Corsi analysis</a></li>
+<li><a class="nav-link" href="#sec-ilo-corsi-analysis"><span class="header-section-number">5.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#sec-walkthrough-corsi-analysis"><span class="header-section-number">5.2</span> Walkthrough video</a></li>
+<li><a class="nav-link" href="#activity-1-set-up-1"><span class="header-section-number">5.3</span> Activity 1: Set-up</a></li>
+<li><a class="nav-link" href="#activity-2-loading-the-data"><span class="header-section-number">5.4</span> Activity 2: Loading the data</a></li>
+<li><a class="nav-link" href="#activity-3-selecting-variables"><span class="header-section-number">5.5</span> Activity 3: Selecting variables</a></li>
+<li><a class="nav-link" href="#activity-4-filtering-observations"><span class="header-section-number">5.6</span> Activity 4: Filtering observations</a></li>
+<li><a class="nav-link" href="#activity-5-summarise"><span class="header-section-number">5.7</span> Activity 5: Summarise</a></li>
+<li><a class="nav-link" href="#activity-6-visualise"><span class="header-section-number">5.8</span> Activity 6: Visualise</a></li>
 <li>
-<a class="nav-link" href="#activity-7-make-it-look-nice"><span class="header-section-number">6.9</span> Activity 7: Make it look nice</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#adding-colour"><span class="header-section-number">6.9.1</span> Adding colour</a></li>
-<li><a class="nav-link" href="#reordering-factors"><span class="header-section-number">6.9.2</span> Reordering factors</a></li>
+<a class="nav-link" href="#activity-7-make-it-look-nice"><span class="header-section-number">5.9</span> Activity 7: Make it look nice</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#adding-colour"><span class="header-section-number">5.9.1</span> Adding colour</a></li>
+<li><a class="nav-link" href="#reordering-factors"><span class="header-section-number">5.9.2</span> Reordering factors</a></li>
 </ul>
 </li>
-<li><a class="nav-link" href="#finished-3"><span class="header-section-number">6.10</span> Finished</a></li>
+<li><a class="nav-link" href="#finished-3"><span class="header-section-number">5.10</span> Finished</a></li>
 </ul>
 
       <div class="book-extra">
@@ -682,7 +685,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-01.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-09.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

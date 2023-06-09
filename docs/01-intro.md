@@ -15,7 +15,7 @@ If you're completely new to programming, you're unlikely to understand everythin
 
 ## Walkthrough video {#sec-walkthrough-intro}
 
-There is a walkthrough video of this chapter available via [Echo360.](https://echo360.org.uk/media/3861d902-df69-417d-8f27-259089f992b8/public) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Echo360.]() (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## R and RStudio {#sec-intro-r}
 
@@ -254,7 +254,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 38 years old. It is 406 days until my birthday.**
+**My name is Emily and I am 38 years old. It is 398 days until my birthday.**
 
 We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 

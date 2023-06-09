@@ -1,0 +1,171 @@
+---
+title: "belong_stub2"
+author: "GUID"
+date: "2023-06-07"
+output: html_document
+---
+
+You'll see that the code chunks that have the wrong code in them have `eval = FALSE` at the top. This means that when you knit the file, it won't evaluate the code in this chunks - this means you can still knit the file (as it won't knit if there are errors)
+
+## Activity 1
+
+```{r}
+# clear everything to start afresh
+lapply(paste("package:", names(sessionInfo()$otherPkgs), sep=""), 
+       detach, 
+       character.only = TRUE, 
+       unload = TRUE)
+
+rm(list = ls())
+```
+
+## Activity 2
+
+```{r chunk2a, eval=FALSE}
+# this is the error mode code
+demographic_data <- read_csv("demographic_data.csv")
+questionnaire_data <- read_csv("questionnaire_data.csv")
+```
+
+```{r chunk2b}
+# add the correct code in this chunk
+
+
+```
+
+What was the error and how did you fix it?
+
+
+## Activity 3
+
+```{r chunk3a, eval=FALSE}
+# this is the error mode code
+full_dat <- inner_join(x = demographic_data,
+                       y = questionnaire_data, 
+                       by = "participant", "level")
+```
+
+```{r chunk3b}
+# add the correct code in this chunk
+
+
+```
+
+What was the error and how did you fix it?
+
+## Activity 4
+
+```{r chunk4a, eval=FALSE}
+# this is the error mode code
+first_year <- full_dat %>%
+  filter(level = "First year")
+```
+
+```{r chunk4b}
+# add the correct code in this chunk
+
+
+```
+
+What was the error and how did you fix it?
+
+## Activity 5
+
+```{r chunk5a, eval=FALSE}
+# this is the error mode code
+first_year <- first_year %>%
+  mutate(gender_coded = factor(gender, levels = c(1,2,3),
+                         labels = c("Man", "Woman", "Non-binary")))
+
+first_year %>%
+  count(gender_coded)
+```
+
+```{r chunk5b}
+# add the correct code in this chunk
+
+
+```
+
+What was the error and how did you fix it?
+
+
+## Activity 6
+
+```{r chunk6a, eval=FALSE}
+# this is the error mode code
+first_year <- first_year %>%
+  selct(Participant, 
+         "gender" = gender_coded,
+         age,
+         belongingness:self_confidence) 
+```
+
+```{r chunk6b}
+# add the correct code in this chunk
+
+
+```
+
+What was the error and how did you fix it?
+
+
+## Activity7 
+
+```{r chunk7a, eval=FALSE}
+# this is the error mode code
+scores_gender <- first_year %>%
+  group_by(participant, gender) %>%
+  summarise(belong = mean(belongingness),
+            engagement = mean(engagement),
+            confidence = mean(self_confidence))
+```
+
+```{r chunk7b}
+# add the correct code in this chunk
+
+
+```
+
+What was the error and how did you fix it?
+
+
+## Activity 8
+
+```{r chunk8a, eval=FALSE}
+# this is the error mode code
+ggplot(first_year, aes(x = gender, y = belongingness) +
+  geom_violin() +
+  geom_boxplot(width = .2) 
+```
+
+```{r chunk8b}
+# add the correct code in this chunk
+
+
+```
+
+What was the error and how did you fix it?
+
+
+
+## Activity 9
+
+```{r chunk9a, eval=FALSE}
+# this is the error mode code
+ggplot(first_year, aes(x = belongingness, y = engagement,fill = gender)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_colour_viridis_d(option = "B")
+```
+
+```{r chunk9b}
+# add the correct code in this chunk
+
+
+```
+
+What was the error and how did you fix it?
+
+
+

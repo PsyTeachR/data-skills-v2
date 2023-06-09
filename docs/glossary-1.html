@@ -79,12 +79,13 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Overview</a></li>
 <li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
-<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
-<li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Stroop 1</a></li>
+<li><a class="" href="stroop-2.html"><span class="header-section-number">3</span> Stroop 2</a></li>
 <li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
-<li><a class="" href="intro-to-corsi-blocks.html"><span class="header-section-number">5</span> Intro to Corsi Blocks</a></li>
-<li><a class="" href="corsi-analysis.html"><span class="header-section-number">6</span> Corsi analysis</a></li>
-<li><a class="" href="who-knows.html"><span class="header-section-number">7</span> Who knows</a></li>
+<li><a class="" href="corsi-blocks-1.html"><span class="header-section-number">5</span> Corsi Blocks 1</a></li>
+<li><a class="" href="corsi-blocks-2.html"><span class="header-section-number">6</span> Corsi Blocks 2</a></li>
+<li><a class="" href="belonging-1.html"><span class="header-section-number">7</span> Belonging 1</a></li>
+<li><a class="" href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -99,14 +100,14 @@
         </div>
       </nav>
 </div>
-  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="glossary-1" class="section level1" number="11">
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="glossary-1" class="section level1" number="12">
 <h1>
 <span class="header-section-number">D</span> Glossary<a class="anchor" aria-label="anchor" href="#glossary-1"><i class="fas fa-link"></i></a>
 </h1>
 <p>You can use the <code>glossary()</code> function to automatically link to a term in the <a href="https://psyteachr.github.io/glossary/">psyTeachR glossary</a> or make your own project-specific glossary.</p>
 <p>This will create a link to the glossary and include a tooltip with a short definition when you hover over the term. Use the following syntax in inline r: <code>glossary("word")</code>. For example, common <a class="glossary" target="_blank" title="The kind of data represented by an object." href="https://psyteachr.github.io/glossary/d#data-type">data types</a> are <a class="glossary" target="_blank" title="A data type representing whole numbers." href="https://psyteachr.github.io/glossary/i#integer">integer</a>, <a class="glossary" target="_blank" title="A data type representing a real decimal number" href="https://psyteachr.github.io/glossary/d#double">double</a>, and <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a>.</p>
 <p>If you need to link to a definition, but are using a different form of the word, add the display version as the second argument (<code>display</code>). You can also override the automatic short definition by providing your own in the third argument (<code>def</code>). Add the argument <code>link = FALSE</code> if you just want the hover definition and not a link to the psyTeachR glossary.</p>
-<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb124"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glossary</span><span class="op">(</span><span class="st">"data type"</span>, </span>
 <span>         display <span class="op">=</span> <span class="st">"Data Types"</span>, </span>
 <span>         def <span class="op">=</span> <span class="st">"My custom definition of data types"</span>, </span>
@@ -115,7 +116,7 @@
 <p>You can add a glossary table to the end of a chapter with the following code. It creates a table of all terms used in that chapter previous to the <code>glossary_table()</code> function. It uses <code>kableExtra()</code>, so if you use it in a code chunk, set <code>results='asis'</code>.</p>
 <div class="verbatim">
 <pre class="sourceCode r"><code class="sourceCode R">```{r, echo=FALSE, results='asis'}</code></pre>
-<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb125"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu">glossary_table</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre class="sourceCode r"><code class="sourceCode R">```</code></pre>
 </div>
@@ -389,7 +390,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-01.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-09.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

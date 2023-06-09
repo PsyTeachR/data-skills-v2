@@ -4,17 +4,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 2 Intro to Stroop effect | Data Skills</title>
+<title>Chapter 2 Stroop 1 | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
 <meta name="description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Load and use packages and functions in R Load and check...">
 <meta name="generator" content="bookdown 0.34 with bs4_book()">
-<meta property="og:title" content="Chapter 2 Intro to Stroop effect | Data Skills">
+<meta property="og:title" content="Chapter 2 Stroop 1 | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/stroop.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <meta property="og:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Load and use packages and functions in R Load and check...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 2 Intro to Stroop effect | Data Skills">
+<meta name="twitter:title" content="Chapter 2 Stroop 1 | Data Skills">
 <meta name="twitter:description" content="2.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Stroop effect is and how is it measured Load and use packages and functions in R Load and check...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -79,12 +79,13 @@
         <ul class="book-toc list-unstyled">
 <li><a class="" href="index.html">Overview</a></li>
 <li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
-<li><a class="active" href="stroop.html"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
-<li><a class="" href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></li>
+<li><a class="active" href="stroop.html"><span class="header-section-number">2</span> Stroop 1</a></li>
+<li><a class="" href="stroop-2.html"><span class="header-section-number">3</span> Stroop 2</a></li>
 <li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
-<li><a class="" href="intro-to-corsi-blocks.html"><span class="header-section-number">5</span> Intro to Corsi Blocks</a></li>
-<li><a class="" href="corsi-analysis.html"><span class="header-section-number">6</span> Corsi analysis</a></li>
-<li><a class="" href="who-knows.html"><span class="header-section-number">7</span> Who knows</a></li>
+<li><a class="" href="corsi-blocks-1.html"><span class="header-section-number">5</span> Corsi Blocks 1</a></li>
+<li><a class="" href="corsi-blocks-2.html"><span class="header-section-number">6</span> Corsi Blocks 2</a></li>
+<li><a class="" href="belonging-1.html"><span class="header-section-number">7</span> Belonging 1</a></li>
+<li><a class="" href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -101,7 +102,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="stroop" class="section level1" number="2">
 <h1>
-<span class="header-section-number">2</span> Intro to Stroop effect<a class="anchor" aria-label="anchor" href="#stroop"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2</span> Stroop 1<a class="anchor" aria-label="anchor" href="#stroop"><i class="fas fa-link"></i></a>
 </h1>
 <div id="sec-ilo-stroop" class="section level2" number="2.1">
 <h2>
@@ -118,7 +119,7 @@
 <h2>
 <span class="header-section-number">2.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-stroop"><i class="fas fa-link"></i></a>
 </h2>
-<p>There is a walkthrough video of this chapter available via <a href="">Echo360.</a>) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+<p>There is a walkthrough video of this chapter available via <a href="">Echo360.</a> (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
 </div>
 <div id="activity-1-the-stroop-effect" class="section level2" number="2.3">
 <h2>
@@ -848,11 +849,11 @@ $( document ).ready(function() {
 });
 </script><div class="chapter-nav">
 <div class="prev"><a href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></div>
-<div class="next"><a href="stroop-analysis.html"><span class="header-section-number">3</span> Stroop analysis</a></div>
+<div class="next"><a href="stroop-2.html"><span class="header-section-number">3</span> Stroop 2</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#stroop"><span class="header-section-number">2</span> Intro to Stroop effect</a></li>
+<li><a class="nav-link" href="#stroop"><span class="header-section-number">2</span> Stroop 1</a></li>
 <li><a class="nav-link" href="#sec-ilo-stroop"><span class="header-section-number">2.1</span> Intended Learning Outcomes</a></li>
 <li><a class="nav-link" href="#sec-walkthrough-stroop"><span class="header-section-number">2.2</span> Walkthrough video</a></li>
 <li><a class="nav-link" href="#activity-1-the-stroop-effect"><span class="header-section-number">2.3</span> Activity 1: The Stroop Effect</a></li>
@@ -897,7 +898,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-01.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-09.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

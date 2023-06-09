@@ -1,5 +1,5 @@
 
-# Corsi analysis
+# Corsi Blocks 2
 
 
 
@@ -351,14 +351,15 @@ ggplot(demographic_data, aes(x = Gender)) +
 
 <img src="06-corsi-analysis_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;" />
 
-But you may prefer to reorder the factor levels using `mutate()` and `fct_level()`. The function `mutate()` is used to create new variables or over-write existing ones and we're going to use it a lot.
+But you may prefer to reorder the factor levels using `mutate()` and `factor()`. The function `mutate()` is used to create new variables or over-write existing ones and we're going to use it a lot.
 
-Because we're overwriting the variables in an existing object rather than creating new ones, this code can seem a bit confusing but you can read it as "start with the dataset demographic data and then, overwrite the column Gender with Gender as a reordered factor and arrange the levels in the order woman, man, non-binary and save it all in the original object".
+Because we're overwriting the variables in an existing object rather than creating new ones, this code can seem a bit confusing but you can read it as "start with the dataset demographic data and then, overwrite the column Gender with Gender as a reordered factor and arrange the levels in the order woman, man, non-binary and save it all in the original object". Because we're passing multiple values to `levels` we to use `c()` to combine them all.
 
 
 ```r
 demographic_data <- demographic_data %>%
-  mutate(Gender = fct_relevel(Gender, "Woman", "Man", "Non-Binary"))
+  mutate(Gender = factor(Gender, 
+                         levels = c("Woman", "Man", "Non-Binary")))
 ```
 
 If you run the plot code again, you'll see it has updated the order:
@@ -371,7 +372,7 @@ ggplot(demographic_data, aes(x = Gender)) +
 
 <img src="06-corsi-analysis_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;" />
 
-* In code chunk 7, use `mutate()` and `fct_level` to reorder the variable `Condition` in the dataset `age_control` so that the bars are in the order "Sleep deprived",  "4 hours sleep", "8 hours sleep" and then run the box plot code again.
+* In code chunk 7, use `mutate()` and `factor` to reorder the variable `Condition` in the dataset `age_control` so that the bars are in the order "Sleep deprived",  "4 hours sleep", "8 hours sleep" and then run the box plot code again.
 
 
 <div class='webex-solution'><button>Hint</button>
@@ -379,7 +380,8 @@ ggplot(demographic_data, aes(x = Gender)) +
 
 ```r
 dataset <- dataset %>%
-  mutate(variable_to_reorder = fct_relevel(variable_to_reorder, "condition1",  "condition2", "condition3"))
+  mutate(variable_to_reorder = factor(variable_to_reorder, 
+                                      levels = c("condition1",  "condition2", "condition3")))
 ```
 
 
@@ -393,7 +395,8 @@ dataset <- dataset %>%
 ```r
 # relevel the factor
 age_control <- age_control %>%
-  mutate(Condition = fct_relevel(Condition, "Sleep deprived",  "4 hours sleep", "8 hours sleep"))
+  mutate(Condition = factor(Condition, 
+                            levels = c("Sleep deprived",  "4 hours sleep", "8 hours sleep")))
 
 # 
 ggplot(age_control, aes(x = Condition, 
