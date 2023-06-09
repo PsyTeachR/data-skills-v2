@@ -561,7 +561,20 @@ A large part of coding is trying to figure why your code doesn't work and this i
 
 These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run. 
 
-1. Restart the R session (`Session - Restart R`) and clear you environment by clicking the brush icon. This should unload any packages you had loaded and also clear the environment. Make sure that the working directory is set to the right folder and then run the below code:
+1. To create the errors, you'll need to ensure you're working from a clean environment and new session. Run the following code which will clear all objects and unload any packages you have loaded:
+
+
+```r
+lapply(paste("package:", names(sessionInfo()$otherPkgs), sep=""), 
+       detach, 
+       character.only = TRUE, 
+       unload = TRUE)
+
+rm(list = ls())
+```
+
+
+2. Then run the below code:
 
 
 ```r

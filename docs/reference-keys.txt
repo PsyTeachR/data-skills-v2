@@ -54,7 +54,7 @@ using-a-function
 sec-function-help
 activity-5-loading-data
 sec-tidyverse
-read-in-the-data-sec-read_csv
+sec-read_csv
 activity-6-check-your-data
 activity-7-visualise-the-data
 finished-1

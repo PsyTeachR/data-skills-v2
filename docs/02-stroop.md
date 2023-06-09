@@ -110,13 +110,8 @@ The server will automatically unzip the files for you into your chosen folder an
 
 The zip file contains four files:
 
-* `stroop_stub1.Rmd` and `stroo_stub2.Rmd`: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the `stroop_sub1.Rmd` Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
+* `stroop_stub1.Rmd` and `stroop_stub2.Rmd`: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the `stroop_sub1.Rmd` Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
 * `participant_data.csv` is a data file that contains each participant's anonymous ID, age, and gender. This data is in <a class='glossary' target='_blank' title='A data format where all of the observations about one subject are in the same row' href='https://psyteachr.github.io/glossary/w#wide'>wide-form</a> which means that all of the observations about one subject are in the same row. There are 270 participants, so there are 270 rows of data.
-
-
-```r
-head(ppt_info)
-```
 
 <div class="kable-table">
 
@@ -168,11 +163,6 @@ head(ppt_info)
 * `experiment_data.csv` is a data file that contains each participant's anonymous ID, and mean reaction time for all the congruent and incongruent trials they completed. This data is in <a class='glossary' target='_blank' title='A data format where each observation is on a separate row' href='https://psyteachr.github.io/glossary/l#long'>long-form</a> where each observation is on a separate row so for the Stroop experiment, each participant has two rows because there are two observations (one for congruent trials and one for incongruent trials). So there are 270 participants, but 540 rows of data (270 * 2).
 
 You may be less familiar with this way of organising data, but for many functions in R your data must be stored this way. This semester, we'll provide you with the data in the format it needs to be in and next semester we'll show you how to transform it yourself.
-
-
-```r
-head(dat)
-```
 
 <div class="kable-table">
 
@@ -343,7 +333,7 @@ library(tidyverse)
 <p class="caption">(\#fig:img-tidyverse)Tidyverse message when successfully loaded</p>
 </div>
 
-### Read in the data {sec-read_csv}
+### Read in the data {#sec-read_csv}
 
 Now we can read in the data. To do this we will use the function `read_csv()` that allows us to read in .csv files, which are a type of data file. There are also functions that allow you to read in .xlsx  (Excel) files and other formats, however in this course we will only use .csv files.
 

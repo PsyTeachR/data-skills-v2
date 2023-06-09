@@ -140,7 +140,7 @@
 <span class="header-section-number">8.4</span> Activity 1: Setup<a class="anchor" aria-label="anchor" href="#activity-1-setup"><i class="fas fa-link"></i></a>
 </h2>
 <p>Login to the server and open <code>belong_stub2.Rmd</code>. To create the errors, you'll need to ensure you're working from a clean environment and new session. If you followed the instructions in Chapter 1, this should happen automatically but just in case, run the following code in code chunk 1 which will clear all objects and unload any packages you have loaded:</p>
-<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"package:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">otherPkgs</span><span class="op">)</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span>, </span>
 <span>       <span class="va">detach</span>, </span>
 <span>       character.only <span class="op">=</span> <span class="cn">TRUE</span>, </span>
@@ -154,7 +154,7 @@
 <span class="header-section-number">8.5</span> Activity 2: Load packages and data<a class="anchor" aria-label="anchor" href="#activity-2-load-packages-and-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>With this code, we want to use the function <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code> from the <code>tidyverse</code> package to load the data into two objects <code>demographic_data</code> and <code>questionnaire_data</code>. This code will produce an error and won't run.</p>
-<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">questionnaire_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"questionnaire_data.csv"</span><span class="op">)</span></span></code></pre></div>
 <div class="webex-solution">
@@ -169,7 +169,7 @@ Hint
 <span class="header-section-number">8.6</span> Activity 3: Join the datasets<a class="anchor" aria-label="anchor" href="#activity-3-join-the-datasets"><i class="fas fa-link"></i></a>
 </h2>
 <p>With this code, we want to join the two objects <code>demographic_data</code> and <code>questionnaire_data</code> together and save them in an object named <code>full_dat</code>. <code>full_dat</code> should have 1000 rows and 7 variables. This code will run, but it won't produce what you want.</p>
-<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb109"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demographic_data</span>,</span>
 <span>                       y <span class="op">=</span> <span class="va">questionnaire_data</span>, </span>
 <span>                       by <span class="op">=</span> <span class="st">"participant"</span>, <span class="st">"level"</span><span class="op">)</span></span></code></pre></div>
@@ -185,7 +185,7 @@ Hint
 <span class="header-section-number">8.7</span> Activity 4: Filter<a class="anchor" aria-label="anchor" href="#activity-4-filter"><i class="fas fa-link"></i></a>
 </h2>
 <p>Next, we want to filter the questionnaire data to only include first-year students:</p>
-<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb110"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">first_year</span> <span class="op">&lt;-</span> <span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span>level <span class="op">=</span> <span class="st">"First year"</span><span class="op">)</span></span></code></pre></div>
 <div class="webex-solution">
@@ -206,7 +206,7 @@ Hint
 </button>
 <p>Look at the order of the levels and labels and think about what 1, 2, and 3 are supposed to represent.</p>
 </div>
-<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb111"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">first_year</span> <span class="op">&lt;-</span> <span class="va">first_year</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender_coded <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">gender</span>, levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span>,<span class="fl">3</span><span class="op">)</span>,</span>
 <span>                         labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Man"</span>, <span class="st">"Woman"</span>, <span class="st">"Non-binary"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
@@ -225,7 +225,7 @@ Hint
 </button>
 <p>Typos are the most common cause of code not working. There are two of them in this code.</p>
 </div>
-<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb112"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">first_year</span> <span class="op">&lt;-</span> <span class="va">first_year</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu">selct</span><span class="op">(</span><span class="va">Participant</span>, </span>
 <span>         <span class="st">"gender"</span> <span class="op">=</span> <span class="va">gender_coded</span>,</span>
@@ -246,7 +246,7 @@ Hint
 </button>
 <p>If you're trying to calculate summary statistics by group, you only need to add the variables you want to create stats for to <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code>. If you get more rows of data than you want, you've probably got too many variables in <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code>, if you've got too few rows of data, you've probably not got all the variables you need.</p>
 </div>
-<div class="sourceCode" id="cb114"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb113"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">scores_gender</span> <span class="op">&lt;-</span> <span class="va">first_year</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">participant</span>, <span class="va">gender</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>belong <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">belongingness</span><span class="op">)</span>,</span>
@@ -264,9 +264,9 @@ Hint
 </button>
 <p>Every <code>(</code> needs a <code>)</code>.</p>
 </div>
-<div class="sourceCode" id="cb115"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb115-1"><a href="belonging-2.html#cb115-1" tabindex="-1"></a><span class="fu">ggplot</span>(first_year, <span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">y =</span> belongingness) <span class="sc">+</span></span>
-<span id="cb115-2"><a href="belonging-2.html#cb115-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
-<span id="cb115-3"><a href="belonging-2.html#cb115-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>) </span></code></pre></div>
+<div class="sourceCode" id="cb114"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb114-1"><a href="belonging-2.html#cb114-1" tabindex="-1"></a><span class="fu">ggplot</span>(first_year, <span class="fu">aes</span>(<span class="at">x =</span> gender, <span class="at">y =</span> belongingness) <span class="sc">+</span></span>
+<span id="cb114-2"><a href="belonging-2.html#cb114-2" tabindex="-1"></a>  <span class="fu">geom_violin</span>() <span class="sc">+</span></span>
+<span id="cb114-3"><a href="belonging-2.html#cb114-3" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> .<span class="dv">2</span>) </span></code></pre></div>
 </div>
 <div id="activity-9-scatterplot" class="section level2" number="8.12">
 <h2>
@@ -280,7 +280,7 @@ Hint
 </button>
 <p><code>fill</code> sets the color inside the points. Using <code>fill</code> with dots and lines might not make much of a difference because they don't have an area to fill. What other argument can you use to change the <code>colour</code>?</p>
 </div>
-<div class="sourceCode" id="cb116"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb115"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, y <span class="op">=</span> <span class="va">engagement</span>,fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span> <span class="op">+</span></span>

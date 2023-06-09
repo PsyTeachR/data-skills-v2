@@ -131,10 +131,10 @@ The server will automatically unzip the files for you into your chosen folder an
 
 The zip file contains four files:
 
-* `stroop_stub1.Rmd` and `stroo_stub2.Rmd`: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the `stroop_sub1.Rmd` Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
+* `stroop_stub1.Rmd` and `stroop_stub2.Rmd`: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the `stroop_sub1.Rmd` Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
 * `participant_data.csv` is a data file that contains each participant's anonymous ID, age, and gender. This data is in `r glossary("wide", "wide-form")` which means that all of the observations about one subject are in the same row. There are 270 participants, so there are 270 rows of data.
 
-```{r fig.cap= "Participant info data"}
+```{r fig.cap= "Participant info data", echo = FALSE}
 head(ppt_info)
 ```
 
@@ -143,7 +143,7 @@ head(ppt_info)
 
 You may be less familiar with this way of organising data, but for many functions in R your data must be stored this way. This semester, we'll provide you with the data in the format it needs to be in and next semester we'll show you how to transform it yourself.
 
-```{r}
+```{r echo = FALSE}
 head(dat)
 ```
 
@@ -267,7 +267,7 @@ knitr::include_graphics("images/stroop/tidyverse.png")
 
 ```
 
-### Read in the data {sec-read_csv}
+### Read in the data {#sec-read_csv}
 
 Now we can read in the data. To do this we will use the function `read_csv()` that allows us to read in .csv files, which are a type of data file. There are also functions that allow you to read in .xlsx  (Excel) files and other formats, however in this course we will only use .csv files.
 

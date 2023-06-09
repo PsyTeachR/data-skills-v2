@@ -223,12 +223,10 @@ Figure 1.2: Creating a new project
 <p>The zip file contains four files:</p>
 <ul>
 <li>
-<code>stroop_stub1.Rmd</code> and <code>stroo_stub2.Rmd</code>: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the <code>stroop_sub1.Rmd</code> Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.</li>
+<code>stroop_stub1.Rmd</code> and <code>stroop_stub2.Rmd</code>: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the <code>stroop_sub1.Rmd</code> Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.</li>
 <li>
 <code>participant_data.csv</code> is a data file that contains each participant's anonymous ID, age, and gender. This data is in <a class="glossary" target="_blank" title="A data format where all of the observations about one subject are in the same row" href="https://psyteachr.github.io/glossary/w#wide">wide-form</a> which means that all of the observations about one subject are in the same row. There are 270 participants, so there are 270 rows of data.</li>
 </ul>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">ppt_info</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr>
@@ -317,8 +315,6 @@ Man
 <code>experiment_data.csv</code> is a data file that contains each participant's anonymous ID, and mean reaction time for all the congruent and incongruent trials they completed. This data is in <a class="glossary" target="_blank" title="A data format where each observation is on a separate row" href="https://psyteachr.github.io/glossary/l#long">long-form</a> where each observation is on a separate row so for the Stroop experiment, each participant has two rows because there are two observations (one for congruent trials and one for incongruent trials). So there are 270 participants, but 540 rows of data (270 * 2).</li>
 </ul>
 <p>You may be less familiar with this way of organising data, but for many functions in R your data must be stored this way. This semester, we'll provide you with the data in the format it needs to be in and next semester we'll show you how to transform it yourself.</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/head.html">head</a></span><span class="op">(</span><span class="va">dat</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
 <thead><tr>
@@ -436,7 +432,7 @@ incongruent
 <ul>
 <li>In code chunk 1, type and run the below code to load the <code>beepr</code> package. If you can't remember how to run code, take a look back at Chapter <a href="sec-intro.html#sec-run-code">1.9.4</a>.</li>
 </ul>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">beepr</span><span class="op">)</span></span></code></pre></div>
 <p>You'll see <code><a href="https://rdrr.io/r/base/library.html">library(beepr)</a></code> appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.</p>
 <div id="using-a-function" class="section level3" number="2.8.1">
@@ -447,13 +443,13 @@ incongruent
 <ul>
 <li>In code chunk 2, write and run the below code to use the function <code><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep()</a></code> (make sure you have your sound on).</li>
 </ul>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <p>After the function name, there is a pair of parentheses, which contain zero or more <a class="glossary" target="_blank" title="A variable that provides input to a function." href="https://psyteachr.github.io/glossary/a#argument">arguments</a>. These are options that you can set. In the example above, the <code>sound</code> argument has a <a class="glossary" target="_blank" title="A value that a function uses for an argument if it is skipped." href="https://psyteachr.github.io/glossary/d#default-value">default value</a> of <code>1</code>, which makes a "ping" sound.</p>
 <ul>
 <li>In code chunk 2, add the below code to use a different sound and try changing the argument to an integer (whole number) between 1 and 11.</li>
 </ul>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span><span class="op">(</span>sound <span class="op">=</span> <span class="fl">8</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div id="sec-function-help" class="section level3" number="2.8.2">
@@ -465,7 +461,7 @@ incongruent
 <ul>
 <li>In the <strong>console</strong>, type and run the code for the different help options below. The reason you run the help code in the console not a code chunk is that you generally don't want to save this code in your script.</li>
 </ul>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># get help with a package</span></span>
 <span><span class="op">?</span><span class="va">beepr</span></span>
 <span></span>
@@ -534,7 +530,7 @@ incongruent
 <ul>
 <li>In code chunk 3, write and run the code to load the <code class="package">tidyverse</code>. When you run this code, you're going to get something that at first glance might look like an error but it's not, it's just telling you which packages it has loaded.</li>
 </ul>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span></code></pre></div>
 <div class="figure" style="text-align: center">
 <span style="display:block;" id="fig:img-tidyverse"></span>
@@ -543,16 +539,16 @@ Figure 2.1: Tidyverse message when successfully loaded
 </p>
 </div>
 </div>
-<div id="read-in-the-data-sec-read_csv" class="section level3" number="2.9.2">
+<div id="sec-read_csv" class="section level3" number="2.9.2">
 <h3>
-<span class="header-section-number">2.9.2</span> Read in the data {sec-read_csv}<a class="anchor" aria-label="anchor" href="#read-in-the-data-sec-read_csv"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.9.2</span> Read in the data<a class="anchor" aria-label="anchor" href="#sec-read_csv"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now we can read in the data. To do this we will use the function <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code> that allows us to read in .csv files, which are a type of data file. There are also functions that allow you to read in .xlsx (Excel) files and other formats, however in this course we will only use .csv files.</p>
 <p>First, we will create an object called <code>dat</code> that contains the data in the <code>experiment_data.csv</code> file. Then, we will create an object called <code>ppt_info</code> that contains the data in the <code>participant_data.csv</code>.</p>
 <ul>
 <li>In code chunk 4, write and run the below code to load the data files.</li>
 </ul>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"experiment_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">ppt_info</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span>file <span class="op">=</span> <span class="st">"participant_data.csv"</span><span class="op">)</span></span></code></pre></div>
 <div class="info">
@@ -584,7 +580,7 @@ Figure 2.1: Tidyverse message when successfully loaded
 <ul>
 <li>Copy, paste and run the below code in code chunk 6 to produce a bar graph that shows the number of men, women, and non-binary participants in the dataset.</li>
 </ul>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">ppt_info</span>, <span class="co"># data we're using</span></span>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender</span>, <span class="co"># variable we want to show as bars</span></span>
 <span>                     fill <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span> <span class="co"># make bars different colours</span></span>
@@ -606,7 +602,7 @@ Figure 2.2: Number of participants by gender
 <ul>
 <li>Copy, paste, and run the below code in code chunk 7 to create violin-boxplots of happiness scores for each income group.</li>
 </ul>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># make plot</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat</span>, <span class="co"># data we're using</span></span>
 <span>       <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">condition</span>, <span class="co"># grouping variable (IV)</span></span>
@@ -875,7 +871,7 @@ $( document ).ready(function() {
 <li>
 <a class="nav-link" href="#activity-5-loading-data"><span class="header-section-number">2.9</span> Activity 5: Loading data</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#sec-tidyverse"><span class="header-section-number">2.9.1</span> Load the Tidyverse</a></li>
-<li><a class="nav-link" href="#read-in-the-data-sec-read_csv"><span class="header-section-number">2.9.2</span> Read in the data {sec-read_csv}</a></li>
+<li><a class="nav-link" href="#sec-read_csv"><span class="header-section-number">2.9.2</span> Read in the data</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#activity-6-check-your-data"><span class="header-section-number">2.10</span> Activity 6: Check your data</a></li>
