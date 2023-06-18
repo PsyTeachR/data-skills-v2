@@ -195,7 +195,7 @@ Explain this answer
 <ul>
 <li>In code chunk 1, write three lines of code that load the tidyverse, load the file <code>participant-data.csv</code> into an object named <code>ppt_info</code>, and then load the file <code>experiment_data.csv</code> into an object named <code>dat</code>. Try and see if you can do this from memory and use the hints before you look at the solution - you'll learn much quicker if you do it this way (even if you don't get it right) than just going straight to the solution.</li>
 <li>Once you've loaded the data files, click on them to view them and check everything looks as it should.</li>
-<li>If you get an error, trouble-shoot with your group and also check the notes in Chapter @ref(sec-read_csv) on how to resolve it.</li>
+<li>If you get an error, trouble-shoot with your group and also check the notes in Chapter <a href="stroop.html#sec-read-csv">2.9.2</a> on how to resolve it.</li>
 </ul>
 <div class="webex-solution">
 <button>
@@ -224,8 +224,10 @@ Solution
 <h3>
 <span class="header-section-number">3.5.1</span> Counting observations<a class="anchor" aria-label="anchor" href="#counting-observations"><i class="fas fa-link"></i></a>
 </h3>
-<p><code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> simply counts the number of observations (rows) of the object you give it. First, we'll count the number of observations of the total dataset. It's important we use the <code>ppt_info</code> dataset to do this because this is in wide-form so 1 row = 1 participant. If we used <code>dat</code>, we might think we have double the number of participants we really do.
-* The weird <code>%&gt;%</code> symbol is known as the <em>pipe</em>. The formal definition is that the pipe takes an object and sends it to the next function but it's maybe easier to read it as <strong>and then</strong>. So the below code reads "Take the object <code>ppt_infO</code> <strong>and then</strong> count it.</p>
+<p><code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> simply counts the number of observations (rows) of the object you give it. First, we'll count the number of observations of the total dataset. It's important we use the <code>ppt_info</code> dataset to do this because this is in wide-form so 1 row = 1 participant. If we used <code>dat</code>, we might think we have double the number of participants we really do.</p>
+<ul>
+<li>The weird <code>%&gt;%</code> symbol is known as the <em>pipe</em> and it's loaded in as part of the <code class="package">tidyverse</code>. The formal definition is that the pipe takes an object and sends it to the next function but it's maybe easier to read it as <strong>and then</strong>. So the below code reads "Take the object <code>ppt_infO</code> <strong>and then</strong> count it.</li>
+</ul>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ppt_info</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -294,7 +296,7 @@ Woman
 <ul>
 <li>
 <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code> will create a table with the summary statistics you have requested.</li>
-<li>The bit to the left of the <code>=</code> sign is the name of the column it will create in the table, you can call this whatever you want but make it informative and easy to read. Variable names cannot have spaces so it's common to separate words with an <code>_</code> underscore. In this case, we'll name the column <code>mean_age</code>.</li>
+<li>The bit to the left of the <code>=</code> sign is the name of the column it will create in the output table, you can call this whatever you want but make it informative and easy to read. Variable names cannot have spaces so it's common to separate words with an <code>_</code> underscore. In this case, we'll name the column <code>mean_age</code>.</li>
 <li>The bit to the right of the <code>=</code> sign is the calculation R will perform. In this case, we'll use the function <code><a href="https://rdrr.io/r/base/mean.html">mean()</a></code> on the variable <code>age</code>.</li>
 </ul>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
@@ -382,7 +384,7 @@ Solution
 <p>Finally, you can also compute summary statistics by groups, just like we did with <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code>. To do this we need to take a slightly different approach and use an additional function <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code>. <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> will group a dataset and then whatever you do to that dataset next will be done separately for each group, so for example, if you group it by gender and then ask it to calculate mean age, it will calculate mean age separately for each gender.</p>
 <p>A useful addition when you are calculating summary statistics by groups is to add in a call to <code><a href="https://dplyr.tidyverse.org/reference/context.html">n()</a></code>. This function counts the number of observations in each group. This gives you the same info you got when you used <code><a href="https://dplyr.tidyverse.org/reference/count.html">count()</a></code> but adding it to the table is a useful reminder of how many data points were used for each calculation. For example, if you calculated the mean score of two groups and one group had 1000 participants and the other had 5 participants, it would be good to be reminded that they're very different sizes.</p>
 <ul>
-<li>In code chunk 2, add the code to calculate summary stats for age by group.</li>
+<li>In code chunk 2, add the below code to calculate summary stats for age by group.</li>
 </ul>
 <div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">ppt_info</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -569,7 +571,7 @@ Explain this answer
 <h2>
 <span class="header-section-number">3.7</span> Activity 5: Data visualisation<a class="anchor" aria-label="anchor" href="#activity-5-data-visualisation"><i class="fas fa-link"></i></a>
 </h2>
-<p>To finish up, let's make a few plots to visualise the data. Again, don't worry too much about understanding this code right now, we'll explain it in the next set of chapters. For now, read through the code and see if you can match up the code to what displays on the plot, and try changing the values or TRUE to FALSE to see what happens and answer the questions.</p>
+<p>To finish up, let's make a few plots to visualise the data. Again, don't worry too much about understanding this code right now, we'll explain it in the next set of chapters. For now, read through the code and see if you can match up the code to what displays on the plot, and try changing the values of <code>width</code> to see what happens and answer the questions.</p>
 <ul>
 <li>In code chunk 4, add the below code to create a boxplot of the reaction times in each condition.</li>
 </ul>
@@ -633,9 +635,9 @@ Explain this answer
 If you're more interested in the overall shape of the data distribution, a density plot might be more appropriate.</p>
 </div>
 </div>
-<div id="debugging-tips" class="section level2" number="3.8">
+<div id="activity-6-debugging" class="section level2" number="3.8">
 <h2>
-<span class="header-section-number">3.8</span> Debugging tips<a class="anchor" aria-label="anchor" href="#debugging-tips"><i class="fas fa-link"></i></a>
+<span class="header-section-number">3.8</span> Activity 6: Debugging<a class="anchor" aria-label="anchor" href="#activity-6-debugging"><i class="fas fa-link"></i></a>
 </h2>
 <p>A large part of coding is trying to figure why your code doesn't work and this is true whether you are a novice or an expert. As you progress through this course you should keep a record of mistakes you make and how you fixed them. In each chapter we will provide a number of common mistakes to look out for but you will undoubtedly make (and fix!) new mistakes yourself.</p>
 <ul>
@@ -648,11 +650,10 @@ If you're more interested in the overall shape of the data distribution, a densi
 </li>
 <li>Have you accidentally deleted any back ticks (```) from the beginning or end of code chunks?</li>
 </ul>
-</div>
-<div id="debugging-exercises" class="section level2" number="3.9">
-<h2>
-<span class="header-section-number">3.9</span> Debugging exercises<a class="anchor" aria-label="anchor" href="#debugging-exercises"><i class="fas fa-link"></i></a>
-</h2>
+<div id="debugging-exercises" class="section level3" number="3.8.1">
+<h3>
+<span class="header-section-number">3.8.1</span> Debugging exercises<a class="anchor" aria-label="anchor" href="#debugging-exercises"><i class="fas fa-link"></i></a>
+</h3>
 <p>These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run.</p>
 <ol style="list-style-type: decimal">
 <li>To create the errors, you'll need to ensure you're working from a clean environment and new session. Run the following code which will clear all objects and unload any packages you have loaded:</li>
@@ -689,6 +690,13 @@ Solution
 </button>
 <p>When loading data, you need to provide the full file name, including the file extension. In this case, the error was caused by writing <code>participant_data</code> instead of <code>participant_data.csv</code>. As far as R is concerned, these are two completely different files and only one of them exists in the working directory.</p>
 </div>
+</div>
+</div>
+<div id="finished-2" class="section level2" number="3.9">
+<h2>
+<span class="header-section-number">3.9</span> Finished<a class="anchor" aria-label="anchor" href="#finished-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Remember to make a note of any mistakes you made and how you fixed them, any other useful information you learned, save your Markdown, and quit your session on the server.</p>
 
 </div>
 </div>
@@ -917,8 +925,10 @@ $( document ).ready(function() {
 </li>
 <li><a class="nav-link" href="#activity-4-experimental-data"><span class="header-section-number">3.6</span> Activity 4: Experimental data</a></li>
 <li><a class="nav-link" href="#activity-5-data-visualisation"><span class="header-section-number">3.7</span> Activity 5: Data visualisation</a></li>
-<li><a class="nav-link" href="#debugging-tips"><span class="header-section-number">3.8</span> Debugging tips</a></li>
-<li><a class="nav-link" href="#debugging-exercises"><span class="header-section-number">3.9</span> Debugging exercises</a></li>
+<li>
+<a class="nav-link" href="#activity-6-debugging"><span class="header-section-number">3.8</span> Activity 6: Debugging</a><ul class="nav navbar-nav"><li><a class="nav-link" href="#debugging-exercises"><span class="header-section-number">3.8.1</span> Debugging exercises</a></li></ul>
+</li>
+<li><a class="nav-link" href="#finished-2"><span class="header-section-number">3.9</span> Finished</a></li>
 </ul>
 
       <div class="book-extra">
@@ -934,7 +944,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-09.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

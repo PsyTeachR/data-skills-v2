@@ -211,9 +211,9 @@ Figure 1.3: The RStudio IDE
 </ul>
 <p>Play around with the settings and see what you prefer - you're going to spend a lot of time with R, it might as well look how you like it!</p>
 </div>
-<div id="settings-for-reproducibility-sec-rstudio-settings" class="section level3" number="1.7.2">
+<div id="sec-rstudio-repro" class="section level3" number="1.7.2">
 <h3>
-<span class="header-section-number">1.7.2</span> Settings for Reproducibility {sec-rstudio-settings}<a class="anchor" aria-label="anchor" href="#settings-for-reproducibility-sec-rstudio-settings"><i class="fas fa-link"></i></a>
+<span class="header-section-number">1.7.2</span> Settings for Reproducibility<a class="anchor" aria-label="anchor" href="#sec-rstudio-repro"><i class="fas fa-link"></i></a>
 </h3>
 <p>One of the reasons you're going to learn R is so that any quantitative data analysis and research you do is <strong>reproducible</strong>. If your work is reproducible, it means that you (or someone else) can take your data and get the same result you got. This is easier to do with code because you have a written record of everything you did, compared to using point-and-click software where there is no record and you just have to remember what you did.</p>
 <p>To help ensure your work is reproducible, there are a few settings you should change in RStudio. If you keep stuff around in your workspace, things can get messy and you can accidentially end up using the wrong dataset or object. You should always start with a clear workspace. This also means that you never want to save your workspace when you exit - the only thing you want to save are your scripts.</p>
@@ -241,7 +241,7 @@ Figure 1.4: RStudio settings
 <h3>
 <span class="header-section-number">1.8.1</span> Objects<a class="anchor" aria-label="anchor" href="#sec-objects"><i class="fas fa-link"></i></a>
 </h3>
-<p>A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using <code>&lt;-</code>.</p>
+<p>A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using <code>&lt;-</code></p>
 <p>Run the following code in the console, but change the values of <code>name</code>, <code>age</code> and <code>birthday</code> to your own details (<code>birthday</code> should be the date of your next birthday). Press enter after you type each line.</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">name</span> <span class="op">&lt;-</span> <span class="st">"Emily"</span></span>
@@ -253,7 +253,7 @@ Figure 1.4: RStudio settings
 <li>
 <code>name</code> is <a class="glossary" target="_blank" title="A data type representing strings of text." href="https://psyteachr.github.io/glossary/c#character">character</a> (text) data. In order for R to recognise it as text, it <strong>must</strong> be enclosed in double quotation marks <code>" "</code>.</li>
 <li>
-<code>age</code> is <a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a> data. In order for R to recognise this as a number, it <strong>must not</strong> be enclosed in quotation marks. Every year I have to update my age in this book and I am confronted with my own mortality getting ever closer.</li>
+<code>age</code> is <a class="glossary" target="_blank" title="A data type representing a real decimal number or integer." href="https://psyteachr.github.io/glossary/n#numeric">numeric</a> data. In order for R to recognise this as a number, it <strong>must not</strong> be enclosed in quotation marks. Every year I have to update my age in this book and I am confronted with my own mortality drawing ever closer.</li>
 <li>
 <code>today</code> stores the result of the function <code><a href="https://rdrr.io/r/base/Sys.time.html">Sys.Date()</a></code>. This function returns your computer system's date. Unlike <code>name</code> and <code>age</code>, which are hard-coded (i.e., they will always return the values you enter), the contents of the object <code>today</code> will change dynamically with the date. That is, if you run that function tomorrow, it will update the date to tomorrow's date.</li>
 <li>
@@ -375,7 +375,7 @@ Figure 1.7: Creating a new R chunk
 <li>Now, we're going to "knit" our file. This simply means that we're going to compile our code into a document that is more presentable. To do this click <code>Knit</code> -&gt; <code>Knit to HMTL</code>. R Markdown will create a new HTML document and it will automatically save this file in your project working directory.</li>
 </ul>
 <p>As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created.</p>
-<p><strong>My name is Emily and I am 38 years old. It is 398 days until my birthday.</strong></p>
+<p><strong>My name is Emily and I am 38 years old. It is 389 days until my birthday.</strong></p>
 <p>We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it!</p>
 <p>There are a few final things to note about knitting that will be useful for the homework:</p>
 <ul>
@@ -692,7 +692,7 @@ $( document ).ready(function() {
 <li>
 <a class="nav-link" href="#sec-rstudio-settings"><span class="header-section-number">1.7</span> Activity 2: Settings</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#themes-and-accessiblilty"><span class="header-section-number">1.7.1</span> Themes and accessiblilty</a></li>
-<li><a class="nav-link" href="#settings-for-reproducibility-sec-rstudio-settings"><span class="header-section-number">1.7.2</span> Settings for Reproducibility {sec-rstudio-settings}</a></li>
+<li><a class="nav-link" href="#sec-rstudio-repro"><span class="header-section-number">1.7.2</span> Settings for Reproducibility</a></li>
 </ul>
 </li>
 <li>
@@ -730,7 +730,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-09.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

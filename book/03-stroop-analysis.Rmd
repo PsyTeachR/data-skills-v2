@@ -85,6 +85,7 @@ Which function do you use to load in any package? `r mcq(c("summary()", answer =
 
 `r unhide()`
 
+
 Which function do you use to load in a .csv dataset? `r mcq(c(answer = "read_csv()", "str()", "readr", "tidyverse"))`
 
 `r hide("Explain this answer")`
@@ -98,7 +99,7 @@ Which function do you use to load in a .csv dataset? `r mcq(c(answer = "read_csv
 
 * In code chunk 1, write three lines of code that load the tidyverse, load the file `participant-data.csv` into an object named `ppt_info`, and then load the file `experiment_data.csv` into an object named `dat`. Try and see if you can do this from memory and use the hints before you look at the solution - you'll learn much quicker if you do it this way (even if you don't get it right) than just going straight to the solution.
 * Once you've loaded the data files, click on them to view them and check everything looks as it should.
-* If you get an error, trouble-shoot with your group and also check the notes in Chapter\ \@ref(sec-read_csv) on how to resolve it.
+* If you get an error, trouble-shoot with your group and also check the notes in Chapter\ \@ref(sec-read-csv) on how to resolve it.
 
 `r hide("Hint")`
 
@@ -126,7 +127,8 @@ Let's start doing some simple analysis on our dataset and as a first step, we'll
 ### Counting observations
 
 `count()` simply counts the number of observations (rows) of the object you give it. First, we'll count the number of observations of the total dataset. It's important we use the `ppt_info` dataset to do this because this is in wide-form so 1 row = 1 participant. If we used `dat`, we might think we have double the number of participants we really do.
-* The weird `%>%` symbol is known as the *pipe*. The formal definition is that the pipe takes an object and sends it to the next function but it's maybe easier to read it as **and then**. So the below code reads "Take the object `ppt_infO` **and then** count it.
+
+* The weird `%>%` symbol is known as the *pipe* and it's loaded in as part of the `r pkg("tidyverse")`. The formal definition is that the pipe takes an object and sends it to the next function but it's maybe easier to read it as **and then**. So the below code reads "Take the object `ppt_infO` **and then** count it.
 
 ```{r}
 ppt_info %>%
@@ -145,7 +147,7 @@ ppt_info %>%
 It's also common to report the mean and standard deviation of the age of your sample. Rather than using `count()`, we'll use the function `summarise()` which can be used to create summary statistics (e.g., mean, median, SD etc).
 
 * `summarise()` will create a table with the summary statistics you have requested. 
-* The bit to the left of the `=` sign is the name of the column it will create in the table, you can call this whatever you want but make it informative and easy to read. Variable names cannot have spaces so it's common to separate words with an `_` underscore. In this case, we'll name the column `mean_age`.
+* The bit to the left of the `=` sign is the name of the column it will create in the output table, you can call this whatever you want but make it informative and easy to read. Variable names cannot have spaces so it's common to separate words with an `_` underscore. In this case, we'll name the column `mean_age`.
 * The bit to the right of the `=` sign is the calculation R will perform. In this case, we'll use the function `mean()` on the variable `age`.
 
 ```{r}
@@ -192,7 +194,7 @@ Finally, you can also compute summary statistics by groups, just like we did wit
 
 A useful addition when you are calculating summary statistics by groups is to add in a call to `n()`. This function counts the number of observations in each group. This gives you the same info you got when you used `count()` but adding it to the table is a useful reminder of how many data points were used for each calculation. For example, if you calculated the mean score of two groups and one group had 1000 participants and the other had 5 participants, it would be good to be reminded that they're very different sizes.
 
-* In code chunk 2, add the code to calculate summary stats for age by group.
+* In code chunk 2, add the below code to calculate summary stats for age by group.
 
 ```{r}
 ppt_info %>%
@@ -300,7 +302,7 @@ Given that the mean reaction time for the congruent condition is lower than the 
 
 ## Activity 5: Data visualisation
 
-To finish up, let's make a few plots to visualise the data. Again, don't worry too much about understanding this code right now, we'll explain it in the next set of chapters. For now, read through the code and see if you can match up the code to what displays on the plot, and try changing the values or TRUE to FALSE to see what happens and answer the questions.
+To finish up, let's make a few plots to visualise the data. Again, don't worry too much about understanding this code right now, we'll explain it in the next set of chapters. For now, read through the code and see if you can match up the code to what displays on the plot, and try changing the values of `width` to see what happens and answer the questions.
 
 * In code chunk 4, add the below code to create a boxplot of the reaction times in each condition.
 
@@ -367,7 +369,7 @@ If you're more interested in the overall shape of the data distribution, a densi
 
 `r unhide()`
 
-## Debugging tips
+## Activity 6: Debugging
 
 A large part of coding is trying to figure why your code doesn't work and this is true whether you are a novice or an expert. As you progress through this course  you should keep a record of mistakes you make and how you fixed them. In each chapter we will provide a number of common mistakes to look out for but you will undoubtedly make (and fix!) new mistakes yourself.
 
@@ -378,7 +380,7 @@ A large part of coding is trying to figure why your code doesn't work and this i
 * Have you used quotation marks where needed?  
 * Have you accidentally deleted any back ticks (```) from the beginning or end of code chunks?
 
-## Debugging exercises
+### Debugging exercises
 
 These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run. 
 
@@ -422,3 +424,7 @@ This will produce the error `Error: 'participant_data' does not exist in current
 When loading data, you need to provide the full file name, including the file extension. In this case, the error was caused by writing `participant_data` instead of `participant_data.csv`. As far as R is concerned, these are two completely different files and only one of them exists in the working directory.
 
 `r unhide()`
+
+## Finished
+
+Remember to  make a note of any mistakes you made and how you fixed them, any other useful information you learned, save your Markdown, and quit your session on the server. 

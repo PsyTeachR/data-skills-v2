@@ -26,7 +26,7 @@ new-project
 rstudio-panes
 sec-rstudio-settings
 themes-and-accessiblilty
-settings-for-reproducibility-sec-rstudio-settings
+sec-rstudio-repro
 activity-3-writing-code
 sec-objects
 removing-objects
@@ -54,7 +54,7 @@ using-a-function
 sec-function-help
 activity-5-loading-data
 sec-tidyverse
-sec-read_csv
+sec-read-csv
 activity-6-check-your-data
 activity-7-visualise-the-data
 finished-1
@@ -70,8 +70,9 @@ summarising-by-groups
 saving-to-objects
 activity-4-experimental-data
 activity-5-data-visualisation
-debugging-tips
+activity-6-debugging
 debugging-exercises
+finished-2
 homework-1
 sec-ilo-homework
 new-project-and-data-files
@@ -98,7 +99,7 @@ argument-names
 tab-auto-complete
 activity-7-analysis-by-groups
 visuaise-the-groups
-finished-2
+finished-3
 corsi-blocks-2
 sec-ilo-corsi-analysis
 sec-walkthrough-corsi-analysis
@@ -111,7 +112,7 @@ activity-6-visualise
 activity-7-make-it-look-nice
 adding-colour
 reordering-factors
-finished-3
+finished-4
 belonging-1
 sec-ilo-belonging
 sec-walkthrough-belong
@@ -130,7 +131,7 @@ grouped-scatterplots
 adding-a-theme
 editing-axis-labels-and-breaks
 make-your-own
-finished-4
+finished-5
 belonging-2
 sec-ilo-belong-analysis
 sec-walkthrough-belong-error
@@ -144,7 +145,7 @@ activity-6-select
 activity-7-summarise
 activity-8-boxplots
 activity-9-scatterplot
-finished-5
+finished-6
 installing-r
 installing-base-r
 installing-rstudio

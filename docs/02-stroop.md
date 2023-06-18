@@ -110,7 +110,7 @@ The server will automatically unzip the files for you into your chosen folder an
 
 The zip file contains four files:
 
-* `stroop_stub1.Rmd` and `stroop_stub2.Rmd`: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the `stroop_sub1.Rmd` Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
+* `stroop_stub1.Rmd` and `stroop_stub2.Rmd`: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open `stroop_sub1.Rmd` by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
 * `participant_data.csv` is a data file that contains each participant's anonymous ID, age, and gender. This data is in <a class='glossary' target='_blank' title='A data format where all of the observations about one subject are in the same row' href='https://psyteachr.github.io/glossary/w#wide'>wide-form</a> which means that all of the observations about one subject are in the same row. There are 270 participants, so there are 270 rows of data.
 
 <div class="kable-table">
@@ -252,6 +252,7 @@ You'll see `library(beepr)` appear in the console. There's no warning messages o
 Now you can use the function `beep()`. A <a class='glossary' target='_blank' title='A named section of code that can be reused.' href='https://psyteachr.github.io/glossary/f#function'>function</a> is a name that refers to some code you can reuse.
 
 * In code chunk 2, write and run the below code to use the function `beep()` (make sure you have your sound on).
+* If you get the error `could not find function` it means you have not loaded the package properly, try running `library(beepr)` again and make sure everything is spelled exactly right.
 
 
 ```r
@@ -333,7 +334,7 @@ library(tidyverse)
 <p class="caption">(\#fig:img-tidyverse)Tidyverse message when successfully loaded</p>
 </div>
 
-### Read in the data {#sec-read_csv}
+### Read in the data {#sec-read-csv}
 
 Now we can read in the data. To do this we will use the function `read_csv()` that allows us to read in .csv files, which are a type of data file. There are also functions that allow you to read in .xlsx  (Excel) files and other formats, however in this course we will only use .csv files.
 

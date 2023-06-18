@@ -223,7 +223,7 @@ Figure 1.2: Creating a new project
 <p>The zip file contains four files:</p>
 <ul>
 <li>
-<code>stroop_stub1.Rmd</code> and <code>stroop_stub2.Rmd</code>: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open the <code>stroop_sub1.Rmd</code> Rmd by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.</li>
+<code>stroop_stub1.Rmd</code> and <code>stroop_stub2.Rmd</code>: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open <code>stroop_sub1.Rmd</code> by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.</li>
 <li>
 <code>participant_data.csv</code> is a data file that contains each participant's anonymous ID, age, and gender. This data is in <a class="glossary" target="_blank" title="A data format where all of the observations about one subject are in the same row" href="https://psyteachr.github.io/glossary/w#wide">wide-form</a> which means that all of the observations about one subject are in the same row. There are 270 participants, so there are 270 rows of data.</li>
 </ul>
@@ -442,6 +442,7 @@ incongruent
 <p>Now you can use the function <code><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep()</a></code>. A <a class="glossary" target="_blank" title="A named section of code that can be reused." href="https://psyteachr.github.io/glossary/f#function">function</a> is a name that refers to some code you can reuse.</p>
 <ul>
 <li>In code chunk 2, write and run the below code to use the function <code><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep()</a></code> (make sure you have your sound on).</li>
+<li>If you get the error <code>could not find function</code> it means you have not loaded the package properly, try running <code><a href="https://rdrr.io/r/base/library.html">library(beepr)</a></code> again and make sure everything is spelled exactly right.</li>
 </ul>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/pkg/beepr/man/beep.html">beep</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
@@ -539,9 +540,9 @@ Figure 2.1: Tidyverse message when successfully loaded
 </p>
 </div>
 </div>
-<div id="sec-read_csv" class="section level3" number="2.9.2">
+<div id="sec-read-csv" class="section level3" number="2.9.2">
 <h3>
-<span class="header-section-number">2.9.2</span> Read in the data<a class="anchor" aria-label="anchor" href="#sec-read_csv"><i class="fas fa-link"></i></a>
+<span class="header-section-number">2.9.2</span> Read in the data<a class="anchor" aria-label="anchor" href="#sec-read-csv"><i class="fas fa-link"></i></a>
 </h3>
 <p>Now we can read in the data. To do this we will use the function <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code> that allows us to read in .csv files, which are a type of data file. There are also functions that allow you to read in .xlsx (Excel) files and other formats, however in this course we will only use .csv files.</p>
 <p>First, we will create an object called <code>dat</code> that contains the data in the <code>experiment_data.csv</code> file. Then, we will create an object called <code>ppt_info</code> that contains the data in the <code>participant_data.csv</code>.</p>
@@ -871,7 +872,7 @@ $( document ).ready(function() {
 <li>
 <a class="nav-link" href="#activity-5-loading-data"><span class="header-section-number">2.9</span> Activity 5: Loading data</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#sec-tidyverse"><span class="header-section-number">2.9.1</span> Load the Tidyverse</a></li>
-<li><a class="nav-link" href="#sec-read_csv"><span class="header-section-number">2.9.2</span> Read in the data</a></li>
+<li><a class="nav-link" href="#sec-read-csv"><span class="header-section-number">2.9.2</span> Read in the data</a></li>
 </ul>
 </li>
 <li><a class="nav-link" href="#activity-6-check-your-data"><span class="header-section-number">2.10</span> Activity 6: Check your data</a></li>
@@ -894,7 +895,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-09.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-06-18.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
