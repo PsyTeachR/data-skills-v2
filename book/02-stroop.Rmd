@@ -118,7 +118,7 @@ We're going to ask you to download **zip files** which you will then upload to t
 
 Once you've done all this, it's time to download the files we need and then upload them to the server.
 
-* First, download the <a href="files/data/stroop/stroop_data.zip" download>Stroop data zip file</a> to your computer and make sure you know which folder you saved it in.
+* First, download the <a href="data/stroop/stroop_data.zip" download>Stroop data zip file</a> to your computer and make sure you know which folder you saved it in.
 * Then, on the server in the Files tab (bottom right), click `Upload > Choose file` then navigate to the folder on your computer where the zip file is saved, select it, click `Open`, then `OK`.
 
 The server will automatically unzip the files for you into your chosen folder and in this case, it's helpful as it means they're now ready to use.

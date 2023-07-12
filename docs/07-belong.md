@@ -85,7 +85,7 @@ I KNOW THIS CHAPTER ISN'T SUBTLE.
 
 Once you've done all this, it's time to download the files we need and then upload them to the server.
 
-* First, download the <a href="files/data/belong/belong_data.zip" download>Belonging data zip file</a> to your computer and make sure you know which folder you saved it in.
+* First, download the <a href="data/belong/belong_data.zip" download>Belonging data zip file</a> to your computer and make sure you know which folder you saved it in.
 * Then, on the server in the Files tab (bottom right), click `Upload > Choose file` then navigate to the folder on your computer where the zip file is saved, select it, click `Open`, then `OK`.
 
 The zip file contains four files:
@@ -159,7 +159,7 @@ Because `gender` is coded numerically, R has assumed that the data in this colum
 
 ::: {.info data-latex=""}
 
-There are several different <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> in R and when you load data in, R will do it's best to guess which one each variable is:
+There are several different <a class='glossary'>data types<span class='def'></span></a> in R and when you load data in, R will do it's best to guess which one each variable is:
 
 * integer (whole numbers like 1L, -10L, 3000L)
 * double (numbers like -0.223, 10.324, 1e4)
@@ -184,7 +184,7 @@ ggplot(full_data, aes(x = gender, y = belongingness)) +
 
 ```
 ## Warning: Continuous x aesthetic
-## i did you forget `aes(group = ...)`?
+## ℹ did you forget `aes(group = ...)`?
 ```
 
 <img src="07-belong_files/figure-html/unnamed-chunk-5-1.png" width="100%" style="display: block; margin: auto;" />
@@ -259,93 +259,29 @@ full_data %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> gender_coded </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 500 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 400 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Non-binary </td>
-   <td style="text-align:right;"> 100 </td>
-  </tr>
-</tbody>
-</table>
+|gender_coded |   n|
+|:------------|---:|
+|Man          | 500|
+|Woman        | 400|
+|Non-binary   | 100|
 
 </div><div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> level </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:right;"> 920 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:right;"> 80 </td>
-  </tr>
-</tbody>
-</table>
+|level       |   n|
+|:-----------|---:|
+|First year  | 920|
+|Second year |  80|
 
 </div><div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> level </th>
-   <th style="text-align:left;"> gender_coded </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 457 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 373 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:left;"> Non-binary </td>
-   <td style="text-align:right;"> 90 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 43 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 27 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:left;"> Non-binary </td>
-   <td style="text-align:right;"> 10 </td>
-  </tr>
-</tbody>
-</table>
+|level       |gender_coded |   n|
+|:-----------|:------------|---:|
+|First year  |Man          | 457|
+|First year  |Woman        | 373|
+|First year  |Non-binary   |  90|
+|Second year |Man          |  43|
+|Second year |Woman        |  27|
+|Second year |Non-binary   |  10|
 
 </div>
 
