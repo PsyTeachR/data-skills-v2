@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 9 Big five personality 1 | Data Skills</title>
+<meta name="author" content="Emily Nordmann">
+<meta name="description" content="9.1 Intended Learning Outcomes By the end of this chapter you should be able to:    9.2 Psych 1B Welcome back to Psych 1B! Whilst much of the data skills work this semester will seem very...">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta property="og:title" content="Chapter 9 Big five personality 1 | Data Skills">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/big-five-personality-1.html">
+<meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta property="og:description" content="9.1 Intended Learning Outcomes By the end of this chapter you should be able to:    9.2 Psych 1B Welcome back to Psych 1B! Whilst much of the data skills work this semester will seem very...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 9 Big five personality 1 | Data Skills">
+<meta name="twitter:description" content="9.1 Intended Learning Outcomes By the end of this chapter you should be able to:    9.2 Psych 1B Welcome back to Psych 1B! Whilst much of the data skills work this semester will seem very...">
+<meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Skills</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Stroop 1</a></li>
+<li><a class="" href="stroop-2.html"><span class="header-section-number">3</span> Stroop 2</a></li>
+<li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
+<li><a class="" href="corsi-blocks-1.html"><span class="header-section-number">5</span> Corsi Blocks 1</a></li>
+<li><a class="" href="corsi-blocks-2.html"><span class="header-section-number">6</span> Corsi Blocks 2</a></li>
+<li><a class="" href="belonging-1.html"><span class="header-section-number">7</span> Belonging 1</a></li>
+<li><a class="" href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></li>
+<li><a class="active" href="big-five-personality-1.html"><span class="header-section-number">9</span> Big five personality 1</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/psyteachr/data-skills-v2">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="big-five-personality-1" class="section level1" number="9">
+<h1>
+<span class="header-section-number">9</span> Big five personality 1<a class="anchor" aria-label="anchor" href="#big-five-personality-1"><i class="fas fa-link"></i></a>
+</h1>
+<div id="sec-ilo-big5" class="section level2" number="9.1">
+<h2>
+<span class="header-section-number">9.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#sec-ilo-big5"><i class="fas fa-link"></i></a>
+</h2>
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>
+<li>
+<li>
+</ul>
+</div>
+<div id="psych-1b" class="section level2" number="9.2">
+<h2>
+<span class="header-section-number">9.2</span> Psych 1B<a class="anchor" aria-label="anchor" href="#psych-1b"><i class="fas fa-link"></i></a>
+</h2>
+<p>Welcome back to Psych 1B! Whilst much of the data skills work this semester will seem very familiar, now that you've got the basics of R, there will be a few minor changes to our approach to help scaffold you towards becoming an independent learner which will be really important at Level 2.</p>
+<p>First, you'll notice that we have reduced the number of walkthrough videos. Rather than having walkthroughs for every chapter, they're limited to a couple of chapters that introduce a lot of new coding concepts. If you'd like additional help working through the chapters, remember that you can attend office hours or GTA sessions. You don't have to have a specific question, some students use the GTA times to complete their data skills work so if they come across a problem, they're already in a place where support is available.</p>
+<p>Second, in Psych 1A we provided you with the Markdown stub files, this semester you'll create your own (and we'll recap how to do that in this chapter).</p>
+<p>Third, there are still three data skills homeworks but they are all now summative and worth 5% of your grade compared to Psych 1A where the first one was formative. Check the Assessment Information Sheet on Moodle for more information.</p>
+<p>And finally, in Psych 1A we strongly recommended that you should use the server rather install R on your own machine. Now that you're more familiar with the basics, if you'd like to install R and RStudio on your machine you can find instructions for how to do so in Appendix A and if you run into any problems, the GTAs can help you. The advantages to installing R on your machine are a) you're not reliant on the server (which does occasionally crash) b) you don't need to be connected to the internet to use R and c) it makes it much easier to check your homework files before you submit them. That all said, if you're comfortable using the server it's absolutely fine to keep doing so.</p>
+</div>
+<div id="activity-1-personality-traits" class="section level2" number="9.3">
+<h2>
+<span class="header-section-number">9.3</span> Activity 1: Personality traits<a class="anchor" aria-label="anchor" href="#activity-1-personality-traits"><i class="fas fa-link"></i></a>
+</h2>
+<p>For the next set of chapters we're going to use data from the most popular model of personality, the Big Five.</p>
+<ul>
+<li>First, take part in <a href="https://projects.fivethirtyeight.com/personality-quiz/">this online version</a> of the Big-5. It only takes a few minutes to complete and it used the items from <a href="https://www-sciencedirect-com.ezproxy.lib.gla.ac.uk/science/article/pii/S0092656616301325">Soto and John (2017)</a> which a short-form version of the Big Five Inventory 2 (BFI-2).<br>
+</li>
+<li>Second, read the <a href="https://openstax.org/books/psychology-2e/pages/11-7-trait-theorists">textbook chapter</a> on personality trait theorists.</li>
+<li>Finally, answer the following questions. Please note that your responses will not save in the browser - if you want to save them, make a note of them somewhere.</li>
+</ul>
+<ol style="list-style-type: decimal">
+<li>The trait 'Agreeableness' in the Big Five personality model refers to:
+<div id="radio_IVISQGLOPY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IVISQGLOPY" value=""><span>The tendency to be organized, careful, and disciplined</span></label><label><input type="radio" autocomplete="off" name="radio_IVISQGLOPY" value="answer"><span>The tendency to be compassionate, cooperative, and warm towards others</span></label><label><input type="radio" autocomplete="off" name="radio_IVISQGLOPY" value=""><span>The tendency to be outgoing, energetic, and sociable</span></label><label><input type="radio" autocomplete="off" name="radio_IVISQGLOPY" value=""><span>The tendency to experience mood swings, anxiety, and irritability.</span></label>
+</div>
+</li>
+<li>In the context of the Big Five Personality model, which trait might be associated with a person who is diligent, efficient, and follows a schedule?</li>
+</ol>
+<div id="radio_CZAZZZSOSW" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_CZAZZZSOSW" value=""><span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_CZAZZZSOSW" value="answer"><span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_CZAZZZSOSW" value=""><span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_CZAZZZSOSW" value=""><span>Agreeableness</span></label>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Individuals who are often nervous, insecure, and easily upset, are considered to have high <input class="webex-solveme nospaces ignorecase" size="11" data-answer='["neuroticism"]'> according to the Big Five Personality Model.</p></li>
+<li><p>In the Big Five Personality Model, people who are outgoing, sociable, and assertive score high on the trait known as <input class="webex-solveme nospaces" size="12" data-answer='["extraversion","extroversion","TRUE"]'></p></li>
+<li>
+<p>Which of these traits in the Big Five Personality model is most closely associated with creativity and a preference for novelty?</p>
+<div id="radio_WWGBXLVKFR" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_WWGBXLVKFR" value=""><span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_WWGBXLVKFR" value=""><span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_WWGBXLVKFR" value=""><span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_WWGBXLVKFR" value="answer"><span>Openness to Experience</span></label>
+</div>
+</li>
+</ol>
+<div class="webex-solution">
+<button>
+Explain these answers
+</button>
+<ol style="list-style-type: decimal">
+<li><p>The correct answer is "The tendency to be compassionate, cooperative, and warm towards others". Agreeableness as a personality trait characterizes individuals who are friendly, compassionate, and like working with others. They tend to be more cooperative while interacting with others.</p></li>
+<li><p>The correct answer is "Conscientiousness". This trait is associated with people who are organized, responsible, and prefer planned rather than spontaneous behavior. High conscientiousness means a person is disciplined, efficient, and diligent.</p></li>
+<li><p>Neuroticism is a personality trait in the Big Five Model. High neuroticism often means a person is likely to experience feelings such as anxiety, anger, or depression. These individuals are more likely to interpret ordinary situations as threatening and minor frustrations as hopelessly difficult.</p></li>
+<li><p>Extraversion characterizes individuals who are outgoing, sociable, and often possess high group visibility. They like to talk, assert themselves, and draw attention to themselves.</p></li>
+<li><p>The correct answer is "Openness to Experience". Individuals with high openness are often very creative, curious about their surroundings, and more aware of their feelings. They tend to think and act in individualistic and non-conforming ways and are likely to have a broad range of interests.</p></li>
+</ol>
+</div>
+</div>
+<div id="sec-new-project-big5" class="section level2" number="9.4">
+<h2>
+<span class="header-section-number">9.4</span> Activity 2: New project<a class="anchor" aria-label="anchor" href="#sec-new-project-big5"><i class="fas fa-link"></i></a>
+</h2>
+<ul>
+<li>Log in to the to R sever and make a new project for the Big-5 chapters (this week and next week).</li>
+<li>If you've decided to install R on your machine, create a new project by clicking <code>File -&gt; New Project</code>. The rest of the process is the same as on the server.</li>
+</ul>
+</div>
+<div id="sec-data-big5" class="section level2" number="9.5">
+<h2>
+<span class="header-section-number">9.5</span> Activity 3: Data files<a class="anchor" aria-label="anchor" href="#sec-data-big5"><i class="fas fa-link"></i></a>
+</h2>
+<p>Once you've done all this, it's time to download the files we need and then upload them to the server.</p>
+<ul>
+<li>First, download the <a href="data/big5/big5_data.zip" download>Big 5 data zip file</a> to your computer and make sure you know which folder you saved it in.</li>
+<li>Then, on the server in the Files tab (bottom right), click <code>Upload &gt; Choose file</code> then navigate to the folder on your computer where the zip file is saved, select it, click <code>Open</code>, then <code>OK</code>.</li>
+<li>If you're working on your own machine, you will need to unzip the files before you can use them. There is a short walkthrough via YouTube for how to do this on <a href="https://www.youtube.com/watch?v=r9hpiyzOOTY">Windows</a> and <a href="https://www.youtube.com/watch?v=PGp1daVIBcs">Mac</a>. You need to unzip the files into your project folder. If you need help with this, come to office hours or a GTA session.</li>
+</ul>
+<p>The zip file contains three files:</p>
+<ul>
+<li>
+<code>big5_data.csv</code> is a data file that contains each participant's response to each question on the full version of the Big Five Inventory-2. There are 60 items in total, and there are 12 items for each of the five personality traits. Each item has a response from 1 (disagree strongly) to 5 (agree strongly).</li>
+<li>
+<code>code_book.csv</code> is a data file that lists the name of each question as it was stored in the questionnaire survey software (e.g., <code>Q4_1</code>), which trait the item refers to (e.g., <code>extraversion</code>), and whether it is a <code>forward</code> or `reversed`` scored item (we'll come back to what this means in a moment).</li>
+<li>
+<code>scoring.csv</code> is a data file that indicates what score each participant response should get depending on whether it is a forward or reversed item.</li>
+</ul>
+</div>
+<div id="activity-4-new-r-markdown" class="section level2" number="9.6">
+<h2>
+<span class="header-section-number">9.6</span> Activity 4: New R Markdown<a class="anchor" aria-label="anchor" href="#activity-4-new-r-markdown"><i class="fas fa-link"></i></a>
+</h2>
+<p>As noted, this semester we're not going to provide stub files, instead you need to create your own RMarkdown files. If you'd like a full refresher on exactly how to do this, you can review <a href="https://psyteachr.github.io/data-skills-v2/sec-intro.html#activity-4-r-markdown">Chapter 1</a> but here's the brief version:</p>
+<ul>
+<li>Click <code>File - New File - R Markdown</code>.</li>
+<li>Give the document the title "Big five 1" and put in your GUID as the author.</li>
+<li>Save the file by clicking <code>File - Save as</code>. It should be saved in your project directory alongside all the data files from Activity 3.</li>
+<li>The gif below is from the Intro chapter and shows how to do this with a slightly different file name.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-new-markdown"></span>
+<img src="images/intro/new-markdown.gif" alt="Opening a new R Markdown document" width="100%"><p class="caption">
+Figure 1.6: Opening a new R Markdown document
+</p>
+</div>
+<p>Next you need to add text and code chunks.</p>
+<ul>
+<li>Delete <strong>everything</strong> from line 8 onwards. On line 8, type "## Activity 5" and press enter to move the cursor down to line 9</li>
+<li>Click the code chunk button at the top of your Markdown document (it's a green square with a C and a plus sign) then click <code>R</code> to insert a new R code chunk.<br>
+</li>
+<li>The gif below is from the Intro chapter and shows how to do this with slightly different text.</li>
+</ul>
+<div class="figure" style="text-align: center">
+<span style="display:block;" id="fig:img-new-chunk"></span>
+<img src="images/intro/new-chunk.gif" alt="Creating a new R chunk" width="100%"><p class="caption">
+Figure 1.7: Creating a new R chunk
+</p>
+</div>
+<p>To make your life easier you can also use keyboard shortcuts. The default shortcut for adding a new code chunk is <code>Cmd + Option + I</code> on a Mac or <code>Ctrl + Alt + I</code> on Windows. You should create a new code chunk <strong>for each activity</strong> or each analysis step (like there was in the stub files from 1A) and make sure there is a description of what the code is doing. This will make it easier to read your Markdown and find where any errors in the code are. <strong>Do not put all of your code in one big chunk.</strong></p>
+</div>
+<div id="activity-5-loading-data-1" class="section level2" number="9.7">
+<h2>
+<span class="header-section-number">9.7</span> Activity 5: Loading data<a class="anchor" aria-label="anchor" href="#activity-5-loading-data-1"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now we've got everything set up, in the code chunk you just created write and run the code that:</p>
+<ul>
+<li>Loads the <code class="package">tidyverse</code>.</li>
+<li>Uses <code><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv()</a></code> to load <code>big5_data.csv</code> into an object named <code>big5</code>.</li>
+<li>Loads <code>scoring.csv</code> into an object named <code>scoring</code>.</li>
+<li>Loads <code>code_book.csv</code> into a object named <code>codebook</code>.</li>
+</ul>
+<p>Whilst coding isn't about memorisation and we certainly don't expect you to be able to write more complicated code off by heart, you should be able to do this task from memory. If you can't, it may be that you've been relying too much on the hints and solutions. Remember that it will make things much easier in the long-run not to take shortcuts at the beginning.</p>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb117"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">package_name</span><span class="op">)</span></span>
+<span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"file_name.csv"</span><span class="op">)</span></span></code></pre></div>
+<p><code>r unhide()</code></p>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb118"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="va">big5</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"big5_data.csv"</span><span class="op">)</span></span>
+<span><span class="va">scoring</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"scoring.csv"</span><span class="op">)</span></span>
+<span><span class="va">codebook</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"code_book.csv"</span><span class="op">)</span></span></code></pre></div>
+<p><code>r unhide()</code></p>
+<pre><code>## Rows: 5605 Columns: 61
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr  (1): ResponseId
+## dbl (60): Q4_1, Q4_2, Q4_3, Q4_4, Q4_5, Q4_6, Q4_7, Q4_8, Q4_9, Q4_10, Q4_11...
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+## Rows: 10 Columns: 3
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr (1): direction
+## dbl (2): response, score
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.
+## Rows: 60 Columns: 4
+## ── Column specification ────────────────────────────────────────────────────────
+## Delimiter: ","
+## chr (4): item, trait, facet, direction
+## 
+## ℹ Use `spec()` to retrieve the full column specification for this data.
+## ℹ Specify the column types or set `show_col_types = FALSE` to quiet this message.</code></pre>
+</div>
+<div id="activity-6-forward-reverse-scoring" class="section level2" number="9.8">
+<h2>
+<span class="header-section-number">9.8</span> Activity 6: Forward &amp; reverse scoring<a class="anchor" aria-label="anchor" href="#activity-6-forward-reverse-scoring"><i class="fas fa-link"></i></a>
+</h2>
+<p>Before we go any further, let's explain what we mean by forward and reverse scoring. One of the issues with conducting research using surveys is that if we don't design them carefully, our data may be affected by response bias. One type of response bias is <strong>acquiescence bias</strong>, which is the finding that people have a tendancy to agree with all statements. To try and minimise the impact of this, many questionnaires will <strong>reverse-code</strong> some of the questions so that a positive response means agreeing with one question but disagreeing with another.</p>
+<ul>
+<li>Below are five of the Big 5 items that relate to "Agreeableness". Type the number of one of the items where you think <strong>agreeing</strong> with the item would mean the participant displayed a higher level of agreeableness<input class="webex-solveme nospaces" size="1" data-answer='["1","3","4"]'>
+</li>
+<li>Now type the number of one of the items where you think <strong>disagreeing</strong> with the item would mean the participant displayed a higher level of agreeableness <input class="webex-solveme nospaces" size="1" data-answer='["2","5"]'>
+</li>
+</ul>
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">Q_No</th>
+<th align="left">Question</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Q 1</td>
+<td align="left">Is compassionate, has a soft heart</td>
+</tr>
+<tr class="even">
+<td align="left">Q 2</td>
+<td align="left">Feels little sympathy for others</td>
+</tr>
+<tr class="odd">
+<td align="left">Q 3</td>
+<td align="left">Is respectful, treats others with respect</td>
+</tr>
+<tr class="even">
+<td align="left">Q 4</td>
+<td align="left">Is polite, courteous to others</td>
+</tr>
+<tr class="odd">
+<td align="left">Q 5</td>
+<td align="left">Starts arguments with others</td>
+</tr>
+</tbody>
+</table></div>
+<p>For those items where agreeing with the item means higher agreeableness, participants receive a score of 1 if they answer "disagree strongly" and a score of 5 if they answer "agree strongly". This is called <strong>forward scoring</strong>. For those items where disagreeing with the item means a higher agreeableness score, participants receive a score of 1 if they answer "agree strongly" and 5 if they answer "disagree strongly". This is know as <strong>reverse coding</strong>.</p>
+<p>By combining all three datasets, We can use the information in <code>scoring</code> and <code>codebook</code> to score all responses to the Big 5 and we'll do that in the next chapter. Before we get there though, we need to ensure that we fully understand the data we have and revisit the concept of wide and long-form data.</p>
+</div>
+<div id="activity-7-check-the-data" class="section level2" number="9.9">
+<h2>
+<span class="header-section-number">9.9</span> Activity 7; Check the data<a class="anchor" aria-label="anchor" href="#activity-7-check-the-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>First, answer these questions about the structure of the datasets and the variables they contain. Remember that R is case-sensitive so you need to type these out exactly.</p>
+<p>There's a few ways you could answer these questions - run <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> or <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> on each object, click on them in the environment pane, or view the list of variables by clicking on the blue arrow next to the object name.</p>
+<ol style="list-style-type: decimal">
+<li>
+<code>scoring</code> and <code>codebook</code> have a variable in common. What is the name of this variable? <input class="webex-solveme nospaces" size="9" data-answer='["direction"]'>
+</li>
+<li>What is the name of the variable in <code>big5</code> that contains the Participant's ID? <input class="webex-solveme nospaces" size="10" data-answer='["ResponseId"]'>.</li>
+<li>
+<code>big5</code> is in wide-form, which means that all the information about each participant is contained in a single row, so the more data you have, the wider the dataset will be. How many participants are in this dataset? <input class="webex-solveme nospaces" size="4" data-answer='["5605"]'>
+</li>
+<li>How many questions are there in total on the Big 5 questionnaire? <input class="webex-solveme nospaces" size="2" data-answer='["60"]'>
+</li>
+<li>What is the name of the first variable in <code>big5</code> that contains the response to a BFI item? <input class="webex-solveme nospaces" size="4" data-answer='["Q4_1"]'>
+</li>
+<li>What is the name of the last variable in <code>big5</code> that contains the response to a BFI item? <input class="webex-solveme nospaces" size="5" data-answer='["Q4_60"]'>
+</li>
+</ol>
+<div class="webex-solution">
+<button>
+Explain these answers
+</button>
+<ol style="list-style-type: decimal">
+<li>They both have a column named "direction".</li>
+<li>The column is named <code>ResponseId</code> which has very annoying capital letters but this is the default name that the Qualtrics survey software uses and you'll be using it for the group project so you might as well get used to it!</li>
+<li>There are 5065 rows of data which means there are 5605 participants. You could have done this with code (<code>big5 %&gt;% count()</code>), or by checking the output of <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> or <code><a href="https://rdrr.io/r/utils/str.html">str()</a></code> but you could also just have looked in the environment pane and seen how many observations there were <code>5605 obs. of 61 variables</code>.</li>
+<li>The BFI has 60 items and you were given this information in Activity 5 &amp; 6. The first and last items are named <code>Q4_1</code> and <code>Q4_60</code>. Again there's a few ways of doing this but running <code>str(big5)</code> or clicking the blue arrow next to the object name in the environment are probably the easiest.</li>
+</ol>
+</div>
+</div>
+<div id="activity-8-long-form-data" class="section level2" number="9.10">
+<h2>
+<span class="header-section-number">9.10</span> Activity 8: Long-form data<a class="anchor" aria-label="anchor" href="#activity-8-long-form-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>In order to be able to join all the data files together in a way that is helpful, we need to transform the <code>big5</code> dataset from wide-form to long-form. We've seen long-form data before in the <a href="https://psyteachr.github.io/data-skills-v2/stroop.html#activity-3-data-files">Stroop chapter</a> but as a reminder, in wide-form data you have a single row for each participant whereas in long-form data, you have a row for each observation you have about that participant.</p>
+<ul>
+<li>There are 5605 participants and we have data from 60 questions for each of them. If the data were in long-form, how many rows should there be? (You will need a calculator for this, you can use the console in R) <input class="webex-solveme nospaces" size="6" data-answer='["336300"]'>
+</li>
+</ul>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>There are 5605 participants and 60 observations each. In long-form, each participant should have 60 rows of data so 5605*60 = 336300.</p>
+</div>
+<p>In long-form, the <code>big5</code> dataset would look something like this:</p>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">ResponseId</th>
+<th align="left">question_name</th>
+<th align="right">answer</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_1</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_2</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_3</td>
+<td align="right">1</td>
+</tr>
+<tr class="even">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_4</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_5</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_6</td>
+<td align="right">3</td>
+</tr>
+<tr class="odd">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_7</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_8</td>
+<td align="right">1</td>
+</tr>
+<tr class="odd">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_9</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_10</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_11</td>
+<td align="right">2</td>
+</tr>
+<tr class="even">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_12</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_13</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_14</td>
+<td align="right">4</td>
+</tr>
+<tr class="odd">
+<td align="left">R_3O9fzdsGn9tEeOm</td>
+<td align="left">Q4_15</td>
+<td align="right">4</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+<p>Given that we want to be able to eventually join together <code>big5</code> with <code>scoring</code> and <code>codebook</code>, we want variables that represent the same data to have the same name.</p>
+<ul>
+<li>What would be a better name for the variable <code>question_name</code>? <input class="webex-solveme nospaces" size="4" data-answer='["item"]'>
+</li>
+<li>What would be a better name for the variable <code>answer</code>? <input class="webex-solveme nospaces" size="8" data-answer='["response"]'>
+</li>
+</ul>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p><code>question_name</code> states which question/item the data refers to (these were previously the column names in the wide-form dataset). <code>codebook</code> also has a column with this information but but it is named <code>item</code> so it would be better decision to call it <code>item</code> so it matches.</p>
+<p>Similarly, <code>answer</code> is the response the participant gave to that item. In <code>scoring</code>, this information is in a column named <code>response</code> so again we want them to match.</p>
+</div>
+<p>This is the code that transform the data from wide-form to long-form using the function <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>. We're going to go through how to do this in the next chapter which you'll also work through in the lab. For now, see if you can figure out what each bit of the code is doing and try and write it out in words.</p>
+<div class="sourceCode" id="cb120"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">big5_long</span> <span class="op">&lt;-</span> <span class="va">big5</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="va">Q4_1</span><span class="op">:</span><span class="va">Q4_60</span>, </span>
+<span>               names_to <span class="op">=</span> <span class="st">"item"</span>, </span>
+<span>               values_to <span class="op">=</span> <span class="st">"response"</span><span class="op">)</span> </span></code></pre></div>
+<div class="webex-solution">
+<button>
+Explain this code in words
+</button>
+<ol style="list-style-type: decimal">
+<li><p><strong>big5_long &lt;- big5 %&gt;%</strong>
+This line is taking the data frame named <code>big5</code> and passing it to the next function using the pipe operator <code>%&gt;%</code>. The <code>big5_long</code> object will store the result of the operations that follow.</p></li>
+<li><p><strong>pivot_longer(cols = Q4_1:Q4_60,</strong>
+The <code>pivot_longer</code> function is used to transform the data from "wide" format to "long" format. In this case, the function is applied to the columns <code>Q4_1</code> through <code>Q4_60</code> of the <code>big5</code> data frame. The wide format has a column for each variable (in this case, 60 different items <code>Q4_1</code> through <code>Q4_60</code>), while the long format has a row for each variable-value pair.</p></li>
+<li><p><strong>names_to = "item",</strong>
+The <code>names_to</code> argument specifies the name of a new column that will be created to store the column names from the original data frame (that is, the names of the items <code>Q4_1</code> through <code>Q4_60</code>). This new column will be named "item".</p></li>
+<li><p><strong>values_to = "response")</strong>
+The <code>values_to</code> argument specifies the name of a new column that will store the values from the original data frame (that is, the responses to the items <code>Q4_1</code> through <code>Q4_60</code>). This new column will be named "response".</p></li>
+</ol>
+<p>So, in summary, this script is taking the <code>big5</code> data frame and transforming it from a wide format to a long format, where the original column names are stored in a new column named "item", and their corresponding values are stored in a new column named "response". The transformed data frame is then stored in a new object called <code>big5_long</code>.</p>
+</div>
+</div>
+<div id="finished-7" class="section level2" number="9.11">
+<h2>
+<span class="header-section-number">9.11</span> Finished<a class="anchor" aria-label="anchor" href="#finished-7"><i class="fas fa-link"></i></a>
+</h2>
+<p>Finally, try knitting the file to HTML and remember to make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server.</p>
+
+</div>
+</div>
+
+
+
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script>
+
+</div>
+<div class="chapter-nav">
+<div class="prev"><a href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></div>
+<div class="next"><a href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#big-five-personality-1"><span class="header-section-number">9</span> Big five personality 1</a></li>
+<li><a class="nav-link" href="#sec-ilo-big5"><span class="header-section-number">9.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#psych-1b"><span class="header-section-number">9.2</span> Psych 1B</a></li>
+<li><a class="nav-link" href="#activity-1-personality-traits"><span class="header-section-number">9.3</span> Activity 1: Personality traits</a></li>
+<li><a class="nav-link" href="#sec-new-project-big5"><span class="header-section-number">9.4</span> Activity 2: New project</a></li>
+<li><a class="nav-link" href="#sec-data-big5"><span class="header-section-number">9.5</span> Activity 3: Data files</a></li>
+<li><a class="nav-link" href="#activity-4-new-r-markdown"><span class="header-section-number">9.6</span> Activity 4: New R Markdown</a></li>
+<li><a class="nav-link" href="#activity-5-loading-data-1"><span class="header-section-number">9.7</span> Activity 5: Loading data</a></li>
+<li><a class="nav-link" href="#activity-6-forward-reverse-scoring"><span class="header-section-number">9.8</span> Activity 6: Forward &amp; reverse scoring</a></li>
+<li><a class="nav-link" href="#activity-7-check-the-data"><span class="header-section-number">9.9</span> Activity 7; Check the data</a></li>
+<li><a class="nav-link" href="#activity-8-long-form-data"><span class="header-section-number">9.10</span> Activity 8: Long-form data</a></li>
+<li><a class="nav-link" href="#finished-7"><span class="header-section-number">9.11</span> Finished</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/09-big5.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/09-big5.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-07-17.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer>
+</div>
+</body>
+</html>

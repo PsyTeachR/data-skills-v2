@@ -1,0 +1,11 @@
+direction,response,score
+forward,1,1
+forward,2,2
+forward,3,3
+forward,4,4
+forward,5,5
+reversed,1,5
+reversed,2,4
+reversed,3,3
+reversed,4,2
+reversed,5,1
