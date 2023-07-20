@@ -98,7 +98,7 @@ activity-6-joining-the-datasets
 argument-names
 tab-auto-complete
 activity-7-analysis-by-groups
-visuaise-the-groups
+visualise-the-groups
 finished-3
 corsi-blocks-2
 sec-ilo-corsi-analysis

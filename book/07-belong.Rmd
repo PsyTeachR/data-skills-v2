@@ -73,8 +73,8 @@ questionnaire_data <- data %>% select(participant, level, belongingness, engagem
 By the end of this chapter you should be able to:
 
 * Explain what Belonging is and how it is measured
-* Convert variables to factors
-* Create scatterplots and grouped scatterplots
+* Convert variables to factors using `mutate()`and `factor()` 
+* Create scatterplots and grouped scatterplots using `ggplot()`, `geom_smooth()` and `geom_point()`
 
 ## Walkthrough video {#sec-walkthrough-belong}
 

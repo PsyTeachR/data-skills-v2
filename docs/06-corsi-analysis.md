@@ -8,9 +8,10 @@
 
 By the end of this chapter you should be able to:
 
-* Select variables
-* Filter observations by multiple criteria
-* Make plots look nice
+* Select variables using `select()`
+* Filter observations by multiple criteria using `filter()`
+* Change the colour of plots look by customising `ggplot()`
+* Reorder categorical variables using `factor()`
 
 ## Walkthrough video {#sec-walkthrough-corsi-analysis}
 

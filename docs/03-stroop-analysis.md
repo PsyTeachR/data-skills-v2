@@ -8,7 +8,7 @@
 
 By the end of this chapter you should be able to:
 
-* Calculate counts and descriptive statistics by groups
+* Calculate counts and descriptive statistics (mean, median, sd) by groups using `count()`, `group_by()` and `summarise()`
 * Troubleshoot a couple of common errors
 
 We'll work through this chapter as a group in the lab in week 3 so feel free to have a read through it in advance but you can do the actual work in the lab!

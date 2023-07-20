@@ -9,7 +9,8 @@
 By the end of this chapter you should be able to:
 
 * Explain what the Corsi Block Task is and what it measures
-* Join two datasets together
+* Join two datasets together using `inner_join()`
+* Create boxplots using `ggplot()`, `geom_boxplot()`, and `facet_wrap()`
 
 ## Walkthrough video {#sec-walkthrough-corsi}
 
@@ -347,7 +348,7 @@ group_scores <- full_dat %>%
 
 Which group has the lowest score? <select class='webex-select'><option value='blank'></option><option value=''>8 hours sleep</option><option value=''>4 hours sleep</option><option value='answer'>Sleep deprived</option></select>
 
-### Visuaise the groups
+### Visualise the groups
 
 Finally, we can also visualise the difference in score between groups.
 

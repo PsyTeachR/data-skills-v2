@@ -204,7 +204,9 @@ In long-form, the `big5` dataset would look something like this:
 
 ```{r echo = FALSE}
 big5 %>%
-  pivot_longer(cols = 2:61, names_to = "question_name", values_to = "answer") %>%
+  pivot_longer(cols = 2:61, 
+               names_to = "question_name", 
+               values_to = "answer") %>%
   head(15)
 ```
 

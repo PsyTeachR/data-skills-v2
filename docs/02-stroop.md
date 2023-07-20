@@ -11,7 +11,8 @@ By the end of this chapter you should be able to:
 
 * Explain what the Stroop effect is and how is it measured
 * Load and use packages and functions in R
-* Load and check data
+* Load data using `read_csv()`
+* Check data using `summary()`, `str()`, and visual methods
 
 ## Walkthrough video {#sec-walkthrough-stroop}
 

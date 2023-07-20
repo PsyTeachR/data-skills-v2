@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 7 Belonging 1 | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="description" content="7.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what Belonging is and how it is measured Convert variables to factors Create scatterplots and grouped...">
+<meta name="description" content="7.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what Belonging is and how it is measured Convert variables to factors using mutate()and factor() Create...">
 <meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="Chapter 7 Belonging 1 | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/belonging-1.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
-<meta property="og:description" content="7.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what Belonging is and how it is measured Convert variables to factors Create scatterplots and grouped...">
+<meta property="og:description" content="7.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what Belonging is and how it is measured Convert variables to factors using mutate()and factor() Create...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 7 Belonging 1 | Data Skills">
-<meta name="twitter:description" content="7.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what Belonging is and how it is measured Convert variables to factors Create scatterplots and grouped...">
+<meta name="twitter:description" content="7.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what Belonging is and how it is measured Convert variables to factors using mutate()and factor() Create...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -111,8 +111,10 @@
 <p>By the end of this chapter you should be able to:</p>
 <ul>
 <li>Explain what Belonging is and how it is measured</li>
-<li>Convert variables to factors</li>
-<li>Create scatterplots and grouped scatterplots</li>
+<li>Convert variables to factors using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>and <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code>
+</li>
+<li>Create scatterplots and grouped scatterplots using <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code>, <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> and <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>
+</li>
 </ul>
 </div>
 <div id="sec-walkthrough-belong" class="section level2" number="7.2">
@@ -903,7 +905,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-07-17.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-07-20.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
