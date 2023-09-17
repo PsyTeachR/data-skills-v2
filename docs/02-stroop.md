@@ -10,7 +10,7 @@
 By the end of this chapter you should be able to:
 
 * Explain what the Stroop effect is and how is it measured
-* Load and use packages and functions in R
+* Load and use packages and functions in Rw
 * Load data using `read_csv()`
 * Check data using `summary()`, `str()`, and visual methods
 
@@ -184,7 +184,7 @@ You'll see `library(beepr)` appear in the console. There's no warning messages o
 
 ### Using a function
 
-Now you can use the function `beep()`. A <a class='glossary'>function<span class='def'></span></a> is a name that refers to some code you can reuse.
+Now you can use the function `beep()`. A <a class='glossary'>function<span class='def'></span></a> is a name that refers to code that performs some sort of action.
 
 * In code chunk 2, write and run the below code to use the function `beep()` (make sure you have your sound on).
 * If you get the error `could not find function` it means you have not loaded the package properly, try running `library(beepr)` again and make sure everything is spelled exactly right.

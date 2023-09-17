@@ -361,7 +361,7 @@ Figure 5.1: ggplot Layers from Field et al. (2012)
 </p>
 </div>
 <ul>
-<li><p>The main function we use is <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> which is from the <code class="package">ggplot2</code> and is loaded as part of the <code class="package">tidyverse</code>. <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> works on a system of layers.</p></li>
+<li><p>The main function we use is <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> which is from the <code class="package">ggplot2</code> package and is loaded as part of the <code class="package">tidyverse</code>. <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> works on a system of layers.</p></li>
 <li><p>The first layer sets up what data the plot will use and the "aesthetic mapping" (<code><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes()</a></code>) which means which variables should be represented on each axis. We want to produce a histogram of the Corsi block scores so we tell <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> to put the variable <code>Corsi_Score</code> on the x-axis.</p></li>
 <li><p>The next layer tells <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> what type of plot (or "geom") to use and here we specify <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>. There are two arguments added to <code><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram()</a></code>: <code>binwidth</code> changes the size of the bars (try changing this value to 2 or 3 and see happens) whilst <code>colour</code> changes the colour of the line around the bars (try changing "black").</p></li>
 <li><p><code><a href="https://ggplot2.tidyverse.org/reference/scale_continuous.html">scale_x_continuous()</a></code> controls the x-axis. <code>name</code> is the x-axis label and <code>breaks</code> updates the number labels on the x-axis. In this case we ask us to give us the sequence (<code>seq</code>) of numbers from 1 to 9, which is quicker than writing them all out.</p></li>
@@ -760,7 +760,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-07-20.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-09-17.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

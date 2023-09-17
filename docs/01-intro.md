@@ -15,7 +15,7 @@ If you're completely new to programming, you're unlikely to understand everythin
 
 ## Walkthrough video {#sec-walkthrough-intro}
 
-There is a walkthrough video of this chapter available via [Echo360.]() (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Echo360.](https://echo360.org.uk/media/ba8471e0-eac6-4f9a-ac15-a24153a86881/public) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## R and RStudio {#sec-intro-r}
 
@@ -33,7 +33,7 @@ Whilst you can access the server through a browser and therefore it is technical
 
 ## R server
 
-First, log on to the R server. The link for the R server can be found at the top of the Data Skills section on the Psych 1A Moodle page. The server is only for UofG students which is why we can't share the link here as this is a public book. We'd suggest saving the link to the server as a bookmark. Login to the sever using your GUID and password that you use to login to all other UofG systems. 
+First, log on to the R server. The link for the R server can be found at the top of the Data Skills section on the Psych 1A Moodle page. The server is only for UofG students which is why we can't share the link here as this is a public book. We'd suggest saving the link to the server as a bookmark. Login to the sever using your GUID and password that you use to login to all other UofG systems. If you're not a student at UofG, you can sign up for a free accout on [RStudio Cloud](https://login.rstudio.cloud/login].
 
 When you login to the server for the first time, you'll see the landing page that has two sections: **Sessions** and **Projects**. 
 
@@ -125,7 +125,7 @@ Ok, let's write some code! We're going to open a script very shortly but first l
 
 A large part of your coding will involve creating and manipulating objects. Objects contain stuff. That stuff can be numbers, words, or the result of operations and analyses. You assign content to an object using `<-`
 
-Run the following code in the console, but change the values of `name`, `age` and `birthday` to your own details (`birthday` should be the date of your next birthday). Press enter after you type each line.
+Run the following code in the console, but change the values of `name`, `age` and `birthday` to your own details (`birthday` should be the date of your next birthday, year-month-day). Press enter after you type each line.
 
 
 ```r
@@ -254,7 +254,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 38 years old. It is 357 days until my birthday.**
+**My name is Emily and I am 38 years old. It is 298 days until my birthday.**
 
 We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 

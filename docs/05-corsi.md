@@ -219,7 +219,7 @@ ggplot() builds plots by combining layers. If you're used to making plots in Exc
 <p class="caption">(\#fig:img-layers)ggplot Layers from Field et al. (2012)</p>
 </div>
 
-* The main function we use is `ggplot()` which is from the <code class='package'>ggplot2</code> and is loaded as part of the <code class='package'>tidyverse</code>. `ggplot()` works on a system of layers.
+* The main function we use is `ggplot()` which is from the <code class='package'>ggplot2</code> package and is loaded as part of the <code class='package'>tidyverse</code>. `ggplot()` works on a system of layers.
 * The first layer sets up what data the plot will use and the "aesthetic mapping" (`aes()`) which means which variables should be represented on each axis. We want to produce a histogram of the Corsi block scores so we tell `ggplot()` to put the variable `Corsi_Score` on the x-axis.
 * The next layer tells `ggplot()` what type of plot (or "geom") to use and here we specify `geom_histogram()`. There are two arguments added to `geom_histogram()`: `binwidth` changes the size of the bars (try changing this value to 2 or 3 and see happens) whilst `colour` changes the colour of the line around the bars (try changing "black").
 * `scale_x_continuous()` controls the x-axis. `name` is the x-axis label and `breaks` updates the number labels on the x-axis. In this case we ask us to give us the sequence (`seq`) of numbers from 1 to 9, which is quicker than writing them all out. 

@@ -70,7 +70,7 @@ full_dat <- inner_join(x = demographic_data,
 
 ## Activity 3: Selecting variables
 
-Often you will have more variables (columns) that you need. For the analysis we're interested in, we really only need three columns, `Participant`, `Condition`, and `Corsi_Score`.
+Often you will have more variables (columns) than you need. For the analysis we're interested in, we really only need three columns, `Participant`, `Condition`, and `Corsi_Score`.
 
 You can create a new dataset with just the columns you want using the `select()` function. You can either specify the columns you want to keep:
 
@@ -177,7 +177,7 @@ full_dat %>%
 The `|` symbol can be a little hard to find on the keyboard. Normally you can type it by pressing `Shift + \` . The key will likely show a symbol of a bar split in two which is slightly confusing. 
 :::
 
-Previous research (e.g., [Hester at el., 2004](https://www.hesterlab.org/wp-content/uploads/publications/JINS-2004-Hester.pdf))has found that age can affect performance on the Corsi block task.
+Previous research (e.g., [Hester at el., 2004](https://www.hesterlab.org/wp-content/uploads/publications/JINS-2004-Hester.pdf)) has found that age can affect performance on the Corsi block task.
 
 * In code chunk 3, use `filter()` to create a new object named `age_control` that just has data from participants whose age is 20 or older but 30 or younger. Your starting dataset should be `analysis_data`
 

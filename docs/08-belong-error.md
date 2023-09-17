@@ -28,7 +28,7 @@ We will give you hints but we won't be giving any solutions. To figure out the a
 * Google the error messages
 * Try changing stuff and see what happens
 
-Once you've figured it out, make notes on what the error was and how you fixed it because there's actually a relatively small set of errors you'll make again and again so it will help you debug future code.
+Don't use ChatGPT or other AI tools for this chapter because you won't learn anything, you need to be the one that figures out the error. Once you've figured it out, make notes on what the error was and how you fixed it because there's actually a relatively small set of errors you'll make again and again so it will help you debug future code.
 
 ## Activity 1: Setup
 
