@@ -95,7 +95,7 @@ Which function do you use to load in a .csv dataset? `r mcq(c(answer = "read_csv
 * `readr`: This is the name of a package, not a function. The readr package provides functions for reading in different types of text data, including .csv files. The function from this package to read .csv files is read_csv().
 * `tidyverse`: This is also a package (actually a collection of packages), not a function. The tidyverse collection includes the readr package, which contains the read_csv() function.
 
-`r `unhide()`
+`r unhide()`
 
 * In code chunk 1, write three lines of code that load the tidyverse, load the file `participant-data.csv` into an object named `ppt_info`, and then load the file `experiment_data.csv` into an object named `dat`. Try and see if you can do this from memory and use the hints before you look at the solution - you'll learn much quicker if you do it this way (even if you don't get it right) than just going straight to the solution.
 * Once you've loaded the data files, click on them to view them and check everything looks as it should.
@@ -142,6 +142,11 @@ ppt_info %>%
   count(gender)
 ```
 
+
+::: {.info data-latex=""}
+If you're watching the video, you may wonder why your output is appearing in a different place to Emily's. You can choose whether the output of your code appears within your Markdown document, or in the console. If you want to change this setting go to `Tools` - `Global options` - `RMarkdown` and then uncheck the box for `Show output inline for all R Markdown documents` if you want it to appear in the console. It makes no difference to your code which one you use, it's entirely preference. 
+:::
+
 ### Calculating summary statistics
 
 It's also common to report the mean and standard deviation of the age of your sample. Rather than using `count()`, we'll use the function `summarise()` which can be used to create summary statistics (e.g., mean, median, SD etc).
@@ -174,6 +179,8 @@ In R, there are many functions to calculate summary statistics. Here is a list o
 7. `sd(x)`: Calculates the standard deviation of `x`.
 8. `var(x)`: Computes the variance of `x`.
 9. `n()` Computes the number of observations, similar to `count()`
+
+<br>
 
 * Add in the code to the above that will also calculate the median age of participants and store it in a column named `median_age`.
 

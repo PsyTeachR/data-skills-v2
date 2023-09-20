@@ -19,7 +19,7 @@ There is a walkthrough video of this chapter available via [Echo360.](https://ec
 
 ## R and RStudio {#sec-intro-r}
 
-R is a programming language that you will write code in. RStudio is an Integrated Development Environment (<a class='glossary'>IDE<span class='def'></span></a>). Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more.
+R is a programming language that you will write code in. RStudio is an Integrated Development Environment (<a class='glossary' target='_blank' title='Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R.' href='https://psyteachr.github.io/glossary/i#ide'>IDE</a>). Think of it as knowing English and using a plain text editor like NotePad to write a book versus using a word processor like Microsoft Word. You could do it, but it would be much harder without things like spell-checking and formatting and you wouldn't be able to use some of the advanced features that Word has developed. In a similar way, you can use R without R Studio but we wouldn't recommend it. RStudio serves as a text editor, file manager, spreadsheet viewer, and more.
 
 * There's an [RStudio IDE Cheatsheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf){download=""} you will find helpful to download and keep as a reference.
 
@@ -68,7 +68,7 @@ Do the following, in this order:
 
 ## RStudio panes
 
-RStudio is arranged with four window <a class='glossary'>panes<span class='def'></span></a>. By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. **When you first open a new project this pane won't display until you open a document or load in some data** -- don't worry, we'll get to that soon.
+RStudio is arranged with four window <a class='glossary' target='_blank' title='RStudio is arranged with four window "panes".' href='https://psyteachr.github.io/glossary/p#panes'>panes</a>. By default, the upper left pane is the **source pane**, where you view, write, and edit code from files and view data tables in a spreadsheet format. **When you first open a new project this pane won't display until you open a document or load in some data** -- don't worry, we'll get to that soon.
 
 <div class="figure" style="text-align: center">
 <img src="images/intro/rstudio.png" alt="The RStudio IDE" width="100%" />
@@ -81,7 +81,7 @@ The lower left pane is the **console pane**, where you can type in commands and 
 Try using the console as a calculator - type `1 + 1` and press enter.
 :::
 
-The right panes have several different tabs that show you information about your code. The most used tab in the upper right pane is the **Environment** tab. The Environment tab lists some information about the <a class='glossary'>objects<span class='def'></span></a> that you have defined in your code. 
+The right panes have several different tabs that show you information about your code. The most used tab in the upper right pane is the **Environment** tab. The Environment tab lists some information about the <a class='glossary' target='_blank' title='A word that identifies and stores the value of some data for later use.' href='https://psyteachr.github.io/glossary/o#object'>objects</a> that you have defined in your code. 
 
 In the lower right pane, the most used tabs are the **Files** tab for directory structure, the **Plots** tab for plots, the **Packages** tab for managing add-on packages (we'll explain what these are in the next chapter), and the **Viewer** tab to display reports created by your scripts. You can change the location of panes and what tabs are shown under `Tools > Global Options... > Pane Layout`. When you open a new project, the Files tab will be set to your project working directory and will show a file with the file extension `.Rproj` which is the file that has all the information about your project. Don't delete this file!
 
@@ -137,8 +137,8 @@ birthday <- as.Date("2024-07-11")
 
 You'll see that four objects now appear in the environment pane:
 
-* `name` is <a class='glossary'>character<span class='def'></span></a> (text) data. In order for R to recognise it as text, it **must** be enclosed in double quotation marks `" "`.
-* `age` is <a class='glossary'>numeric<span class='def'></span></a> data. In order for R to recognise this as a number, it **must not** be enclosed in quotation marks. Every year I have to update my age in this book and I am confronted with my own mortality drawing ever closer. 
+* `name` is <a class='glossary' target='_blank' title='A data type representing strings of text.' href='https://psyteachr.github.io/glossary/c#character'>character</a> (text) data. In order for R to recognise it as text, it **must** be enclosed in double quotation marks `" "`.
+* `age` is <a class='glossary' target='_blank' title='A data type representing a real decimal number or integer.' href='https://psyteachr.github.io/glossary/n#numeric'>numeric</a> data. In order for R to recognise this as a number, it **must not** be enclosed in quotation marks. Every year I have to update my age in this book and I am confronted with my own mortality drawing ever closer. 
 * `today` stores the result of the function `Sys.Date()`. This function returns your computer system's date. Unlike `name` and `age`, which are hard-coded (i.e., they will always return the values you enter), the contents of the object `today` will change dynamically with the date. That is, if you run that function tomorrow, it will update the date to tomorrow's date.
 * `birthday` is also a date but it's hard-coded as a specific date. It's wrapped within the `as.Date()` function that tells R to interpret the character string you provide as a date rather than text.
 
@@ -254,7 +254,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 38 years old. It is 298 days until my birthday.**
+**My name is Emily and I am 38 years old. It is 295 days until my birthday.**
 
 We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 
@@ -307,24 +307,24 @@ The glossary at the end of each chapter defines common jargon you might encounte
  </thead>
 <tbody>
   <tr>
-   <td style="text-align:left;"> character </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> [character](https://psyteachr.github.io/glossary/c.html#character){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing strings of text. </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> IDE </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> [ide](https://psyteachr.github.io/glossary/i.html#ide){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> Integrated Development Environment: a program that serves as a text editor, file manager, and provides functions to help you read and write code. RStudio is an IDE for R. </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> numeric </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> [numeric](https://psyteachr.github.io/glossary/n.html#numeric){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A data type representing a real decimal number or integer. </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> object </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> [object](https://psyteachr.github.io/glossary/o.html#object){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> A word that identifies and stores the value of some data for later use. </td>
   </tr>
   <tr>
-   <td style="text-align:left;"> panes </td>
-   <td style="text-align:left;">  </td>
+   <td style="text-align:left;"> [panes](https://psyteachr.github.io/glossary/p.html#panes){class="glossary" target="_blank"} </td>
+   <td style="text-align:left;"> RStudio is arranged with four window "panes". </td>
   </tr>
 </tbody>
 </table>

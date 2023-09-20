@@ -76,7 +76,9 @@ Which function do you use to load in a .csv dataset? <select class='webex-select
 * `readr`: This is the name of a package, not a function. The readr package provides functions for reading in different types of text data, including .csv files. The function from this package to read .csv files is read_csv().
 * `tidyverse`: This is also a package (actually a collection of packages), not a function. The tidyverse collection includes the readr package, which contains the read_csv() function.
 
-`r `unhide()`
+
+</div>
+
 
 * In code chunk 1, write three lines of code that load the tidyverse, load the file `participant-data.csv` into an object named `ppt_info`, and then load the file `experiment_data.csv` into an object named `dat`. Try and see if you can do this from memory and use the hints before you look at the solution - you'll learn much quicker if you do it this way (even if you don't get it right) than just going straight to the solution.
 * Once you've loaded the data files, click on them to view them and check everything looks as it should.
@@ -129,9 +131,18 @@ ppt_info %>%
 
 <div class="kable-table">
 
-|   n|
-|---:|
-| 270|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> n </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 270 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -145,13 +156,35 @@ ppt_info %>%
 
 <div class="kable-table">
 
-|gender     |   n|
-|:----------|---:|
-|Man        | 100|
-|Non-Binary |  50|
-|Woman      | 120|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> n </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Man </td>
+   <td style="text-align:right;"> 100 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Non-Binary </td>
+   <td style="text-align:right;"> 50 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Woman </td>
+   <td style="text-align:right;"> 120 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
+
+
+::: {.info data-latex=""}
+If you're watching the video, you may wonder why your output is appearing in a different place to Emily's. You can choose whether the output of your code appears within your Markdown document, or in the console. If you want to change this setting go to `Tools` - `Global options` - `RMarkdown` and then uncheck the box for `Show output inline for all R Markdown documents` if you want it to appear in the console. It makes no difference to your code which one you use, it's entirely preference. 
+:::
 
 ### Calculating summary statistics
 
@@ -169,9 +202,18 @@ ppt_info %>%
 
 <div class="kable-table">
 
-| mean_age|
-|--------:|
-|  24.4037|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> mean_age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 24.4037 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -186,9 +228,20 @@ ppt_info %>%
 
 <div class="kable-table">
 
-| mean_age|   sd_age|
-|--------:|--------:|
-|  24.4037| 3.496677|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> mean_age </th>
+   <th style="text-align:right;"> sd_age </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 24.4037 </td>
+   <td style="text-align:right;"> 3.496677 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -203,6 +256,8 @@ In R, there are many functions to calculate summary statistics. Here is a list o
 7. `sd(x)`: Calculates the standard deviation of `x`.
 8. `var(x)`: Computes the variance of `x`.
 9. `n()` Computes the number of observations, similar to `count()`
+
+<br>
 
 * Add in the code to the above that will also calculate the median age of participants and store it in a column named `median_age`.
 
@@ -242,11 +297,40 @@ ppt_info %>%
 
 <div class="kable-table">
 
-|gender     | mean_age|   sd_age| median_age| group_size|
-|:----------|--------:|--------:|----------:|----------:|
-|Man        | 24.25000| 3.382591|       24.0|        100|
-|Non-Binary | 24.22000| 3.726847|       25.5|         50|
-|Woman      | 24.60833| 3.510598|       25.0|        120|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> mean_age </th>
+   <th style="text-align:right;"> sd_age </th>
+   <th style="text-align:right;"> median_age </th>
+   <th style="text-align:right;"> group_size </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Man </td>
+   <td style="text-align:right;"> 24.25000 </td>
+   <td style="text-align:right;"> 3.382591 </td>
+   <td style="text-align:right;"> 24.0 </td>
+   <td style="text-align:right;"> 100 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Non-Binary </td>
+   <td style="text-align:right;"> 24.22000 </td>
+   <td style="text-align:right;"> 3.726847 </td>
+   <td style="text-align:right;"> 25.5 </td>
+   <td style="text-align:right;"> 50 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Woman </td>
+   <td style="text-align:right;"> 24.60833 </td>
+   <td style="text-align:right;"> 3.510598 </td>
+   <td style="text-align:right;"> 25.0 </td>
+   <td style="text-align:right;"> 120 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
