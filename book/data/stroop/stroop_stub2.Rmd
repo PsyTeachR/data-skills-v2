@@ -44,4 +44,8 @@ Remember to use your Markdown to keep notes!
 
 ```
 
+```{r chunk7}
+# debugging exercises
+
+```
 

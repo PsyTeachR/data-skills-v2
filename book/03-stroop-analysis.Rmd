@@ -97,7 +97,7 @@ Which function do you use to load in a .csv dataset? `r mcq(c(answer = "read_csv
 
 `r unhide()`
 
-* In code chunk 1, write three lines of code that load the tidyverse, load the file `participant-data.csv` into an object named `ppt_info`, and then load the file `experiment_data.csv` into an object named `dat`. Try and see if you can do this from memory and use the hints before you look at the solution - you'll learn much quicker if you do it this way (even if you don't get it right) than just going straight to the solution.
+* In code chunk 1, write three lines of code that load the tidyverse, load the file `participant_data.csv` into an object named `ppt_info`, and then load the file `experiment_data.csv` into an object named `dat`. Try and see if you can do this from memory and use the hints before you look at the solution - you'll learn much quicker if you do it this way (even if you don't get it right) than just going straight to the solution.
 * Once you've loaded the data files, click on them to view them and check everything looks as it should.
 * If you get an error, trouble-shoot with your group and also check the notes in Chapter\ \@ref(sec-read-csv) on how to resolve it.
 
