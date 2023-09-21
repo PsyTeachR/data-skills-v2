@@ -112,102 +112,36 @@ The server will automatically unzip the files for you into your chosen folder an
 The zip file contains four files:
 
 * `stroop_stub1.Rmd` and `stroop_stub2.Rmd`: to help you out in the first semester, we'll provide pre-formatted Markdown files ("stub" files) that contain code chunks for each activity and spaces for you to take notes. Open `stroop_sub1.Rmd` by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
-* `participant_data.csv` is a data file that contains each participant's anonymous ID, age, and gender. This data is in <a class='glossary' target='_blank' title='A data format where all of the observations about one subject are in the same row' href='https://psyteachr.github.io/glossary/w#wide'>wide-form</a> which means that all of the observations about one subject are in the same row. There are 270 participants, so there are 270 rows of data.
+* `participant_data.csv` is a data file that contains each participant's anonymous ID, age, and gender. This data is in <a class='glossary'>wide-form<span class='def'></span></a> which means that all of the observations about one subject are in the same row. There are 270 participants, so there are 270 rows of data.
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> participant_id </th>
-   <th style="text-align:left;"> gender </th>
-   <th style="text-align:right;"> age </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 20 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 20 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 27 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 19 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 23 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 28 </td>
-  </tr>
-</tbody>
-</table>
+| participant_id|gender | age|
+|--------------:|:------|---:|
+|              1|Man    |  20|
+|              2|Man    |  20|
+|              3|Man    |  27|
+|              4|Man    |  19|
+|              5|Man    |  23|
+|              6|Man    |  28|
 
 </div>
 
 
-* `experiment_data.csv` is a data file that contains each participant's anonymous ID, and mean reaction time for all the congruent and incongruent trials they completed. This data is in <a class='glossary' target='_blank' title='A data format where each observation is on a separate row' href='https://psyteachr.github.io/glossary/l#long'>long-form</a> where each observation is on a separate row so for the Stroop experiment, each participant has two rows because there are two observations (one for congruent trials and one for incongruent trials). So there are 270 participants, but 540 rows of data (270 * 2).
+* `experiment_data.csv` is a data file that contains each participant's anonymous ID, and mean reaction time for all the congruent and incongruent trials they completed. This data is in <a class='glossary'>long-form<span class='def'></span></a> where each observation is on a separate row so for the Stroop experiment, each participant has two rows because there are two observations (one for congruent trials and one for incongruent trials). So there are 270 participants, but 540 rows of data (270 * 2).
 
 You may be less familiar with this way of organising data, but for many functions in R your data must be stored this way. This semester, we'll provide you with the data in the format it needs to be in and next semester we'll show you how to transform it yourself.
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> participant_id </th>
-   <th style="text-align:left;"> condition </th>
-   <th style="text-align:right;"> reaction_time </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> congruent </td>
-   <td style="text-align:right;"> 847.0311 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> incongruent </td>
-   <td style="text-align:right;"> 910.3084 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:left;"> congruent </td>
-   <td style="text-align:right;"> 748.1366 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:left;"> incongruent </td>
-   <td style="text-align:right;"> 967.4626 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:left;"> congruent </td>
-   <td style="text-align:right;"> 786.2370 </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:left;"> incongruent </td>
-   <td style="text-align:right;"> 975.7407 </td>
-  </tr>
-</tbody>
-</table>
+| participant_id|condition   | reaction_time|
+|--------------:|:-----------|-------------:|
+|              1|congruent   |      847.0311|
+|              1|incongruent |      910.3084|
+|              2|congruent   |      748.1366|
+|              2|incongruent |      967.4626|
+|              3|congruent   |      786.2370|
+|              3|incongruent |      975.7407|
 
 </div>
 
@@ -215,11 +149,11 @@ Before we load in and work with the data files we need to explain a few more thi
 
 ## Packages and functions {#sec-packages}
 
-When you install R you will have access to a range of <a class='glossary' target='_blank' title='A named section of code that can be reused.' href='https://psyteachr.github.io/glossary/f#function'>functions</a> including options for <a class='glossary' target='_blank' title='The process of preparing data for visualisation and statistical analysis.' href='https://psyteachr.github.io/glossary/d#data-wrangling'>data wrangling</a> and statistical analysis. The functions that are included in the default installation are typically referred to as <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages.' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> and you can think of them like the default apps that come pre-loaded on your phone. 
+When you install R you will have access to a range of <a class='glossary'>functions<span class='def'></span></a> including options for <a class='glossary'>data wrangling<span class='def'></span></a> and statistical analysis. The functions that are included in the default installation are typically referred to as <a class='glossary'>base R<span class='def'></span></a> and you can think of them like the default apps that come pre-loaded on your phone. 
 
-One of the great things about R, however, is that it is **user extensible**: anyone can create a new add-on that extends its functionality. There are currently thousands of <a class='glossary' target='_blank' title='A group of R functions.' href='https://psyteachr.github.io/glossary/p#package'>packages</a> that R users have created to solve many different kinds of problems, or just simply to have fun. For example, there are packages for data visualisation, machine learning, interactive dashboards, web scraping, and playing games such as Sudoku.
+One of the great things about R, however, is that it is **user extensible**: anyone can create a new add-on that extends its functionality. There are currently thousands of <a class='glossary'>packages<span class='def'></span></a> that R users have created to solve many different kinds of problems, or just simply to have fun. For example, there are packages for data visualisation, machine learning, interactive dashboards, web scraping, and playing games such as Sudoku.
 
-Add-on packages are not included with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone. The main repository where packages reside is called <a class='glossary' target='_blank' title='The Comprehensive R Archive Network: a network of ftp and web servers around the world that store identical, up-to-date, versions of code and documentation for R.' href='https://psyteachr.github.io/glossary/c#cran'>CRAN</a>, the Comprehensive R Archive Network.
+Add-on packages are not included with base R, but have to be downloaded and installed from an archive, in the same way that you would, for instance, download and install PokemonGo on your smartphone. The main repository where packages reside is called <a class='glossary'>CRAN<span class='def'></span></a>, the Comprehensive R Archive Network.
 
 There is an important distinction between **installing** a package and **loading** a package.
 
@@ -233,45 +167,77 @@ The packages you need for this course are already installed on the server so we'
 
 ### Loading a package
 
-This is done using the `library()` function. This is like **launching** an app on your phone: the functionality is only there when the app is launched and remains there until you close the app or restart. For example, when you run `library(beepr)` within a session, the functions in the package `beepr` will be made available for your R session. The next time you start R, you will need to run `library(beepr)` again if you want to access that package.
+This is done using the `library()` function. This is like **launching** an app on your phone: the functionality is only there when the app is launched and remains there until you close the app or restart. For example, when you run `library(cowsay)` within a session, the functions in the package `cowsay` will be made available for your R session. The next time you start R, you will need to run `library(cowsay)` again if you want to access that package.
 
 ## Activity 4: Packages and function
 
-As an example, let's load the <code class='package'>beepr</code> package which is already installed on the server. The <code class='package'>beepr</code> package is mostly just for fun - it makes R play a short noise - but it's useful to show you how packages work. To load a package, you use the function `library()` and include the name of the package you want to load in parentheses.
+As an example, let's load the <code class='package'>cowsay</code> package which is already installed on the server. The <code class='package'>cowsay</code> package is just for fun - it will print a message with an animal - but it's useful to show you how packages work. To load a package, you use the function `library()` and include the name of the package you want to load in parentheses.
 
-* In code chunk 1, type and run the below code to load the `beepr` package. If you can't remember how to run code, take a look back at Chapter\ \@ref(sec-run-code).
+* In code chunk 1, type and run the below code to load the `cowsay` package. If you can't remember how to run code, take a look back at Chapter\ \@ref(sec-run-code).
 
 
 ```r
-library(beepr)
+library(cowsay)
 ```
 
-You'll see `library(beepr)` appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.
+You'll see `library(cowsay)` appear in the console. There's no warning messages or errors so it looks like it has loaded successfully.
 
 ### Using a function
 
-Now you can use the function `beep()`. A <a class='glossary' target='_blank' title='A named section of code that can be reused.' href='https://psyteachr.github.io/glossary/f#function'>function</a> is a name that refers to code that performs some sort of action.
+Now you can use the function `say()`. A <a class='glossary'>function<span class='def'></span></a> is a name that refers to code that performs some sort of action.
 
-* In code chunk 2, write and run the below code to use the function `beep()` (make sure you have your sound on).
-* If you get the error `could not find function` it means you have not loaded the package properly, try running `library(beepr)` again and make sure everything is spelled exactly right.
+* In code chunk 2, write and run the below code to use the function `say()`.
+* If you get the error `could not find function` it means you have not loaded the package properly, try running `library(cowsay)` again and make sure everything is spelled exactly right.
 
 
 ```r
-beep()
+say()
 ```
 
-After the function name, there is a pair of parentheses, which contain zero or more <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>arguments</a>. These are options that you can set. In the example above, the `sound` argument has a <a class='glossary' target='_blank' title='A value that a function uses for an argument if it is skipped.' href='https://psyteachr.github.io/glossary/d#default-value'>default value</a> of `1`, which makes a "ping" sound. 
+```
+## 
+##  -------------- 
+## Hello world! 
+##  --------------
+##     \
+##       \
+##         \
+##             |\___/|
+##           ==) ^Y^ (==
+##             \  ^  /
+##              )=*=(
+##             /     \
+##             |     |
+##            /| | | |\
+##            \| | |_|/\
+##       jgs  //_// ___/
+##                \_)
+## 
+```
 
-* In code chunk 2, add the below code to use a different sound and try changing the argument to an integer (whole number) between 1 and 11.
+After the function name, there is a pair of parentheses, which contain zero or more <a class='glossary'>arguments<span class='def'></span></a>. These are options that you can set. If you don't give it any information, it will try and use the default arguments if it has them. `say()` has two main arguments with a <a class='glossary'>default value<span class='def'></span></a>: `what` the text says (default `Hello world`), and the animal the message is said `by` (default is a cat).
+
+To look up all the various options that you could use with `say()`, run the following code in the console:
 
 
 ```r
-beep(sound = 8)
+?say
+```
+
+The help documentation can be a little hard to read - scrolling to the bottom and looking at the examples can help.
+
+
+* In code chunk 2, add the below code to produce a different message and animal - below is an example but try your own.
+
+
+```r
+say(what = "Do or do not, there is no try",
+    by = "yoda")
 ```
 
 ### Function Help {#sec-function-help}
 
-If you want more information about what a function does or how to use it, you can look at the help document. If a <a class='glossary' target='_blank' title='A named section of code that can be reused.' href='https://psyteachr.github.io/glossary/f#function'>function</a> is in <a class='glossary' target='_blank' title='The set of R functions that come with a basic installation of R, before you add external packages.' href='https://psyteachr.github.io/glossary/b#base-r'>base R</a> or a package you have loaded, you can type `?function_name` in the console to access the help file. At the top of the help it will give you the function and package name. 
+If you want more information about what a function does or how to use it, you can look at the help document. If a <a class='glossary'>function<span class='def'></span></a> is in <a class='glossary'>base R<span class='def'></span></a> or a package you have loaded, you can type `?function_name` in the console to access the help file. At the top of the help it will give you the function and package name. 
 
 If the package isn't loaded, use `?package_name::function_name`. When you aren't sure what package the function is in, use the shortcut `??function_name` which will give you a list of all possible options.
 
@@ -280,21 +246,21 @@ If the package isn't loaded, use `?package_name::function_name`. When you aren't
 
 ```r
 # get help with a package
-?beepr
+?cowsay
 
 # get help with a function if the package it's from is already loaded
-?beep
+?say
 
 # get help with a function whether or not the package is loaded
-?beepr::beep
+?cowsay::say
 
 # shows a list of potentially matching functions
-??beep
+??say
 ```
 
 <div class="small_right" style="width: 50%; max-width: 400px;"><img src="images/stroop/function_help.png" /></div>
 
-Function help is always organised in the same way. For example, look at the help for `?beepr::beep`. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The **Usage** section shows the function with all of its <a class='glossary' target='_blank' title='A variable that provides input to a function.' href='https://psyteachr.github.io/glossary/a#argument'>arguments</a>. If any of those arguments have default values, they will be shown like `function(arg = default)`. The **Arguments** section lists each argument with an explanation. There may be a **Details** section after this with even more detail about the functions. The **Examples** section is last, and shows examples that you can run in your console window to see how the function works.
+Function help is always organised in the same way. For example, look at the help for `?cowsay::say`. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The **Usage** section shows the function with all of its <a class='glossary'>arguments<span class='def'></span></a>. If any of those arguments have default values, they will be shown like `function(arg = default)`. The **Arguments** section lists each argument with an explanation. There may be a **Details** section after this with even more detail about the functions. The **Examples** section is last, and shows examples that you can run in your console window to see how the function works.
 
 
 ::: {.callout-note .try style="clear: both;"}
@@ -317,8 +283,8 @@ OK, let's get back to looking at our data. In order to load and work with our St
 - <code class='package'>tibble</code>, for tables 
 - <code class='package'>tidyr</code>, for data tidying
 - <code class='package'>dplyr</code>, for data manipulation
-- <code class='package'>stringr</code>, for <a class='glossary' target='_blank' title='A piece of text inside of quotes.' href='https://psyteachr.github.io/glossary/s#string'>strings</a>
-- <code class='package'>forcats</code>, for <a class='glossary' target='_blank' title='A data type where a specific set of values are stored with labels; An explanatory variable manipulated by the experimenter' href='https://psyteachr.github.io/glossary/f#factor'>factors</a>
+- <code class='package'>stringr</code>, for <a class='glossary'>strings<span class='def'></span></a>
+- <code class='package'>forcats</code>, for <a class='glossary'>factors<span class='def'></span></a>
 - <code class='package'>purrr</code>, for repeating things
 
 To use <code class='package'>readr</code> to import the data, we need to load the <code class='package'>tidyverse</code>.
@@ -366,7 +332,7 @@ You should now see that the objects `dat` and `ppt_info` have appeared in the en
 
 What is the **mean** age pf participants to 1 decimal place? <input class='webex-solveme nospaces' size='4' data-answer='["24.4"]'/>
 
-What is the **mean** overall reaction time to 1 decimal place? <input class='webex-solveme nospaces' size='3' data-answer='["821"]'/>
+What is the **mean** overall reaction time to 1 decimal place? <input class='webex-solveme nospaces' size='5' data-answer='["817.7"]'/>
 
 ## Activity 7: Visualise the data
 
@@ -389,8 +355,8 @@ ggplot(ppt_info, # data we're using
 ```
 
 <div class="figure" style="text-align: center">
-<img src="02-stroop_files/figure-html/unnamed-chunk-6-1.png" alt="Number of participants by gender" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-6)Number of participants by gender</p>
+<img src="02-stroop_files/figure-html/unnamed-chunk-7-1.png" alt="Number of participants by gender" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-7)Number of participants by gender</p>
 </div>
 
 Are there more men, women, or non-binary participants in the sample? <select class='webex-select'><option value='blank'></option><option value=''>More men</option><option value='answer'>More women</option><option value=''>More non-binary participants</option></select>
@@ -417,8 +383,8 @@ ggplot(dat, # data we're using
 ```
 
 <div class="figure" style="text-align: center">
-<img src="02-stroop_files/figure-html/unnamed-chunk-7-1.png" alt="Violin-boxplot of reaction times in each condition" width="100%" />
-<p class="caption">(\#fig:unnamed-chunk-7)Violin-boxplot of reaction times in each condition</p>
+<img src="02-stroop_files/figure-html/unnamed-chunk-8-1.png" alt="Violin-boxplot of reaction times in each condition" width="100%" />
+<p class="caption">(\#fig:unnamed-chunk-8)Violin-boxplot of reaction times in each condition</p>
 </div>
 
 * The violin (the wavy line) shows density. Basically, the fatter the wavy shape, the more data points there are at that point. It's called a violin plot because it very often looks (kinda) like a violin. 
