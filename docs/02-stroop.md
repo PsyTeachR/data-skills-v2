@@ -226,7 +226,6 @@ To look up all the various options that you could use with `say()`, run the foll
 
 The help documentation can be a little hard to read - scrolling to the bottom and looking at the examples can help.
 
-
 * In code chunk 2, add the below code to produce a different message and animal - below is an example but try your own.
 
 
@@ -257,8 +256,6 @@ If the package isn't loaded, use `?package_name::function_name`. When you aren't
 # shows a list of potentially matching functions
 ??say
 ```
-
-<div class="small_right" style="width: 50%; max-width: 400px;"><img src="images/stroop/function_help.png" /></div>
 
 Function help is always organised in the same way. For example, look at the help for `?cowsay::say`. At the top, it tells you the name of the function and its package in curly brackets, then a short description of the function, followed by a longer description. The **Usage** section shows the function with all of its <a class='glossary'>arguments<span class='def'></span></a>. If any of those arguments have default values, they will be shown like `function(arg = default)`. The **Arguments** section lists each argument with an explanation. There may be a **Details** section after this with even more detail about the functions. The **Examples** section is last, and shows examples that you can run in your console window to see how the function works.
 
