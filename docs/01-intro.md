@@ -33,7 +33,11 @@ Whilst you can access the server through a browser and therefore it is technical
 
 ## R server
 
-First, log on to the R server. The link for the R server can be found at the top of the Data Skills section on the Psych 1A Moodle page. The server is only for UofG students which is why we can't share the link here as this is a public book. We'd suggest saving the link to the server as a bookmark. Login to the sever using your GUID and password that you use to login to all other UofG systems. If you're not a student at UofG, you can sign up for a free accout on [RStudio Cloud](https://login.rstudio.cloud/login].
+First, log on to the R server. The link for the R server can be found at the top of the Data Skills section on the Psych 1A Moodle page. The server is only for UofG students which is why we can't share the link here as this is a public book. We'd suggest saving the link to the server as a bookmark. Login to the sever using your GUID and password that you use to login to all other UofG systems. If you're not a student at UofG, you can sign up for a free account on [RStudio Cloud](https://login.rstudio.cloud/login].
+
+::: {.warning data-latex=""}
+If you did the UofG Access Course, you may have been given access to R through a slightly different version of the software. Please use the link that is on Moodle and don't continue to use the platform you got from the Access Course as ours has some additional features you will need.
+:::
 
 When you login to the server for the first time, you'll see the landing page that has two sections: **Sessions** and **Projects**. 
 
@@ -254,7 +258,7 @@ My name is `r name` and I am `r age` years old. It is `r birthday - today` days 
 
 As if by magic, that slightly odd bit of text you copied and pasted now appears as a normal sentence with the values pulled in from the objects you created. 
 
-**My name is Emily and I am 38 years old. It is 294 days until my birthday.**
+**My name is Emily and I am 38 years old. It is 290 days until my birthday.**
 
 We're not going to use this function very often in the rest of the course but hopefully you can see just how useful this would be when writing up a report with lots of numbers. R Markdown is an incredibly powerful and flexible format - this book was written using it! 
 
