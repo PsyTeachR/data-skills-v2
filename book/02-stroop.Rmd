@@ -329,7 +329,7 @@ ggplot(ppt_info, # data we're using
 
 Are there more men, women, or non-binary participants in the sample? `r mcq(c("More men", answer = "More women", "More non-binary participants"))`
 
-* Copy, paste, and run the below code  in code chunk 7 to create violin-boxplots of happiness scores for each income group.
+* Copy, paste, and run the below code  in code chunk 7 to create violin-boxplots of reaction times for each condition.
 
 ```{r, fig.cap= "Violin-boxplot of reaction times in each condition"}
 

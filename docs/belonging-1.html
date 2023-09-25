@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -223,7 +223,7 @@ Explain this answer
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">questionnaire_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"questionnaire_data.csv"</span><span class="op">)</span></span></code></pre></div>
@@ -262,7 +262,7 @@ Which variables are included in both datasets? <select class="webex-select"><opt
 <ul>
 <li>In code chunk 2, add and run the below code to join the datasets.Try removing the <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> to see what happens to the table.</li>
 </ul>
-<div class="sourceCode" id="cb82"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb83"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demographic_data</span>, <span class="co"># table 1</span></span>
 <span>                        y <span class="op">=</span> <span class="va">questionnaire_data</span>, <span class="co"># table 2</span></span>
 <span>                        by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"participant"</span>, <span class="st">"level"</span><span class="op">)</span><span class="op">)</span> <span class="co"># all common columns</span></span></code></pre></div>
@@ -281,7 +281,7 @@ Which variables are included in both datasets? <select class="webex-select"><opt
 ##  Max.   :1000.0   Max.   :3.0   Max.   :25.00</code></pre>
 <p>Because <code>gender</code> is coded numerically, R has assumed that the data in this column is numeric so it has calculated statistics as if it were a number but it's entirely meaningless (what does a mean gender of 1.7 mean?).</p>
 <div class="info">
-<p>There are several different <a class="glossary">data types<span class="def"></span></a> in R and when you load data in, R will do it's best to guess which one each variable is:</p>
+<p>There are several different <a class="glossary" target="_blank" title="The kind of data represented by an object." href="https://psyteachr.github.io/glossary/d#data-type">data types</a> in R and when you load data in, R will do it's best to guess which one each variable is:</p>
 <ul>
 <li>integer (whole numbers like 1L, -10L, 3000L)</li>
 <li>double (numbers like -0.223, 10.324, 1e4)</li>
@@ -297,7 +297,7 @@ Which variables are included in both datasets? <select class="webex-select"><opt
 <span class="header-section-number">7.8.1</span> Recoding factors<a class="anchor" aria-label="anchor" href="#recoding-factors"><i class="fas fa-link"></i></a>
 </h3>
 <p>If you try and use the data that's in <code>gender</code> as it is, it can cause some problems. For example, if you tried to plot a boxplot of the scores by gender, you'd get this mess because as far as R is concerned, you haven't given it a grouping variable, you've given it two continuous variables</p>
-<div class="sourceCode" id="cb84"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb85"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">full_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender</span>, y <span class="op">=</span> <span class="va">belongingness</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## Warning: Continuous x aesthetic
@@ -311,7 +311,7 @@ Which variables are included in both datasets? <select class="webex-select"><opt
 <code>labels</code> then specifies the labels you want to use instead of the original values and these <strong>must be in the same order as the levels</strong>. R will do exactly what you tell it to so if you accidentally tell it to give a label of "Man" to number 1, you'll end up getting your gender scores the wrong way round. This is one of the reasons why it can be safer to create a second variable when recoding so that you can more easily check that the values line up with what they're supposed to be.</li>
 <li>Add and run the below code to code chunk 3.</li>
 </ul>
-<div class="sourceCode" id="cb86"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_data</span> <span class="op">&lt;-</span> <span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender_coded <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">gender</span>, </span>
 <span>                        levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">2</span>,<span class="fl">1</span>, <span class="fl">3</span><span class="op">)</span>,</span>
@@ -323,7 +323,7 @@ Which variables are included in both datasets? <select class="webex-select"><opt
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb87"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">full_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">gender_coded</span>, y <span class="op">=</span> <span class="va">belongingness</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-7-1.png" width="100%" style="display: block; margin: auto;"></div>
@@ -344,7 +344,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb88"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">group</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -352,7 +352,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb89"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">gender_coded</span><span class="op">)</span></span>
 <span></span>
@@ -363,81 +363,151 @@ Solution
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">level</span>, <span class="va">gender_coded</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">gender_coded</th>
-<th align="right">n</th>
+<thead><tr>
+<th style="text-align:left;">
+gender_coded
+</th>
+<th style="text-align:right;">
+n
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">Man</td>
-<td align="right">500</td>
+<tr>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+500
+</td>
 </tr>
-<tr class="even">
-<td align="left">Woman</td>
-<td align="right">400</td>
+<tr>
+<td style="text-align:left;">
+Woman
+</td>
+<td style="text-align:right;">
+400
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Non-binary</td>
-<td align="right">100</td>
+<tr>
+<td style="text-align:left;">
+Non-binary
+</td>
+<td style="text-align:right;">
+100
+</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">level</th>
-<th align="right">n</th>
+<thead><tr>
+<th style="text-align:left;">
+level
+</th>
+<th style="text-align:right;">
+n
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">First year</td>
-<td align="right">920</td>
+<tr>
+<td style="text-align:left;">
+First year
+</td>
+<td style="text-align:right;">
+920
+</td>
 </tr>
-<tr class="even">
-<td align="left">Second year</td>
-<td align="right">80</td>
+<tr>
+<td style="text-align:left;">
+Second year
+</td>
+<td style="text-align:right;">
+80
+</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">level</th>
-<th align="left">gender_coded</th>
-<th align="right">n</th>
+<thead><tr>
+<th style="text-align:left;">
+level
+</th>
+<th style="text-align:left;">
+gender_coded
+</th>
+<th style="text-align:right;">
+n
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">First year</td>
-<td align="left">Man</td>
-<td align="right">457</td>
+<tr>
+<td style="text-align:left;">
+First year
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+457
+</td>
 </tr>
-<tr class="even">
-<td align="left">First year</td>
-<td align="left">Woman</td>
-<td align="right">373</td>
+<tr>
+<td style="text-align:left;">
+First year
+</td>
+<td style="text-align:left;">
+Woman
+</td>
+<td style="text-align:right;">
+373
+</td>
 </tr>
-<tr class="odd">
-<td align="left">First year</td>
-<td align="left">Non-binary</td>
-<td align="right">90</td>
+<tr>
+<td style="text-align:left;">
+First year
+</td>
+<td style="text-align:left;">
+Non-binary
+</td>
+<td style="text-align:right;">
+90
+</td>
 </tr>
-<tr class="even">
-<td align="left">Second year</td>
-<td align="left">Man</td>
-<td align="right">43</td>
+<tr>
+<td style="text-align:left;">
+Second year
+</td>
+<td style="text-align:left;">
+Man
+</td>
+<td style="text-align:right;">
+43
+</td>
 </tr>
-<tr class="odd">
-<td align="left">Second year</td>
-<td align="left">Woman</td>
-<td align="right">27</td>
+<tr>
+<td style="text-align:left;">
+Second year
+</td>
+<td style="text-align:left;">
+Woman
+</td>
+<td style="text-align:right;">
+27
+</td>
 </tr>
-<tr class="even">
-<td align="left">Second year</td>
-<td align="left">Non-binary</td>
-<td align="right">10</td>
+<tr>
+<td style="text-align:left;">
+Second year
+</td>
+<td style="text-align:left;">
+Non-binary
+</td>
+<td style="text-align:right;">
+10
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -456,7 +526,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb90"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span>variable <span class="op">=</span> <span class="st">"value"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -464,7 +534,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb91"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">first_year_data</span> <span class="op">&lt;-</span> <span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">level</span> <span class="op">==</span> <span class="st">"First year"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -473,7 +543,7 @@ Solution
 <li>Add this code to code chunk 5. It will reorder the dataset, drop the original <code>gender</code> column and <code>level</code>, and rename <code>gender_coded</code> as <code>gender</code> to make it simpler to type.</li>
 <li>The <code>:</code> notation means that it will select all columns from <code>belonginess</code> to <code>self-confidence</code> so we don't have to type them all out.</li>
 </ul>
-<div class="sourceCode" id="cb92"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">first_year_data</span> <span class="op">&lt;-</span> <span class="va">first_year_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">participant</span>, </span>
 <span>         <span class="st">"gender"</span> <span class="op">=</span> <span class="va">gender_coded</span>,</span>
@@ -484,7 +554,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb93"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">first_year_data</span> <span class="op">&lt;-</span> <span class="va">starting_dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="va">first_function</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="va">second_function</span></span></code></pre></div>
@@ -493,7 +563,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb94"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">first_year_data</span> <span class="op">&lt;-</span> <span class="va">full_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">level</span> <span class="op">==</span> <span class="st">"First year"</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">participant</span>, </span>
@@ -512,12 +582,12 @@ Solution
 <span class="header-section-number">7.11.1</span> Scatterplots<a class="anchor" aria-label="anchor" href="#scatterplots"><i class="fas fa-link"></i></a>
 </h3>
 <p>To visualise two continuous variables we can use a scatterplot by calling <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code>. To use <code><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point()</a></code> you need to specify an <code>x</code> and a <code>y</code> variable.</p>
-<div class="sourceCode" id="cb95"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, y <span class="op">=</span> <span class="va">engagement</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>To add a line of best fit, add on a layer that calls <code><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth()</a></code> (instinctively you might expect to need <code><a href="https://ggplot2.tidyverse.org/reference/geom_path.html">geom_line()</a></code>, this does something very different and will make your plot look mad, try it). You can specify different methods of drawing the line, for now, we'll choose <code>method = "lm"</code> which stands for "linear model" which basically means draw a straight line.</p>
-<div class="sourceCode" id="cb96"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb97"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, y <span class="op">=</span> <span class="va">engagement</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_point.html">geom_point</a></span><span class="op">(</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_smooth.html">geom_smooth</a></span><span class="op">(</span>method <span class="op">=</span> <span class="st">"lm"</span><span class="op">)</span></span></code></pre></div>
@@ -547,7 +617,7 @@ Expain this answer
 <code>fill</code> changes the interior colour of the geom. It works with 'filled' geoms like bars, boxplots, or the interior of polygons.</li>
 <li>To use colour-blind friendly colours, you add on <code><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_colour_viridis_d()</a></code> - <code>colour</code> because it's mapped to <code>colour</code> and <code>d</code> because it's a discrete variable (gender is categorical).</li>
 </ul>
-<div class="sourceCode" id="cb98"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb99"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
 <span>                            y <span class="op">=</span> <span class="va">engagement</span>,</span>
 <span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -565,7 +635,7 @@ Expain this answer
 <ul>
 <li>The below code adds on <code><a href="https://ggplot2.tidyverse.org/reference/ggtheme.html">theme_minimal()</a></code> but try removing this line and then typing <code>theme_</code> to see all the options that are available with the auto-complete. Try a few and see which one your favourite is.</li>
 </ul>
-<div class="sourceCode" id="cb100"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
 <span>                            y <span class="op">=</span> <span class="va">engagement</span>,</span>
 <span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -579,7 +649,7 @@ Expain this answer
 <span class="header-section-number">7.11.4</span> Editing axis labels and breaks<a class="anchor" aria-label="anchor" href="#editing-axis-labels-and-breaks"><i class="fas fa-link"></i></a>
 </h3>
 <p>There's a couple of ways that you can edit axis labels and breaks. If you just want to edit the overall axis labels, the easiest way is to use the <code><a href="https://ggplot2.tidyverse.org/reference/labs.html">labs()</a></code> function:</p>
-<div class="sourceCode" id="cb101"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb102"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
 <span>                            y <span class="op">=</span> <span class="va">engagement</span>,</span>
 <span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -600,7 +670,7 @@ Expain this answer
 <li>
 <code>breaks</code> changes the breaks of the axis, i.e., the numbers that are presented. We ask it for a sequence (<code>seq</code>) of all the numbers from ` to 7.</li>
 </ul>
-<div class="sourceCode" id="cb103"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb104"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
 <span>                            y <span class="op">=</span> <span class="va">engagement</span>,</span>
 <span>                            colour <span class="op">=</span> <span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -631,7 +701,7 @@ Expain this answer
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb105"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb106"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># belonging and self-confidence</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">belongingness</span>, </span>
 <span>                            y <span class="op">=</span> <span class="va">self_confidence</span>,</span>
@@ -650,7 +720,7 @@ Solution
 <span>       subtitle <span class="op">=</span> <span class="st">"First year students"</span><span class="op">)</span></span></code></pre></div>
 <pre><code>## `geom_smooth()` using formula = 'y ~ x'</code></pre>
 <div class="inline-figure"><img src="07-belong_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb107"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb108"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># engagement and self-confidence</span></span>
 <span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">first_year_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">engagement</span>, </span>
 <span>                            y <span class="op">=</span> <span class="va">self_confidence</span>,</span>
