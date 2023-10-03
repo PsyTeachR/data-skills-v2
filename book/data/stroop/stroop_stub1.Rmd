@@ -19,7 +19,7 @@ Activity 4
 
 
 ```{r chunk2}
-# in this code chunk, write the code to use beep
+# in this code chunk, write the code to use cowsay
 
 
 ```
