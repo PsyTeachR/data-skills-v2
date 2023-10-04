@@ -1,0 +1,601 @@
+Participant,Gender,Age,Condition
+1,Man,34,8 hours sleep
+2,Non-Binary,40,8 hours sleep
+3,Man,55,8 hours sleep
+4,Woman,27,8 hours sleep
+5,Woman,55,8 hours sleep
+6,Man,58,8 hours sleep
+7,Man,25,8 hours sleep
+8,Man,18,8 hours sleep
+9,Man,33,8 hours sleep
+10,Woman,19,8 hours sleep
+11,Woman,57,8 hours sleep
+12,Man,31,8 hours sleep
+13,Woman,29,8 hours sleep
+14,Woman,43,8 hours sleep
+15,Woman,25,8 hours sleep
+16,Woman,58,8 hours sleep
+17,Woman,25,8 hours sleep
+18,Man,26,8 hours sleep
+19,Woman,50,8 hours sleep
+20,Woman,20,8 hours sleep
+21,Woman,57,8 hours sleep
+22,Man,19,8 hours sleep
+23,Woman,18,8 hours sleep
+24,Non-Binary,26,8 hours sleep
+25,Man,24,8 hours sleep
+26,Woman,30,8 hours sleep
+27,Man,46,8 hours sleep
+28,Man,37,8 hours sleep
+29,Man,31,8 hours sleep
+30,Woman,33,8 hours sleep
+31,Man,24,8 hours sleep
+32,Woman,53,8 hours sleep
+33,Man,29,8 hours sleep
+34,Woman,42,8 hours sleep
+35,Man,44,8 hours sleep
+36,Woman,30,8 hours sleep
+37,Woman,37,8 hours sleep
+38,Woman,27,8 hours sleep
+39,Woman,47,8 hours sleep
+40,Woman,58,8 hours sleep
+41,Woman,29,8 hours sleep
+42,Woman,25,8 hours sleep
+43,Non-Binary,24,8 hours sleep
+44,Woman,32,8 hours sleep
+45,Woman,36,8 hours sleep
+46,Woman,60,8 hours sleep
+47,Woman,56,8 hours sleep
+48,Non-Binary,40,8 hours sleep
+49,Non-Binary,52,8 hours sleep
+50,Man,23,8 hours sleep
+51,Woman,24,8 hours sleep
+52,Man,21,8 hours sleep
+53,Man,27,8 hours sleep
+54,Woman,34,8 hours sleep
+55,Woman,25,8 hours sleep
+56,Woman,20,8 hours sleep
+57,Man,54,8 hours sleep
+58,Woman,31,8 hours sleep
+59,Woman,45,8 hours sleep
+60,Woman,23,8 hours sleep
+61,Man,26,8 hours sleep
+62,Woman,50,8 hours sleep
+63,Woman,36,8 hours sleep
+64,Man,54,8 hours sleep
+65,Man,51,8 hours sleep
+66,Man,18,8 hours sleep
+67,Man,45,8 hours sleep
+68,Man,47,8 hours sleep
+69,Man,21,8 hours sleep
+70,Man,43,8 hours sleep
+71,Man,28,8 hours sleep
+72,Woman,22,8 hours sleep
+73,Woman,53,8 hours sleep
+74,Man,36,8 hours sleep
+75,Woman,52,8 hours sleep
+76,Non-Binary,50,8 hours sleep
+77,Non-Binary,56,8 hours sleep
+78,Woman,22,8 hours sleep
+79,Woman,40,8 hours sleep
+80,Man,58,8 hours sleep
+81,Man,42,8 hours sleep
+82,Woman,38,8 hours sleep
+83,Woman,22,8 hours sleep
+84,Woman,29,8 hours sleep
+85,Man,19,8 hours sleep
+86,Woman,35,8 hours sleep
+87,Woman,21,8 hours sleep
+88,Man,59,8 hours sleep
+89,Man,40,8 hours sleep
+90,Non-Binary,25,8 hours sleep
+91,Woman,18,8 hours sleep
+92,Man,28,8 hours sleep
+93,Woman,54,8 hours sleep
+94,Woman,28,8 hours sleep
+95,Man,32,8 hours sleep
+96,Man,32,8 hours sleep
+97,Woman,59,8 hours sleep
+98,Man,32,8 hours sleep
+99,Man,32,8 hours sleep
+100,Woman,58,8 hours sleep
+101,Non-Binary,42,8 hours sleep
+102,Man,53,8 hours sleep
+103,Man,20,8 hours sleep
+104,Woman,24,8 hours sleep
+105,Woman,21,8 hours sleep
+106,Woman,57,8 hours sleep
+107,Non-Binary,54,8 hours sleep
+108,Non-Binary,41,8 hours sleep
+109,Man,55,8 hours sleep
+110,Woman,21,8 hours sleep
+111,Woman,20,8 hours sleep
+112,Man,28,8 hours sleep
+113,Man,27,8 hours sleep
+114,Woman,46,8 hours sleep
+115,Woman,40,8 hours sleep
+116,Woman,22,8 hours sleep
+117,Woman,41,8 hours sleep
+118,Man,49,8 hours sleep
+119,Non-Binary,42,8 hours sleep
+120,Woman,28,8 hours sleep
+121,Man,27,8 hours sleep
+122,Man,32,8 hours sleep
+123,Man,48,8 hours sleep
+124,Woman,27,8 hours sleep
+125,Non-Binary,41,8 hours sleep
+126,Man,52,8 hours sleep
+127,Woman,27,8 hours sleep
+128,Woman,25,8 hours sleep
+129,Man,59,8 hours sleep
+130,Man,49,8 hours sleep
+131,Woman,56,8 hours sleep
+132,Man,24,8 hours sleep
+133,Woman,55,8 hours sleep
+134,Man,34,8 hours sleep
+135,Woman,37,8 hours sleep
+136,Woman,50,8 hours sleep
+137,Woman,54,8 hours sleep
+138,Man,27,8 hours sleep
+139,Man,27,8 hours sleep
+140,Man,19,8 hours sleep
+141,Woman,32,8 hours sleep
+142,Woman,40,8 hours sleep
+143,Woman,57,8 hours sleep
+144,Woman,52,8 hours sleep
+145,Man,19,8 hours sleep
+146,Man,23,8 hours sleep
+147,Woman,26,8 hours sleep
+148,Woman,40,8 hours sleep
+149,Woman,42,8 hours sleep
+150,Woman,32,8 hours sleep
+151,Woman,39,8 hours sleep
+152,Woman,25,8 hours sleep
+153,Woman,46,8 hours sleep
+154,Man,58,8 hours sleep
+155,Man,38,8 hours sleep
+156,Woman,26,8 hours sleep
+157,Man,51,8 hours sleep
+158,Woman,58,8 hours sleep
+159,Woman,60,8 hours sleep
+160,Woman,28,8 hours sleep
+161,Non-Binary,21,8 hours sleep
+162,Man,24,8 hours sleep
+163,Woman,28,8 hours sleep
+164,Man,50,8 hours sleep
+165,Woman,28,8 hours sleep
+166,Man,55,8 hours sleep
+167,Woman,38,8 hours sleep
+168,Woman,27,8 hours sleep
+169,Man,20,8 hours sleep
+170,Non-Binary,52,8 hours sleep
+171,Woman,51,8 hours sleep
+172,Man,57,8 hours sleep
+173,Woman,45,8 hours sleep
+174,Woman,30,8 hours sleep
+175,Man,25,8 hours sleep
+176,Woman,19,8 hours sleep
+177,Man,23,8 hours sleep
+178,Woman,40,8 hours sleep
+179,Man,34,8 hours sleep
+180,Man,49,8 hours sleep
+181,Woman,31,8 hours sleep
+182,Woman,24,8 hours sleep
+183,Woman,30,8 hours sleep
+184,Man,25,8 hours sleep
+185,Woman,55,8 hours sleep
+186,Man,28,8 hours sleep
+187,Woman,59,8 hours sleep
+188,Man,34,8 hours sleep
+189,Woman,24,8 hours sleep
+190,Man,36,8 hours sleep
+191,Woman,57,8 hours sleep
+192,Man,32,8 hours sleep
+193,Man,31,8 hours sleep
+194,Woman,43,8 hours sleep
+195,Woman,44,8 hours sleep
+196,Man,34,8 hours sleep
+197,Man,50,8 hours sleep
+198,Woman,35,8 hours sleep
+199,Man,37,8 hours sleep
+200,Woman,44,8 hours sleep
+201,Man,59,4 hours sleep
+202,Woman,27,4 hours sleep
+203,Non-Binary,26,4 hours sleep
+204,Non-Binary,48,4 hours sleep
+205,Man,36,4 hours sleep
+206,Non-Binary,35,4 hours sleep
+207,Man,45,4 hours sleep
+208,Man,38,4 hours sleep
+209,Woman,46,4 hours sleep
+210,Woman,53,4 hours sleep
+211,Woman,37,4 hours sleep
+212,Woman,40,4 hours sleep
+213,Man,59,4 hours sleep
+214,Woman,22,4 hours sleep
+215,Woman,19,4 hours sleep
+216,Man,35,4 hours sleep
+217,Woman,29,4 hours sleep
+218,Man,30,4 hours sleep
+219,Woman,60,4 hours sleep
+220,Man,55,4 hours sleep
+221,Woman,35,4 hours sleep
+222,Man,27,4 hours sleep
+223,Man,26,4 hours sleep
+224,Woman,52,4 hours sleep
+225,Woman,46,4 hours sleep
+226,Man,39,4 hours sleep
+227,Man,36,4 hours sleep
+228,Man,25,4 hours sleep
+229,Woman,50,4 hours sleep
+230,Woman,19,4 hours sleep
+231,Man,60,4 hours sleep
+232,Woman,22,4 hours sleep
+233,Woman,38,4 hours sleep
+234,Man,48,4 hours sleep
+235,Man,53,4 hours sleep
+236,Man,44,4 hours sleep
+237,Non-Binary,40,4 hours sleep
+238,Non-Binary,20,4 hours sleep
+239,Woman,32,4 hours sleep
+240,Non-Binary,59,4 hours sleep
+241,Woman,56,4 hours sleep
+242,Non-Binary,24,4 hours sleep
+243,Man,51,4 hours sleep
+244,Man,48,4 hours sleep
+245,Man,35,4 hours sleep
+246,Woman,35,4 hours sleep
+247,Woman,52,4 hours sleep
+248,Man,57,4 hours sleep
+249,Man,26,4 hours sleep
+250,Woman,32,4 hours sleep
+251,Woman,34,4 hours sleep
+252,Man,24,4 hours sleep
+253,Woman,47,4 hours sleep
+254,Woman,25,4 hours sleep
+255,Man,18,4 hours sleep
+256,Man,26,4 hours sleep
+257,Man,52,4 hours sleep
+258,Woman,42,4 hours sleep
+259,Man,19,4 hours sleep
+260,Man,28,4 hours sleep
+261,Woman,21,4 hours sleep
+262,Woman,57,4 hours sleep
+263,Woman,37,4 hours sleep
+264,Woman,28,4 hours sleep
+265,Woman,35,4 hours sleep
+266,Man,31,4 hours sleep
+267,Woman,20,4 hours sleep
+268,Non-Binary,45,4 hours sleep
+269,Woman,20,4 hours sleep
+270,Man,45,4 hours sleep
+271,Man,46,4 hours sleep
+272,Woman,56,4 hours sleep
+273,Man,40,4 hours sleep
+274,Woman,32,4 hours sleep
+275,Non-Binary,40,4 hours sleep
+276,Man,41,4 hours sleep
+277,Woman,57,4 hours sleep
+278,Woman,50,4 hours sleep
+279,Man,54,4 hours sleep
+280,Man,46,4 hours sleep
+281,Non-Binary,23,4 hours sleep
+282,Man,42,4 hours sleep
+283,Non-Binary,59,4 hours sleep
+284,Man,43,4 hours sleep
+285,Woman,41,4 hours sleep
+286,Man,49,4 hours sleep
+287,Man,25,4 hours sleep
+288,Man,33,4 hours sleep
+289,Woman,56,4 hours sleep
+290,Woman,49,4 hours sleep
+291,Woman,56,4 hours sleep
+292,Man,18,4 hours sleep
+293,Woman,47,4 hours sleep
+294,Man,42,4 hours sleep
+295,Woman,60,4 hours sleep
+296,Woman,20,4 hours sleep
+297,Man,39,4 hours sleep
+298,Man,34,4 hours sleep
+299,Woman,37,4 hours sleep
+300,Man,52,4 hours sleep
+301,Woman,31,4 hours sleep
+302,Woman,54,4 hours sleep
+303,Woman,41,4 hours sleep
+304,Man,47,4 hours sleep
+305,Woman,25,4 hours sleep
+306,Man,37,4 hours sleep
+307,Non-Binary,27,4 hours sleep
+308,Man,39,4 hours sleep
+309,Man,34,4 hours sleep
+310,Woman,26,4 hours sleep
+311,Non-Binary,52,4 hours sleep
+312,Man,54,4 hours sleep
+313,Woman,38,4 hours sleep
+314,Woman,33,4 hours sleep
+315,Woman,43,4 hours sleep
+316,Man,52,4 hours sleep
+317,Woman,52,4 hours sleep
+318,Man,43,4 hours sleep
+319,Man,30,4 hours sleep
+320,Man,53,4 hours sleep
+321,Woman,42,4 hours sleep
+322,Non-Binary,45,4 hours sleep
+323,Woman,46,4 hours sleep
+324,Woman,30,4 hours sleep
+325,Woman,38,4 hours sleep
+326,Woman,42,4 hours sleep
+327,Man,46,4 hours sleep
+328,Man,37,4 hours sleep
+329,Man,46,4 hours sleep
+330,Woman,30,4 hours sleep
+331,Man,30,4 hours sleep
+332,Woman,52,4 hours sleep
+333,Man,22,4 hours sleep
+334,Woman,30,4 hours sleep
+335,Woman,40,4 hours sleep
+336,Man,45,4 hours sleep
+337,Woman,25,4 hours sleep
+338,Man,55,4 hours sleep
+339,Man,41,4 hours sleep
+340,Man,33,4 hours sleep
+341,Non-Binary,28,4 hours sleep
+342,Woman,40,4 hours sleep
+343,Woman,47,4 hours sleep
+344,Non-Binary,49,4 hours sleep
+345,Woman,44,4 hours sleep
+346,Non-Binary,32,4 hours sleep
+347,Woman,18,4 hours sleep
+348,Woman,27,4 hours sleep
+349,Woman,39,4 hours sleep
+350,Woman,59,4 hours sleep
+351,Man,53,4 hours sleep
+352,Non-Binary,58,4 hours sleep
+353,Woman,42,4 hours sleep
+354,Man,47,4 hours sleep
+355,Woman,54,4 hours sleep
+356,Man,44,4 hours sleep
+357,Man,26,4 hours sleep
+358,Woman,36,4 hours sleep
+359,Man,52,4 hours sleep
+360,Non-Binary,51,4 hours sleep
+361,Man,40,4 hours sleep
+362,Woman,29,4 hours sleep
+363,Non-Binary,32,4 hours sleep
+364,Man,52,4 hours sleep
+365,Woman,46,4 hours sleep
+366,Man,24,4 hours sleep
+367,Man,46,4 hours sleep
+368,Man,51,4 hours sleep
+369,Non-Binary,26,4 hours sleep
+370,Woman,18,4 hours sleep
+371,Woman,27,4 hours sleep
+372,Woman,58,4 hours sleep
+373,Woman,58,4 hours sleep
+374,Woman,56,4 hours sleep
+375,Woman,40,4 hours sleep
+376,Woman,23,4 hours sleep
+377,Woman,49,4 hours sleep
+378,Man,56,4 hours sleep
+379,Non-Binary,33,4 hours sleep
+380,Man,43,4 hours sleep
+381,Woman,33,4 hours sleep
+382,Woman,19,4 hours sleep
+383,Woman,51,4 hours sleep
+384,Woman,31,4 hours sleep
+385,Woman,47,4 hours sleep
+386,Man,45,4 hours sleep
+387,Man,38,4 hours sleep
+388,Woman,40,4 hours sleep
+389,Man,47,4 hours sleep
+390,Man,42,4 hours sleep
+391,Woman,56,4 hours sleep
+392,Man,23,4 hours sleep
+393,Woman,21,4 hours sleep
+394,Man,20,4 hours sleep
+395,Woman,27,4 hours sleep
+396,Man,45,4 hours sleep
+397,Woman,29,4 hours sleep
+398,Man,20,4 hours sleep
+399,Man,18,4 hours sleep
+400,Woman,50,4 hours sleep
+401,Man,53,Sleep deprived
+402,Non-Binary,30,Sleep deprived
+403,Non-Binary,32,Sleep deprived
+404,Woman,30,Sleep deprived
+405,Man,47,Sleep deprived
+406,Woman,35,Sleep deprived
+407,Woman,56,Sleep deprived
+408,Woman,43,Sleep deprived
+409,Man,53,Sleep deprived
+410,Man,53,Sleep deprived
+411,Woman,20,Sleep deprived
+412,Non-Binary,42,Sleep deprived
+413,Non-Binary,28,Sleep deprived
+414,Woman,47,Sleep deprived
+415,Woman,33,Sleep deprived
+416,Woman,28,Sleep deprived
+417,Man,55,Sleep deprived
+418,Non-Binary,49,Sleep deprived
+419,Woman,48,Sleep deprived
+420,Woman,54,Sleep deprived
+421,Woman,19,Sleep deprived
+422,Woman,39,Sleep deprived
+423,Woman,34,Sleep deprived
+424,Woman,22,Sleep deprived
+425,Woman,32,Sleep deprived
+426,Woman,49,Sleep deprived
+427,Non-Binary,52,Sleep deprived
+428,Woman,44,Sleep deprived
+429,Man,39,Sleep deprived
+430,Man,42,Sleep deprived
+431,Woman,32,Sleep deprived
+432,Man,52,Sleep deprived
+433,Woman,47,Sleep deprived
+434,Man,51,Sleep deprived
+435,Woman,22,Sleep deprived
+436,Non-Binary,22,Sleep deprived
+437,Man,24,Sleep deprived
+438,Man,19,Sleep deprived
+439,Woman,33,Sleep deprived
+440,Man,57,Sleep deprived
+441,Woman,40,Sleep deprived
+442,Woman,40,Sleep deprived
+443,Man,41,Sleep deprived
+444,Man,38,Sleep deprived
+445,Non-Binary,35,Sleep deprived
+446,Man,36,Sleep deprived
+447,Woman,26,Sleep deprived
+448,Man,36,Sleep deprived
+449,Woman,36,Sleep deprived
+450,Woman,22,Sleep deprived
+451,Woman,33,Sleep deprived
+452,Man,56,Sleep deprived
+453,Woman,57,Sleep deprived
+454,Man,49,Sleep deprived
+455,Woman,32,Sleep deprived
+456,Man,43,Sleep deprived
+457,Woman,37,Sleep deprived
+458,Woman,52,Sleep deprived
+459,Woman,48,Sleep deprived
+460,Man,41,Sleep deprived
+461,Man,34,Sleep deprived
+462,Woman,24,Sleep deprived
+463,Woman,30,Sleep deprived
+464,Woman,52,Sleep deprived
+465,Woman,30,Sleep deprived
+466,Man,31,Sleep deprived
+467,Man,21,Sleep deprived
+468,Woman,42,Sleep deprived
+469,Woman,46,Sleep deprived
+470,Woman,33,Sleep deprived
+471,Man,58,Sleep deprived
+472,Man,26,Sleep deprived
+473,Man,54,Sleep deprived
+474,Woman,39,Sleep deprived
+475,Man,39,Sleep deprived
+476,Woman,41,Sleep deprived
+477,Non-Binary,31,Sleep deprived
+478,Non-Binary,47,Sleep deprived
+479,Woman,57,Sleep deprived
+480,Woman,48,Sleep deprived
+481,Woman,56,Sleep deprived
+482,Non-Binary,54,Sleep deprived
+483,Woman,25,Sleep deprived
+484,Woman,31,Sleep deprived
+485,Woman,18,Sleep deprived
+486,Woman,40,Sleep deprived
+487,Woman,43,Sleep deprived
+488,Man,40,Sleep deprived
+489,Man,48,Sleep deprived
+490,Man,38,Sleep deprived
+491,Woman,34,Sleep deprived
+492,Woman,56,Sleep deprived
+493,Non-Binary,24,Sleep deprived
+494,Woman,29,Sleep deprived
+495,Man,49,Sleep deprived
+496,Man,36,Sleep deprived
+497,Woman,36,Sleep deprived
+498,Woman,42,Sleep deprived
+499,Man,34,Sleep deprived
+500,Woman,26,Sleep deprived
+501,Woman,40,Sleep deprived
+502,Woman,48,Sleep deprived
+503,Woman,55,Sleep deprived
+504,Non-Binary,50,Sleep deprived
+505,Woman,33,Sleep deprived
+506,Non-Binary,25,Sleep deprived
+507,Man,22,Sleep deprived
+508,Man,27,Sleep deprived
+509,Woman,58,Sleep deprived
+510,Woman,45,Sleep deprived
+511,Man,54,Sleep deprived
+512,Woman,36,Sleep deprived
+513,Woman,50,Sleep deprived
+514,Man,33,Sleep deprived
+515,Man,23,Sleep deprived
+516,Woman,25,Sleep deprived
+517,Woman,42,Sleep deprived
+518,Man,31,Sleep deprived
+519,Man,48,Sleep deprived
+520,Woman,42,Sleep deprived
+521,Man,25,Sleep deprived
+522,Woman,60,Sleep deprived
+523,Man,41,Sleep deprived
+524,Man,22,Sleep deprived
+525,Man,31,Sleep deprived
+526,Man,50,Sleep deprived
+527,Non-Binary,18,Sleep deprived
+528,Woman,54,Sleep deprived
+529,Woman,52,Sleep deprived
+530,Man,21,Sleep deprived
+531,Man,52,Sleep deprived
+532,Non-Binary,35,Sleep deprived
+533,Man,27,Sleep deprived
+534,Man,29,Sleep deprived
+535,Woman,20,Sleep deprived
+536,Woman,43,Sleep deprived
+537,Woman,29,Sleep deprived
+538,Woman,54,Sleep deprived
+539,Man,25,Sleep deprived
+540,Woman,34,Sleep deprived
+541,Woman,22,Sleep deprived
+542,Woman,36,Sleep deprived
+543,Woman,55,Sleep deprived
+544,Woman,49,Sleep deprived
+545,Woman,19,Sleep deprived
+546,Non-Binary,34,Sleep deprived
+547,Man,25,Sleep deprived
+548,Man,35,Sleep deprived
+549,Man,43,Sleep deprived
+550,Man,47,Sleep deprived
+551,Man,36,Sleep deprived
+552,Man,22,Sleep deprived
+553,Man,46,Sleep deprived
+554,Woman,46,Sleep deprived
+555,Woman,29,Sleep deprived
+556,Man,18,Sleep deprived
+557,Woman,47,Sleep deprived
+558,Woman,24,Sleep deprived
+559,Man,22,Sleep deprived
+560,Woman,27,Sleep deprived
+561,Man,53,Sleep deprived
+562,Woman,25,Sleep deprived
+563,Woman,48,Sleep deprived
+564,Man,22,Sleep deprived
+565,Woman,56,Sleep deprived
+566,Woman,39,Sleep deprived
+567,Woman,29,Sleep deprived
+568,Woman,27,Sleep deprived
+569,Man,46,Sleep deprived
+570,Man,47,Sleep deprived
+571,Woman,18,Sleep deprived
+572,Woman,31,Sleep deprived
+573,Non-Binary,24,Sleep deprived
+574,Non-Binary,51,Sleep deprived
+575,Man,27,Sleep deprived
+576,Woman,32,Sleep deprived
+577,Man,36,Sleep deprived
+578,Man,35,Sleep deprived
+579,Man,39,Sleep deprived
+580,Woman,35,Sleep deprived
+581,Man,20,Sleep deprived
+582,Woman,60,Sleep deprived
+583,Non-Binary,54,Sleep deprived
+584,Man,35,Sleep deprived
+585,Man,58,Sleep deprived
+586,Woman,18,Sleep deprived
+587,Non-Binary,56,Sleep deprived
+588,Man,32,Sleep deprived
+589,Woman,23,Sleep deprived
+590,Man,50,Sleep deprived
+591,Woman,55,Sleep deprived
+592,Man,57,Sleep deprived
+593,Non-Binary,27,Sleep deprived
+594,Man,51,Sleep deprived
+595,Woman,43,Sleep deprived
+596,Man,35,Sleep deprived
+597,Non-Binary,22,Sleep deprived
+598,Man,52,Sleep deprived
+599,Woman,23,Sleep deprived
+600,Woman,46,Sleep deprived
