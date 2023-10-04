@@ -661,15 +661,11 @@ If you're more interested in the overall shape of the data distribution, a densi
 </h3>
 <p>These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run.</p>
 <ol style="list-style-type: decimal">
-<li>To create the errors, you'll need to ensure you're working from a clean environment and new session. Run the following code which will clear all objects and unload any packages you have loaded:</li>
+<li><p>To create the errors, you'll need to ensure you're working from a clean environment and new session. First, click <code>Session</code> then <code>Restart session</code>.</p></li>
+<li><p>Then run the following code which will clear all objects you have created:</p></li>
 </ol>
 <div class="sourceCode" id="cb34"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/paste.html">paste</a></span><span class="op">(</span><span class="st">"package:"</span>, <span class="fu"><a href="https://rdrr.io/r/base/names.html">names</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/utils/sessionInfo.html">sessionInfo</a></span><span class="op">(</span><span class="op">)</span><span class="op">$</span><span class="va">otherPkgs</span><span class="op">)</span>, sep<span class="op">=</span><span class="st">""</span><span class="op">)</span>, </span>
-<span>       <span class="va">detach</span>, </span>
-<span>       character.only <span class="op">=</span> <span class="cn">TRUE</span>, </span>
-<span>       unload <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/rm.html">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <ol start="2" style="list-style-type: decimal">
 <li>Then run the below code:</li>
 </ol>
@@ -948,7 +944,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-09-25.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-10-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
