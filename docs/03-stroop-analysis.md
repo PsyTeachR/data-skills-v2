@@ -131,18 +131,9 @@ ppt_info %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 270 </td>
-  </tr>
-</tbody>
-</table>
+|   n|
+|---:|
+| 270|
 
 </div>
 
@@ -156,28 +147,11 @@ ppt_info %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> gender </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 100 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Non-Binary </td>
-   <td style="text-align:right;"> 50 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 120 </td>
-  </tr>
-</tbody>
-</table>
+|gender     |   n|
+|:----------|---:|
+|Man        | 100|
+|Non-Binary |  50|
+|Woman      | 120|
 
 </div>
 
@@ -202,18 +176,9 @@ ppt_info %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> mean_age </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 24.4037 </td>
-  </tr>
-</tbody>
-</table>
+| mean_age|
+|--------:|
+|  24.4037|
 
 </div>
 
@@ -228,20 +193,9 @@ ppt_info %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> mean_age </th>
-   <th style="text-align:right;"> sd_age </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 24.4037 </td>
-   <td style="text-align:right;"> 3.496677 </td>
-  </tr>
-</tbody>
-</table>
+| mean_age|   sd_age|
+|--------:|--------:|
+|  24.4037| 3.496677|
 
 </div>
 
@@ -297,40 +251,11 @@ ppt_info %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> gender </th>
-   <th style="text-align:right;"> mean_age </th>
-   <th style="text-align:right;"> sd_age </th>
-   <th style="text-align:right;"> median_age </th>
-   <th style="text-align:right;"> group_size </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 24.25000 </td>
-   <td style="text-align:right;"> 3.382591 </td>
-   <td style="text-align:right;"> 24.0 </td>
-   <td style="text-align:right;"> 100 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Non-Binary </td>
-   <td style="text-align:right;"> 24.22000 </td>
-   <td style="text-align:right;"> 3.726847 </td>
-   <td style="text-align:right;"> 25.5 </td>
-   <td style="text-align:right;"> 50 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 24.60833 </td>
-   <td style="text-align:right;"> 3.510598 </td>
-   <td style="text-align:right;"> 25.0 </td>
-   <td style="text-align:right;"> 120 </td>
-  </tr>
-</tbody>
-</table>
+|gender     | mean_age|   sd_age| median_age| group_size|
+|:----------|--------:|--------:|----------:|----------:|
+|Man        | 24.25000| 3.382591|       24.0|        100|
+|Non-Binary | 24.22000| 3.726847|       25.5|         50|
+|Woman      | 24.60833| 3.510598|       25.0|        120|
 
 </div>
 
@@ -572,7 +497,7 @@ A large part of coding is trying to figure why your code doesn't work and this i
 
 These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run. 
 
-1. To create the errors, you'll need to ensure you're working from a clean environment and new session. First, click `Session` then `Restart session`.
+1. To create the errors, you'll need to ensure you're working from a clean environment and new session. First, click `Session` then `Restart R`.
 
 
 2. Then run the following code which will clear all objects you have created:

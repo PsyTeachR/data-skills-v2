@@ -391,7 +391,7 @@ A large part of coding is trying to figure why your code doesn't work and this i
 
 These exercises will produce errors. Try to solve the errors yourself, and then make a note of what the error message was and how you solved it - you might find it helpful to create a new file just for error solving notes. You will find that you make the same errors in R over and over again so whilst this might slow you down initially, it will greatly speed you up in the long-run. 
 
-1. To create the errors, you'll need to ensure you're working from a clean environment and new session. First, click `Session` then `Restart session`.
+1. To create the errors, you'll need to ensure you're working from a clean environment and new session. First, click `Session` then `Restart R`.
 
 
 2. Then run the following code which will clear all objects you have created:
