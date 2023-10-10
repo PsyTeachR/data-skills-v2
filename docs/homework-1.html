@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -169,10 +169,10 @@
 <p>These questions will ask you to write code that performs a specific task and save it in a specific object name. For example:</p>
 <p>Replace the NULL with code that calculates mean age and standard deviation for each gender group using the dataset <code>ppt_info</code>. Save this in an object named <code>age_stats</code>. The final table should have three columns and three rows. The columns should be named <code>gender</code>, <code>mean_age</code>, and <code>sd_age</code>.</p>
 <p>You will be given a code chunk that looks like this:</p>
-<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb36"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">age_stats</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div>
 <p>You should replace the NULL with the code that completes the task, for example:</p>
-<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb37"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">age_stats</span> <span class="op">&lt;-</span> <span class="va">dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span>,</span>
@@ -185,10 +185,10 @@
 </h3>
 <p>Sometimes we will ask you to look at the output you have created and provide a single number. For example:</p>
 <p>Look at <code>age_stats</code>. How many paticipants are in the largest gender group? Replace the NULL with a single whole number. This number should not be in quotation marks.</p>
-<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb38"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">largest_group</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div>
 <p>To answer this you would look at <code>age_stats</code> and see that the largest gender group is women with 120 participants so you would replace the NULL with 120. It's important that you don't put the number in quotation marks otherwise R will treat your answer as a character variable rather than a number and it won't match the solution.</p>
-<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb39"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">largest_group</span> <span class="op">&lt;-</span> <span class="fl">120</span></span></code></pre></div>
 </div>
 <div id="multiple-choice" class="section level3" number="4.4.3">
@@ -197,7 +197,7 @@
 </h3>
 <p>Finally, we will sometimes ask you a multiple choice question, usually based on interpreting the data or a plot. For example:</p>
 <p>First, run the below code to create a boxplot of reaction times for each condition.</p>
-<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb40"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"stroop_data.csv"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">condition</span>, y <span class="op">=</span> <span class="va">reaction_time</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -208,10 +208,10 @@
 <li>Incongruent</li>
 </ol>
 <p>Replace the NULL with your answer. Please just provide a single whole number and do not put this number in quotation marks.</p>
-<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb41"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">slower_rt</span> <span class="op">&lt;-</span> <span class="cn">NULL</span></span></code></pre></div>
 <p>You would then replace the NULL with your answer, in this case, it would the incongruent condition that is slower:</p>
-<div class="sourceCode" id="cb43"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb42"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">slower_rt</span> <span class="op">&lt;-</span> <span class="fl">2</span></span></code></pre></div>
 </div>
 </div>
@@ -507,7 +507,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-10-09.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2023-10-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

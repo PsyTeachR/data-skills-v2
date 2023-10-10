@@ -14,7 +14,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-corsi}
 
-There is a walkthrough video of this chapter available via [Echo360.]() (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Zoom](https://uofglasgow.zoom.us/rec/share/PBmegQSlJPdjWlwoZ5qW6yYEjHpxLkt2bI1Jl3T_2GFEq41qtDmARzHpqe4PKUsK.HZhufe77H0Eq2M1L?startTime=1696859847000). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: The Corsi Block Task
 
@@ -92,58 +92,18 @@ Once you've done all this, it's time to download the files we need and then uplo
 The zip file contains four files:
 
 * `corsi_stub1.Rmd` and `corsi_stub2.Rmd`, the stub files you'll complete for this chapter and the next one. Open  `corsi_stub1.Rmd` by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
-* `demographic_data.csv` is a data file that contains each participant's anonymous ID, age, gender and which experimental condition they were in (8 hours sleep, 4 hours sleep, or sleep deprived). This data is in <a class='glossary' target='_blank' title='A data format where all of the observations about one subject are in the same row' href='https://psyteachr.github.io/glossary/w#wide'>wide-form</a>. There are 600 participants, so there are 600 rows of data.
+* `demographic_data.csv` is a data file that contains each participant's anonymous ID, age, gender and which experimental condition they were in (8 hours sleep, 4 hours sleep, or sleep deprived). This data is in <a class='glossary'>wide-form<span class='def'></span></a>. There are 600 participants, so there are 600 rows of data.
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> Participant </th>
-   <th style="text-align:left;"> Gender </th>
-   <th style="text-align:right;"> Age </th>
-   <th style="text-align:left;"> Condition </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 48 </td>
-   <td style="text-align:left;"> 8 hours sleep </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 32 </td>
-   <td style="text-align:left;"> 8 hours sleep </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 31 </td>
-   <td style="text-align:left;"> 8 hours sleep </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 20 </td>
-   <td style="text-align:left;"> 8 hours sleep </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 59 </td>
-   <td style="text-align:left;"> 8 hours sleep </td>
-  </tr>
-  <tr>
-   <td style="text-align:right;"> 6 </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 60 </td>
-   <td style="text-align:left;"> 8 hours sleep </td>
-  </tr>
-</tbody>
-</table>
+| Participant|Gender | Age|Condition     |
+|-----------:|:------|---:|:-------------|
+|           1|Woman  |  48|8 hours sleep |
+|           2|Woman  |  32|8 hours sleep |
+|           3|Man    |  31|8 hours sleep |
+|           4|Man    |  20|8 hours sleep |
+|           5|Man    |  59|8 hours sleep |
+|           6|Man    |  60|8 hours sleep |
 
 </div>
 
@@ -283,7 +243,7 @@ If you get an error that says `object X not found`, double check you have spelle
 
 ## Activity 6: Joining the datasets
 
-We want to compare the scores for each sleep condition, however, the column that says what condition a participant is in a different dataset (`demographic_data`) to the column that has their scores (`score_data`). To fix this, we can perform a <a class='glossary' target='_blank' title='' href='https://psyteachr.github.io/glossary/j#join'>joins</a>.There are lots of different types of joins you can do, but the one we want is an  <a class='glossary' target='_blank' title='A mutating join that returns all the rows that have a match in the other table.' href='https://psyteachr.github.io/glossary/i#inner-join'>inner-join</a> which returns all the rows in one table that have a match in the other table.
+We want to compare the scores for each sleep condition, however, the column that says what condition a participant is in a different dataset (`demographic_data`) to the column that has their scores (`score_data`). To fix this, we can perform a <a class='glossary'>joins<span class='def'></span></a>.There are lots of different types of joins you can do, but the one we want is an  <a class='glossary'>inner-join<span class='def'></span></a> which returns all the rows in one table that have a match in the other table.
 
 Before you run the code, think about what the final output is going to look like. `demographic_data` has 4 columns, `score_data` has 2 columns, but the column `Participant` is the same column. 
 
