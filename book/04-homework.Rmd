@@ -116,7 +116,7 @@ Replace the NULL with your answer. Please just provide a single whole number and
 lowest_hap <- NULL
 ```
 
-You would then replace the NULL with your answer, in this case, it would the incongruent condition that is slower:
+You would then replace look at the plot and replace the NULL with your answer, for example:
 
 ```{r}
 lowest_hap <- 1
