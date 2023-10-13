@@ -27,8 +27,8 @@ The number one reason that students lose marks on the data skills homeworks is s
 The zip folder contains three files:
 
 * `ds1_GUID_blank.Rmd` which is the Markdown document you will write your answers in. It already has all the code chunks and instructions you need.
-* `ppt_data.csv` is the participant data from the Stroop experiment. It is exactly the data as the Stroop data you used in the previous chapters, however, the file name and variable names are all slightly different so that you can't just copy and paste from the book, you will need to change the names. You're going to hate me for this but I promise it will help you in the long-run.
-* `stroop_data.csv` is again the same data you've been using but with a slightly different file name and variable names so that you can't copy and paste.
+* `ahi-cesd2023.csv` is data from a study that looked at happiness and depression scores. There are three variables `id`, the participant's ID, `ahiTotal`, their total happiness score from a questionnaire, and `cesdTotal` their total depression score from a questionnaire.
+* `pinfo_2023.csv` has the information about each participant, their `id`, their `age`, and their `income`, which is one of three groups, `Below average`, `Average`, `Above average`.
 
 ## Completing the homework file
 
@@ -55,7 +55,7 @@ There are usually four types of questions in the homework files.
 
 These questions will ask you to write code that performs a specific task and save it in a specific object name. For example:
 
-Replace the NULL with code that calculates mean age and standard deviation for each gender group using the dataset `ppt_info`. Save this in an object named `age_stats`. The final table should have three columns and three rows. The columns should be named `gender`, `mean_age`, and `sd_age`.
+Replace the NULL with code that calculates mean age and standard deviation for each income group as well as how many participants are in that group using the dataset `ppt_info`. Save this in an object named `age_stats`. The final table should have four columns and three rows. The columns should be named `income`, `mean_age`, `sd_age` and `n_group`.
 
 You will be given a code chunk that looks like this:
 
@@ -69,9 +69,10 @@ You should replace the NULL with the code that completes the task, for example:
 
 ```r
 age_stats <- dat %>%
-  group_by(gender) %>%
+  group_by(income) %>%
   summarise(mean_age = mean(age),
-            sd_age = sd_age)
+            sd_age = sd_age,
+            n_group = n())
 ```
 
 To get the marks, everything about the object must match the solution, so check the number of columns and rows, and the names of the variables are how they are specified in the question.
@@ -80,51 +81,52 @@ To get the marks, everything about the object must match the solution, so check 
 
 Sometimes we will ask you to look at the output you have created and provide a single number. For example:
 
-Look at `age_stats`. How many paticipants are in the largest gender group? Replace the NULL with a single whole number. This number should not be in quotation marks.
+Look at `age_stats`. How many participants are in the largest income group? Replace the NULL with a single whole number. This number should not be in quotation marks.
 
 
 ```r
 largest_group <- NULL
 ```
 
-To answer this you would look at `age_stats` and see that the largest gender group is women with 120 participants so you would replace the NULL with 120. It's important that you don't put the number in quotation marks otherwise R will treat your answer as a character variable rather than a number and it won't match the solution.
+To answer this you would look at `age_stats` and see that the largest income group is Average with 136 participants so you would replace the NULL with 136 It's important that you don't put the number in quotation marks otherwise R will treat your answer as a character variable rather than a number and it won't match the solution.
 
 
 ```r
-largest_group <- 120
+largest_group <- 136
 ```
 
 ### Multiple-choice
 
 Finally, we will sometimes ask you a multiple choice question, usually based on interpreting the data or a plot. For example:
 
-First, run the below code to create a boxplot of reaction times for each condition.
+First, run the below code to create a boxplot of happiness scores for each condition.
 
 
 ```r
 library(tidyverse)
-read_csv("stroop_data.csv") %>%
-  ggplot(aes(x = condition, y = reaction_time)) +
+read_csv("ahi-cesd2023.csv") %>%
+  ggplot(aes(x = income, y = ahiTotal)) +
   geom_boxplot()
 ```
 
-Based on this plot, which condition has slower reaction times?
+Based on this plot, which group has the lowest happiness scores?
 
-1. Congruent
-2. Incongruent
+1. Below Average
+2. Average
+3. Above average
 
 Replace the NULL with your answer. Please just provide a single whole number and do not put this number in quotation marks.
 
 
 ```r
-slower_rt <- NULL
+lowest_hap <- NULL
 ```
 
 You would then replace the NULL with your answer, in this case, it would the incongruent condition that is slower:
 
 
 ```r
-slower_rt <- 2
+lowest_hap <- 1
 ```
 
 ## Knitting your file
