@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 9 Big five personality 1 | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="description" content="9.1 Intended Learning Outcomes By the end of this chapter you should be able to:    9.2 Psych 1B Welcome back to Psych 1B! Whilst much of the data skills work this semester will seem very...">
+<meta name="description" content="9.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Big Five model of personality is Create your own R Markdown documents with code chunks Explain the...">
 <meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="Chapter 9 Big five personality 1 | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/big-five-personality-1.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
-<meta property="og:description" content="9.1 Intended Learning Outcomes By the end of this chapter you should be able to:    9.2 Psych 1B Welcome back to Psych 1B! Whilst much of the data skills work this semester will seem very...">
+<meta property="og:description" content="9.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Big Five model of personality is Create your own R Markdown documents with code chunks Explain the...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 9 Big five personality 1 | Data Skills">
-<meta name="twitter:description" content="9.1 Intended Learning Outcomes By the end of this chapter you should be able to:    9.2 Psych 1B Welcome back to Psych 1B! Whilst much of the data skills work this semester will seem very...">
+<meta name="twitter:description" content="9.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what the Big Five model of personality is Create your own R Markdown documents with code chunks Explain the...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -87,6 +87,7 @@
 <li><a class="" href="belonging-1.html"><span class="header-section-number">7</span> Belonging 1</a></li>
 <li><a class="" href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></li>
 <li><a class="active" href="big-five-personality-1.html"><span class="header-section-number">9</span> Big five personality 1</a></li>
+<li><a class="" href="big-five-personality-2.html"><span class="header-section-number">10</span> # Big five personality 2</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -110,9 +111,9 @@
 </h2>
 <p>By the end of this chapter you should be able to:</p>
 <ul>
-<li>
-<li>
-<li>
+<li>Explain what the Big Five model of personality is</li>
+<li>Create your own R Markdown documents with code chunks</li>
+<li>Explain the concept of forward and reverse coding</li>
 </ul>
 </div>
 <div id="psych-1b" class="section level2" number="9.2">
@@ -138,22 +139,22 @@
 </ul>
 <ol style="list-style-type: decimal">
 <li>The trait 'Agreeableness' in the Big Five personality model refers to:
-<div id="radio_TFSPYMQLGX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_TFSPYMQLGX" value=""><span>The tendency to be organized, careful, and disciplined</span></label><label><input type="radio" autocomplete="off" name="radio_TFSPYMQLGX" value="answer"><span>The tendency to be compassionate, cooperative, and warm towards others</span></label><label><input type="radio" autocomplete="off" name="radio_TFSPYMQLGX" value=""><span>The tendency to be outgoing, energetic, and sociable</span></label><label><input type="radio" autocomplete="off" name="radio_TFSPYMQLGX" value=""><span>The tendency to experience mood swings, anxiety, and irritability.</span></label>
+<div id="radio_OXTNPZSRUS" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_OXTNPZSRUS" value=""><span>The tendency to be organized, careful, and disciplined</span></label><label><input type="radio" autocomplete="off" name="radio_OXTNPZSRUS" value="answer"><span>The tendency to be compassionate, cooperative, and warm towards others</span></label><label><input type="radio" autocomplete="off" name="radio_OXTNPZSRUS" value=""><span>The tendency to be outgoing, energetic, and sociable</span></label><label><input type="radio" autocomplete="off" name="radio_OXTNPZSRUS" value=""><span>The tendency to experience mood swings, anxiety, and irritability.</span></label>
 </div>
 </li>
 <li>In the context of the Big Five Personality model, which trait might be associated with a person who is diligent, efficient, and follows a schedule?</li>
 </ol>
-<div id="radio_PETTUPXASX" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_PETTUPXASX" value=""><span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_PETTUPXASX" value="answer"><span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_PETTUPXASX" value=""><span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_PETTUPXASX" value=""><span>Agreeableness</span></label>
+<div id="radio_IFBPFRSXFY" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_IFBPFRSXFY" value=""><span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_IFBPFRSXFY" value="answer"><span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_IFBPFRSXFY" value=""><span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_IFBPFRSXFY" value=""><span>Agreeableness</span></label>
 </div>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Individuals who are often nervous, insecure, and easily upset, are considered to have high <input class="webex-solveme nospaces ignorecase" size="11" data-answer='["neuroticism"]'> according to the Big Five Personality Model.</p></li>
 <li><p>In the Big Five Personality Model, people who are outgoing, sociable, and assertive score high on the trait known as <input class="webex-solveme nospaces" size="12" data-answer='["extraversion","extroversion","TRUE"]'></p></li>
 <li>
 <p>Which of these traits in the Big Five Personality model is most closely associated with creativity and a preference for novelty?</p>
-<div id="radio_KRVEVGOSEF" class="webex-radiogroup">
-<label><input type="radio" autocomplete="off" name="radio_KRVEVGOSEF" value=""><span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_KRVEVGOSEF" value=""><span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_KRVEVGOSEF" value=""><span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_KRVEVGOSEF" value="answer"><span>Openness to Experience</span></label>
+<div id="radio_NCNBJZAWHE" class="webex-radiogroup">
+<label><input type="radio" autocomplete="off" name="radio_NCNBJZAWHE" value=""><span>Extraversion</span></label><label><input type="radio" autocomplete="off" name="radio_NCNBJZAWHE" value=""><span>Conscientiousness</span></label><label><input type="radio" autocomplete="off" name="radio_NCNBJZAWHE" value=""><span>Neuroticism</span></label><label><input type="radio" autocomplete="off" name="radio_NCNBJZAWHE" value="answer"><span>Openness to Experience</span></label>
 </div>
 </li>
 </ol>
@@ -451,17 +452,75 @@ The <code>values_to</code> argument specifies the name of a new column that will
 <p>So, in summary, this script is taking the <code>big5</code> data frame and transforming it from a wide format to a long format, where the original column names are stored in a new column named "item", and their corresponding values are stored in a new column named "response". The transformed data frame is then stored in a new object called <code>big5_long</code>.</p>
 </div>
 </div>
-<div id="finished-7" class="section level2" number="9.11">
+<div id="activity-9-refresh-your-memory" class="section level2" number="9.11">
 <h2>
-<span class="header-section-number">9.11</span> Finished<a class="anchor" aria-label="anchor" href="#finished-7"><i class="fas fa-link"></i></a>
+<span class="header-section-number">9.11</span> Activity 9: Refresh your memory<a class="anchor" aria-label="anchor" href="#activity-9-refresh-your-memory"><i class="fas fa-link"></i></a>
+</h2>
+<p>Finally, so that your memory is refreshed ahead of Psych 1B, answer the following questions:</p>
+<ol style="list-style-type: decimal">
+<li>What does the select function in the tidyverse primarily do? <select class="webex-select"><option value="blank"></option>
+<option value="">Filter rows based on a condition</option>
+<option value="">Create new columns</option>
+<option value="answer">Select specific columns</option>
+<option value="">Sort the data</option></select>
+</li>
+</ol>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The <code>select</code> function is primarily used to choose and extract specific columns (variables) from a data frame or tibble. It allows you to subset your data by selecting only the columns you are interested in for further analysis, which can be very useful when dealing with large datasets.</p>
+</div>
+<ol start="2" style="list-style-type: decimal">
+<li>What is the main purpose of the filter function in the tidyverse? <select class="webex-select"><option value="blank"></option>
+<option value="">Create new columns</option>
+<option value="">Sort the data</option>
+<option value="answer">Filter rows based on a condition</option>
+<option value="">Select specific columns</option></select>
+</li>
+</ol>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The <code>filter</code> function is used to subset or filter rows from a dataset based on specific conditions or criteria. It allows you to retain only those rows that meet certain criteria, making it easier to focus on the subset of data relevant to your analysis.</p>
+</div>
+<ol start="3" style="list-style-type: decimal">
+<li>What does the mutate function in the tidyverse primarily do? <select class="webex-select"><option value="blank"></option>
+<option value="">Select specific columns</option>
+<option value="">Create new rows</option>
+<option value="answer">Create new columns</option>
+<option value="">Sort the data</option></select>
+</li>
+</ol>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>The mutate function is used to add new columns (variables) to a data frame or tibble, often by applying some transformation or calculation to existing columns. It allows you to create new variables based on the values of other variables, which is useful for generating additional insights or features in your data.</p>
+</div>
+<ol start="4" style="list-style-type: decimal">
+<li>How do you load an R package named "cowsay" into your R session? <select class="webex-select"><option value="blank"></option>
+<option value="answer">library(cowsay)</option>
+<option value="">install.packages('cowsay')</option>
+<option value="">load(cowsay)</option>
+<option value="">read_csv(cowsay)</option></select>
+</li>
+</ol>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<p>When a package is already installed on your system, you can use the <code><a href="https://rdrr.io/r/base/library.html">library()</a></code> function to load it into your R session. This makes the package's functions and features available for use in your R code. So, if "cowsay" is already installed, you can simply load it into your session with <code><a href="https://github.com/sckott/cowsay">library(cowsay)</a></code> to start using its functionality.</p>
+</div>
+</div>
+<div id="finished-7" class="section level2" number="9.12">
+<h2>
+<span class="header-section-number">9.12</span> Finished<a class="anchor" aria-label="anchor" href="#finished-7"><i class="fas fa-link"></i></a>
 </h2>
 <p>Finally, try knitting the file to HTML and remember to make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server.</p>
 
 </div>
-</div>
-
-
-
 </div>
 <script>
 
@@ -664,9 +723,12 @@ $( document ).ready(function() {
   move_sidebar();
   window.onresize = move_sidebar;
 });
-</script><div class="chapter-nav">
+</script>
+
+</div>
+<div class="chapter-nav">
 <div class="prev"><a href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></div>
-<div class="next"><a href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></div>
+<div class="next"><a href="big-five-personality-2.html"><span class="header-section-number">10</span> # Big five personality 2</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
@@ -681,7 +743,8 @@ $( document ).ready(function() {
 <li><a class="nav-link" href="#activity-6-forward-reverse-scoring"><span class="header-section-number">9.8</span> Activity 6: Forward &amp; reverse scoring</a></li>
 <li><a class="nav-link" href="#activity-7-check-the-data"><span class="header-section-number">9.9</span> Activity 7; Check the data</a></li>
 <li><a class="nav-link" href="#activity-8-long-form-data"><span class="header-section-number">9.10</span> Activity 8: Long-form data</a></li>
-<li><a class="nav-link" href="#finished-7"><span class="header-section-number">9.11</span> Finished</a></li>
+<li><a class="nav-link" href="#activity-9-refresh-your-memory"><span class="header-section-number">9.11</span> Activity 9: Refresh your memory</a></li>
+<li><a class="nav-link" href="#finished-7"><span class="header-section-number">9.12</span> Finished</a></li>
 </ul>
 
       <div class="book-extra">
@@ -691,8 +754,6 @@ $( document ).ready(function() {
         </ul>
 </div>
     </nav>
-</div>
-
 </div>
 </div> <!-- .container -->
 
@@ -708,5 +769,6 @@ $( document ).ready(function() {
 
 </div></div>
 </footer>
+</div>
 </body>
 </html>

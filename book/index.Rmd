@@ -63,4 +63,14 @@ In terms of the coverage of skills, v2 covers the same functions as v1, however,
 * Information about coding conventions and rules (e.g., info on how functions and arguments work) that was previously in an early chapter named Programming Basics has been distributed throughout the chapters in the first semester to try and convey this information in context.
 * There is now a full chapter on fixing errors.
 
+## Statement on use of AI
+
+A premium subscription to ChatGPT using GPT4.0 was used to assist in the writing of these materials in the following ways:
+
+* To suggest multiple-choice questions and other types of quizzes and/or to provide the text for "Explain this answer" for such quizzes
+* To proof-read and check for typos and inconsistencies in variable names
+* To suggest improvements to the text
+
+Any information provided by ChatGPT was verified, for example, where code was used, the syntax and output was checked to ensure it was correct and where theoretical or conceptual information was provided, only that which the author could verify from their pre-existing expertise was included. 
+
 

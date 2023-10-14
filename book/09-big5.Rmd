@@ -5,9 +5,9 @@
 
 By the end of this chapter you should be able to:
 
-* 
-*
-*
+* Explain what the Big Five model of personality is
+* Create your own R Markdown documents with code chunks
+* Explain the concept of forward and reverse coding
 
 ## Psych 1B
 
@@ -131,6 +131,8 @@ codebook <- read_csv("code_book.csv")
 ```
 ` r unhide()`
 
+
+
 ```{r echo = FALSE, message = FALSE}
 library(tidyverse)
 big5 <- read_csv("data/big5/big5_data.csv")
@@ -248,6 +250,36 @@ The `values_to` argument specifies the name of a new column that will store the 
 
 So, in summary, this script is taking the `big5` data frame and transforming it from a wide format to a long format, where the original column names are stored in a new column named "item", and their corresponding values are stored in a new column named "response". The transformed data frame is then stored in a new object called `big5_long`.
 `r unhide()`
+
+## Activity 9: Refresh your memory
+
+Finally, so that your memory is refreshed ahead of Psych 1B, answer the following questions:
+
+1. What does the select function in the tidyverse primarily do? `r mcq(c("Filter rows based on a condition", "Create new columns", answer = "Select specific columns", "Sort the data"))`
+
+`r hide("Explain this answer")`
+The `select` function is primarily used to choose and extract specific columns (variables) from a data frame or tibble. It allows you to subset your data by selecting only the columns you are interested in for further analysis, which can be very useful when dealing with large datasets.
+`r unhide()` 
+
+2. What is the main purpose of the filter function in the tidyverse? `r mcq(c("Create new columns", "Sort the data", answer = "Filter rows based on a condition", "Select specific columns"))`
+
+`r hide("Explain this answer")`
+The `filter` function is used to subset or filter rows from a dataset based on specific conditions or criteria. It allows you to retain only those rows that meet certain criteria, making it easier to focus on the subset of data relevant to your analysis.
+`r unhide()` 
+
+3. What does the mutate function in the tidyverse primarily do? `r mcq(c("Select specific columns", "Create new rows", answer = "Create new columns", "Sort the data"))`
+
+`r hide("Explain this answer")`
+The mutate function is used to add new columns (variables) to a data frame or tibble, often by applying some transformation or calculation to existing columns. It allows you to create new variables based on the values of other variables, which is useful for generating additional insights or features in your data.
+`r unhide()`
+
+4. How do you load an R package named "cowsay" into your R session? `r mcq(c(answer = "library(cowsay)", "install.packages('cowsay')", "load(cowsay)", "read_csv(cowsay)"))`
+
+`r hide("Explain this answer")`
+
+When a package is already installed on your system, you can use the `library()` function to load it into your R session. This makes the package's functions and features available for use in your R code. So, if "cowsay" is already installed, you can simply load it into your session with `library(cowsay)` to start using its functionality.
+`r unhide()`
+
 
 ## Finished
 

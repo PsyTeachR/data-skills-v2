@@ -17,6 +17,7 @@ fig:settings-code
 fig:img-soundimals-hash
 how-to-use-this-book-and-the-walkthrough-videos
 changes-from-version-1
+statement-on-use-of-ai
 sec-intro
 sec-ilo-intro
 sec-walkthrough-intro
@@ -157,7 +158,19 @@ activity-5-loading-data-1
 activity-6-forward-reverse-scoring
 activity-7-check-the-data
 activity-8-long-form-data
+activity-9-refresh-your-memory
 finished-7
+big-five-personality-2
+sec-ilo-big5-2
+sec-walkthrough-big5
+sec-setup-big5
+activity-2-loading-the-data-1
+activity-3-wide-form-and-long-form-data
+activity-4-inner_join
+actvity-5-pipe-it
+activity-6-describe-and-visualise
+activity-7-add-a-filter
+finished-8
 installing-r
 installing-base-r
 installing-rstudio
