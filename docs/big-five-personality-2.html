@@ -4,18 +4,18 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>Chapter 10 # Big five personality 2 | Data Skills</title>
+<title>Chapter 10 Big five personality 2 | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="description" content="10.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to reshape data from wide-form to long-form using pivot_longer()   10.2 Walkthrough video There is a...">
+<meta name="description" content="10.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to reshape data from wide-form to long-form using pivot_longer() Be able to summarise data for different...">
 <meta name="generator" content="bookdown 0.34 with bs4_book()">
-<meta property="og:title" content="Chapter 10 # Big five personality 2 | Data Skills">
+<meta property="og:title" content="Chapter 10 Big five personality 2 | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/big-five-personality-2.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
-<meta property="og:description" content="10.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to reshape data from wide-form to long-form using pivot_longer()   10.2 Walkthrough video There is a...">
+<meta property="og:description" content="10.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to reshape data from wide-form to long-form using pivot_longer() Be able to summarise data for different...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Chapter 10 # Big five personality 2 | Data Skills">
-<meta name="twitter:description" content="10.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to reshape data from wide-form to long-form using pivot_longer()   10.2 Walkthrough video There is a...">
+<meta name="twitter:title" content="Chapter 10 Big five personality 2 | Data Skills">
+<meta name="twitter:description" content="10.1 Intended Learning Outcomes By the end of this chapter you should be able to: Be able to reshape data from wide-form to long-form using pivot_longer() Be able to summarise data for different...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -87,7 +87,7 @@
 <li><a class="" href="belonging-1.html"><span class="header-section-number">7</span> Belonging 1</a></li>
 <li><a class="" href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></li>
 <li><a class="" href="big-five-personality-1.html"><span class="header-section-number">9</span> Big five personality 1</a></li>
-<li><a class="active" href="big-five-personality-2.html"><span class="header-section-number">10</span> # Big five personality 2</a></li>
+<li><a class="active" href="big-five-personality-2.html"><span class="header-section-number">10</span> Big five personality 2</a></li>
 <li class="book-part">Appendices</li>
 <li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
 <li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
@@ -103,7 +103,7 @@
 </div>
   </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="big-five-personality-2" class="section level1" number="10">
 <h1>
-<span class="header-section-number">10</span> # Big five personality 2<a class="anchor" aria-label="anchor" href="#big-five-personality-2"><i class="fas fa-link"></i></a>
+<span class="header-section-number">10</span> Big five personality 2<a class="anchor" aria-label="anchor" href="#big-five-personality-2"><i class="fas fa-link"></i></a>
 </h1>
 <div id="sec-ilo-big5-2" class="section level2" number="10.1">
 <h2>
@@ -112,6 +112,8 @@
 <p>By the end of this chapter you should be able to:</p>
 <ul>
 <li>Be able to reshape data from wide-form to long-form using <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>
+</li>
+<li>Be able to summarise data for different groupings using <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise()</a></code>
 </li>
 </ul>
 </div>
@@ -876,7 +878,7 @@ $( document ).ready(function() {
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
       <ul class="nav navbar-nav">
-<li><a class="nav-link" href="#big-five-personality-2"><span class="header-section-number">10</span> # Big five personality 2</a></li>
+<li><a class="nav-link" href="#big-five-personality-2"><span class="header-section-number">10</span> Big five personality 2</a></li>
 <li><a class="nav-link" href="#sec-ilo-big5-2"><span class="header-section-number">10.1</span> Intended Learning Outcomes</a></li>
 <li><a class="nav-link" href="#sec-walkthrough-big5"><span class="header-section-number">10.2</span> Walkthrough video</a></li>
 <li><a class="nav-link" href="#sec-setup-big5"><span class="header-section-number">10.3</span> Activity 1: Set-up</a></li>

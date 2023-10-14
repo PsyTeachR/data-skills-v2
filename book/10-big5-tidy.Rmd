@@ -1,5 +1,5 @@
 
-# # Big five personality 2
+# Big five personality 2
 
 ```{r echo =FALSE, message=FALSE}
 library(tidyverse)
@@ -14,6 +14,7 @@ codebook <- read_csv("data/big5/code_book.csv")
 By the end of this chapter you should be able to:
 
 * Be able to reshape data from wide-form to long-form using `pivot_longer()`
+* Be able to summarise data for different groupings using `group_by()` and `summarise()`
 
 
 ## Walkthrough video {#sec-walkthrough-big5}
