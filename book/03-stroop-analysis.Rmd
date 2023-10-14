@@ -401,7 +401,7 @@ rm(list = ls())
 ```
 
 
-2. Then run the below code:
+3. Then run the below code:
 
 ```{r debugging1, eval=FALSE}
 dat_exercise <- read_csv("participant_data.csv")

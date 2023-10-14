@@ -219,7 +219,7 @@ knitr::include_graphics("images/corsi/layers.png")
 
 * The main function we use is `ggplot()` which is from the `r pkg("ggplot2")` package and is loaded as part of the `r pkg("tidyverse")`. `ggplot()` works on a system of layers.
 * The first layer sets up what data the plot will use and the "aesthetic mapping" (`aes()`) which means which variables should be represented on each axis. We want to produce a histogram of the Corsi block scores so we tell `ggplot()` to put the variable `Corsi_Score` on the x-axis.
-* The next layer tells `ggplot()` what type of plot (or "geom") to use and here we specify `geom_histogram()`. There are two arguments added to `geom_histogram()`: `binwidth` changes the size of the bars (try changing this value to 2 or 3 and see happens) whilst `colour` changes the colour of the line around the bars (try changing "black").
+* The next layer tells `ggplot()` what type of plot (or "geom") to use and here we specify `geom_histogram()`. There are two arguments added to `geom_histogram()`: `binwidth` changes the size of the bars (try changing this value to 2 or 3 and see happens) whilst `colour` changes the colour of the line around the bars (try changing "black" to the name of another colour).
 * `scale_x_continuous()` controls the x-axis. `name` is the x-axis label and `breaks` updates the number labels on the x-axis. In this case we ask us to give us the sequence (`seq`) of numbers from 1 to 9, which is quicker than writing them all out. 
 * All the layer are connected with `+` and it's important that this comes at the end of the first line and not the start of the second line or it won't work.
 
@@ -238,7 +238,7 @@ If you get an error that says `object X not found`, double check you have spelle
 
 ## Activity 6: Joining the datasets
 
-We want to compare the scores for each sleep condition, however, the column that says what condition a participant is in a different dataset (`demographic_data`) to the column that has their scores (`score_data`). To fix this, we can perform a `r glossary("join", "joins")`.There are lots of different types of joins you can do, but the one we want is an  `r glossary("inner join", "inner-join")` which returns all the rows in one table that have a match in the other table.
+We want to compare the scores for each sleep condition, however, the column that says what condition a participant took part in is contained in a different dataset (`demographic_data`) to the column that has their scores (`score_data`). To fix this, we can perform a `r glossary("join")`.There are lots of different types of joins you can do, but the one we want is an  `r glossary("inner join", "inner-join")` which returns all the rows in one table that have a match in the other table.
 
 Before you run the code, think about what the final output is going to look like. `demographic_data` has 4 columns, `score_data` has 2 columns, but the column `Participant` is the same column. 
 

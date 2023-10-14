@@ -120,7 +120,7 @@ Whilst coding isn't about memorisation and we certainly don't expect you to be a
 library(package_name)
 object_name <- read_csv("file_name.csv")
 ```
-` r unhide()`
+`r unhide()`
 
 `r hide("Solution")`
 ```{r eval = FALSE}
@@ -131,7 +131,7 @@ codebook <- read_csv("code_book.csv")
 ```
 ` r unhide()`
 
-```{r echo = FALSE}
+```{r echo = FALSE, message = FALSE}
 library(tidyverse)
 big5 <- read_csv("data/big5/big5_data.csv")
 scoring <- read_csv("data/big5/scoring.csv")
@@ -207,13 +207,13 @@ big5 %>%
   pivot_longer(cols = 2:61, 
                names_to = "question_name", 
                values_to = "answer") %>%
-  head(15)
+  head(10)
 ```
 
 Given that we want to be able to eventually join together `big5` with `scoring` and `codebook`, we want variables that represent the same data to have the same name.
 
-* What would be a better name for the variable `question_name`? `r fitb("item")`
-* What would be a better name for the variable `answer`? `r fitb("response")`
+* What should we name `question_name` so that it matches the same column in `codebook`? `r fitb("item")`
+* What should we name `answer` so that it matches the same column in `scoring`? `answer`? `r fitb("response")`
 
 `r hide("Explain this answer")`
 

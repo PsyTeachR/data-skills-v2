@@ -25,6 +25,8 @@ For the next set of chapters we're going to use data from a questionnaire that m
 * Third, read the introduction and discussion of the paper ["A sense of belonging at university: student retention, motivation and enjoyment"](https://go.exlibris.link/cV2NR1GR). You can read the method and the results if you're interested although we haven't yet learned about the statistics they use. Note that this paper uses a slightly different scale than the one you did above. 
 * Finally, answer the following questions. Please note that your responses will not save in the browser - if you want to save them, make a note of them somewhere.
 
+<br>
+
 1. Which of the following best describes the concept of belongingness in the context of university students? 
 
 <div class='webex-radiogroup' id='radio_SOEFIODXIH'><label><input type="radio" autocomplete="off" name="radio_SOEFIODXIH" value="answer"></input> <span>The degree to which students feel accepted, valued, and included in their university community</span></label><label><input type="radio" autocomplete="off" name="radio_SOEFIODXIH" value=""></input> <span>The students&apos; ability to adhere to university policies and rules</span></label><label><input type="radio" autocomplete="off" name="radio_SOEFIODXIH" value=""></input> <span>The physical presence of students on campus</span></label><label><input type="radio" autocomplete="off" name="radio_SOEFIODXIH" value=""></input> <span>The level of students&apos; academic achievement</span></label></div>
@@ -37,6 +39,8 @@ The concept of belongingness in the context of university students is best descr
 
 </div>
 
+
+<br>
 
 2. According to research, why is fostering a sense of belonging crucial for first-year university students? 
 
@@ -85,14 +89,14 @@ I KNOW THIS CHAPTER ISN'T SUBTLE.
 
 Once you've done all this, it's time to download the files we need and then upload them to the server.
 
-* First, download the <a href="data/belong/belong_data.zip" download>Belonging data zip file</a> to your computer and make sure you know which folder you saved it in.
+* First, download the <a href="data/belong/belonging_data.zip" download>Belonging data zip file</a> to your computer and make sure you know which folder you saved it in.
 * Then, on the server in the Files tab (bottom right), click `Upload > Choose file` then navigate to the folder on your computer where the zip file is saved, select it, click `Open`, then `OK`.
 
 The zip file contains four files:
 
 * `belong_stub1.Rmd` and `belong_stub2.Rmd`, the stub files you'll complete for this chapter and the next one. Open  `belong_stub1.Rmd` by clicking on it in the Files tab and then edit the heading to add in your GUID and today's date.
 * `demographic_data.csv` is a data file that contains each participant's anonymous ID, age, gender and level of study. Gender has been coded numerically where woman = 1, man = 2, and non-binary = 3.
-* `questionnaire_data` is a data file that contains each participants ID, level of study, and their score on three components of the belonging scale (belonging, engagement, self-confidence). 
+* `questionnaire_data` is a data file that contains each participant's ID, level of study, and their score on three components of the belonging scale (belonging, engagement, self-confidence). 
 
 Now, we need to load the tidyverse and the data files so that we can use them. 
 
@@ -159,7 +163,7 @@ Because `gender` is coded numerically, R has assumed that the data in this colum
 
 ::: {.info data-latex=""}
 
-There are several different <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> in R and when you load data in, R will do it's best to guess which one each variable is:
+There are several different <a class='glossary'>data types<span class='def'></span></a> in R and when you load data in, R will do it's best to guess which one each variable is:
 
 * integer (whole numbers like 1L, -10L, 3000L)
 * double (numbers like -0.223, 10.324, 1e4)
@@ -259,93 +263,29 @@ full_data %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> gender_coded </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 500 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 400 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Non-binary </td>
-   <td style="text-align:right;"> 100 </td>
-  </tr>
-</tbody>
-</table>
+|gender_coded |   n|
+|:------------|---:|
+|Man          | 500|
+|Woman        | 400|
+|Non-binary   | 100|
 
 </div><div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> level </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:right;"> 920 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:right;"> 80 </td>
-  </tr>
-</tbody>
-</table>
+|level       |   n|
+|:-----------|---:|
+|First year  | 920|
+|Second year |  80|
 
 </div><div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> level </th>
-   <th style="text-align:left;"> gender_coded </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 457 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 373 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:left;"> Non-binary </td>
-   <td style="text-align:right;"> 90 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 43 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 27 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:left;"> Non-binary </td>
-   <td style="text-align:right;"> 10 </td>
-  </tr>
-</tbody>
-</table>
+|level       |gender_coded |   n|
+|:-----------|:------------|---:|
+|First year  |Man          | 457|
+|First year  |Woman        | 373|
+|First year  |Non-binary   |  90|
+|Second year |Man          |  43|
+|Second year |Woman        |  27|
+|Second year |Non-binary   |  10|
 
 </div>
 
@@ -355,7 +295,7 @@ full_data %>%
 
 ## Activity 7: Filter and select
 
-The analysis we're going to do is going to focus on gender differences in belonging for first year students and as we can see from the demographic counts, we have some second year students in our sample that we need to get rid of.
+Our analysis will focus on gender differences in belonging for first year students and as we can see from the demographic counts, we have some second year students in our sample that we need to get rid of.
 
 * In code chunk 5, create an object named `first_year_data` that only contains the data from first year students. Your starting dataset should be `full_data`.
 
@@ -402,7 +342,7 @@ first_year_data <- first_year_data %>%
          belongingness:self_confidence) 
 ```
 
-Finally, see if you can string all this code together using pipes (`%>%`) in one code chunk. You should start with `full_data` and save it all in an object named `first_year_data`.
+Finally, see if you can string both the `filter()` and `select()` code together using pipes (`%>%`) in one code chunk. You should start with `full_data` and save it all in an object named `first_year_data`.
 
 
 <div class='webex-solution'><button>Hint</button>
@@ -453,7 +393,7 @@ ggplot(first_year_data, aes(x = belongingness, y = engagement)) +
 
 <img src="07-belong_files/figure-html/unnamed-chunk-15-1.png" width="100%" style="display: block; margin: auto;" />
 
-To add a line of best fit, add on a layer that calls `geom_smooth()` (instinctively you might expect to need `geom_line()`, this does something very different and will make your plot look mad, try it). You can specify different methods of drawing the line, for now, we'll choose `method = "lm"` which stands for "linear model" which basically means draw a straight line.
+To add a line of best fit, add a layer that calls `geom_smooth()` (instinctively you might expect to need `geom_line()`, this does something very different and will make your plot look mad, try it). You can specify different methods of drawing the line, for now, we'll choose `method = "lm"` which stands for "linear model" which basically means draw a straight line.
 
 
 ```r
@@ -549,7 +489,7 @@ ggplot(first_year_data, aes(x = belongingness,
 
 However, if you want to make more fine-grained changes you may need to use the `scale_` functions.
 
-* We don't need to add on another scale function for colour, we can just use the one that's alreeady there and add in the arguments `name` and `labels`.
+* We don't need to add on another scale function for colour, we can just use the one that's alreedy there and add in the arguments `name` and `labels`.
 * `breaks` changes the breaks of the axis, i.e., the numbers that are presented. We ask it for a sequence (`seq`) of all the numbers from ` to 7.
 
 

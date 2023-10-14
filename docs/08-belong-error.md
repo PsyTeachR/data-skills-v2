@@ -32,15 +32,15 @@ Don't use ChatGPT or other AI tools for this chapter because you won't learn any
 
 ## Activity 1: Setup
 
-Login to the server and open `belong_stub2.Rmd`. To create the errors, you'll need to ensure you're working from a clean environment and new session. If you followed the instructions in Chapter 1, this should happen automatically but just in case, run the following code in code chunk 1 which will clear all objects and unload any packages you have loaded:
+Login to the server and open `belong_stub2.Rmd`. To create the errors, you'll need to ensure you're working from a clean environment and new session. If you followed the instructions in Chapter 1, this should happen automatically but just in case, follow the below steps which will clear all objects and unload any packages you have loaded:
+
+1. Click `Session` then `Restart R`.
+
+
+2. Then run the following code which will clear all objects you have created:
 
 
 ```r
-lapply(paste("package:", names(sessionInfo()$otherPkgs), sep=""), 
-       detach, 
-       character.only = TRUE, 
-       unload = TRUE)
-
 rm(list = ls())
 ```
 
@@ -113,16 +113,6 @@ This is one of those rare times when reading the error message will give you a c
 Then, we want to recode gender as a factor and count the number of participants in each gender group. This code will run, but it will introduce an error into your data.
 
 
-<div class='webex-solution'><button>Hint</button>
-
-
-Look at the order of the levels and labels and think about what 1, 2, and 3 are supposed to represent. 
-
-
-</div>
-
-
-
 ```r
 first_year <- first_year %>%
   mutate(gender_coded = factor(gender, levels = c(1,2,3),
@@ -132,19 +122,20 @@ first_year %>%
   count(gender_coded)
 ```
 
-## Activity 6: Select
-
-This code should use the function `select()` to select a the columns `participant`, `gender_coded`, `age`, and three questionnaire score columns and rename `gender_coded` as `gender`. 
 
 
 <div class='webex-solution'><button>Hint</button>
 
 
-Typos are the most common cause of code not working. There are two of them in this code.
+Look at the order of the levels and labels and think about what 1, 2, and 3 are supposed to represent. 
 
 
 </div>
 
+
+## Activity 6: Select
+
+This code should use the function `select()` to select the columns `participant`, `gender_coded`, `age`, the three questionnaire score columns, and also rename `gender_coded` as `gender`. 
 
 
 ```r
@@ -158,9 +149,28 @@ first_year %>%
   count(gender_coded)
 ```
 
+
+<div class='webex-solution'><button>Hint</button>
+
+
+Typos (either mispelled word or incorrect use of capital letters) are the most common cause of code not working. There are two of them in this code.
+
+
+</div>
+
+
 ## Activity 7: Summarise
 
-This code should use `group_by()` and `summarise()` to calculate the mean scores on each belonging sub-scale by gender and save it in an object named `scores_gender`. The final table should have 4 columns (gender, belong, engagement, and confidence) and three rows (one for each gender).
+This code should use `group_by()` and `summarise()` to calculate the mean scores on each belonging sub-scale by gender and save it in an object named `scores_gender`. The final table should have 4 columns (gender, belong, engagement, and confidence) and three rows (one for each gender). This code will run, but it won't produce what it is supposed to.
+
+
+```r
+scores_gender <- first_year %>%
+  group_by(participant, gender) %>%
+  summarise(belong = mean(belongingness),
+            engagement = mean(engagement),
+            confidence = mean(self_confidence))
+```
 
 
 <div class='webex-solution'><button>Hint</button>
@@ -172,18 +182,16 @@ If you're trying to calculate summary statistics by group, you only need to add 
 </div>
 
 
-
-```r
-scores_gender <- first_year %>%
-  group_by(participant, gender) %>%
-  summarise(belong = mean(belongingness),
-            engagement = mean(engagement),
-            confidence = mean(self_confidence))
-```
-
 ## Activity 8: Boxplots
 
-Now we want to make a boxplot that shows belonging scores by gender using `ggplot()`. This won't code throw an error, but it also won't fully run and you'll need to press escape in the console to get out of it. 
+Now we want to make a boxplot that shows belonging scores by gender using `ggplot()`. This won't code throw an error, but it also won't fully run and you'll need to put your cursor in the console and press escape to get out of it. 
+
+
+```r
+ggplot(first_year, aes(x = gender, y = belongingness) +
+  geom_violin() +
+  geom_boxplot(width = .2) 
+```
 
 
 <div class='webex-solution'><button>Hint</button>
@@ -195,18 +203,25 @@ Every `(` needs a `)`.
 </div>
 
 
-
-```r
-ggplot(first_year, aes(x = gender, y = belongingness) +
-  geom_violin() +
-  geom_boxplot(width = .2) 
-```
-
 ## Activity 9: Scatterplot
 
-Finally, we wanted to make a grouped scatterplot that shows the relationship between belonging scores and engagement scores by gender. There should be different coloured data points for each gender and different coloured lines and the colours should use the colour-blind friendly viridis palette.
+Finally, we want to make a grouped scatterplot that shows the relationship between belonging scores and engagement scores by gender. There should be different coloured data points for each gender and different coloured lines and the colours should use the colour-blind friendly viridis palette.
 
 This code will run and produce a scatterplot, but it isn't what we want. 
+
+
+```r
+ggplot(first_year, aes(x = belongingness, y = engagement, fill = gender)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_colour_viridis_d(option = "D")
+```
+
+```
+## `geom_smooth()` using formula = 'y ~ x'
+```
+
+<img src="08-belong-error_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" />
 
 
 <div class='webex-solution'><button>Hint</button>
@@ -217,20 +232,6 @@ This code will run and produce a scatterplot, but it isn't what we want.
 
 </div>
 
-
-
-```r
-ggplot(first_year, aes(x = belongingness, y = engagement,fill = gender)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  scale_colour_viridis_d(option = "B")
-```
-
-```
-## `geom_smooth()` using formula = 'y ~ x'
-```
-
-<img src="08-belong-error_files/figure-html/unnamed-chunk-11-1.png" width="100%" style="display: block; margin: auto;" />
 
 ## Finished
 

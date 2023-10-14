@@ -121,14 +121,14 @@ Don't use ChatGPT or other AI tools for this chapter because you won't learn any
 
 ## Activity 1: Setup
 
-Login to the server and open `belong_stub2.Rmd`. To create the errors, you'll need to ensure you're working from a clean environment and new session. If you followed the instructions in Chapter 1, this should happen automatically but just in case, run the following code in code chunk 1 which will clear all objects and unload any packages you have loaded:
+Login to the server and open `belong_stub2.Rmd`. To create the errors, you'll need to ensure you're working from a clean environment and new session. If you followed the instructions in Chapter 1, this should happen automatically but just in case, follow the below steps which will clear all objects and unload any packages you have loaded:
+
+1. Click `Session` then `Restart R`.
+
+
+2. Then run the following code which will clear all objects you have created:
 
 ```{r eval = FALSE}
-lapply(paste("package:", names(sessionInfo()$otherPkgs), sep=""), 
-       detach, 
-       character.only = TRUE, 
-       unload = TRUE)
-
 rm(list = ls())
 ```
 
@@ -185,12 +185,6 @@ This is one of those rare times when reading the error message will give you a c
 
 Then, we want to recode gender as a factor and count the number of participants in each gender group. This code will run, but it will introduce an error into your data.
 
-`r hide("Hint")`
-
-Look at the order of the levels and labels and think about what 1, 2, and 3 are supposed to represent. 
-
-`r unhide()`
-
 ```{r eval=FALSE}
 first_year <- first_year %>%
   mutate(gender_coded = factor(gender, levels = c(1,2,3),
@@ -200,15 +194,16 @@ first_year %>%
   count(gender_coded)
 ```
 
-## Activity 6: Select
-
-This code should use the function `select()` to select a the columns `participant`, `gender_coded`, `age`, and three questionnaire score columns and rename `gender_coded` as `gender`. 
 
 `r hide("Hint")`
 
-Typos are the most common cause of code not working. There are two of them in this code.
+Look at the order of the levels and labels and think about what 1, 2, and 3 are supposed to represent. 
 
 `r unhide()`
+
+## Activity 6: Select
+
+This code should use the function `select()` to select the columns `participant`, `gender_coded`, `age`, the three questionnaire score columns, and also rename `gender_coded` as `gender`. 
 
 ```{r eval=FALSE}
 first_year <- first_year %>%
@@ -221,15 +216,15 @@ first_year %>%
   count(gender_coded)
 ```
 
-## Activity 7: Summarise
-
-This code should use `group_by()` and `summarise()` to calculate the mean scores on each belonging sub-scale by gender and save it in an object named `scores_gender`. The final table should have 4 columns (gender, belong, engagement, and confidence) and three rows (one for each gender).
-
 `r hide("Hint")`
 
-If you're trying to calculate summary statistics by group, you only need to add the variables you want to create stats for to `group_by()`. If you get more rows of data than you want, you've probably got too many variables in `group_by()`, if you've got too few rows of data, you've probably not got all the variables you need.
+Typos (either mispelled word or incorrect use of capital letters) are the most common cause of code not working. There are two of them in this code.
 
 `r unhide()`
+
+## Activity 7: Summarise
+
+This code should use `group_by()` and `summarise()` to calculate the mean scores on each belonging sub-scale by gender and save it in an object named `scores_gender`. The final table should have 4 columns (gender, belong, engagement, and confidence) and three rows (one for each gender). This code will run, but it won't produce what it is supposed to.
 
 ```{r eval = FALSE}
 scores_gender <- first_year %>%
@@ -239,15 +234,15 @@ scores_gender <- first_year %>%
             confidence = mean(self_confidence))
 ```
 
-## Activity 8: Boxplots
-
-Now we want to make a boxplot that shows belonging scores by gender using `ggplot()`. This won't code throw an error, but it also won't fully run and you'll need to press escape in the console to get out of it. 
-
 `r hide("Hint")`
 
-Every `(` needs a `)`.
+If you're trying to calculate summary statistics by group, you only need to add the variables you want to create stats for to `group_by()`. If you get more rows of data than you want, you've probably got too many variables in `group_by()`, if you've got too few rows of data, you've probably not got all the variables you need.
 
 `r unhide()`
+
+## Activity 8: Boxplots
+
+Now we want to make a boxplot that shows belonging scores by gender using `ggplot()`. This won't code throw an error, but it also won't fully run and you'll need to put your cursor in the console and press escape to get out of it. 
 
 ```{r eval = FALSE}
 ggplot(first_year, aes(x = gender, y = belongingness) +
@@ -255,24 +250,30 @@ ggplot(first_year, aes(x = gender, y = belongingness) +
   geom_boxplot(width = .2) 
 ```
 
+`r hide("Hint")`
+
+Every `(` needs a `)`.
+
+`r unhide()`
+
 ## Activity 9: Scatterplot
 
-Finally, we wanted to make a grouped scatterplot that shows the relationship between belonging scores and engagement scores by gender. There should be different coloured data points for each gender and different coloured lines and the colours should use the colour-blind friendly viridis palette.
+Finally, we want to make a grouped scatterplot that shows the relationship between belonging scores and engagement scores by gender. There should be different coloured data points for each gender and different coloured lines and the colours should use the colour-blind friendly viridis palette.
 
 This code will run and produce a scatterplot, but it isn't what we want. 
+
+```{r}
+ggplot(first_year, aes(x = belongingness, y = engagement, fill = gender)) +
+  geom_point() +
+  geom_smooth(method = "lm") +
+  scale_colour_viridis_d(option = "D")
+```
 
 `r hide("Hint")`
  
 `fill` sets the color inside the points. Using `fill` with dots and lines might not make much of a difference because they don't have an area to fill. What other argument can you use to change the `colour`?
 
 `r unhide()`
-
-```{r}
-ggplot(first_year, aes(x = belongingness, y = engagement,fill = gender)) +
-  geom_point() +
-  geom_smooth(method = "lm") +
-  scale_colour_viridis_d(option = "B")
-```
 
 ## Finished
 

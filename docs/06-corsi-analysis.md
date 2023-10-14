@@ -126,7 +126,7 @@ Whilst `select()` is used to pick and choose columns, `filter()` is used to pick
 ```r
 # only keep data from men
 full_dat %>%
-  filter(Gender == "man")
+  filter(Gender == "Man")
 
 # only keep data from ppts who are exactly 18
 full_dat %>%
@@ -202,11 +202,15 @@ age_control <- analysis_data %>%
   filter(Age >= 20 & Age <= 30)
 ```
 
+</div>
+
+
+
 How many participants are left in the sample after filtering for age? <input class='webex-solveme nospaces' size='3' data-answer='["163"]'/>
 
 ## Activity 5: Summarise
 
-Now we have reduced the dataset down to just the variables and observations we're interesting in, let's compute the descriptive statistics and visualise this reduced sample.
+Now we have reduced the dataset down to just the variables and observations we're interested in, let's compute the descriptive statistics and visualise this reduced sample.
 
 * In code chunk 4, calculate the mean score (`Corsi_Score`) and standard deviation for each group (`Condition`) using the data set `age_control`. Save it in an object named `group_stats` and call the column names `mean_score` and `sd_score`. You will need to use `group_by()` and `summarise()` to do this.
 * You've done this a couple of times before now, try doing it from memory and talk it through with your group before you look at the hint or solution.
@@ -316,7 +320,7 @@ For reasons that are unclear, the default colours in `ggplot()` are extremely un
 ggplot(age_control, aes(x = Condition, 
                         y = Corsi_Score, 
                         fill = Condition)) +
-  geom_boxplot(alpha = 0.9) +
+  geom_boxplot(alpha = 0.7) +
   guides(fill = "none") +
   scale_fill_viridis_d(option = "E")
 ```
