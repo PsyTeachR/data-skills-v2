@@ -206,7 +206,7 @@ age_control <- analysis_data %>%
 
 
 
-How many participants are left in the sample after filtering for age? <input class='webex-solveme nospaces' size='3' data-answer='["163"]'/>
+How many participants are left in the sample after filtering for age? <input class='webex-solveme nospaces' size='3' data-answer='["168"]'/>
 
 ## Activity 5: Summarise
 
