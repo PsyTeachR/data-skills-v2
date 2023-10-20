@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>D Server troubleshooting | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="description" content="D.1 Can't access server Sometimes the server crashes. Sometimes there's nothing we can do about this until IT fix it but once useful trick to try if you are getting an error message when trying to...">
+<meta name="description" content="D.1 Can't access server Sometimes the server crashes. Often, there's nothing we can do about this until IT fix it but one useful trick to try if you are getting an error message when trying to...">
 <meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="D Server troubleshooting | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/server-troubleshooting.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
-<meta property="og:description" content="D.1 Can't access server Sometimes the server crashes. Sometimes there's nothing we can do about this until IT fix it but once useful trick to try if you are getting an error message when trying to...">
+<meta property="og:description" content="D.1 Can't access server Sometimes the server crashes. Often, there's nothing we can do about this until IT fix it but one useful trick to try if you are getting an error message when trying to...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="D Server troubleshooting | Data Skills">
-<meta name="twitter:description" content="D.1 Can't access server Sometimes the server crashes. Sometimes there's nothing we can do about this until IT fix it but once useful trick to try if you are getting an error message when trying to...">
+<meta name="twitter:description" content="D.1 Can't access server Sometimes the server crashes. Often, there's nothing we can do about this until IT fix it but one useful trick to try if you are getting an error message when trying to...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -110,13 +110,14 @@
 <h2>
 <span class="header-section-number">D.1</span> Can't access server<a class="anchor" aria-label="anchor" href="#cant-access-server"><i class="fas fa-link"></i></a>
 </h2>
-<p>Sometimes the server crashes. Sometimes there's nothing we can do about this until IT fix it but once useful trick to try if you are getting an error message when trying to access the server at all, is to open the server in an incognito window. If this works, <a href="https://its.uiowa.edu/support/article/719">clear your cache</a> and that should fix it long-term (well, until the next crash). This also sometimes works if you're having issues accessing Moodle or MyCampus.</p>
+<p>Sometimes the server crashes. Often, there's nothing we can do about this until IT fix it but one useful trick to try if you are getting an error message when trying to access the server is to open the server in an incognito window.</p>
+<p>If this works, <a href="https://its.uiowa.edu/support/article/719">clear your cache</a> and that should fix it long-term (well, until the next crash). This also sometimes works if you're having issues accessing Moodle or MyCampus.</p>
 </div>
 <div id="out-of-date-packages" class="section level2" number="14.2">
 <h2>
 <span class="header-section-number">D.2</span> Out of date packages<a class="anchor" aria-label="anchor" href="#out-of-date-packages"><i class="fas fa-link"></i></a>
 </h2>
-<p>If you get an error message that says something like <code>namespace package 1.1.0 is already loaded, but &gt;= 2.0.1 is required</code> then it likely means that you have installed a newer version of a package on the server. As it notes in the Intro to R chapter, you should not be installing anything on the server, everything you need is there and installing updated versions of packages only causes issues. We promise that we don't write these things down just for fun.</p>
+<p>If you get an error message that says something like <code>namespace package 1.1.0 is already loaded, but &gt;= 2.0.1 is required</code> then it likely means that you have installed a newer version of a package on the server. As it notes in the the <a href="https://psyteachr.github.io/data-skills-v2/stroop.html#sec-install-package">original explanation of packages and functions</a>, you should not be installing anything on the server, everything you need is there and installing updated versions of packages only causes issues. We promise that we don't write these things down just for fun!</p>
 <p>If this is happening to you, run the following code in the console. This will uninstall any packages you have installed and default to the ones on the server so everything will work again:</p>
 <div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/lapply.html">lapply</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/list.files.html">dir</a></span><span class="op">(</span><span class="st">"~/.Rp/packages"</span>, full.names <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>, <span class="va">unlink</span>, <span class="cn">TRUE</span>, <span class="cn">TRUE</span><span class="op">)</span></span></code></pre></div>
