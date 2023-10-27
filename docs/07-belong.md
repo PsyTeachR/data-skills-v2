@@ -14,7 +14,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-belong}
 
-There is a walkthrough video of this chapter available via [Echo360.]() (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Zoom](https://uofglasgow.zoom.us/rec/play/qzbkW69-0eV2FylTX7JrQt9T9zgYJn20V1lw_eHpuodZJomoV2SNIiHw5m1Q4EgEdNupQQykjcJP458-.OWX2O8dtfuK2boCV?canPlayFromShare=true&from=share_recording_detail&continueMode=true&componentName=rec-play&originRequestUrl=https%3A%2F%2Fuofglasgow.zoom.us%2Frec%2Fshare%2FTC4Z5Boz9ilK28Z5Q4VzRTJO17DEzH8zBR0ZsLvwjeSgVSs7GHfAFOjS7-UcsU1i.Ngg2j1yD5uwFmZ4p) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: Belonging, engagement, and self-confidence
 
@@ -163,7 +163,7 @@ Because `gender` is coded numerically, R has assumed that the data in this colum
 
 ::: {.info data-latex=""}
 
-There are several different <a class='glossary' target='_blank' title='The kind of data represented by an object.' href='https://psyteachr.github.io/glossary/d#data-type'>data types</a> in R and when you load data in, R will do it's best to guess which one each variable is:
+There are several different <a class='glossary'>data types<span class='def'></span></a> in R and when you load data in, R will do it's best to guess which one each variable is:
 
 * integer (whole numbers like 1L, -10L, 3000L)
 * double (numbers like -0.223, 10.324, 1e4)
@@ -263,93 +263,29 @@ full_data %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> gender_coded </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 500 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 400 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Non-binary </td>
-   <td style="text-align:right;"> 100 </td>
-  </tr>
-</tbody>
-</table>
+|gender_coded |   n|
+|:------------|---:|
+|Man          | 500|
+|Woman        | 400|
+|Non-binary   | 100|
 
 </div><div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> level </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:right;"> 920 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:right;"> 80 </td>
-  </tr>
-</tbody>
-</table>
+|level       |   n|
+|:-----------|---:|
+|First year  | 920|
+|Second year |  80|
 
 </div><div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> level </th>
-   <th style="text-align:left;"> gender_coded </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 457 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 373 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> First year </td>
-   <td style="text-align:left;"> Non-binary </td>
-   <td style="text-align:right;"> 90 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:left;"> Man </td>
-   <td style="text-align:right;"> 43 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:left;"> Woman </td>
-   <td style="text-align:right;"> 27 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Second year </td>
-   <td style="text-align:left;"> Non-binary </td>
-   <td style="text-align:right;"> 10 </td>
-  </tr>
-</tbody>
-</table>
+|level       |gender_coded |   n|
+|:-----------|:------------|---:|
+|First year  |Man          | 457|
+|First year  |Woman        | 373|
+|First year  |Non-binary   |  90|
+|Second year |Man          |  43|
+|Second year |Woman        |  27|
+|Second year |Non-binary   |  10|
 
 </div>
 
