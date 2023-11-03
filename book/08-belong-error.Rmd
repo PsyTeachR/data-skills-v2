@@ -121,7 +121,7 @@ Don't use ChatGPT or other AI tools for this chapter because you won't learn any
 
 ## Activity 1: Setup
 
-**If you completed Belonging 1 before 3rd November, go and download the <a href="data/belong/demographic.csv" download>demographic.csv</a> and <a href="data/belong/questionnaire_data.csv" download>questionnaire_data.csv</a> again and upload to server as there was an extra column in them which will make the error mode harder**
+**If you completed Belonging 1 before 3rd November, go and download the <a href="data/belong/demographic_data.csv" download>demographic_data.csv</a> and <a href="data/belong/questionnaire_data.csv" download>questionnaire_data.csv</a> again and upload to server as there was an extra column in them which will make the error mode harder**
 
 Login to the server and open `belong_stub2.Rmd`. To create the errors, you'll need to ensure you're working from a clean environment and new session. If you followed the instructions in Chapter 1, this should happen automatically but just in case, follow the below steps which will clear all objects and unload any packages you have loaded:
 
