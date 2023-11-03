@@ -13,7 +13,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-belong-error}
 
-There is a walkthrough video of this chapter available via [Echo360.]() (INCOMING) We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Zoom](https://uofglasgow.zoom.us/rec/share/oYotzgWPcIBsAQ_1lO19HowohST0Fvxtcl_kjJrkwGhh0l2SkL7gY-jscKG8KIup.F96yEJOmLW-pCUvV). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Error mode
 
@@ -186,7 +186,7 @@ If you're trying to calculate summary statistics by group, you only need to add 
 
 ## Activity 8: Boxplots
 
-Now we want to make a boxplot that shows belonging scores by gender using `ggplot()`. This won't code throw an error, but it also won't fully run and you'll need to put your cursor in the console and press escape to get out of it. 
+Now we want to make a boxplot that shows belonging scores by gender using `ggplot()`. This code will either give you an error of `incomplete expression` or it may not throw an error, but it also won't fully run and you'll need to put your cursor in the console and press escape to get out of it. 
 
 
 ```r
