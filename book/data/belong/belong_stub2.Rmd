@@ -9,15 +9,12 @@ You'll see that the code chunks that have the wrong code in them have `eval = FA
 
 ## Activity 1
 
-```{r}
-# clear everything to start afresh
-lapply(paste("package:", names(sessionInfo()$otherPkgs), sep=""), 
-       detach, 
-       character.only = TRUE, 
-       unload = TRUE)
+Click Session then Restart R.
 
+```{r}
 rm(list = ls())
 ```
+
 
 ## Activity 2
 
