@@ -64,8 +64,8 @@ data <- data %>% mutate_at(vars(belongingness:self_confidence), round, 2)
 demographic_data <- data %>% select(participant, gender, age, level)
 questionnaire_data <- data %>% select(participant, level, belongingness, engagement, self_confidence)
 
-write.csv(x = demographic_data, file = "demographic_data.csv")
-write.csv(x = questionnaire_data, file = "questionnaire_data.csv")
+#write.csv(x = demographic_data, file = "demographic_data.csv")
+#write.csv(x = questionnaire_data, file = "questionnaire_data.csv")
 
 ```
 
@@ -120,6 +120,8 @@ We will give you hints but we won't be giving any solutions. To figure out the a
 Don't use ChatGPT or other AI tools for this chapter because you won't learn anything, you need to be the one that figures out the error. Once you've figured it out, make notes on what the error was and how you fixed it because there's actually a relatively small set of errors you'll make again and again so it will help you debug future code.
 
 ## Activity 1: Setup
+
+**If you completed Belonging 1 before 3rd November, go and download the <a href="data/belong/demographic.csv" download>demographic.csv</a> and <a href="data/belong/questionnaire_data.csv" download>questionnaire_data.csv</a> again and upload to server as there was an extra column in them which will make the error mode harder**
 
 Login to the server and open `belong_stub2.Rmd`. To create the errors, you'll need to ensure you're working from a clean environment and new session. If you followed the instructions in Chapter 1, this should happen automatically but just in case, follow the below steps which will clear all objects and unload any packages you have loaded:
 
