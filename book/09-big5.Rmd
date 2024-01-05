@@ -29,16 +29,26 @@ For the next set of chapters we're going to use data from the most popular model
 * Second, read the [textbook chapter](https://openstax.org/books/psychology-2e/pages/11-7-trait-theorists) on personality trait theorists.
 * Finally, answer the following questions. Please note that your responses will not save in the browser - if you want to save them, make a note of them somewhere.
 
+<br>
+
 1. The trait 'Agreeableness' in the Big Five personality model refers to:
 `r longmcq(c("The tendency to be organized, careful, and disciplined", answer = "The tendency to be compassionate, cooperative, and warm towards others", "The tendency to be outgoing, energetic, and sociable", "The tendency to experience mood swings, anxiety, and irritability."))`
+
+<br>
 
 2. In the context of the Big Five Personality model, which trait might be associated with a person who is diligent, efficient, and follows a schedule?
 
 `r longmcq(c("Neuroticism", answer = "Conscientiousness", "Extraversion", "Agreeableness"))`
 
+<br>
+
 3. Individuals who are often nervous, insecure, and easily upset, are considered to have high `r fitb("neuroticism", ignore_case = TRUE)` according to the Big Five Personality Model.
 
+<br>
+
 4. In the Big Five Personality Model, people who are outgoing, sociable, and assertive score high on the trait known as `r fitb(c("extraversion", "extroversion", ignore_case = TRUE))`
+
+<br>
 
 5. Which of these traits in the Big Five Personality model is most closely associated with creativity and a preference for novelty?
 `r longmcq(c("Extraversion", "Conscientiousness", "Neuroticism", answer = "Openness to Experience"))`
@@ -175,9 +185,9 @@ First, answer these questions about the structure of the datasets and the variab
 There's a few ways you could answer these questions - run `summary()` or `str()` on each object, click on them in the environment pane, or view the list of variables by clicking on the blue arrow next to the object name.
 
 1. `scoring` and `codebook` have a variable in common. What is the name of this variable? `r fitb("direction")`
-2. What is the name of the variable in `big5` that contains the Participant's ID? `r fitb("ResponseId")`.
+2. What is the name of the variable in `big5` that contains the Participant's ID? Remember that is case sensitive. `r fitb("ResponseId")`.
 3. `big5` is in wide-form, which means that all the information about each participant is contained in a single row, so the more data you have, the wider the dataset will be. How many participants are in this dataset? `r fitb(5605)`
-4. How many questions are there in total on the Big 5 questionnaire? `r fitb(60)`
+4. How many questions are there in total on the Big 5 questionnaire? You've been given this information in this chapter. `r fitb(60)`
 5. What is the name of the first variable in `big5` that contains the response to a BFI item? `r fitb("Q4_1")`
 6. What is the name of the last variable in `big5` that contains the response to a BFI item? `r fitb("Q4_60")`
 
@@ -186,7 +196,9 @@ There's a few ways you could answer these questions - run `summary()` or `str()`
 1. They both have a column named "direction".
 2. The column is named `ResponseId` which has very annoying capital letters but this is the default name that the Qualtrics survey software uses and you'll be using it for the group project so you might as well get used to it!
 3. There are 5065 rows of data which means there are 5605 participants. You could have done this with code (`big5 %>% count()`), or by checking the output of `summary()` or `str()` but you could also just have looked in the environment pane and seen how many observations there were `5605 obs. of 61 variables`.
-4. The BFI has 60 items and you were given this information in Activity 5 & 6. The first and last items are named `Q4_1` and `Q4_60`. Again there's a few ways of doing this but running `str(big5)` or clicking the blue arrow next to the object name in the environment are probably the easiest.
+4. The BFI has 60 items and you were given this information in Activity 3.
+5. The first items is named `Q4_1`.
+6. The last item is named `Q4_60`. Again there's a few ways of doing this but running `str(big5)` or clicking the blue arrow next to the object name in the environment are probably the easiest.
 
 `r unhide()`
 
@@ -283,4 +295,4 @@ When a package is already installed on your system, you can use the `library()` 
 
 ## Finished
 
-Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server. 
+Finally, try knitting the file to HTML and remember to  make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server if applicable. 

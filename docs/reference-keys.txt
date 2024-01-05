@@ -171,6 +171,17 @@ actvity-5-pipe-it
 activity-6-describe-and-visualise
 activity-7-add-a-filter
 finished-8
+resilience-1
+sec-ilo-resil1
+activity-1-resilience
+sec-new-project-resil
+sec-data-resil
+activity-4-loading-the-data
+activity-5-check-the-data
+activity-6-convert-data-types
+activity-7-join-and-reshape-the-data
+activity-8-summarise-and-visualise
+finished-9
 installing-r
 installing-base-r
 installing-rstudio

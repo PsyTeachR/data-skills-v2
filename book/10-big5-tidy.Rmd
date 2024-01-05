@@ -19,7 +19,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-big5}
 
-There is a walkthrough video of this chapter available via [Zoom](INCOMING). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via Zoom (INCOMING). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: Set-up {#sec-setup-big5}
 
@@ -66,10 +66,10 @@ big5 %>%
 
 To join our dataset with the information we have in `codebook` and `scoring`, we need to transform this to long-form data, where there are multiple rows of data for each participant - one for each observation. 
 
-There are 60 questions in the Big Five personality test, so we have 60 observations for each participant. How many rows of data will we have for each participant if we transform the dataset to long-form? `r fitb(60)`
+There are 60 questions in the Big Five personality test, so we have 60 observations for each participant. How many rows of data will we have **for each participant** if we transform the dataset to long-form? `r fitb(60)`
 
 `r hide("Explain this answer")`
-This might seem like a trick question, it's not, it's just trying to reinforce that you will have as many rows as you have bits of data for each participant. Therefore in this case, we have 60 observations, so we'll have 60 rows of data.
+This might seem like a trick question, it's not, it's just trying to reinforce that you will have as many rows as you have bits of data for each participant. Therefore in this case, we have 60 observations, so we'll have 60 rows of data for each person.
 `r unhide()`
 
 The function we use for this is `pivot_longer()` and we briefly described it and showed how to use it in the last chapter but let's see if you can figure it out step-by-step. Create a new code chunk and then try and adapt the below code to pivot the data.
@@ -122,7 +122,20 @@ join1 %>%
   head()
 ```
 
-We also want to add in the information that is in `scoring`. Create a new object named `join2` that starts with `join1` and then joins it to `scoring` by the two columns they have in common. Remember that if you need to specify mulitple variables, you need to use `c()`.
+We also want to add in the information that is in `scoring`.  First, look at the variables in `join1` and `scoring`. If you join these together, how many variables will be in the resulting dataset?`r fitb(7)`
+
+`r hide("Explain this answer")`
+
+There are 6 variables in `join1`, `ResponseId`, `item`, `response`, `trait`, `facet`, and `direction`. 
+
+`scoring` has 3 variables, `direction`, `response`, and `score`.
+
+When you join the two, the new dataset will have all of the unique columns. `join1` already has `direction` and `response` so the only addition will be `score` taking the number of columns from 6 to 7.
+
+`r unhide()`
+
+
+* Create a new object named `join2` that starts with `join1` and then joins it to `scoring` by the two columns they have in common. Remember that if you need to specify multiple variables, you need to use `c()`.
 
 `r hide("Hint")`
 ```{r eval = FALSE}
@@ -143,7 +156,7 @@ join2 <- join1%>%
 
 The above two joins are a really good example of where pipes come in very useful. We don't need `join1`, it's just partial step on the way to `join2` and the problem is that the more objects we create and have in our environment, the more likely we are to accidentally use the wrong one.
 
-Create a new code chunk and then write the code to create an object named `full_dat` that starts with `big5_long`, and then joins it to `codebook`, and then joins it to `scoring` using the pipe `%>%`.
+* Create a new code chunk and then write the code to create an object named `full_dat` that starts with `big5_long`, and then joins it to `codebook`, and then joins it to `scoring` using the pipe `%>%`.
 
 `r hide("Hint")`
 ```{r eval = FALSE}
@@ -169,7 +182,7 @@ First, let's look at the mean scores for each trait (openness, conscientiousness
 
 `full_dat` contains the raw scores to each item, so a first step, we want to create a new object that calculates the mean score for each participant (`ResponseId`) for each `trait`. We can do this by using functions we have used before: `group_by()` and `summarise()`. Because we want scores by two variables (each participant and each trait), `group_by()` has two variables passed to it:
 
-```{r}
+```{r message=FALSE}
 trait_scores <- full_dat%>%
   group_by(ResponseId, trait) %>%
   summarise(ppt_mean = mean(score),
@@ -181,8 +194,15 @@ We can see that `trait_scores` has the average score on each trait for each part
 
 ```{r echo = FALSE}
 trait_scores %>%
-  head()
+  head(5)
 ```
+
+In the above table, which trait does this participant have the lowest score on? `r mcq(c("agreeableness", "conscientiousness", answer = "extraversion", "neg_emotionality", "open_minded"))`
+
+`r hide("Explain this answer")`
+
+This participant's average extraversion score was 2.5 which is lower than the scores on the other traits.
+`r unhide()`
 
 Now, make a boxplot of the scores for each trait. See if you can do this from memory:
 
@@ -226,7 +246,7 @@ ggplot(data = trait_scores, aes(x = trait, y = ppt_mean, fill = trait)) +
 
 Which trait has the lowest median score? `r mcq(c("agreeablness", "conscientiousness", answer = "extraversion", "neuroticism", "openness"))`
 
-Which trait has the lowest median score? `r mcq(c("agreeablness", "conscientiousness",  "extraversion", "neuroticism", answer =  "openness"))`
+Which trait has the highest median score? `r mcq(c("agreeablness", "conscientiousness",  "extraversion", "neuroticism", answer =  "openness"))`
 
 You can also create a table of the mean scores for each trait, collapsing across participant by removing `ResponseId` from `group_by()`:
 
@@ -247,7 +267,7 @@ trait_means
 
 Each personality trait is made up of a number of different facets. For example, of the 12 extraversion items, three measure sociability, three measure assertiveness, and three measure energy. The information about which item measures each facet was originally contained in `codebook` and is in the variable `facet`.
 
-Create a new code chunk and then create an object named `extra_data` that just contains the extraversion items. You will need to start with the object `full_dat` and use `filter()` to do this.
+* Create a new code chunk and then create an object named `extra_data` that just contains the extraversion items. You will need to start with the object `full_dat` and use `filter()` to do this.
 
 `r hide("Hint")`
 
@@ -295,6 +315,13 @@ facet_means <- facet_scores %>%
             n = n()) 
 ```
 `r unhide()`
+
+
+The resulting table should look like this:
+
+```{r}
+facet_means
+```
 
 
 ## Finished

@@ -14,7 +14,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-big5}
 
-There is a walkthrough video of this chapter available via [Zoom](INCOMING). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via Zoom (INCOMING). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: Set-up {#sec-setup-big5}
 
@@ -63,107 +63,25 @@ As noted in the last chapter, our Big Five data is currently in wide-form, with 
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> ResponseId </th>
-   <th style="text-align:right;"> Q4_1 </th>
-   <th style="text-align:right;"> Q4_2 </th>
-   <th style="text-align:right;"> Q4_3 </th>
-   <th style="text-align:right;"> Q4_4 </th>
-   <th style="text-align:right;"> Q4_5 </th>
-   <th style="text-align:right;"> Q4_6 </th>
-   <th style="text-align:right;"> Q4_7 </th>
-   <th style="text-align:right;"> Q4_8 </th>
-   <th style="text-align:right;"> Q4_9 </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_12z0hyaE0u5KaRG </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_2VmvNkJQ6RpY3PV </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_eboWF1vMzPIVPi1 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_1jBz09Q5pO9alkq </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_pui4ZWuxPsJ7vUt </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-</tbody>
-</table>
+|ResponseId        | Q4_1| Q4_2| Q4_3| Q4_4| Q4_5| Q4_6| Q4_7| Q4_8| Q4_9|
+|:-----------------|----:|----:|----:|----:|----:|----:|----:|----:|----:|
+|R_3O9fzdsGn9tEeOm |    5|    4|    1|    1|    5|    3|    5|    1|    2|
+|R_12z0hyaE0u5KaRG |    4|    4|    5|    1|    5|    3|    5|    5|    1|
+|R_2VmvNkJQ6RpY3PV |    3|    5|    4|    2|    2|    4|    4|    4|    2|
+|R_eboWF1vMzPIVPi1 |    4|    2|    5|    1|    2|    5|    2|    5|    2|
+|R_1jBz09Q5pO9alkq |    4|    5|    1|    2|    1|    3|    4|    4|    1|
+|R_pui4ZWuxPsJ7vUt |    2|    5|    5|    2|    1|    3|    5|    1|    2|
 
 </div>
 
 To join our dataset with the information we have in `codebook` and `scoring`, we need to transform this to long-form data, where there are multiple rows of data for each participant - one for each observation. 
 
-There are 60 questions in the Big Five personality test, so we have 60 observations for each participant. How many rows of data will we have for each participant if we transform the dataset to long-form? <input class='webex-solveme nospaces' size='2' data-answer='["60"]'/>
+There are 60 questions in the Big Five personality test, so we have 60 observations for each participant. How many rows of data will we have **for each participant** if we transform the dataset to long-form? <input class='webex-solveme nospaces' size='2' data-answer='["60"]'/>
 
 
 <div class='webex-solution'><button>Explain this answer</button>
 
-This might seem like a trick question, it's not, it's just trying to reinforce that you will have as many rows as you have bits of data for each participant. Therefore in this case, we have 60 observations, so we'll have 60 rows of data.
+This might seem like a trick question, it's not, it's just trying to reinforce that you will have as many rows as you have bits of data for each participant. Therefore in this case, we have 60 observations, so we'll have 60 rows of data for each person.
 
 </div>
 
@@ -220,72 +138,35 @@ If you look at `join1` you can see that this object now has all the original col
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> ResponseId </th>
-   <th style="text-align:left;"> item </th>
-   <th style="text-align:right;"> response </th>
-   <th style="text-align:left;"> trait </th>
-   <th style="text-align:left;"> facet </th>
-   <th style="text-align:left;"> direction </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_1 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:left;"> extraversion </td>
-   <td style="text-align:left;"> sociability </td>
-   <td style="text-align:left;"> forward </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_2 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:left;"> agreeableness </td>
-   <td style="text-align:left;"> compassion </td>
-   <td style="text-align:left;"> forward </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_3 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> conscientiousness </td>
-   <td style="text-align:left;"> organisation </td>
-   <td style="text-align:left;"> reversed </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_4 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> neg_emotionality </td>
-   <td style="text-align:left;"> anxiety </td>
-   <td style="text-align:left;"> reversed </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_5 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:left;"> open_minded </td>
-   <td style="text-align:left;"> aes_sensitivity </td>
-   <td style="text-align:left;"> reversed </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_6 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:left;"> extraversion </td>
-   <td style="text-align:left;"> assertiveness </td>
-   <td style="text-align:left;"> forward </td>
-  </tr>
-</tbody>
-</table>
+|ResponseId        |item | response|trait             |facet           |direction |
+|:-----------------|:----|--------:|:-----------------|:---------------|:---------|
+|R_3O9fzdsGn9tEeOm |Q4_1 |        5|extraversion      |sociability     |forward   |
+|R_3O9fzdsGn9tEeOm |Q4_2 |        4|agreeableness     |compassion      |forward   |
+|R_3O9fzdsGn9tEeOm |Q4_3 |        1|conscientiousness |organisation    |reversed  |
+|R_3O9fzdsGn9tEeOm |Q4_4 |        1|neg_emotionality  |anxiety         |reversed  |
+|R_3O9fzdsGn9tEeOm |Q4_5 |        5|open_minded       |aes_sensitivity |reversed  |
+|R_3O9fzdsGn9tEeOm |Q4_6 |        3|extraversion      |assertiveness   |forward   |
 
 </div>
 
-We also want to add in the information that is in `scoring`. Create a new object named `join2` that starts with `join1` and then joins it to `scoring` by the two columns they have in common. Remember that if you need to specify mulitple variables, you need to use `c()`.
+We also want to add in the information that is in `scoring`.  First, look at the variables in `join1` and `scoring`. If you join these together, how many variables will be in the resulting dataset?<input class='webex-solveme nospaces' size='1' data-answer='["7"]'/>
+
+
+<div class='webex-solution'><button>Explain this answer</button>
+
+
+There are 6 variables in `join1`, `ResponseId`, `item`, `response`, `trait`, `facet`, and `direction`. 
+
+`scoring` has 3 variables, `direction`, `response`, and `score`.
+
+When you join the two, the new dataset will have all of the unique columns. `join1` already has `direction` and `response` so the only addition will be `score` taking the number of columns from 6 to 7.
+
+
+</div>
+
+
+
+* Create a new object named `join2` that starts with `join1` and then joins it to `scoring` by the two columns they have in common. Remember that if you need to specify multiple variables, you need to use `c()`.
 
 
 <div class='webex-solution'><button>Hint</button>
@@ -316,7 +197,7 @@ join2 <- join1%>%
 
 The above two joins are a really good example of where pipes come in very useful. We don't need `join1`, it's just partial step on the way to `join2` and the problem is that the more objects we create and have in our environment, the more likely we are to accidentally use the wrong one.
 
-Create a new code chunk and then write the code to create an object named `full_dat` that starts with `big5_long`, and then joins it to `codebook`, and then joins it to `scoring` using the pipe `%>%`.
+* Create a new code chunk and then write the code to create an object named `full_dat` that starts with `big5_long`, and then joins it to `codebook`, and then joins it to `scoring` using the pipe `%>%`.
 
 
 <div class='webex-solution'><button>Hint</button>
@@ -361,72 +242,30 @@ trait_scores <- full_dat%>%
             n = n()) 
 ```
 
-```
-## `summarise()` has grouped output by 'ResponseId'. You can override using the
-## `.groups` argument.
-```
-
 We can see that `trait_scores` has the average score on each trait for each participant:
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> ResponseId </th>
-   <th style="text-align:left;"> trait </th>
-   <th style="text-align:right;"> ppt_mean </th>
-   <th style="text-align:right;"> ppt_sd </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> agreeableness </td>
-   <td style="text-align:right;"> 3.916667 </td>
-   <td style="text-align:right;"> 1.0836247 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> conscientiousness </td>
-   <td style="text-align:right;"> 3.333333 </td>
-   <td style="text-align:right;"> 1.0730867 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> extraversion </td>
-   <td style="text-align:right;"> 2.500000 </td>
-   <td style="text-align:right;"> 1.9306146 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> neg_emotionality </td>
-   <td style="text-align:right;"> 3.666667 </td>
-   <td style="text-align:right;"> 1.3026779 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> open_minded </td>
-   <td style="text-align:right;"> 4.833333 </td>
-   <td style="text-align:right;"> 0.5773503 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_01bclyhvsvPyH0l </td>
-   <td style="text-align:left;"> agreeableness </td>
-   <td style="text-align:right;"> 4.500000 </td>
-   <td style="text-align:right;"> 0.9045340 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-</tbody>
-</table>
+|ResponseId        |trait             | ppt_mean|    ppt_sd|  n|
+|:-----------------|:-----------------|--------:|---------:|--:|
+|R_00WKbbVigS4o2nD |agreeableness     | 3.916667| 1.0836247| 12|
+|R_00WKbbVigS4o2nD |conscientiousness | 3.333333| 1.0730867| 12|
+|R_00WKbbVigS4o2nD |extraversion      | 2.500000| 1.9306146| 12|
+|R_00WKbbVigS4o2nD |neg_emotionality  | 3.666667| 1.3026779| 12|
+|R_00WKbbVigS4o2nD |open_minded       | 4.833333| 0.5773503| 12|
 
 </div>
+
+In the above table, which trait does this participant have the lowest score on? <select class='webex-select'><option value='blank'></option><option value=''>agreeableness</option><option value=''>conscientiousness</option><option value='answer'>extraversion</option><option value=''>neg_emotionality</option><option value=''>open_minded</option></select>
+
+
+<div class='webex-solution'><button>Explain this answer</button>
+
+
+This participant's average extraversion score was 2.5 which is lower than the scores on the other traits.
+
+</div>
+
 
 Now, make a boxplot of the scores for each trait. See if you can do this from memory:
 
@@ -484,7 +323,7 @@ ggplot(data = trait_scores, aes(x = trait, y = ppt_mean, fill = trait)) +
 
 Which trait has the lowest median score? <select class='webex-select'><option value='blank'></option><option value=''>agreeablness</option><option value=''>conscientiousness</option><option value='answer'>extraversion</option><option value=''>neuroticism</option><option value=''>openness</option></select>
 
-Which trait has the lowest median score? <select class='webex-select'><option value='blank'></option><option value=''>agreeablness</option><option value=''>conscientiousness</option><option value=''>extraversion</option><option value=''>neuroticism</option><option value='answer'>openness</option></select>
+Which trait has the highest median score? <select class='webex-select'><option value='blank'></option><option value=''>agreeablness</option><option value=''>conscientiousness</option><option value=''>extraversion</option><option value=''>neuroticism</option><option value='answer'>openness</option></select>
 
 You can also create a table of the mean scores for each trait, collapsing across participant by removing `ResponseId` from `group_by()`:
 
@@ -499,48 +338,13 @@ trait_means <- trait_scores %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> trait </th>
-   <th style="text-align:right;"> trait_mean </th>
-   <th style="text-align:right;"> trait_sd </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> agreeableness </td>
-   <td style="text-align:right;"> 3.666459 </td>
-   <td style="text-align:right;"> 0.6165711 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> conscientiousness </td>
-   <td style="text-align:right;"> 3.253494 </td>
-   <td style="text-align:right;"> 0.7608749 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> extraversion </td>
-   <td style="text-align:right;"> 3.134121 </td>
-   <td style="text-align:right;"> 0.7838352 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> neg_emotionality </td>
-   <td style="text-align:right;"> 3.301784 </td>
-   <td style="text-align:right;"> 0.8500805 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> open_minded </td>
-   <td style="text-align:right;"> 3.775379 </td>
-   <td style="text-align:right;"> 0.6470955 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-</tbody>
-</table>
+|trait             | trait_mean|  trait_sd|    n|
+|:-----------------|----------:|---------:|----:|
+|agreeableness     |   3.666459| 0.6165711| 5605|
+|conscientiousness |   3.253494| 0.7608749| 5605|
+|extraversion      |   3.134121| 0.7838352| 5605|
+|neg_emotionality  |   3.301784| 0.8500805| 5605|
+|open_minded       |   3.775379| 0.6470955| 5605|
 
 </div>
 
@@ -549,7 +353,7 @@ trait_means <- trait_scores %>%
 
 Each personality trait is made up of a number of different facets. For example, of the 12 extraversion items, three measure sociability, three measure assertiveness, and three measure energy. The information about which item measures each facet was originally contained in `codebook` and is in the variable `facet`.
 
-Create a new code chunk and then create an object named `extra_data` that just contains the extraversion items. You will need to start with the object `full_dat` and use `filter()` to do this.
+* Create a new code chunk and then create an object named `extra_data` that just contains the extraversion items. You will need to start with the object `full_dat` and use `filter()` to do this.
 
 
 <div class='webex-solution'><button>Hint</button>
@@ -619,6 +423,24 @@ facet_means <- facet_scores %>%
 
 </div>
 
+
+
+The resulting table should look like this:
+
+
+```r
+facet_means
+```
+
+<div class="kable-table">
+
+|facet         | facet_mean|  facet_sd|    n|
+|:-------------|----------:|---------:|----:|
+|assertiveness |   3.014451| 0.9399298| 5605|
+|energy        |   3.399777| 0.8608341| 5605|
+|sociability   |   2.988136| 1.0608567| 5605|
+
+</div>
 
 
 ## Finished
