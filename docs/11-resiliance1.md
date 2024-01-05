@@ -1,5 +1,4 @@
 
-
 # Resilience 1
 
 ## Intended Learning Outcomes {#sec-ilo-resil1}
@@ -7,8 +6,8 @@
 By the end of this chapter you should be able to:
 
 * Explain what resilience is
-* Create new variables using `case_when()` and `mutate()`
-* Convert variables to different data types using `as.factor()` and `as.numeric()`
+* Convert variables to different data types using `as.factor()` and `as.character()`
+* Beging to problem solve how to reshape data to long-form
 
 
 ## Activity 1: Resilience
@@ -16,17 +15,17 @@ By the end of this chapter you should be able to:
 For the next set of chapters we're going to use data from a measurement of resilience.
 
 * First, take part in [this online version](https://www.psytoolkit.org/cgi-bin/3.4.4/survey?s=LOYSJ) of the Brief Resilience Coping Scale by Sinclair and Wallston (2004).
-* Second, read the [Wikipedia entry](https://en.wikipedia.org/wiki/Psychological_resilience#) on resilience. It's quite long so you don't have to read the entire thint (although feel free if you're interested), the main sections to focus on are Overview, Process, and Developing and Sustaining Resilience.
+* Second, read the [Wikipedia entry](https://en.wikipedia.org/wiki/Psychological_resilience#) on resilience. It's quite long so you don't have to read the entire thing (although feel free if you're interested), the main sections to focus on are Overview, Process, and Developing and Sustaining Resilience.
 * Finally, answer the following questions. Please note that your responses will not save in the browser - if you want to save them, make a note of them somewhere.
 
 
-1. Which of these is a strategy suggested to enhance resilience? `r(c(answer = " Cognitive-behavioral techniques", "Avoidance of stress", "Emotional suppression", "Increased dependency"))`
+1. Which of these is a strategy suggested to enhance resilience? <select class='webex-select'><option value='blank'></option><option value='answer'>Cognitive-behavioral techniques</option><option value=''>Avoidance of stress</option><option value=''>Emotional suppression</option><option value=''>Increased dependency</option></select>
 
-2.Psychological resilience is mainly characterized as a: <select class='webex-select'><option value='blank'></option><option value=''>Permanent trait</option><option value=''>Singular event</option><option value='answer'>Process</option><option value=''>Fixed state</option></select>
+2. Psychological resilience is mainly characterized as a: <select class='webex-select'><option value='blank'></option><option value=''>Permanent trait</option><option value=''>Singular event</option><option value='answer'>Process</option><option value=''>Fixed state</option></select>
 
 3. Resilient individuals do not experience any increase in stress in response to stressors. <select class='webex-select'><option value='blank'></option><option value=''>True</option><option value='answer'>False</option></select>
 
-4.  Social support systems are considered external factors influencing a person's level of resilience. <select class='webex-select'><option value='blank'></option><option value='answer'>True</option><option value=''>False</option></select>
+4. Social support systems are considered external factors influencing a person's level of resilience. <select class='webex-select'><option value='blank'></option><option value='answer'>True</option><option value=''>False</option></select>
 
 5. The presence of stress in life is necessary for the practice and development of resilience. <select class='webex-select'><option value='blank'></option><option value='answer'>True</option><option value=''>False</option></select>
 
@@ -68,7 +67,7 @@ The data we're working with is simulated data for an experiment where people hav
 The zip file contains three files:
 
 * `demographic_data` contains the participant ID, age, gender, and treatment condition (1 = control, 2 = intervention).
-* `questionnaire_data` contains the participant ID and then their responses to each question on the Brief Resilence Scale.
+* `questionnaire_data` contains the participant ID and then their responses to each question on the Brief Resilience Scale.
 * `scoring.csv` contains the scoring information for the questionnaire as some of the items are reverse-scored (also known as backward scoring).
 
 Is `demographic_data` in wide-form or long-form? <select class='webex-select'><option value='blank'></option><option value='answer'>wide-form</option><option value=''>long-form</option></select>

@@ -6,16 +6,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 11 Resilience 1 | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Create new variables using case_when() and mutate() Convert variables to different data...">
+<meta name="description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Convert variables to different data types using as.factor() and as.character() Beging...">
 <meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="Chapter 11 Resilience 1 | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/resilience-1.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
-<meta property="og:description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Create new variables using case_when() and mutate() Convert variables to different data...">
+<meta property="og:description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Convert variables to different data types using as.factor() and as.character() Beging...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 11 Resilience 1 | Data Skills">
-<meta name="twitter:description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Create new variables using case_when() and mutate() Convert variables to different data...">
+<meta name="twitter:description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Convert variables to different data types using as.factor() and as.character() Beging...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -114,10 +114,9 @@
 <p>By the end of this chapter you should be able to:</p>
 <ul>
 <li>Explain what resilience is</li>
-<li>Create new variables using <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>
+<li>Convert variables to different data types using <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code> and <code><a href="https://rdrr.io/r/base/character.html">as.character()</a></code>
 </li>
-<li>Convert variables to different data types using <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code> and <code><a href="https://rdrr.io/r/base/numeric.html">as.numeric()</a></code>
-</li>
+<li>Beging to problem solve how to reshape data to long-form</li>
 </ul>
 </div>
 <div id="activity-1-resilience" class="section level2" number="11.2">
@@ -127,19 +126,20 @@
 <p>For the next set of chapters we're going to use data from a measurement of resilience.</p>
 <ul>
 <li>First, take part in <a href="https://www.psytoolkit.org/cgi-bin/3.4.4/survey?s=LOYSJ">this online version</a> of the Brief Resilience Coping Scale by Sinclair and Wallston (2004).</li>
-<li>Second, read the <a href="https://en.wikipedia.org/wiki/Psychological_resilience#">Wikipedia entry</a> on resilience. It's quite long so you don't have to read the entire thint (although feel free if you're interested), the main sections to focus on are Overview, Process, and Developing and Sustaining Resilience.</li>
+<li>Second, read the <a href="https://en.wikipedia.org/wiki/Psychological_resilience#">Wikipedia entry</a> on resilience. It's quite long so you don't have to read the entire thing (although feel free if you're interested), the main sections to focus on are Overview, Process, and Developing and Sustaining Resilience.</li>
 <li>Finally, answer the following questions. Please note that your responses will not save in the browser - if you want to save them, make a note of them somewhere.</li>
 </ul>
 <ol style="list-style-type: decimal">
-<li>Which of these is a strategy suggested to enhance resilience? <code>r(c(answer = " Cognitive-behavioral techniques", "Avoidance of stress", "Emotional suppression", "Increased dependency"))</code>
-</li>
-</ol>
-<p>2.Psychological resilience is mainly characterized as a: <select class="webex-select"><option value="blank"></option>
+<li><p>Which of these is a strategy suggested to enhance resilience? <select class="webex-select"><option value="blank"></option>
+<option value="answer">Cognitive-behavioral techniques</option>
+<option value="">Avoidance of stress</option>
+<option value="">Emotional suppression</option>
+<option value="">Increased dependency</option></select></p></li>
+<li><p>Psychological resilience is mainly characterized as a: <select class="webex-select"><option value="blank"></option>
 <option value="">Permanent trait</option>
 <option value="">Singular event</option>
 <option value="answer">Process</option>
-<option value="">Fixed state</option></select></p>
-<ol start="3" style="list-style-type: decimal">
+<option value="">Fixed state</option></select></p></li>
 <li><p>Resilient individuals do not experience any increase in stress in response to stressors. <select class="webex-select"><option value="blank"></option>
 <option value="">True</option>
 <option value="answer">False</option></select></p></li>
@@ -190,7 +190,7 @@ Explain these answers
 <li>
 <code>demographic_data</code> contains the participant ID, age, gender, and treatment condition (1 = control, 2 = intervention).</li>
 <li>
-<code>questionnaire_data</code> contains the participant ID and then their responses to each question on the Brief Resilence Scale.</li>
+<code>questionnaire_data</code> contains the participant ID and then their responses to each question on the Brief Resilience Scale.</li>
 <li>
 <code>scoring.csv</code> contains the scoring information for the questionnaire as some of the items are reverse-scored (also known as backward scoring).</li>
 </ul>
