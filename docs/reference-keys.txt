@@ -187,6 +187,7 @@ installing-base-r
 installing-rstudio
 rstudio-settings
 installing-latex
+installing-packages
 symbols
 conventions
 webexercises

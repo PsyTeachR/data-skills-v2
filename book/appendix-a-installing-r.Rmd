@@ -40,3 +40,18 @@ You can install the LaTeX typesetting system to produce PDF reports from RStudio
 ```{r eval=FALSE}
 tinytex::install_tinytex()
 ```
+
+
+## Installing packages
+
+Whilst Base R comes with built-in functions, you will also need to install any additional packages you want to use. 
+
+You can install packages using the `install.packages()` function. **Only ever run this command in the console, never save it in a script or Markdown**. This is because if you save it in a script, everytime you run that script it will install the package again. At best, this will be a waste of time and at work, it might install a more recent version of the package that no longer works with your code.
+
+```{r eval = FALSE}
+install.packages("tidyverse")
+```
+
+When you run this code it will produce a bunch of text until it eventually installs. You're looking for something that says "package ‘tidyverse’ successfully unpacked and MD5 sums checked" which confirms that the installation has been successful. Once you've done this, you can then run `library(tidyverse)` as usual. You only need to install packages once but remember you need to load them each time you use them.
+
+If you ever get an error message saying "No package called X", check you've spelled the name of the package right and if so, it might be that you need to install it using the same method. 

@@ -27,7 +27,7 @@ You may also want to change the appearance of your code. Different fonts and the
 <p class="caption">(\#fig:settings-general)RStudio General and Appearance settings</p>
 </div>
 
-You may also want to change the settings in the Code tab. Foe example, some people prefer two spaces instead of tabs for their code and like to be able to see the <a class='glossary'>whitespace<span class='def'></span></a> characters. But these are all a matter of personal preference.
+You may also want to change the settings in the Code tab. Foe example, some people prefer two spaces instead of tabs for their code and like to be able to see the <a class='glossary' target='_blank' title='Spaces, tabs and line breaks' href='https://psyteachr.github.io/glossary/w#whitespace'>whitespace</a> characters. But these are all a matter of personal preference.
 
 <div class="figure" style="text-align: center">
 <img src="images/rstudio_settings_code.png" alt="RStudio Code settings" width="100%" />
@@ -43,3 +43,19 @@ You can install the LaTeX typesetting system to produce PDF reports from RStudio
 ```r
 tinytex::install_tinytex()
 ```
+
+
+## Installing packages
+
+Whilst Base R comes with built-in functions, you will also need to install any additional packages you want to use. 
+
+You can install packages using the `install.packages()` function. **Only ever run this command in the console, never save it in a script or Markdown**. This is because if you save it in a script, everytime you run that script it will install the package again. At best, this will be a waste of time and at work, it might install a more recent version of the package that no longer works with your code.
+
+
+```r
+install.packages("tidyverse")
+```
+
+When you run this code it will produce a bunch of text until it eventually installs. You're looking for something that says "package ‘tidyverse’ successfully unpacked and MD5 sums checked" which confirms that the installation has been successful. Once you've done this, you can then run `library(tidyverse)` as usual. You only need to install packages once but remember you need to load them each time you use them.
+
+If you ever get an error message saying "No package called X", check you've spelled the name of the package right and if so, it might be that you need to install it using the same method. 

@@ -293,11 +293,28 @@ dat_scores %>%
 
 <div class="kable-table">
 
-|gender     | group_score|
-|:----------|-----------:|
-|man        |    3.000816|
-|non-binary |    3.098810|
-|woman      |    3.017898|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> group_score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> man </td>
+   <td style="text-align:right;"> 3.000816 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> non-binary </td>
+   <td style="text-align:right;"> 3.098810 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> woman </td>
+   <td style="text-align:right;"> 3.017898 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -312,10 +329,24 @@ dat_scores %>%
 
 <div class="kable-table">
 
-|treatment    | group_score|
-|:------------|-----------:|
-|control      |    2.810133|
-|intervention |    3.197737|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> treatment </th>
+   <th style="text-align:right;"> group_score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 2.810133 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> intervention </td>
+   <td style="text-align:right;"> 3.197737 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 

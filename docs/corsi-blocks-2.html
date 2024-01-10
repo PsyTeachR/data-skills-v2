@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -160,7 +160,7 @@
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb57"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">package_name</span><span class="op">)</span></span>
 <span><span class="va">object_name1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"file_name1.csv"</span><span class="op">)</span></span>
 <span><span class="va">object_name2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"file_name1.csv"</span><span class="op">)</span></span>
@@ -170,7 +170,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb58"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">score_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"score_data.csv"</span><span class="op">)</span></span>
@@ -185,11 +185,11 @@ Solution
 </h2>
 <p>Often you will have more variables (columns) than you need. For the analysis we're interested in, we really only need three columns, <code>Participant</code>, <code>Condition</code>, and <code>Corsi_Score</code>.</p>
 <p>You can create a new dataset with just the columns you want using the <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> function. You can either specify the columns you want to keep:</p>
-<div class="sourceCode" id="cb59"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Participant</span>, <span class="va">Condition</span>, <span class="va">Corsi_Score</span><span class="op">)</span></span></code></pre></div>
 <p>Or you could specify which columns you want to drop using <code>-variable</code>:</p>
-<div class="sourceCode" id="cb60"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="op">-</span><span class="va">Gender</span>, <span class="op">-</span><span class="va">Age</span><span class="op">)</span></span></code></pre></div>
 <p>Which method you use will depend on how many variables you have, sometimes it's quicker to specify that ones you want, sometimes it's quicker to specify the ones you don't want. Additionally, the columns in the object you create will be arranged in the order you state them so you can also use <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> to rearrange the order of your columns.</p>
@@ -200,7 +200,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb61"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">column1</span>, <span class="va">column2</span>, <span class="va">column3</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -208,7 +208,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb62"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">analysis_data</span> <span class="op">&lt;-</span> <span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html">select</a></span><span class="op">(</span><span class="va">Participant</span>, <span class="va">Condition</span>, <span class="va">Age</span>, <span class="va">Corsi_Score</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -219,7 +219,7 @@ Solution
 </h2>
 <p>Whilst <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> is used to pick and choose columns, <code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> is used to pick which rows of data you want to keep based on one or more criteria.</p>
 <p><code><a href="https://dplyr.tidyverse.org/reference/filter.html">filter()</a></code> is very powerful and can be used in a number of ways. For example, you can use it to select rows where one of the variables equals an exact value. If this value is text, it should be in quotation marks (e.g., <code>"man"</code>) but if it's a number it doesn't need to be. You do have to use the double equal sign in both though:</p>
-<div class="sourceCode" id="cb63"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># only keep data from men</span></span>
 <span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Gender</span> <span class="op">==</span> <span class="st">"Man"</span><span class="op">)</span></span>
@@ -228,7 +228,7 @@ Solution
 <span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">==</span> <span class="fl">18</span><span class="op">)</span></span></code></pre></div>
 <p>You can also use it to keep a range of values. For numerical values, you can do this by specifying criteria like more than or less than.</p>
-<div class="sourceCode" id="cb64"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># only keep data from ppts whose Age is more than 18</span></span>
 <span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;</span> <span class="fl">18</span><span class="op">)</span></span>
@@ -237,7 +237,7 @@ Solution
 <span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;=</span> <span class="fl">18</span><span class="op">)</span></span></code></pre></div>
 <p>You can also specify a range of values using some slightly weird notation <code>%in%</code> which will keep any row where the value equals one of the ones you specify. Whenever you have to enter multiple values to a single argument, you need to wrap them in <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> which stands for <strong>combine</strong>. A common error is to forget to use <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> when you've got multiple values - make a note of this!</p>
-<div class="sourceCode" id="cb65"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># keep ppts whose Age equals 18, 25, or 30</span></span>
 <span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">18</span>,<span class="fl">25</span>,<span class="fl">30</span><span class="op">)</span><span class="op">)</span></span>
@@ -246,7 +246,7 @@ Solution
 <span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Gender</span> <span class="op"><a href="https://rdrr.io/r/base/match.html">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Man"</span>, <span class="st">"Woman"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Finally, you can also combine multiple criteria using <code>&amp;</code> (AND) or <code>|</code> (OR):</p>
-<div class="sourceCode" id="cb66"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># keep data from men over 30</span></span>
 <span><span class="va">full_dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">&amp;</span> <span class="va">Gender</span> <span class="op">==</span> <span class="st">"Man"</span><span class="op">)</span></span>
@@ -267,7 +267,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb67"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">variable</span> <span class="op">&gt;=</span> <span class="fl">20</span> <span class="op">&amp;</span> <span class="va">variable</span> <span class="op">&lt;=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -275,7 +275,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb68"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">age_control</span> <span class="op">&lt;-</span> <span class="va">analysis_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html">filter</a></span><span class="op">(</span><span class="va">Age</span> <span class="op">&gt;=</span> <span class="fl">20</span> <span class="op">&amp;</span> <span class="va">Age</span> <span class="op">&lt;=</span> <span class="fl">30</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -294,7 +294,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb69"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">grouping_variable</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>column_name <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">measurement</span><span class="op">)</span>,</span>
@@ -304,7 +304,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb70"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">group_stats</span> <span class="op">&lt;-</span> <span class="va">age_control</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">Condition</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">Corsi_Score</span><span class="op">)</span>,</span>
@@ -326,7 +326,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb71"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">grouping_variable</span>, y <span class="op">=</span> <span class="va">measurement</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -334,7 +334,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb72"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, y <span class="op">=</span> <span class="va">Corsi_Score</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-17-1.png" width="100%" style="display: block; margin: auto;"></div>
@@ -352,14 +352,14 @@ Solution
 <span class="header-section-number">6.9.1</span> Adding colour<a class="anchor" aria-label="anchor" href="#adding-colour"><i class="fas fa-link"></i></a>
 </h3>
 <p><code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> gives you a huge amount of control over how your plots look. First, we can add colour by adding <code>fill</code> to the mapping. <code>fill</code> also takes the value <code>Condition</code> because we want a different colour for each level of condition.</p>
-<div class="sourceCode" id="cb73"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, </span>
 <span>                        y <span class="op">=</span> <span class="va">Corsi_Score</span>, </span>
 <span>                        fill <span class="op">=</span> <span class="va">Condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
 <div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-18-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>By default, any time you add in colour as a variable, <code><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot()</a></code> will produce a legend guide to tell you what the colours means. Sometimes this is necessary because you can't read the plot without knowing what the colours mean, but in this case, we already know what the colours mean because it's on the x-axis so all this legend is doing is taking up space. We can remove it by adding a layer and a call to <code><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides()</a></code>.</p>
-<div class="sourceCode" id="cb74"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, </span>
 <span>                        y <span class="op">=</span> <span class="va">Corsi_Score</span>, </span>
 <span>                        fill <span class="op">=</span> <span class="va">Condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -371,7 +371,7 @@ Solution
 <li>The viridis palette has 8 options, in code chunk 6, add the below code and try changing <code>option</code> from any letter from A to H and see which one your favourite is.</li>
 <li>Sometimes when you add in colour, it can make the black lines harder to read. One approach to this problem is to reduce the transparency of the colour fill by using the argument <code>alpha</code> which will take a value of 0 (completely transparent) to 1 (fully opaque). Try changing this value to see which value works best (sometimes it is trial-and-error):</li>
 </ul>
-<div class="sourceCode" id="cb75"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">age_control</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Condition</span>, </span>
 <span>                        y <span class="op">=</span> <span class="va">Corsi_Score</span>, </span>
 <span>                        fill <span class="op">=</span> <span class="va">Condition</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
@@ -397,18 +397,18 @@ Explain this answer
 <p>A lot of the time, whether a variable is discrete or continuous is easy enough to spot by whether the data is text (probably discrete) or numeric (probably continuous), however, this isn't always the case. Whilst the corsi score is a number, it can only take on a specific and relatively set of values (the whole numbers 1-9). In other cases you might have a category coded as numbers (e.g., gender coded as 1, 2, 3)</p>
 </div>
 <p>In R, <strong>factors</strong> are a type of variable that represents categorical data with distinct levels or categories. It is similar to a discrete variable because both involve distinct values or categories. By default, R will order any factors alpha-numerically. Sometimes this is what you want but sometimes you'd prefer a different order, for example if we make a bar chart of the counts of how many participants of each gender there are it will look like this:</p>
-<div class="sourceCode" id="cb76"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">demographic_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
 <div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-21-1.png" width="100%" style="display: block; margin: auto;"></div>
 <p>But you may prefer to reorder the factor levels using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code>. The function <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> is used to create new variables or over-write existing ones and we're going to use it a lot.</p>
 <p>Because we're overwriting the variables in an existing object rather than creating new ones, this code can seem a bit confusing but you can read it as "start with the dataset demographic data and then, overwrite the column Gender with Gender as a reordered factor and arrange the levels in the order woman, man, non-binary and save it all in the original object". Because we're passing multiple values to <code>levels</code> we to use <code><a href="https://rdrr.io/r/base/c.html">c()</a></code> to combine them all.</p>
-<div class="sourceCode" id="cb77"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">demographic_data</span> <span class="op">&lt;-</span> <span class="va">demographic_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">Gender</span>, </span>
 <span>                         levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"Woman"</span>, <span class="st">"Man"</span>, <span class="st">"Non-Binary"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>If you run the plot code again, you'll see it has updated the order:</p>
-<div class="sourceCode" id="cb78"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">demographic_data</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">Gender</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
 <span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_bar.html">geom_bar</a></span><span class="op">(</span><span class="op">)</span> </span></code></pre></div>
 <div class="inline-figure"><img src="06-corsi-analysis_files/figure-html/unnamed-chunk-23-1.png" width="100%" style="display: block; margin: auto;"></div>
@@ -419,7 +419,7 @@ Explain this answer
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb79"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dataset</span> <span class="op">&lt;-</span> <span class="va">dataset</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>variable_to_reorder <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">variable_to_reorder</span>, </span>
 <span>                                      levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"condition1"</span>,  <span class="st">"condition2"</span>, <span class="st">"condition3"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
@@ -428,7 +428,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb80"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb81"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># relevel the factor</span></span>
 <span><span class="va">age_control</span> <span class="op">&lt;-</span> <span class="va">age_control</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>Condition <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">Condition</span>, </span>
@@ -694,7 +694,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-01-05.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-01-10.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
