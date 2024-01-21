@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Chapter 12 Resilience 2 | Data Skills</title>
+<meta name="author" content="Emily Nordmann">
+<meta name="description" content="12.1 Intended Learning Outcomes By the end of this chapter you should be able to: Create new columns with mutate and case_when() Identify and deal with missing data using na.rm, is.na(), and...">
+<meta name="generator" content="bookdown 0.34 with bs4_book()">
+<meta property="og:title" content="Chapter 12 Resilience 2 | Data Skills">
+<meta property="og:type" content="book">
+<meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/resilience-2.html">
+<meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<meta property="og:description" content="12.1 Intended Learning Outcomes By the end of this chapter you should be able to: Create new columns with mutate and case_when() Identify and deal with missing data using na.rm, is.na(), and...">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Chapter 12 Resilience 2 | Data Skills">
+<meta name="twitter:description" content="12.1 Intended Learning Outcomes By the end of this chapter you should be able to: Create new columns with mutate and case_when() Identify and deal with missing data using na.rm, is.na(), and...">
+<meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-6NP3MF25W3');
+    </script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><style type="text/css">
+    
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+  </style>
+<style type="text/css">
+    /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+    div.csl-bib-body { }
+    div.csl-entry {
+      clear: both;
+        }
+    .hanging div.csl-entry {
+      margin-left:2em;
+      text-indent:-2em;
+    }
+    div.csl-left-margin {
+      min-width:2em;
+      float:left;
+    }
+    div.csl-right-inline {
+      margin-left:2em;
+      padding-left:1em;
+    }
+    div.csl-indent {
+      margin-left: 2em;
+    }
+  </style>
+<link rel="stylesheet" href="include/psyteachr.css">
+<link rel="stylesheet" href="include/webex.css">
+<link rel="stylesheet" href="include/style.css">
+</head>
+<body data-spy="scroll" data-target="#toc">
+
+<div class="container-fluid">
+<div class="row">
+  <header class="col-sm-12 col-lg-3 sidebar sidebar-book"><a class="sr-only sr-only-focusable" href="#content">Skip to main content</a>
+
+    <div class="d-flex align-items-start justify-content-between">
+      <h1>
+        <a href="index.html" title="">Data Skills</a>
+      </h1>
+      <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Show table of contents</span></button>
+    </div>
+
+    <div id="main-nav" class="collapse-lg">
+      <form role="search">
+        <input id="search" class="form-control" type="search" placeholder="Search" aria-label="Search">
+</form>
+
+      <nav aria-label="Table of contents"><h2>Table of contents</h2>
+        <ul class="book-toc list-unstyled">
+<li><a class="" href="index.html">Overview</a></li>
+<li><a class="" href="sec-intro.html"><span class="header-section-number">1</span> Intro to R and RStudio</a></li>
+<li><a class="" href="stroop.html"><span class="header-section-number">2</span> Stroop 1</a></li>
+<li><a class="" href="stroop-2.html"><span class="header-section-number">3</span> Stroop 2</a></li>
+<li><a class="" href="homework-1.html"><span class="header-section-number">4</span> Homework 1</a></li>
+<li><a class="" href="corsi-blocks-1.html"><span class="header-section-number">5</span> Corsi Blocks 1</a></li>
+<li><a class="" href="corsi-blocks-2.html"><span class="header-section-number">6</span> Corsi Blocks 2</a></li>
+<li><a class="" href="belonging-1.html"><span class="header-section-number">7</span> Belonging 1</a></li>
+<li><a class="" href="belonging-2.html"><span class="header-section-number">8</span> Belonging 2</a></li>
+<li><a class="" href="big-five-personality-1.html"><span class="header-section-number">9</span> Big five personality 1</a></li>
+<li><a class="" href="big-five-personality-2.html"><span class="header-section-number">10</span> Big five personality 2</a></li>
+<li><a class="" href="resilience-1.html"><span class="header-section-number">11</span> Resilience 1</a></li>
+<li><a class="active" href="resilience-2.html"><span class="header-section-number">12</span> Resilience 2</a></li>
+<li><a class="" href="intro-to-probability.html"><span class="header-section-number">13</span> Intro to Probability</a></li>
+<li><a class="" href="probability-continued.html"><span class="header-section-number">14</span> Probability continued</a></li>
+<li><a class="" href="simulation.html"><span class="header-section-number">15</span> Simulation</a></li>
+<li class="book-part">Appendices</li>
+<li><a class="" href="installing-r.html"><span class="header-section-number">A</span> Installing R</a></li>
+<li><a class="" href="symbols.html"><span class="header-section-number">B</span> Symbols</a></li>
+<li><a class="" href="conventions.html"><span class="header-section-number">C</span> Conventions</a></li>
+<li><a class="" href="server-troubleshooting.html"><span class="header-section-number">D</span> Server troubleshooting</a></li>
+<li><a class="" href="license.html">License</a></li>
+<li><a class="" href="references.html">References</a></li>
+</ul>
+
+        <div class="book-extra">
+          <p><a id="book-repo" href="https://github.com/psyteachr/data-skills-v2">View book source <i class="fab fa-github"></i></a></p>
+        </div>
+      </nav>
+</div>
+  </header><main class="col-sm-12 col-md-9 col-lg-7" id="content"><div id="resilience-2" class="section level1" number="12">
+<h1>
+<span class="header-section-number">12</span> Resilience 2<a class="anchor" aria-label="anchor" href="#resilience-2"><i class="fas fa-link"></i></a>
+</h1>
+<div id="sec-ilo-resil-2" class="section level2" number="12.1">
+<h2>
+<span class="header-section-number">12.1</span> Intended Learning Outcomes<a class="anchor" aria-label="anchor" href="#sec-ilo-resil-2"><i class="fas fa-link"></i></a>
+</h2>
+<p>By the end of this chapter you should be able to:</p>
+<ul>
+<li>Create new columns with <code>mutate</code> and <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code>
+</li>
+<li>Identify and deal with missing data using <code>na.rm</code>, <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code>, and <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code>
+</li>
+</ul>
+</div>
+<div id="sec-walkthrough-resil" class="section level2" number="12.2">
+<h2>
+<span class="header-section-number">12.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-resil"><i class="fas fa-link"></i></a>
+</h2>
+<p>There is a walkthrough video of this chapter available via <a href="">Zoom</a>(INCOMING). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+</div>
+<div id="sec-setup-resil2" class="section level2" number="12.3">
+<h2>
+<span class="header-section-number">12.3</span> Activity 1: Set-up<a class="anchor" aria-label="anchor" href="#sec-setup-resil2"><i class="fas fa-link"></i></a>
+</h2>
+<p>Login to the server and then:</p>
+<ul>
+<li>Open your Resilience project.</li>
+<li>Create a new Markdown document named "Resilience 2". Delete the default text and then create a new code chunk.</li>
+<li>Your environment should be clear but if there are objects in it, remove them by pressing the brush icon.</li>
+<li>Create a new code chunk and then copy, paste, and run the below code. You don't need to edit anything, this will get you to the point you were at in Activity 7 in Resilience 1. Once you've run the code, click on <code>dat_wide</code> to view it and take a minute to familiarise yourself with the variables and structure of the dataset.</li>
+</ul>
+<div class="sourceCode" id="cb156"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
+<span><span class="va">demo_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
+<span><span class="va">q_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"questionnaire_data.csv"</span><span class="op">)</span></span>
+<span><span class="va">scoring</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"scoring.csv"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">demo_cleaned</span> <span class="op">&lt;-</span> <span class="va">demo_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>treatment <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">treatment</span>, </span>
+<span>                            levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, </span>
+<span>                            labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"control"</span>, <span class="st">"intervention"</span><span class="op">)</span><span class="op">)</span>,</span>
+<span>         gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span>,</span>
+<span>         participant_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">participant_ID</span><span class="op">)</span><span class="op">)</span> <span class="co"># convert to character</span></span>
+<span></span>
+<span><span class="va">q_cleaned</span> <span class="op">&lt;-</span> <span class="va">q_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>participant_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">participant_ID</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dat_wide</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demo_cleaned</span>, y <span class="op">=</span> <span class="va">q_cleaned</span>, by <span class="op">=</span> <span class="st">"participant_ID"</span><span class="op">)</span> </span></code></pre></div>
+<ul>
+<li>How many rows of data are there in <code>dat_wide</code>? <input class="webex-solveme nospaces" size="3" data-answer='["890"]'>
+</li>
+<li>How many columns (variables) are there in <code>dat_wide</code>? <input class="webex-solveme nospaces" size="2" data-answer='["10"]'>
+</li>
+<li>What is the name of the column that stores the participant's ID number? <select class="webex-select"><option value="blank"></option>
+<option value="">ID</option>
+<option value="">Participant ID</option>
+<option value="answer">participant_ID</option>
+<option value="">Participant_id</option></select>
+</li>
+</ul>
+</div>
+<div id="activity-2-identify-missing-data" class="section level2" number="12.4">
+<h2>
+<span class="header-section-number">12.4</span> Activity 2: Identify missing data<a class="anchor" aria-label="anchor" href="#activity-2-identify-missing-data"><i class="fas fa-link"></i></a>
+</h2>
+<p>As noted in Resilience 1, there is a little bit of missing data in this dataset. There's a few ways to identify missing data. The first method you have already encountered, you can run <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> on the object and any variables with missing data will have a count of <code>NA's</code>.</p>
+<div class="sourceCode" id="cb157"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dat_wide</span><span class="op">)</span></span></code></pre></div>
+<p>But you can also do this using <code>tidyverse</code> functions. The reason this is potentially more useful is that it is easier to store it as a table and refer back to it later. It also just contains the information you need about missing data, rather than all the summary stats.</p>
+<ul>
+<li>
+<code><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all()</a></code> is a function that applies the summary calculation to all variables in an object</li>
+<li>
+<code>sum(is.na(.))</code> adds up (sums) how many values are NAs (<code>is.na</code>)</li>
+<li>The . in <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code> acts as a placeholder for each column in turn.</li>
+</ul>
+<div class="sourceCode" id="cb158"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">missing_data</span> <span class="op">&lt;-</span> <span class="va">dat_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span><span class="op">(</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>Finally, you could also eyeball the data (literally just look at it). Although with a large number of data points, this isn't particularly accurate.</p>
+</div>
+<div id="activity-3-removing-missing-values" class="section level2" number="12.5">
+<h2>
+<span class="header-section-number">12.5</span> Activity 3: Removing missing values<a class="anchor" aria-label="anchor" href="#activity-3-removing-missing-values"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now we've identified which columns have missing values, we can deal with it using the function <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> which drops any NA values from our object.</p>
+<p>The first option is to do the nuclear version and drop any line of data if there is a single missing data point so that we only have complete cases. Because our data is in wide-form, this would mean that we drop all the data from an entire participant if they are missing data in any of the variables.</p>
+<div class="sourceCode" id="cb159"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_complete</span> <span class="op">&lt;-</span> <span class="va">dat_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<ul>
+<li>How many data points are left after running <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code>? <input class="webex-solveme nospaces" size="3" data-answer='["685"]'>
+</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>You can figure this out by looking in the environment pane and seeing how many observations <code>dat_complete</code> has. You could also do it with code:</p>
+<div class="sourceCode" id="cb160"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_complete</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="right">n</th>
+</tr></thead>
+<tbody><tr class="odd">
+<td align="right">685</td>
+</tr></tbody>
+</table></div>
+</div>
+</div>
+<p>We lost a lot of data by doing this, it's removed 205 participants (about 23% of the original dataset) for having one or more NA in any row. You'll learn more about statistical power in Level 2 but the tl:dr version is that we generally want our sample sizes to be as large as possible and we don't want to throw away data unnecessarily.</p>
+<p>Our study is going to look at whether resilience scores change depending on the treatment condition participants underwent. Look at the columns that have missing data and think about which ones are absolutely necessary for that analysis.</p>
+<ul>
+<li>Which column might we not mind having missing data for? <select class="webex-select"><option value="blank"></option>
+<option value="">participant_ID</option>
+<option value="answer">age</option>
+<option value="">bounce_back_quickly</option></select>
+</li>
+</ul>
+<div class="webex-solution">
+<button>
+Explain this answer
+</button>
+<ul>
+<li><p>Generally speaking, you always need the <code>participant_id</code> so you know which data comes from which person. Additionally, <code>participant_id</code> doesn't actually have any missing data.</p></li>
+<li><p><code>bounce_back_quickly</code> is one of the items on the resilience scale, so if we want to accurately measure resilience scores, we don't want any missing data in this variable.</p></li>
+<li><p>However, <code>age</code> isn't necessary for our analysis. When writing up a research report, you would normally report the age and gender stats of your sample but we can make a note of any missing data rather than having to delete the entire participant. For example:</p></li>
+</ul>
+<p><em>There were 890 participants in total (mean age = 28.9217687, SD = 6.6229404, missing = 8)</em></p>
+</div>
+<p>Instead of running <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> on the entire dataset, we can specify which columns to include or ignore. This code works the same way as <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> in that you can either say which columns you want it to run the code on, or you say which columns to ignore. In this case, it's easier to say which ones to ignore.</p>
+<div class="sourceCode" id="cb161"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_final</span> <span class="op">&lt;-</span> <span class="va">dat_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">-</span><span class="va">participant_ID</span>, <span class="op">-</span><span class="va">gender</span>, <span class="op">-</span><span class="va">age</span><span class="op">)</span></span></code></pre></div>
+<p>This then means only the resilience and treatment columns are included in the call to <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code>, which gives us an extra 8 participants. Which isn't much, but every little counts.</p>
+</div>
+<div id="activity-4-reshape-and-score" class="section level2" number="12.6">
+<h2>
+<span class="header-section-number">12.6</span> Activity 4: Reshape and score<a class="anchor" aria-label="anchor" href="#activity-4-reshape-and-score"><i class="fas fa-link"></i></a>
+</h2>
+<p>Now we've got rid of the missing data, we can transform the object to long-form and score it. Copy and paste the below code (this was explained in the last chapter, we've provided it for you so we can jump ahead to more interesting things).</p>
+<div class="sourceCode" id="cb162"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_long</span> <span class="op">&lt;-</span> <span class="va">dat_final</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="va">bounce_back_quickly</span><span class="op">:</span><span class="va">long_time_over_setbacks</span>, </span>
+<span>               names_to <span class="op">=</span> <span class="st">"item"</span>, </span>
+<span>               values_to <span class="op">=</span> <span class="st">"response"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">dat_long</span>, y <span class="op">=</span> <span class="va">scoring</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"item"</span>, <span class="st">"response"</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">participant_ID</span>, <span class="va">age</span>, <span class="va">gender</span>, <span class="va">treatment</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>resilience_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div id="activity-5-creating-new-variables" class="section level2" number="12.7">
+<h2>
+<span class="header-section-number">12.7</span> Activity 5: Creating new variables<a class="anchor" aria-label="anchor" href="#activity-5-creating-new-variables"><i class="fas fa-link"></i></a>
+</h2>
+<p>In addition to using the data that is contained in our original datasets, we can also create new variables using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> combined with other functions.</p>
+<p>Let's imagine that for some reason, there is an error in the software used to record the data and age has been recorded incorrectly and each participant is actually 1 year older than the values we have.</p>
+<p>We can create a new column using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code>.</p>
+<ul>
+<li>The bit on the left of the equals sign is the name of the new variable we will create, in this case, it will be a column named <code>age_corrected</code>.</li>
+<li>The bit on the right of the equals sign determines the values that column will have. In this case, it will add 1 to the values that are currently stored in the column <code>age</code>
+</li>
+<li>We just want to add columns to the existing object which is why we are still using <code>dat_scores</code> rather than creating a new object.</li>
+</ul>
+<div class="sourceCode" id="cb163"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_corrected <span class="op">=</span> <span class="va">age</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
+<p>We can also create new variables using a combination of <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code>. <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code> is a very useful and powerful function that allows you to create new variables based on multiple conditions and values.</p>
+<p>For example, we can create a new categorical variable assigns participants to the "Younger" category if their <code>age_corrected</code> is less than or equal (<code>&lt;=</code>) to 30, and "Older" if <code>age_corrected</code> is more than (<code>&gt;</code>) 30. This categorisation is not based on any scientifically motivated split, it's just around the age I stopped being able to go out more than once a week.</p>
+<ul>
+<li>You can read <code>~</code> as <code>then</code>, i.e., if age is less than or equal to 30, then write "Younger".</li>
+<li>You can have as many conditions as you like, just separate them with commas.</li>
+<li>
+<code>.default</code> isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it would just return an NA. You could also set it to return "MISSING" or you could set it to return whatever value is in the original column (for example if you didn't need to recode all the values, just some of them).</li>
+</ul>
+<div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
+<span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
+<span>                                  .default <span class="op">=</span> <span class="cn">NA</span>, <span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<p>The new variable <code>age_category</code> will be created as a <code>character</code> variable but we want it to be stored as a factor.</p>
+<ul>
+<li>Add on a line of code to the above to overwrite the new variable as a factor.</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
+<span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
+<span>                                  .default <span class="op">=</span> <span class="cn">NA</span>, <span class="op">)</span>,</span>
+<span>         variable_name <span class="op">=</span> <span class="fu">function_to_create_factors</span><span class="op">(</span><span class="va">variable_to_factorise</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb166"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
+<span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
+<span>                                  .default <span class="op">=</span> <span class="cn">NA</span>, <span class="op">)</span>,</span>
+<span>         age_category <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">age_category</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<p>Now it's a factor, using your method of choice, count how many participants are in each group.</p>
+<ul>
+<li>There are <input class="webex-solveme nospaces" size="3" data-answer='["351"]'> participants in the younger group</li>
+<li>There are <input class="webex-solveme nospaces" size="3" data-answer='["334"]'> participants in the older group</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb167"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span> </span>
+<span></span>
+<span><span class="co"># or</span></span>
+<span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dat_scores</span><span class="op">)</span></span>
+<span></span>
+<span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">age_category</span><span class="op">)</span></span></code></pre></div>
+<pre><code>##  participant_ID          age              gender           treatment  
+##  Length:692         Min.   :18.0   man       :322   control     :324  
+##  Class :character   1st Qu.:23.0   non-binary: 22   intervention:368  
+##  Mode  :character   Median :29.0   woman     :348                     
+##                     Mean   :28.9                                      
+##                     3rd Qu.:35.0                                      
+##                     Max.   :40.0                                      
+##                     NA's   :7                                         
+##  resilience_score age_corrected   age_category
+##  Min.   :1.833    Min.   :19.0   Older  :334  
+##  1st Qu.:2.667    1st Qu.:24.0   Younger:351  
+##  Median :3.000    Median :30.0   NA's   :  7  
+##  Mean   :3.026    Mean   :29.9                
+##  3rd Qu.:3.333    3rd Qu.:36.0                
+##  Max.   :4.333    Max.   :41.0                
+##                   NA's   :7</code></pre>
+<div class="kable-table">
+<div class="inline-table"><table class="table table-sm">
+<thead><tr class="header">
+<th align="left">age_category</th>
+<th align="right">n</th>
+</tr></thead>
+<tbody>
+<tr class="odd">
+<td align="left">Older</td>
+<td align="right">334</td>
+</tr>
+<tr class="even">
+<td align="left">Younger</td>
+<td align="right">351</td>
+</tr>
+<tr class="odd">
+<td align="left">NA</td>
+<td align="right">7</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+<div id="activity-6-more-variable-creation" class="section level2" number="12.8">
+<h2>
+<span class="header-section-number">12.8</span> Activity 6: More variable creation<a class="anchor" aria-label="anchor" href="#activity-6-more-variable-creation"><i class="fas fa-link"></i></a>
+</h2>
+<p>Let's try some other examples to give you a sense of the flexibility this affords (this will help you with the group project analysis).</p>
+<p>The software we used to store the data really has gone wrong and we've also discovered that <code>gender</code> has been coded incorrectly - <code>man</code> and <code>woman</code> have been switched, although <code>non-binary</code> is correct.</p>
+<ul>
+<li>Create a new variable named <code>gender_corrected</code> using <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code>
+</li>
+<li>If <code>gender</code> equals <code>man</code>, <code>gender_corrected</code> should say <code>woman</code>
+</li>
+<li>Everything else can stay the same</li>
+<li>You have to use both the single and double equal signs to get this to work.</li>
+<li>Remember to make it a factor once you're done</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<div class="sourceCode" id="cb170"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>new_variable <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">old_variable</span> <span class="op">==</span> <span class="st">"old_value"</span> <span class="op">~</span> <span class="st">"new_value"</span>,</span>
+<span>                                  <span class="va">old_variable</span> <span class="op">==</span> <span class="st">"old_value"</span> <span class="op">~</span> <span class="st">"new_value"</span>,</span>
+<span>                                  .default <span class="op">=</span> <span class="va">the_rest</span><span class="op">)</span>,</span>
+<span>         new_variable <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">new_variable</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<div class="sourceCode" id="cb171"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender_corrected <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"man"</span> <span class="op">~</span> <span class="st">"woman"</span>,</span>
+<span>                                      <span class="va">gender</span> <span class="op">==</span> <span class="st">"woman"</span> <span class="op">~</span> <span class="st">"man"</span>,</span>
+<span>                                      .default <span class="op">=</span> <span class="va">gender</span><span class="op">)</span>,</span>
+<span>         gender_corrected <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">gender_corrected</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<ul>
+<li>How many men are there in the corrected gender variable? <input class="webex-solveme nospaces" size="3" data-answer='["348"]'>
+</li>
+<li>How many women are there in the corrected gender variable? <input class="webex-solveme nospaces" size="3" data-answer='["322"]'>
+</li>
+<li>How many non-binary people are there in the corrected gender variable? <input class="webex-solveme nospaces" size="2" data-answer='["22"]'>
+</li>
+</ul>
+</div>
+<div id="activity-7-analysis-and-visualisation" class="section level2" number="12.9">
+<h2>
+<span class="header-section-number">12.9</span> Activity 7: Analysis and visualisation<a class="anchor" aria-label="anchor" href="#activity-7-analysis-and-visualisation"><i class="fas fa-link"></i></a>
+</h2>
+<p>For the final step, let's calculate all the numbers you would need if you were writing up this study for an analysis. You've done all of this before multiple times throughout Psych 1A and Psych 1B - try and do as much of it as you can from memory and trial-and-error before you look at the hints or solutions.</p>
+<div id="demographic-stats" class="section level3" number="12.9.1">
+<h3>
+<span class="header-section-number">12.9.1</span> Demographic stats<a class="anchor" aria-label="anchor" href="#demographic-stats"><i class="fas fa-link"></i></a>
+</h3>
+<p>Write code to calculate the following (remember to use the corrected variables):</p>
+<ul>
+<li>Total number of participants</li>
+<li>Number of each gender</li>
+<li>Mean age and standard deviation</li>
+<li>Number of participants in each treatment condition</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>These are all the functions you need to achieve the above</p>
+<div class="sourceCode" id="cb172"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">mean</span></span>
+<span><span class="va">sd</span></span>
+<span><span class="va">na.rm</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>If you have looked at the solutions without trying it for yourself, just remember that it's your own learning that will suffer and Level 2 is going to be an unpleasant shock to the system if you've been taking shortcuts throughout Level 1....</p>
+<div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># total ppts</span></span>
+<span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># gender split</span></span>
+<span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># mean age, sd and missing</span></span>
+<span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    missing <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># number in each condition</span></span>
+<span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">treatment</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="analysis-stats" class="section level3" number="12.9.2">
+<h3>
+<span class="header-section-number">12.9.2</span> Analysis stats<a class="anchor" aria-label="anchor" href="#analysis-stats"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>Mean, standard deviation, min and max resilience score across all participants</li>
+<li>Mean, standard deviation, min and max resilience score for each treatment condition</li>
+<li>A visualisation of the difference between the two groups</li>
+</ul>
+<div class="webex-solution">
+<button>
+Hint
+</button>
+<p>These are all the functions you need to achieve the above</p>
+<div class="sourceCode" id="cb174"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="va">mean</span></span>
+<span><span class="va">sd</span></span>
+<span><span class="va">min</span></span>
+<span><span class="va">max</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="co"># which plot you choose is up to you, it might involve the following</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="webex-solution">
+<button>
+Solution
+</button>
+<p>If you have looked at the solutions without trying it for yourself, just remember that it's your own learning that will suffer and Level 2 is going to be an unpleasant shock to the system if you've been taking shortcuts throughout Level 1....</p>
+<div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># overall resilience score</span></span>
+<span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">resilience_score</span><span class="op">)</span>,</span>
+<span>            sd_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">resilience_score</span><span class="op">)</span>,</span>
+<span>            min_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">resilience_score</span><span class="op">)</span>,</span>
+<span>            max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">resilience_score</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># resilience scores by group</span></span>
+<span></span>
+<span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">treatment</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">resilience_score</span><span class="op">)</span>,</span>
+<span>            sd_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">resilience_score</span><span class="op">)</span>,</span>
+<span>            min_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">min</a></span><span class="op">(</span><span class="va">resilience_score</span><span class="op">)</span>,</span>
+<span>            max <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/Extremes.html">max</a></span><span class="op">(</span><span class="va">resilience_score</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># visualisation</span></span>
+<span></span>
+<span><span class="co">## histogram by group</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat_scores</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">resilience_score</span>, fill <span class="op">=</span> <span class="va">treatment</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_histogram.html">geom_histogram</a></span><span class="op">(</span>colour <span class="op">=</span> <span class="st">"black"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/facet_wrap.html">facet_wrap</a></span><span class="op">(</span><span class="op">~</span> <span class="va">treatment</span>, nrow <span class="op">=</span> <span class="fl">2</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"E"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># violin-boxplot</span></span>
+<span></span>
+<span><span class="fu"><a href="https://ggplot2.tidyverse.org/reference/ggplot.html">ggplot</a></span><span class="op">(</span><span class="va">dat_scores</span>, <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/aes.html">aes</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">treatment</span>, y <span class="op">=</span> <span class="va">resilience_score</span>, fill <span class="op">=</span> <span class="va">treatment</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_violin.html">geom_violin</a></span><span class="op">(</span>alpha <span class="op">=</span> <span class="fl">.3</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/geom_boxplot.html">geom_boxplot</a></span><span class="op">(</span>width <span class="op">=</span> <span class="fl">.2</span>, alpha <span class="op">=</span> <span class="fl">.6</span><span class="op">)</span><span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/guides.html">guides</a></span><span class="op">(</span>fill <span class="op">=</span> <span class="st">"none"</span><span class="op">)</span> <span class="op">+</span></span>
+<span>  <span class="fu"><a href="https://ggplot2.tidyverse.org/reference/scale_viridis.html">scale_fill_viridis_d</a></span><span class="op">(</span>option <span class="op">=</span> <span class="st">"E"</span><span class="op">)</span></span></code></pre></div>
+</div>
+</div>
+<div id="write-up" class="section level3" number="12.9.3">
+<h3>
+<span class="header-section-number">12.9.3</span> Write-up<a class="anchor" aria-label="anchor" href="#write-up"><i class="fas fa-link"></i></a>
+</h3>
+<p>After participants were excluded for having missing data in the resilience scores, in total there were <input class="webex-solveme nospaces" size="3" data-answer='["692"]'> participants (<input class="webex-solveme nospaces" size="3" data-answer='["322"]'> men, <input class="webex-solveme nospaces" size="3" data-answer='["348"]'> women, <input class="webex-solveme nospaces" size="2" data-answer='["22"]'> non-binary, mean age = <input class="webex-solveme nospaces" size="4" data-answer='["28.9"]'>, SD = <input class="webex-solveme nospaces" size="3" data-answer='["6.6"]'>, missing = <input class="webex-solveme nospaces" size="1" data-answer='["7"]'>). <input class="webex-solveme nospaces" size="3" data-answer='["324"]'> participants were randomly assigned to the control condition and <input class="webex-solveme nospaces" size="3" data-answer='["368"]'> were randomly assigned to the treatment condition.</p>
+<p>Collapsing across both treatment conditions, the overall mean resilience score was <input class="webex-solveme nospaces" size="4" data-answer='["3.03"]'> (SD = <input class="webex-solveme nospaces" size="5" data-answer='["0.438",".438"]'>, min = <input class="webex-solveme nospaces" size="4" data-answer='["1.83"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["4.33"]'>). When analysed by treatment group, participants in the control condition (mean = <input class="webex-solveme nospaces" size="4" data-answer='["2.84"]'>, SD = <input class="webex-solveme nospaces" size="5" data-answer='["0.391",".391"]'>, min = <input class="webex-solveme nospaces" size="4" data-answer='["1.83"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["3.83"]'>) self-reported <select class="webex-select"><option value="blank"></option>
+<option value="answer">lower</option>
+<option value="">higher</option></select> resilience scores than participants in the treatment condition (mean = <input class="webex-solveme nospaces" size="4" data-answer='["3.19"]'>, SD = <input class="webex-solveme nospaces" size="5" data-answer='["0.411",".411"]'>, min = <input class="webex-solveme nospaces" size="1" data-answer='["2"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["4.33"]'>).</p>
+<p>The hypothesis that the treatment would improve resilience scores was therefore <select class="webex-select"><option value="blank"></option>
+<option value="answer">supported</option>
+<option value="">rejected</option></select>.</p>
+</div>
+</div>
+<div id="finished-10" class="section level2" number="12.10">
+<h2>
+<span class="header-section-number">12.10</span> Finished<a class="anchor" aria-label="anchor" href="#finished-10"><i class="fas fa-link"></i></a>
+</h2>
+<p>Finally, try knitting the file to HTML and remember to make a note of any mistakes you made and how you fixed them or any other useful information you learned. Then save your Markdown, and quit your session on the server if applicable.</p>
+
+</div>
+</div>
+<script>
+
+/* update total correct if #webex-total_correct exists */
+update_total_correct = function() {
+  console.log("webex: update total_correct");
+
+  if (t = document.getElementById("webex-total_correct")) {
+    var correct = document.getElementsByClassName("webex-correct").length;
+    var solvemes = document.getElementsByClassName("webex-solveme").length;
+    var radiogroups = document.getElementsByClassName("webex-radiogroup").length;
+    var selects = document.getElementsByClassName("webex-select").length;
+
+    t.innerHTML = correct + " of " + (solvemes + radiogroups + selects) + " correct";
+  }
+}
+
+/* webex-solution button toggling function */
+b_func = function() {
+  console.log("webex: toggle hide");
+
+  var cl = this.parentElement.classList;
+  if (cl.contains('open')) {
+    cl.remove("open");
+  } else {
+    cl.add("open");
+  }
+}
+
+/* function for checking solveme answers */
+solveme_func = function(e) {
+  console.log("webex: check solveme");
+
+  var real_answers = JSON.parse(this.dataset.answer);
+  var my_answer = this.value;
+  var cl = this.classList;
+  if (cl.contains("ignorecase")) {
+    my_answer = my_answer.toLowerCase();
+  }
+  if (cl.contains("nospaces")) {
+    my_answer = my_answer.replace(/ /g, "")
+  }
+
+  if (my_answer == "") {
+    cl.remove("webex-correct");
+    cl.remove("webex-incorrect");
+  } else if (real_answers.includes(my_answer)) {
+    cl.add("webex-correct");
+    cl.remove("webex-incorrect");
+  } else {
+    cl.add("webex-incorrect");
+    cl.remove("webex-correct");
+  }
+
+  // match numeric answers within a specified tolerance
+  if(this.dataset.tol > 0){
+    var tol = JSON.parse(this.dataset.tol);
+    var matches = real_answers.map(x => Math.abs(x - my_answer) < tol)
+    if (matches.reduce((a, b) => a + b, 0) > 0) {
+      cl.add("webex-correct");
+    } else {
+      cl.remove("webex-correct");
+    }
+  }
+
+  // added regex bit
+  if (cl.contains("regex")){
+    answer_regex = RegExp(real_answers.join("|"))
+    if (answer_regex.test(my_answer)) {
+      cl.add("webex-correct");
+    }
+  }
+
+  update_total_correct();
+}
+
+/* function for checking select answers */
+select_func = function(e) {
+  console.log("webex: check select");
+
+  var cl = this.classList
+
+  /* add style */
+  cl.remove("webex-incorrect");
+  cl.remove("webex-correct");
+  if (this.value == "answer") {
+    cl.add("webex-correct");
+  } else if (this.value != "blank") {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+/* function for checking radiogroups answers */
+radiogroups_func = function(e) {
+  console.log("webex: check radiogroups");
+
+  var checked_button = document.querySelector('input[name=' + this.id + ']:checked');
+  var cl = checked_button.parentElement.classList;
+  var labels = checked_button.parentElement.parentElement.children;
+
+  /* get rid of styles */
+  for (i = 0; i < labels.length; i++) {
+    labels[i].classList.remove("webex-incorrect");
+    labels[i].classList.remove("webex-correct");
+  }
+
+  /* add style */
+  if (checked_button.value == "answer") {
+    cl.add("webex-correct");
+  } else {
+    cl.add("webex-incorrect");
+  }
+
+  update_total_correct();
+}
+
+window.onload = function() {
+  console.log("webex onload");
+  /* set up solution buttons */
+  var buttons = document.getElementsByTagName("button");
+
+  for (var i = 0; i < buttons.length; i++) {
+    if (buttons[i].parentElement.classList.contains('webex-solution')) {
+      buttons[i].onclick = b_func;
+    }
+  }
+
+  /* set up webex-solveme inputs */
+  var solveme = document.getElementsByClassName("webex-solveme");
+
+  for (var i = 0; i < solveme.length; i++) {
+    /* make sure input boxes don't auto-anything */
+    solveme[i].setAttribute("autocomplete","off");
+    solveme[i].setAttribute("autocorrect", "off");
+    solveme[i].setAttribute("autocapitalize", "off");
+    solveme[i].setAttribute("spellcheck", "false");
+    solveme[i].value = "";
+
+    /* adjust answer for ignorecase or nospaces */
+    var cl = solveme[i].classList;
+    var real_answer = solveme[i].dataset.answer;
+    if (cl.contains("ignorecase")) {
+      real_answer = real_answer.toLowerCase();
+    }
+    if (cl.contains("nospaces")) {
+      real_answer = real_answer.replace(/ /g, "");
+    }
+    solveme[i].dataset.answer = real_answer;
+
+    /* attach checking function */
+    solveme[i].onkeyup = solveme_func;
+    solveme[i].onchange = solveme_func;
+
+    $(solveme[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  /* set up radiogroups */
+  var radiogroups = document.getElementsByClassName("webex-radiogroup");
+  for (var i = 0; i < radiogroups.length; i++) {
+    radiogroups[i].onchange = radiogroups_func;
+  }
+
+  /* set up selects */
+  var selects = document.getElementsByClassName("webex-select");
+  for (var i = 0; i < selects.length; i++) {
+    selects[i].onchange = select_func;
+    $(selects[i]).after(" <span class='webex-icon'></span>");
+  }
+
+  update_total_correct();
+}
+
+</script><script>
+$( document ).ready(function() {
+  var cite = ' ';
+  var psyteachr = ' <a href="https://psyteachr.github.io/"><img src="images/logos/psyteachr_logo.png" style="height: 31px; color: white;" alt="psyTeachR: Reproducible Research" /></a>';
+  var license = ' <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/" target="blank"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png"></a>';
+
+  $("footer div.row div:eq(1) p").html(
+    psyteachr + license + cite
+  );
+
+  // open rdrr links externally
+  $("a[href^='https://rdrr.io']").click(function(){
+    window.open(this.href);
+    return false;
+  });
+
+  // visible second sidebar in mobile
+  function move_sidebar() {
+    var w = window.innerWidth;
+    if (w < 992) {
+      $("#toc").appendTo($("#main-nav"));
+    } else {
+      $("#toc").appendTo($("div.sidebar-chapter"));
+    }
+  }
+  move_sidebar();
+  window.onresize = move_sidebar;
+});
+</script><div class="chapter-nav">
+<div class="prev"><a href="resilience-1.html"><span class="header-section-number">11</span> Resilience 1</a></div>
+<div class="next"><a href="intro-to-probability.html"><span class="header-section-number">13</span> Intro to Probability</a></div>
+</div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
+    <nav id="toc" data-toggle="toc" aria-label="On this page"><h2>On this page</h2>
+      <ul class="nav navbar-nav">
+<li><a class="nav-link" href="#resilience-2"><span class="header-section-number">12</span> Resilience 2</a></li>
+<li><a class="nav-link" href="#sec-ilo-resil-2"><span class="header-section-number">12.1</span> Intended Learning Outcomes</a></li>
+<li><a class="nav-link" href="#sec-walkthrough-resil"><span class="header-section-number">12.2</span> Walkthrough video</a></li>
+<li><a class="nav-link" href="#sec-setup-resil2"><span class="header-section-number">12.3</span> Activity 1: Set-up</a></li>
+<li><a class="nav-link" href="#activity-2-identify-missing-data"><span class="header-section-number">12.4</span> Activity 2: Identify missing data</a></li>
+<li><a class="nav-link" href="#activity-3-removing-missing-values"><span class="header-section-number">12.5</span> Activity 3: Removing missing values</a></li>
+<li><a class="nav-link" href="#activity-4-reshape-and-score"><span class="header-section-number">12.6</span> Activity 4: Reshape and score</a></li>
+<li><a class="nav-link" href="#activity-5-creating-new-variables"><span class="header-section-number">12.7</span> Activity 5: Creating new variables</a></li>
+<li><a class="nav-link" href="#activity-6-more-variable-creation"><span class="header-section-number">12.8</span> Activity 6: More variable creation</a></li>
+<li>
+<a class="nav-link" href="#activity-7-analysis-and-visualisation"><span class="header-section-number">12.9</span> Activity 7: Analysis and visualisation</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#demographic-stats"><span class="header-section-number">12.9.1</span> Demographic stats</a></li>
+<li><a class="nav-link" href="#analysis-stats"><span class="header-section-number">12.9.2</span> Analysis stats</a></li>
+<li><a class="nav-link" href="#write-up"><span class="header-section-number">12.9.3</span> Write-up</a></li>
+</ul>
+</li>
+<li><a class="nav-link" href="#finished-10"><span class="header-section-number">12.10</span> Finished</a></li>
+</ul>
+
+      <div class="book-extra">
+        <ul class="list-unstyled">
+<li><a id="book-source" href="https://github.com/psyteachr/data-skills-v2/blob/master/book/12-resilience2.Rmd">View source <i class="fab fa-github"></i></a></li>
+          <li><a id="book-edit" href="https://github.com/psyteachr/data-skills-v2/edit/master/book/12-resilience2.Rmd">Edit this page <i class="fab fa-github"></i></a></li>
+        </ul>
+</div>
+    </nav>
+</div>
+
+</div>
+</div> <!-- .container -->
+
+<footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-01-21.</p>
+  </div>
+
+  <div class="col-12 col-md-6 mt-3">
+    <p>This book was built by the <a class="text-light" href="https://bookdown.org">bookdown</a> R package.</p>
+  </div>
+
+</div></div>
+</footer><!-- dynamically load mathjax for compatibility with self-contained --><script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script><script type="text/x-mathjax-config">const popovers = document.querySelectorAll('a.footnote-ref[data-toggle="popover"]');
+for (let popover of popovers) {
+  const div = document.createElement('div');
+  div.setAttribute('style', 'position: absolute; top: 0, left:0; width:0, height:0, overflow: hidden; visibility: hidden;');
+  div.innerHTML = popover.getAttribute('data-content');
+
+  var has_math = div.querySelector("span.math");
+  if (has_math) {
+    document.body.appendChild(div);
+    MathJax.Hub.Queue(["Typeset", MathJax.Hub, div]);
+    MathJax.Hub.Queue(function() {
+      popover.setAttribute('data-content', div.innerHTML);
+      document.body.removeChild(div);
+    })
+  }
+}
+</script>
+</body>
+</html>

@@ -83,7 +83,6 @@ They're both in wide-form at the moment because each dataset has a single row fo
 </div>
 
 
-
 ## Activity 4: Loading the data
 
 In code chunk 1, write and run the code that:
@@ -272,13 +271,13 @@ Now we've got everything together we can calculate the mean scores for each part
 
 ```r
 dat_scores <- dat %>%
-  group_by(participant_ID, gender, treatment) %>%
+  group_by(participant_ID, age, gender, treatment) %>%
   summarise(resilience_score = mean(score, na.rm = TRUE)) %>%
   ungroup()
 ```
 
 ```
-## `summarise()` has grouped output by 'participant_ID', 'gender'. You can
+## `summarise()` has grouped output by 'participant_ID', 'age', 'gender'. You can
 ## override using the `.groups` argument.
 ```
 
@@ -293,28 +292,11 @@ dat_scores %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> gender </th>
-   <th style="text-align:right;"> group_score </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> man </td>
-   <td style="text-align:right;"> 3.000816 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> non-binary </td>
-   <td style="text-align:right;"> 3.098810 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> woman </td>
-   <td style="text-align:right;"> 3.017898 </td>
-  </tr>
-</tbody>
-</table>
+|gender     | group_score|
+|:----------|-----------:|
+|man        |    3.000816|
+|non-binary |    3.098810|
+|woman      |    3.017898|
 
 </div>
 
@@ -329,24 +311,10 @@ dat_scores %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> treatment </th>
-   <th style="text-align:right;"> group_score </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> control </td>
-   <td style="text-align:right;"> 2.810133 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> intervention </td>
-   <td style="text-align:right;"> 3.197737 </td>
-  </tr>
-</tbody>
-</table>
+|treatment    | group_score|
+|:------------|-----------:|
+|control      |    2.810133|
+|intervention |    3.197737|
 
 </div>
 

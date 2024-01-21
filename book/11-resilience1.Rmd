@@ -75,7 +75,6 @@ They're both in wide-form at the moment because each dataset has a single row fo
 
 `r unhide()`
 
-
 ## Activity 4: Loading the data
 
 In code chunk 1, write and run the code that:
@@ -233,7 +232,7 @@ Now we've got everything together we can calculate the mean scores for each part
 
 ```{r}
 dat_scores <- dat %>%
-  group_by(participant_ID, gender, treatment) %>%
+  group_by(participant_ID, age, gender, treatment) %>%
   summarise(resilience_score = mean(score, na.rm = TRUE)) %>%
   ungroup()
 ```
