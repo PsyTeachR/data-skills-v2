@@ -38,9 +38,11 @@ By the end of this book, you will be able to analyse data from classic psycholog
 
 * Importing and simulating data
 * Manipulating and wrangling data into an appropriate format for analysis
-* Calculate summaries of descriptive statistics
-* Produce informative data visualisations
-* Perform basic probability calculations using simulation
+* Calculating summaries of descriptive statistics
+* Producing informative data visualisations
+* Performing basic probability calculations using simulation
+
+This book accompanies our first-year undergraduate psychology curriculum. The course materials for our [second](https://psyteachr.github.io/analysis-v2/) and [third](https://psyteachr.github.io/stat-models-v1/) year courses are also available open-access, in addition to [PGT and ad-hoc courses.](https://psyteachr.github.io/)
 
 ## How to use this book and the walkthrough videos
 
