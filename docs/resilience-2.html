@@ -19,7 +19,7 @@
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -140,7 +140,7 @@
 <li>Your environment should be clear but if there are objects in it, remove them by pressing the brush icon.</li>
 <li>Create a new code chunk and then copy, paste, and run the below code. You don't need to edit anything, this will get you to the point you were at in Activity 7 in Resilience 1. Once you've run the code, click on <code>dat_wide</code> to view it and take a minute to familiarise yourself with the variables and structure of the dataset.</li>
 </ul>
-<div class="sourceCode" id="cb156"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb157"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="va">demo_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">q_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"questionnaire_data.csv"</span><span class="op">)</span></span>
@@ -175,7 +175,7 @@
 <span class="header-section-number">12.4</span> Activity 2: Identify missing data<a class="anchor" aria-label="anchor" href="#activity-2-identify-missing-data"><i class="fas fa-link"></i></a>
 </h2>
 <p>As noted in Resilience 1, there is a little bit of missing data in this dataset. There's a few ways to identify missing data. The first method you have already encountered, you can run <code><a href="https://rdrr.io/r/base/summary.html">summary()</a></code> on the object and any variables with missing data will have a count of <code>NA's</code>.</p>
-<div class="sourceCode" id="cb157"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb158"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dat_wide</span><span class="op">)</span></span></code></pre></div>
 <p>But you can also do this using <code>tidyverse</code> functions. The reason this is potentially more useful is that it is easier to store it as a table and refer back to it later. It also just contains the information you need about missing data, rather than all the summary stats.</p>
 <ul>
@@ -185,7 +185,7 @@
 <code>sum(is.na(.))</code> adds up (sums) how many values are NAs (<code>is.na</code>)</li>
 <li>The . in <code><a href="https://rdrr.io/r/base/NA.html">is.na()</a></code> acts as a placeholder for each column in turn.</li>
 </ul>
-<div class="sourceCode" id="cb158"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb159"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">missing_data</span> <span class="op">&lt;-</span> <span class="va">dat_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise_all.html">summarise_all</a></span><span class="op">(</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>Finally, you could also eyeball the data (literally just look at it). Although with a large number of data points, this isn't particularly accurate.</p>
@@ -196,7 +196,7 @@
 </h2>
 <p>Now we've identified which columns have missing values, we can deal with it using the function <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> which drops any NA values from our object.</p>
 <p>The first option is to do the nuclear version and drop any line of data if there is a single missing data point so that we only have complete cases. Because our data is in wide-form, this would mean that we drop all the data from an entire participant if they are missing data in any of the variables.</p>
-<div class="sourceCode" id="cb159"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb160"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_complete</span> <span class="op">&lt;-</span> <span class="va">dat_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <ul>
@@ -208,16 +208,20 @@
 Hint
 </button>
 <p>You can figure this out by looking in the environment pane and seeing how many observations <code>dat_complete</code> has. You could also do it with code:</p>
-<div class="sourceCode" id="cb160"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb161"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_complete</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="right">n</th>
+<thead><tr>
+<th style="text-align:right;">
+n
+</th>
 </tr></thead>
-<tbody><tr class="odd">
-<td align="right">685</td>
+<tbody><tr>
+<td style="text-align:right;">
+685
+</td>
 </tr></tbody>
 </table></div>
 </div>
@@ -243,7 +247,7 @@ Explain this answer
 <p><em>There were 890 participants in total (mean age = 28.9217687, SD = 6.6229404, missing = 8)</em></p>
 </div>
 <p>Instead of running <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code> on the entire dataset, we can specify which columns to include or ignore. This code works the same way as <code><a href="https://dplyr.tidyverse.org/reference/select.html">select()</a></code> in that you can either say which columns you want it to run the code on, or you say which columns to ignore. In this case, it's easier to say which ones to ignore.</p>
-<div class="sourceCode" id="cb161"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb162"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_final</span> <span class="op">&lt;-</span> <span class="va">dat_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na</a></span><span class="op">(</span><span class="op">-</span><span class="va">participant_ID</span>, <span class="op">-</span><span class="va">gender</span>, <span class="op">-</span><span class="va">age</span><span class="op">)</span></span></code></pre></div>
 <p>This then means only the resilience and treatment columns are included in the call to <code><a href="https://tidyr.tidyverse.org/reference/drop_na.html">drop_na()</a></code>, which gives us an extra 8 participants. Which isn't much, but every little counts.</p>
@@ -253,7 +257,7 @@ Explain this answer
 <span class="header-section-number">12.6</span> Activity 4: Reshape and score<a class="anchor" aria-label="anchor" href="#activity-4-reshape-and-score"><i class="fas fa-link"></i></a>
 </h2>
 <p>Now we've got rid of the missing data, we can transform the object to long-form and score it. Copy and paste the below code (this was explained in the last chapter, we've provided it for you so we can jump ahead to more interesting things).</p>
-<div class="sourceCode" id="cb162"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb163"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_long</span> <span class="op">&lt;-</span> <span class="va">dat_final</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="va">bounce_back_quickly</span><span class="op">:</span><span class="va">long_time_over_setbacks</span>, </span>
 <span>               names_to <span class="op">=</span> <span class="st">"item"</span>, </span>
@@ -279,7 +283,7 @@ Explain this answer
 </li>
 <li>We just want to add columns to the existing object which is why we are still using <code>dat_scores</code> rather than creating a new object.</li>
 </ul>
-<div class="sourceCode" id="cb163"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_corrected <span class="op">=</span> <span class="va">age</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span></span></code></pre></div>
 <p>We can also create new variables using a combination of <code><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate()</a></code> and <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code>. <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code> is a very useful and powerful function that allows you to create new variables based on multiple conditions and values.</p>
@@ -290,7 +294,7 @@ Explain this answer
 <li>
 <code>.default</code> isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it would just return an NA. You could also set it to return "MISSING" or you could set it to return whatever value is in the original column (for example if you didn't need to recode all the values, just some of them).</li>
 </ul>
-<div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
 <span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
@@ -303,7 +307,7 @@ Explain this answer
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb165"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb166"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
 <span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
@@ -314,7 +318,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb166"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb167"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
 <span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
@@ -330,7 +334,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb167"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="op">)</span> </span>
 <span></span>
 <span><span class="co"># or</span></span>
@@ -341,7 +345,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb168"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb169"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/base/summary.html">summary</a></span><span class="op">(</span><span class="va">dat_scores</span><span class="op">)</span></span>
 <span></span>
 <span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -364,22 +368,38 @@ Solution
 ##                   NA's   :7</code></pre>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr class="header">
-<th align="left">age_category</th>
-<th align="right">n</th>
+<thead><tr>
+<th style="text-align:left;">
+age_category
+</th>
+<th style="text-align:right;">
+n
+</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
-<td align="left">Older</td>
-<td align="right">334</td>
+<tr>
+<td style="text-align:left;">
+Older
+</td>
+<td style="text-align:right;">
+334
+</td>
 </tr>
-<tr class="even">
-<td align="left">Younger</td>
-<td align="right">351</td>
+<tr>
+<td style="text-align:left;">
+Younger
+</td>
+<td style="text-align:right;">
+351
+</td>
 </tr>
-<tr class="odd">
-<td align="left">NA</td>
-<td align="right">7</td>
+<tr>
+<td style="text-align:left;">
+NA
+</td>
+<td style="text-align:right;">
+7
+</td>
 </tr>
 </tbody>
 </table></div>
@@ -405,7 +425,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb170"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb171"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>new_variable <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">old_variable</span> <span class="op">==</span> <span class="st">"old_value"</span> <span class="op">~</span> <span class="st">"new_value"</span>,</span>
 <span>                                  <span class="va">old_variable</span> <span class="op">==</span> <span class="st">"old_value"</span> <span class="op">~</span> <span class="st">"new_value"</span>,</span>
@@ -416,7 +436,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb171"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb172"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender_corrected <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"man"</span> <span class="op">~</span> <span class="st">"woman"</span>,</span>
 <span>                                      <span class="va">gender</span> <span class="op">==</span> <span class="st">"woman"</span> <span class="op">~</span> <span class="st">"man"</span>,</span>
@@ -453,7 +473,7 @@ Solution
 Hint
 </button>
 <p>These are all the functions you need to achieve the above</p>
-<div class="sourceCode" id="cb172"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">mean</span></span>
@@ -467,7 +487,7 @@ Hint
 Solution
 </button>
 <p>If you have looked at the solutions without trying it for yourself, just remember that it's your own learning that will suffer and Level 2 is going to be an unpleasant shock to the system if you've been taking shortcuts throughout Level 1....</p>
-<div class="sourceCode" id="cb173"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb174"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># total ppts</span></span>
 <span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -501,7 +521,7 @@ Solution
 Hint
 </button>
 <p>These are all the functions you need to achieve the above</p>
-<div class="sourceCode" id="cb174"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="va">mean</span></span>
@@ -521,7 +541,7 @@ Hint
 Solution
 </button>
 <p>If you have looked at the solutions without trying it for yourself, just remember that it's your own learning that will suffer and Level 2 is going to be an unpleasant shock to the system if you've been taking shortcuts throughout Level 1....</p>
-<div class="sourceCode" id="cb175"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb176"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># overall resilience score</span></span>
 <span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">resilience_score</span><span class="op">)</span>,</span>
@@ -819,7 +839,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-01-22.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-01-30.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -100,9 +100,18 @@ dat_complete %>%
 
 <div class="kable-table">
 
-|   n|
-|---:|
-| 685|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:right;"> n </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:right;"> 685 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -285,11 +294,28 @@ dat_scores %>%
 
 <div class="kable-table">
 
-|age_category |   n|
-|:------------|---:|
-|Older        | 334|
-|Younger      | 351|
-|NA           |   7|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> age_category </th>
+   <th style="text-align:right;"> n </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Older </td>
+   <td style="text-align:right;"> 334 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Younger </td>
+   <td style="text-align:right;"> 351 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NA </td>
+   <td style="text-align:right;"> 7 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 

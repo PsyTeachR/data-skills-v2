@@ -195,7 +195,7 @@ dat_wide <- inner_join(x = demo_cleaned, y = q_cleaned, by = "participant_ID")
 Once we've done that, we need to reshape it into long-form using `pivot_longer()`. See if you can remember how to do this using just the hints. Reshaping data is probably the hardest conceptual leap you've taken since first learning to code and it only gets easier if you try and think through the problem yourself.
 
 * Name the object you're going to create `dat_long`
-* Start with the dataset `join1`
+* Start with the dataset `dat_wide`
 * Use `pivot_longer()`
 * The first column you want to pivot is named `bounce_back_quickly` and the last column is named `long_time_over_setbacks`.
 * You want to send the names of the columns to a variable called `item`
@@ -292,11 +292,28 @@ dat_scores %>%
 
 <div class="kable-table">
 
-|gender     | group_score|
-|:----------|-----------:|
-|man        |    3.000816|
-|non-binary |    3.098810|
-|woman      |    3.017898|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> gender </th>
+   <th style="text-align:right;"> group_score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> man </td>
+   <td style="text-align:right;"> 3.000816 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> non-binary </td>
+   <td style="text-align:right;"> 3.098810 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> woman </td>
+   <td style="text-align:right;"> 3.017898 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
@@ -311,10 +328,24 @@ dat_scores %>%
 
 <div class="kable-table">
 
-|treatment    | group_score|
-|:------------|-----------:|
-|control      |    2.810133|
-|intervention |    3.197737|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> treatment </th>
+   <th style="text-align:right;"> group_score </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> control </td>
+   <td style="text-align:right;"> 2.810133 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> intervention </td>
+   <td style="text-align:right;"> 3.197737 </td>
+  </tr>
+</tbody>
+</table>
 
 </div>
 
