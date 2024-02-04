@@ -127,7 +127,7 @@
 <h2>
 <span class="header-section-number">12.2</span> Walkthrough video<a class="anchor" aria-label="anchor" href="#sec-walkthrough-resil"><i class="fas fa-link"></i></a>
 </h2>
-<p>There is a walkthrough video of this chapter available via <a href="">Zoom</a>(INCOMING). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
+<p>There is a walkthrough video of this chapter available via <a href="https://echo360.org.uk/media/f80d0a1a-c528-48f2-b474-724359b7b57e/public">Echo360</a>. We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.</p>
 </div>
 <div id="sec-setup-resil2" class="section level2" number="12.3">
 <h2>
@@ -288,13 +288,14 @@ Explain this answer
 <li>You can read <code>~</code> as <code>then</code>, i.e., if age is less than or equal to 30, then write "Younger".</li>
 <li>You can have as many conditions as you like, just separate them with commas.</li>
 <li>
-<code>.default</code> isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it would just return an NA. You could also set it to return "MISSING" or you could set it to return whatever value is in the original column (for example if you didn't need to recode all the values, just some of them).</li>
+<code>TRUE</code> isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it will return the text "Missing" for all the NA values in age.</li>
+<li>
+<strong>Fun fact</strong>: If you're working on your own computer and have recently installed the tidyverse, you have a slightly different version of <code><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when()</a></code> than on the server. If you'd like to see Emily discover this in real-time, you can watch the walkthrough video. The below code will work on both the server and your local installation.</li>
 </ul>
 <div class="sourceCode" id="cb164"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
-<span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
-<span>                                  .default <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>The new variable <code>age_category</code> will be created as a <code>character</code> variable but we want it to be stored as a factor.</p>
 <ul>
 <li>Add on a line of code to the above to overwrite the new variable as a factor.</li>
@@ -307,7 +308,7 @@ Hint
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
 <span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
-<span>                                  .default <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span>,</span>
+<span>                                  <span class="cn">TRUE</span> <span class="op">~</span> <span class="st">"Missing"</span><span class="op">)</span>,</span>
 <span>         variable_name <span class="op">=</span> <span class="fu">function_to_create_factors</span><span class="op">(</span><span class="va">variable_to_factorise</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="webex-solution">
@@ -318,13 +319,14 @@ Solution
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
 <span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
-<span>                                  .default <span class="op">=</span> <span class="cn">NA</span>, <span class="op">)</span>,</span>
+<span>                                  <span class="cn">TRUE</span> <span class="op">~</span> <span class="st">"Missing"</span><span class="op">)</span>,</span>
 <span>         age_category <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">age_category</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <p>Now it's a factor, using your method of choice, count how many participants are in each group.</p>
 <ul>
 <li>There are <input class="webex-solveme nospaces" size="3" data-answer='["351"]'> participants in the younger group</li>
 <li>There are <input class="webex-solveme nospaces" size="3" data-answer='["334"]'> participants in the older group</li>
+<li>There are <input class="webex-solveme nospaces" size="1" data-answer='["7"]'> participants in the missing group</li>
 </ul>
 <div class="webex-solution">
 <button>
@@ -355,9 +357,9 @@ Solution
 ##                     Max.   :40.0                                      
 ##                     NA's   :7                                         
 ##  resilience_score age_corrected   age_category
-##  Min.   :1.833    Min.   :19.0   Older  :334  
-##  1st Qu.:2.667    1st Qu.:24.0   Younger:351  
-##  Median :3.000    Median :30.0   NA's   :  7  
+##  Min.   :1.833    Min.   :19.0   Missing:  7  
+##  1st Qu.:2.667    1st Qu.:24.0   Older  :334  
+##  Median :3.000    Median :30.0   Younger:351  
 ##  Mean   :3.026    Mean   :29.9                
 ##  3rd Qu.:3.333    3rd Qu.:36.0                
 ##  Max.   :4.333    Max.   :41.0                
@@ -370,16 +372,16 @@ Solution
 </tr></thead>
 <tbody>
 <tr class="odd">
+<td align="left">Missing</td>
+<td align="right">7</td>
+</tr>
+<tr class="even">
 <td align="left">Older</td>
 <td align="right">334</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">Younger</td>
 <td align="right">351</td>
-</tr>
-<tr class="odd">
-<td align="left">NA</td>
-<td align="right">7</td>
 </tr>
 </tbody>
 </table></div>
@@ -399,8 +401,8 @@ Solution
 </li>
 <li>If <code>gender</code> equals <code>woman</code>, <code>gender_corrected</code> should say <code>man</code>
 </li>
-<li>Everything else can stay the same</li>
-<li>You have to use both the single and double equal signs to get this to work.</li>
+<li>If <code>gender</code> equals <code>non-binary</code>, <code>gender_corrected</code> should also say <code>non-binary</code>
+</li>
 <li>Remember to make it a factor once you're done</li>
 </ul>
 <div class="webex-solution">
@@ -411,7 +413,7 @@ Hint
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>new_variable <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">old_variable</span> <span class="op">==</span> <span class="st">"old_value"</span> <span class="op">~</span> <span class="st">"new_value"</span>,</span>
 <span>                                  <span class="va">old_variable</span> <span class="op">==</span> <span class="st">"old_value"</span> <span class="op">~</span> <span class="st">"new_value"</span>,</span>
-<span>                                  .default <span class="op">=</span> <span class="va">the_rest</span><span class="op">)</span>,</span>
+<span>                                  <span class="va">old_variable</span> <span class="op">==</span> <span class="st">"old_value"</span> <span class="op">~</span> <span class="st">"new_value"</span><span class="op">)</span>,</span>
 <span>         new_variable <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">new_variable</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="webex-solution">
@@ -422,7 +424,7 @@ Solution
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>gender_corrected <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">gender</span> <span class="op">==</span> <span class="st">"man"</span> <span class="op">~</span> <span class="st">"woman"</span>,</span>
 <span>                                      <span class="va">gender</span> <span class="op">==</span> <span class="st">"woman"</span> <span class="op">~</span> <span class="st">"man"</span>,</span>
-<span>                                      .default <span class="op">=</span> <span class="va">gender</span><span class="op">)</span>,</span>
+<span>                                      <span class="va">gender</span> <span class="op">==</span> <span class="st">"non-binary"</span> <span class="op">~</span> <span class="st">"non-binary"</span><span class="op">)</span>,</span>
 <span>         gender_corrected <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">gender_corrected</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <ul>
@@ -563,10 +565,13 @@ Solution
 <h3>
 <span class="header-section-number">12.9.3</span> Write-up<a class="anchor" aria-label="anchor" href="#write-up"><i class="fas fa-link"></i></a>
 </h3>
-<p>After participants were excluded for having missing data in the resilience scores, in total there were <input class="webex-solveme nospaces" size="3" data-answer='["692"]'> participants (<input class="webex-solveme nospaces" size="3" data-answer='["322"]'> men, <input class="webex-solveme nospaces" size="3" data-answer='["348"]'> women, <input class="webex-solveme nospaces" size="2" data-answer='["22"]'> non-binary, mean age = <input class="webex-solveme nospaces" size="4" data-answer='["28.9"]'>, SD = <input class="webex-solveme nospaces" size="3" data-answer='["6.6"]'>, missing = <input class="webex-solveme nospaces" size="1" data-answer='["7"]'>). <input class="webex-solveme nospaces" size="3" data-answer='["324"]'> participants were randomly assigned to the control condition and <input class="webex-solveme nospaces" size="3" data-answer='["368"]'> were randomly assigned to the treatment condition.</p>
-<p>Collapsing across both treatment conditions, the overall mean resilience score was <input class="webex-solveme nospaces" size="4" data-answer='["3.03"]'> (SD = <input class="webex-solveme nospaces" size="5" data-answer='["0.438",".438"]'>, min = <input class="webex-solveme nospaces" size="4" data-answer='["1.83"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["4.33"]'>). When analysed by treatment group, participants in the control condition (mean = <input class="webex-solveme nospaces" size="4" data-answer='["2.84"]'>, SD = <input class="webex-solveme nospaces" size="5" data-answer='["0.391",".391"]'>, min = <input class="webex-solveme nospaces" size="4" data-answer='["1.83"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["3.83"]'>) self-reported <select class="webex-select"><option value="blank"></option>
+<p><strong>To get the same numbers, report all numbers to 2 decimal places, rounding up at .5</strong>.</p>
+<p>After participants were excluded for having missing data in the resilience scores, in total there were <input class="webex-solveme nospaces" size="3" data-answer='["692"]'> participants (<input class="webex-solveme nospaces" size="3" data-answer='["348"]'> men, <input class="webex-solveme nospaces" size="3" data-answer='["322"]'> women, <input class="webex-solveme nospaces" size="2" data-answer='["22"]'> non-binary, mean age = <input class="webex-solveme nospaces" size="4" data-answer='["28.9"]'>, SD = <input class="webex-solveme nospaces" size="3" data-answer='["6.6"]'>, missing = <input class="webex-solveme nospaces" size="1" data-answer='["7"]'>).</p>
+<p><input class="webex-solveme nospaces" size="3" data-answer='["324"]'> participants were randomly assigned to the control condition and <input class="webex-solveme nospaces" size="3" data-answer='["368"]'> were randomly assigned to the treatment condition.</p>
+<p>Collapsing across both treatment conditions, the overall mean resilience score was <input class="webex-solveme nospaces" size="4" data-answer='["3.03"]'> (SD = <input class="webex-solveme nospaces" size="4" data-answer='["0.44",".44"]'>, min = <input class="webex-solveme nospaces" size="4" data-answer='["1.83"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["4.33"]'>).</p>
+<p>When analysed by treatment group, participants in the control condition (mean = <input class="webex-solveme nospaces" size="4" data-answer='["2.84"]'>, SD = <input class="webex-solveme nospaces" size="4" data-answer='["0.39",".39"]'>, min = <input class="webex-solveme nospaces" size="4" data-answer='["1.83"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["3.83"]'>) self-reported <select class="webex-select"><option value="blank"></option>
 <option value="answer">lower</option>
-<option value="">higher</option></select> resilience scores than participants in the treatment condition (mean = <input class="webex-solveme nospaces" size="4" data-answer='["3.19"]'>, SD = <input class="webex-solveme nospaces" size="5" data-answer='["0.411",".411"]'>, min = <input class="webex-solveme nospaces" size="1" data-answer='["2"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["4.33"]'>).</p>
+<option value="">higher</option></select> resilience scores than participants in the treatment condition (mean = <input class="webex-solveme nospaces" size="4" data-answer='["3.19"]'>, SD = <input class="webex-solveme nospaces" size="4" data-answer='["0.41",".41"]'>, min = <input class="webex-solveme nospaces" size="1" data-answer='["2"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["4.33"]'>).</p>
 <p>The hypothesis that the treatment would improve resilience scores was therefore <select class="webex-select"><option value="blank"></option>
 <option value="answer">supported</option>
 <option value="">rejected</option></select>.</p>

@@ -14,7 +14,7 @@ By the end of this chapter you should be able to:
 
 ## Walkthrough video {#sec-walkthrough-resil}
 
-There is a walkthrough video of this chapter available via [Zoom]()(INCOMING). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
+There is a walkthrough video of this chapter available via [Echo360](https://echo360.org.uk/media/f80d0a1a-c528-48f2-b474-724359b7b57e/public). We recommend first trying to work through each section of the book on your own and then watching the video if you get stuck, or if you would like more information. This will feel slower than just starting with the video, but you will learn more in the long-run. Please note that there may have been minor edits to the book since the video was recorded. Where there are differences, the book should always take precedence.
 
 ## Activity 1: Set-up {#sec-setup-resil2}
 
@@ -185,14 +185,14 @@ For example, we can create a new categorical variable that assigns participants 
 
 * You can read `~` as `then`, i.e., if age is less than or equal to 30, then write "Younger".
 * You can have as many conditions as you like, just separate them with commas.
-* `.default` isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it would just return an NA. You could also set it to return "MISSING" or you could set it to return whatever value is in the original column (for example if you didn't need to recode all the values, just some of them).
+* `TRUE` isn't always necessary but it controls what value is entered if a value doesn't meet any of the conditions. In this case, it will return the text "Missing" for all the NA values in age.
+* **Fun fact**: If you're working on your own computer and have recently installed the tidyverse, you have a slightly different version of `case_when()` than on the server. If you'd like to see Emily discover this in real-time, you can watch the walkthrough video. The below code will work on both the server and your local installation.
 
 
 ```r
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
-                                  age_corrected > 30 ~ "Older", 
-                                  .default = NA))
+                                  age_corrected > 30 ~ "Older"))
 ```
 
 The new variable `age_category` will be created as a `character` variable but we want it to be stored as a factor. 
@@ -207,7 +207,7 @@ The new variable `age_category` will be created as a `character` variable but we
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
-                                  .default = NA),
+                                  TRUE ~ "Missing"),
          variable_name = function_to_create_factors(variable_to_factorise))
 ```
 
@@ -222,7 +222,7 @@ dat_scores <- dat_scores %>%
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
-                                  .default = NA, ),
+                                  TRUE ~ "Missing"),
          age_category = as.factor(age_category))
 ```
 
@@ -234,6 +234,7 @@ Now it's a factor, using your method of choice, count how many participants are 
 
 * There are <input class='webex-solveme nospaces' size='3' data-answer='["351"]'/> participants in the younger group
 * There are <input class='webex-solveme nospaces' size='3' data-answer='["334"]'/> participants in the older group
+* There are <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/> participants in the missing group
 
 
 <div class='webex-solution'><button>Hint</button>
@@ -274,9 +275,9 @@ dat_scores %>%
 ##                     Max.   :40.0                                      
 ##                     NA's   :7                                         
 ##  resilience_score age_corrected   age_category
-##  Min.   :1.833    Min.   :19.0   Older  :334  
-##  1st Qu.:2.667    1st Qu.:24.0   Younger:351  
-##  Median :3.000    Median :30.0   NA's   :  7  
+##  Min.   :1.833    Min.   :19.0   Missing:  7  
+##  1st Qu.:2.667    1st Qu.:24.0   Older  :334  
+##  Median :3.000    Median :30.0   Younger:351  
 ##  Mean   :3.026    Mean   :29.9                
 ##  3rd Qu.:3.333    3rd Qu.:36.0                
 ##  Max.   :4.333    Max.   :41.0                
@@ -287,9 +288,9 @@ dat_scores %>%
 
 |age_category |   n|
 |:------------|---:|
+|Missing      |   7|
 |Older        | 334|
 |Younger      | 351|
-|NA           |   7|
 
 </div>
 
@@ -306,8 +307,7 @@ The software we used to store the data really has gone wrong and we've also disc
 * Create a new variable named `gender_corrected` using `mutate()` and `case_when()`
 * If `gender` equals `man`, `gender_corrected` should say `woman`
 * If `gender` equals `woman`, `gender_corrected` should say `man`
-* Everything else can stay the same
-* You have to use both the single and double equal signs to get this to work.
+* If `gender` equals `non-binary`, `gender_corrected` should also say `non-binary`
 * Remember to make it a factor once you're done
 
 
@@ -319,7 +319,7 @@ The software we used to store the data really has gone wrong and we've also disc
 dat_scores <- dat_scores %>%
   mutate(new_variable = case_when(old_variable == "old_value" ~ "new_value",
                                   old_variable == "old_value" ~ "new_value",
-                                  .default = the_rest),
+                                  old_variable == "old_value" ~ "new_value"),
          new_variable = as.factor(new_variable))
 ```
 
@@ -335,7 +335,7 @@ dat_scores <- dat_scores %>%
 dat_scores <- dat_scores %>%
   mutate(gender_corrected = case_when(gender == "man" ~ "woman",
                                       gender == "woman" ~ "man",
-                                      .default = gender),
+                                      gender == "non-binary" ~ "non-binary"),
          gender_corrected = as.factor(gender_corrected))
 ```
 
@@ -494,9 +494,15 @@ ggplot(dat_scores, aes(x = treatment, y = resilience_score, fill = treatment)) +
 
 ### Write-up
 
-After participants were excluded for having missing data in the resilience scores, in total there were <input class='webex-solveme nospaces' size='3' data-answer='["692"]'/> participants (<input class='webex-solveme nospaces' size='3' data-answer='["322"]'/> men, <input class='webex-solveme nospaces' size='3' data-answer='["348"]'/> women, <input class='webex-solveme nospaces' size='2' data-answer='["22"]'/> non-binary, mean age = <input class='webex-solveme nospaces' size='4' data-answer='["28.9"]'/>, SD = <input class='webex-solveme nospaces' size='3' data-answer='["6.6"]'/>, missing = <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/>). <input class='webex-solveme nospaces' size='3' data-answer='["324"]'/> participants were randomly assigned to the control condition and <input class='webex-solveme nospaces' size='3' data-answer='["368"]'/> were randomly assigned to the treatment condition.
+**To get the same numbers, report all numbers to 2 decimal places, rounding up at .5**.
 
-Collapsing across both treatment conditions, the overall mean resilience score was <input class='webex-solveme nospaces' size='4' data-answer='["3.03"]'/> (SD = <input class='webex-solveme nospaces' size='5' data-answer='["0.438",".438"]'/>, min = <input class='webex-solveme nospaces' size='4' data-answer='["1.83"]'/>, max = <input class='webex-solveme nospaces' size='4' data-answer='["4.33"]'/>). When analysed by treatment group, participants in the control condition  (mean = <input class='webex-solveme nospaces' size='4' data-answer='["2.84"]'/>, SD = <input class='webex-solveme nospaces' size='5' data-answer='["0.391",".391"]'/>, min = <input class='webex-solveme nospaces' size='4' data-answer='["1.83"]'/>, max = <input class='webex-solveme nospaces' size='4' data-answer='["3.83"]'/>) self-reported <select class='webex-select'><option value='blank'></option><option value='answer'>lower</option><option value=''>higher</option></select> resilience scores than participants in the treatment condition (mean = <input class='webex-solveme nospaces' size='4' data-answer='["3.19"]'/>, SD = <input class='webex-solveme nospaces' size='5' data-answer='["0.411",".411"]'/>, min = <input class='webex-solveme nospaces' size='1' data-answer='["2"]'/>, max = <input class='webex-solveme nospaces' size='4' data-answer='["4.33"]'/>).
+After participants were excluded for having missing data in the resilience scores, in total there were <input class='webex-solveme nospaces' size='3' data-answer='["692"]'/> participants (<input class='webex-solveme nospaces' size='3' data-answer='["348"]'/> men, <input class='webex-solveme nospaces' size='3' data-answer='["322"]'/> women, <input class='webex-solveme nospaces' size='2' data-answer='["22"]'/> non-binary, mean age = <input class='webex-solveme nospaces' size='4' data-answer='["28.9"]'/>, SD = <input class='webex-solveme nospaces' size='3' data-answer='["6.6"]'/>, missing = <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/>). 
+
+<input class='webex-solveme nospaces' size='3' data-answer='["324"]'/> participants were randomly assigned to the control condition and <input class='webex-solveme nospaces' size='3' data-answer='["368"]'/> were randomly assigned to the treatment condition.
+
+Collapsing across both treatment conditions, the overall mean resilience score was <input class='webex-solveme nospaces' size='4' data-answer='["3.03"]'/> (SD = <input class='webex-solveme nospaces' size='4' data-answer='["0.44",".44"]'/>, min = <input class='webex-solveme nospaces' size='4' data-answer='["1.83"]'/>, max = <input class='webex-solveme nospaces' size='4' data-answer='["4.33"]'/>). 
+
+When analysed by treatment group, participants in the control condition  (mean = <input class='webex-solveme nospaces' size='4' data-answer='["2.84"]'/>, SD = <input class='webex-solveme nospaces' size='4' data-answer='["0.39",".39"]'/>, min = <input class='webex-solveme nospaces' size='4' data-answer='["1.83"]'/>, max = <input class='webex-solveme nospaces' size='4' data-answer='["3.83"]'/>) self-reported <select class='webex-select'><option value='blank'></option><option value='answer'>lower</option><option value=''>higher</option></select> resilience scores than participants in the treatment condition (mean = <input class='webex-solveme nospaces' size='4' data-answer='["3.19"]'/>, SD = <input class='webex-solveme nospaces' size='4' data-answer='["0.41",".41"]'/>, min = <input class='webex-solveme nospaces' size='1' data-answer='["2"]'/>, max = <input class='webex-solveme nospaces' size='4' data-answer='["4.33"]'/>).
 
 The hypothesis that the treatment would improve resilience scores was therefore <select class='webex-select'><option value='blank'></option><option value='answer'>supported</option><option value=''>rejected</option></select>.
 
