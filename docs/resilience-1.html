@@ -6,20 +6,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Chapter 11 Resilience 1 | Data Skills</title>
 <meta name="author" content="Emily Nordmann">
-<meta name="description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Convert variables to different data types using as.factor() and as.character() Beging...">
+<meta name="description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Convert variables to different data types using as.factor() and as.character() Begin to...">
 <meta name="generator" content="bookdown 0.34 with bs4_book()">
 <meta property="og:title" content="Chapter 11 Resilience 1 | Data Skills">
 <meta property="og:type" content="book">
 <meta property="og:url" content="https://psyteachr.github.io/data-skills-v2/resilience-1.html">
 <meta property="og:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
-<meta property="og:description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Convert variables to different data types using as.factor() and as.character() Beging...">
+<meta property="og:description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Convert variables to different data types using as.factor() and as.character() Begin to...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Chapter 11 Resilience 1 | Data Skills">
-<meta name="twitter:description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Convert variables to different data types using as.factor() and as.character() Beging...">
+<meta name="twitter:description" content="11.1 Intended Learning Outcomes By the end of this chapter you should be able to: Explain what resilience is Convert variables to different data types using as.factor() and as.character() Begin to...">
 <meta name="twitter:image" content="https://psyteachr.github.io/data-skills-v2/images/logos/logo.png">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
-<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.4.2/transition.js"></script><script src="libs/bs3compat-0.4.2/tabs.js"></script><script src="libs/bs3compat-0.4.2/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
+<script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><script src="libs/bs3compat-0.5.0/transition.js"></script><script src="libs/bs3compat-0.5.0/tabs.js"></script><script src="libs/bs3compat-0.5.0/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
 <!-- Global site tag (gtag.js) - Google Analytics --><script async src="https://www.googletagmanager.com/gtag/js?id=G-6NP3MF25W3"></script><script>
       window.dataLayer = window.dataLayer || [];
@@ -120,7 +120,7 @@
 <li>Explain what resilience is</li>
 <li>Convert variables to different data types using <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code> and <code><a href="https://rdrr.io/r/base/character.html">as.character()</a></code>
 </li>
-<li>Beging to problem solve how to reshape data to long-form</li>
+<li>Begin to problem solve how to reshape data to long-form</li>
 </ul>
 </div>
 <div id="activity-1-resilience" class="section level2" number="11.2">
@@ -188,7 +188,7 @@ Explain these answers
 <li>Then, on the server in the Files tab (bottom right), click <code>Upload &gt; Choose file</code> then navigate to the folder on your computer where the zip file is saved, select it, click <code>Open</code>, then <code>OK</code>.</li>
 <li>If you're working on your own machine, you will need to unzip the files before you can use them. There is a short walkthrough via YouTube for how to do this on <a href="https://www.youtube.com/watch?v=r9hpiyzOOTY">Windows</a> and <a href="https://www.youtube.com/watch?v=PGp1daVIBcs">Mac</a>. You need to unzip the files into your project folder. If you need help with this, come to office hours or a GTA session.</li>
 </ul>
-<p>The data we're working with is simulated data for an experiment where people have completed a resilience questionnaire and also take part in treatment condition. They either are in the control group where they are asked to do a colouring book every night, or they're in an intervention group where they're asked to complete CBT exercises every night. There are 890 participants in total.</p>
+<p>The data we're working with is simulated data for an experiment where people have completed a resilience questionnaire and also take part in a treatment condition. They either are in the control group where they are asked to do a colouring book every night, or they're in an intervention group where they're asked to complete CBT exercises every night. There are 890 participants in total.</p>
 <p>The zip file contains three files:</p>
 <ul>
 <li>
@@ -198,18 +198,6 @@ Explain these answers
 <li>
 <code>scoring.csv</code> contains the scoring information for the questionnaire as some of the items are reverse-scored (also known as backward scoring).</li>
 </ul>
-<p>Is <code>demographic_data</code> in wide-form or long-form? <select class="webex-select"><option value="blank"></option>
-<option value="answer">wide-form</option>
-<option value="">long-form</option></select>
-Is <code>questionnaire_data</code> in wide-form or long-form? <select class="webex-select"><option value="blank"></option>
-<option value="answer">wide-form</option>
-<option value="">long-form</option></select></p>
-<div class="webex-solution">
-<button>
-Explain these answers
-</button>
-<p>They're both in wide-form at the moment because each dataset has a single row for each participant, with multiple columns for each bit of information.</p>
-</div>
 </div>
 <div id="activity-4-loading-the-data" class="section level2" number="11.5">
 <h2>
@@ -227,7 +215,7 @@ Explain these answers
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb142"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb141"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va">package_name</span><span class="op">)</span></span>
 <span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"file_name.csv"</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -235,12 +223,24 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb142"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html">library</a></span><span class="op">(</span><span class="va"><a href="https://tidyverse.tidyverse.org">tidyverse</a></span><span class="op">)</span></span>
 <span><span class="va">demo_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"demographic_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">q_data</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"questionnaire_data.csv"</span><span class="op">)</span></span>
 <span><span class="va">scoring</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://readr.tidyverse.org/reference/read_delim.html">read_csv</a></span><span class="op">(</span><span class="st">"scoring.csv"</span><span class="op">)</span></span></code></pre></div>
-<p><code>r unhide()</code></p>
+</div>
+<p>Is <code>demographic_data</code> in wide-form or long-form? <select class="webex-select"><option value="blank"></option>
+<option value="answer">wide-form</option>
+<option value="">long-form</option></select>
+Is <code>questionnaire_data</code> in wide-form or long-form? <select class="webex-select"><option value="blank"></option>
+<option value="answer">wide-form</option>
+<option value="">long-form</option></select></p>
+<div class="webex-solution">
+<button>
+Explain these answers
+</button>
+<p>They're both in wide-form at the moment because each dataset has a single row for each participant, with multiple columns for each bit of information.</p>
+</div>
 </div>
 <div id="activity-5-check-the-data" class="section level2" number="11.6">
 <h2>
@@ -275,21 +275,21 @@ Solution
 </h2>
 <p>A useful next step with data processing is to fix any data types as it can prevent problems further down the line. We've done this before but we'll extend it a little now and show you other functions to convert.</p>
 <p>First, let's do a conversion you've already done - we'll use <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code> to convert <code>treatment</code> to a factor and update the labels. We'll store this in a new object named <code>demo_cleaned</code> but we will just overwrite the existing variable treatment rather than creating a new one.</p>
-<div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb143"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">demo_cleaned</span> <span class="op">&lt;-</span> <span class="va">demo_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>treatment <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">treatment</span>, <span class="co"># the variable you're converting</span></span>
 <span>                            levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, <span class="co"># original values</span></span>
 <span>                            labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"control"</span>, <span class="st">"intervention"</span><span class="op">)</span><span class="op">)</span><span class="op">)</span> <span class="co"># new labels</span></span></code></pre></div>
 <p>If you now run <code>summary(demo_cleaned)</code>, you'll see that <code>treatment</code> is now coded as a factor and it helpfully tells us how many participants are in each group.</p>
 <p><code>gender</code> is also a categorical variable that we might want to include in our analysis but it requires a slightly different, and simpler, approach because the values are already stored as text, R just doesn't yet know that these represent discrete categories. Instead of using <code><a href="https://rdrr.io/r/base/factor.html">factor()</a></code> and updating the <code>levels</code> and <code>labels</code>, we can just use <code><a href="https://rdrr.io/r/base/factor.html">as.factor()</a></code>, which just overwrites whatever is in that column as a factor.</p>
-<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb144"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">demo_cleaned</span> <span class="op">&lt;-</span> <span class="va">demo_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>treatment <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">treatment</span>, </span>
 <span>                            levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, </span>
 <span>                            labels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"control"</span>, <span class="st">"intervention"</span><span class="op">)</span><span class="op">)</span>,</span>
 <span>         gender <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span><span class="op">)</span> <span class="co"># simpler version when no need to update labels</span></span></code></pre></div>
 <p>There are also similar functions for other data types. Although it won't really cause us any problems, we can convert <code>participant_ID</code>. It's currently stored as a numeric variable (because the IDs are just numbers) but really it's a character variable (it's just the same as a name).</p>
-<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb145"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">demo_cleaned</span> <span class="op">&lt;-</span> <span class="va">demo_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>treatment <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/factor.html">factor</a></span><span class="op">(</span><span class="va">treatment</span>, </span>
 <span>                            levels <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span>,<span class="fl">2</span><span class="op">)</span>, </span>
@@ -303,7 +303,7 @@ Solution
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb146"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">q_cleaned</span> <span class="op">&lt;-</span> <span class="va">q_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>participant_ID <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/character.html">as.character</a></span><span class="op">(</span><span class="va">participant_ID</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
@@ -312,8 +312,8 @@ Solution
 <h2>
 <span class="header-section-number">11.8</span> Activity 7: Join and reshape the data<a class="anchor" aria-label="anchor" href="#activity-7-join-and-reshape-the-data"><i class="fas fa-link"></i></a>
 </h2>
-<p>We can now do out first join and join together the demographic and questionnaire data so we've got a single wide-form dataset. In this code we create an object named <code>dat_wide</code> that joins together <code>demo_cleaned</code> and <code>q_cleaned</code>.</p>
-<div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
+<p>We can now do our first join and join together the demographic and questionnaire data so we've got a single wide-form dataset. In this code we create an object named <code>dat_wide</code> that joins together <code>demo_cleaned</code> and <code>q_cleaned</code>.</p>
+<div class="sourceCode" id="cb147"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_wide</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">demo_cleaned</span>, y <span class="op">=</span> <span class="va">q_cleaned</span>, by <span class="op">=</span> <span class="st">"participant_ID"</span><span class="op">)</span> </span></code></pre></div>
 <p>Once we've done that, we need to reshape it into long-form using <code><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer()</a></code>. See if you can remember how to do this using just the hints. Reshaping data is probably the hardest conceptual leap you've taken since first learning to code and it only gets easier if you try and think through the problem yourself.</p>
 <ul>
@@ -333,7 +333,7 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb148"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">object_name</span> <span class="op">&lt;-</span> <span class="va">starting_data</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="va">first_var</span><span class="op">:</span><span class="va">last_var</span>, </span>
 <span>               names_to <span class="op">=</span> <span class="st">"name"</span>, </span>
@@ -343,7 +343,7 @@ Hint
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb150"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb149"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_long</span> <span class="op">&lt;-</span> <span class="va">dat_wide</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://tidyr.tidyverse.org/reference/pivot_longer.html">pivot_longer</a></span><span class="op">(</span>cols <span class="op">=</span> <span class="va">bounce_back_quickly</span><span class="op">:</span><span class="va">long_time_over_setbacks</span>, </span>
 <span>               names_to <span class="op">=</span> <span class="st">"item"</span>, </span>
@@ -357,14 +357,14 @@ Solution
 <button>
 Hint
 </button>
-<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb150"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">object1</span>, y <span class="op">=</span> <span class="va">object2</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"commoncol1"</span>, <span class="st">"commoncol2"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="webex-solution">
 <button>
 Solution
 </button>
-<div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb151"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate-joins.html">inner_join</a></span><span class="op">(</span>x <span class="op">=</span> <span class="va">dat_long</span>, y <span class="op">=</span> <span class="va">scoring</span>, by <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">"item"</span>, <span class="st">"response"</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 </div>
@@ -378,7 +378,7 @@ Solution
 <li>There's some missing data (we'll come back to this in the next chapter), so you need to add on <code>na.rm = TRUE</code> to get it to calculate the means.</li>
 <li>When you use <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by()</a></code>, it's always safest to include <code><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup()</a></code> at the end at it prevents future operations you do on that dataset accidentally being grouped by variables you didn't intend.</li>
 </ul>
-<div class="sourceCode" id="cb153"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb152"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">participant_ID</span>, <span class="va">age</span>, <span class="va">gender</span>, <span class="va">treatment</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>resilience_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -386,79 +386,53 @@ Solution
 <pre><code>## `summarise()` has grouped output by 'participant_ID', 'age', 'gender'. You can
 ## override using the `.groups` argument.</code></pre>
 <p>Now that we've got the mean scores, we can look at group differences.For example, scores for different genders:</p>
-<div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb154"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>group_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">resilience_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>group_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">resilience_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr>
-<th style="text-align:left;">
-gender
-</th>
-<th style="text-align:right;">
-group_score
-</th>
+<thead><tr class="header">
+<th align="left">gender</th>
+<th align="right">group_score</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-man
-</td>
-<td style="text-align:right;">
-3.000816
-</td>
+<tr class="odd">
+<td align="left">man</td>
+<td align="right">3.000816</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-non-binary
-</td>
-<td style="text-align:right;">
-3.098810
-</td>
+<tr class="even">
+<td align="left">non-binary</td>
+<td align="right">3.098810</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-woman
-</td>
-<td style="text-align:right;">
-3.017898
-</td>
+<tr class="odd">
+<td align="left">woman</td>
+<td align="right">3.017898</td>
 </tr>
 </tbody>
 </table></div>
 </div>
 <p>Or for the treatment conditions:</p>
-<div class="sourceCode" id="cb156"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb155"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">group_by</a></span><span class="op">(</span><span class="va">treatment</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>group_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">resilience_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>group_score <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">resilience_score</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span><span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/group_by.html">ungroup</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div class="kable-table">
 <div class="inline-table"><table class="table table-sm">
-<thead><tr>
-<th style="text-align:left;">
-treatment
-</th>
-<th style="text-align:right;">
-group_score
-</th>
+<thead><tr class="header">
+<th align="left">treatment</th>
+<th align="right">group_score</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-control
-</td>
-<td style="text-align:right;">
-2.810133
-</td>
+<tr class="odd">
+<td align="left">control</td>
+<td align="right">2.810133</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-intervention
-</td>
-<td style="text-align:right;">
-3.197737
-</td>
+<tr class="even">
+<td align="left">intervention</td>
+<td align="right">3.197737</td>
 </tr>
 </tbody>
 </table></div>
@@ -681,10 +655,7 @@ $( document ).ready(function() {
   move_sidebar();
   window.onresize = move_sidebar;
 });
-</script>
-
-</div>
-<div class="chapter-nav">
+</script><div class="chapter-nav">
 <div class="prev"><a href="big-five-personality-2.html"><span class="header-section-number">10</span> Big five personality 2</a></div>
 <div class="next"><a href="resilience-2.html"><span class="header-section-number">12</span> Resilience 2</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
@@ -711,12 +682,14 @@ $( document ).ready(function() {
 </div>
     </nav>
 </div>
+
+</div>
 </div> <!-- .container -->
 
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-01-30.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-02-04.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
@@ -753,6 +726,5 @@ for (let popover of popovers) {
   }
 }
 </script>
-</div>
 </body>
 </html>

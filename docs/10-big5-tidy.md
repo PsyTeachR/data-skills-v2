@@ -63,96 +63,14 @@ As noted in the last chapter, our Big Five data is currently in wide-form, with 
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> ResponseId </th>
-   <th style="text-align:right;"> Q4_1 </th>
-   <th style="text-align:right;"> Q4_2 </th>
-   <th style="text-align:right;"> Q4_3 </th>
-   <th style="text-align:right;"> Q4_4 </th>
-   <th style="text-align:right;"> Q4_5 </th>
-   <th style="text-align:right;"> Q4_6 </th>
-   <th style="text-align:right;"> Q4_7 </th>
-   <th style="text-align:right;"> Q4_8 </th>
-   <th style="text-align:right;"> Q4_9 </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_12z0hyaE0u5KaRG </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_2VmvNkJQ6RpY3PV </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_eboWF1vMzPIVPi1 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_1jBz09Q5pO9alkq </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:right;"> 1 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_pui4ZWuxPsJ7vUt </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 2 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:right;"> 2 </td>
-  </tr>
-</tbody>
-</table>
+|ResponseId        | Q4_1| Q4_2| Q4_3| Q4_4| Q4_5| Q4_6| Q4_7| Q4_8| Q4_9|
+|:-----------------|----:|----:|----:|----:|----:|----:|----:|----:|----:|
+|R_3O9fzdsGn9tEeOm |    5|    4|    1|    1|    5|    3|    5|    1|    2|
+|R_12z0hyaE0u5KaRG |    4|    4|    5|    1|    5|    3|    5|    5|    1|
+|R_2VmvNkJQ6RpY3PV |    3|    5|    4|    2|    2|    4|    4|    4|    2|
+|R_eboWF1vMzPIVPi1 |    4|    2|    5|    1|    2|    5|    2|    5|    2|
+|R_1jBz09Q5pO9alkq |    4|    5|    1|    2|    1|    3|    4|    4|    1|
+|R_pui4ZWuxPsJ7vUt |    2|    5|    5|    2|    1|    3|    5|    1|    2|
 
 </div>
 
@@ -220,68 +138,14 @@ If you look at `join1` you can see that this object now has all the original col
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> ResponseId </th>
-   <th style="text-align:left;"> item </th>
-   <th style="text-align:right;"> response </th>
-   <th style="text-align:left;"> trait </th>
-   <th style="text-align:left;"> facet </th>
-   <th style="text-align:left;"> direction </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_1 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:left;"> extraversion </td>
-   <td style="text-align:left;"> sociability </td>
-   <td style="text-align:left;"> forward </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_2 </td>
-   <td style="text-align:right;"> 4 </td>
-   <td style="text-align:left;"> agreeableness </td>
-   <td style="text-align:left;"> compassion </td>
-   <td style="text-align:left;"> forward </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_3 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> conscientiousness </td>
-   <td style="text-align:left;"> organisation </td>
-   <td style="text-align:left;"> reversed </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_4 </td>
-   <td style="text-align:right;"> 1 </td>
-   <td style="text-align:left;"> neg_emotionality </td>
-   <td style="text-align:left;"> anxiety </td>
-   <td style="text-align:left;"> reversed </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_5 </td>
-   <td style="text-align:right;"> 5 </td>
-   <td style="text-align:left;"> open_minded </td>
-   <td style="text-align:left;"> aes_sensitivity </td>
-   <td style="text-align:left;"> reversed </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_3O9fzdsGn9tEeOm </td>
-   <td style="text-align:left;"> Q4_6 </td>
-   <td style="text-align:right;"> 3 </td>
-   <td style="text-align:left;"> extraversion </td>
-   <td style="text-align:left;"> assertiveness </td>
-   <td style="text-align:left;"> forward </td>
-  </tr>
-</tbody>
-</table>
+|ResponseId        |item | response|trait             |facet           |direction |
+|:-----------------|:----|--------:|:-----------------|:---------------|:---------|
+|R_3O9fzdsGn9tEeOm |Q4_1 |        5|extraversion      |sociability     |forward   |
+|R_3O9fzdsGn9tEeOm |Q4_2 |        4|agreeableness     |compassion      |forward   |
+|R_3O9fzdsGn9tEeOm |Q4_3 |        1|conscientiousness |organisation    |reversed  |
+|R_3O9fzdsGn9tEeOm |Q4_4 |        1|neg_emotionality  |anxiety         |reversed  |
+|R_3O9fzdsGn9tEeOm |Q4_5 |        5|open_minded       |aes_sensitivity |reversed  |
+|R_3O9fzdsGn9tEeOm |Q4_6 |        3|extraversion      |assertiveness   |forward   |
 
 </div>
 
@@ -382,54 +246,13 @@ We can see that `trait_scores` has the average score on each trait for each part
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> ResponseId </th>
-   <th style="text-align:left;"> trait </th>
-   <th style="text-align:right;"> ppt_mean </th>
-   <th style="text-align:right;"> ppt_sd </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> agreeableness </td>
-   <td style="text-align:right;"> 3.916667 </td>
-   <td style="text-align:right;"> 1.0836247 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> conscientiousness </td>
-   <td style="text-align:right;"> 3.333333 </td>
-   <td style="text-align:right;"> 1.0730867 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> extraversion </td>
-   <td style="text-align:right;"> 2.500000 </td>
-   <td style="text-align:right;"> 1.9306146 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> neg_emotionality </td>
-   <td style="text-align:right;"> 3.666667 </td>
-   <td style="text-align:right;"> 1.3026779 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> R_00WKbbVigS4o2nD </td>
-   <td style="text-align:left;"> open_minded </td>
-   <td style="text-align:right;"> 4.833333 </td>
-   <td style="text-align:right;"> 0.5773503 </td>
-   <td style="text-align:right;"> 12 </td>
-  </tr>
-</tbody>
-</table>
+|ResponseId        |trait             | ppt_mean|    ppt_sd|  n|
+|:-----------------|:-----------------|--------:|---------:|--:|
+|R_00WKbbVigS4o2nD |agreeableness     | 3.916667| 1.0836247| 12|
+|R_00WKbbVigS4o2nD |conscientiousness | 3.333333| 1.0730867| 12|
+|R_00WKbbVigS4o2nD |extraversion      | 2.500000| 1.9306146| 12|
+|R_00WKbbVigS4o2nD |neg_emotionality  | 3.666667| 1.3026779| 12|
+|R_00WKbbVigS4o2nD |open_minded       | 4.833333| 0.5773503| 12|
 
 </div>
 
@@ -515,48 +338,13 @@ trait_means <- trait_scores %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> trait </th>
-   <th style="text-align:right;"> trait_mean </th>
-   <th style="text-align:right;"> trait_sd </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> agreeableness </td>
-   <td style="text-align:right;"> 3.666459 </td>
-   <td style="text-align:right;"> 0.6165711 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> conscientiousness </td>
-   <td style="text-align:right;"> 3.253494 </td>
-   <td style="text-align:right;"> 0.7608749 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> extraversion </td>
-   <td style="text-align:right;"> 3.134121 </td>
-   <td style="text-align:right;"> 0.7838352 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> neg_emotionality </td>
-   <td style="text-align:right;"> 3.301784 </td>
-   <td style="text-align:right;"> 0.8500805 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> open_minded </td>
-   <td style="text-align:right;"> 3.775379 </td>
-   <td style="text-align:right;"> 0.6470955 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-</tbody>
-</table>
+|trait             | trait_mean|  trait_sd|    n|
+|:-----------------|----------:|---------:|----:|
+|agreeableness     |   3.666459| 0.6165711| 5605|
+|conscientiousness |   3.253494| 0.7608749| 5605|
+|extraversion      |   3.134121| 0.7838352| 5605|
+|neg_emotionality  |   3.301784| 0.8500805| 5605|
+|open_minded       |   3.775379| 0.6470955| 5605|
 
 </div>
 
@@ -646,36 +434,11 @@ facet_means
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> facet </th>
-   <th style="text-align:right;"> facet_mean </th>
-   <th style="text-align:right;"> facet_sd </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> assertiveness </td>
-   <td style="text-align:right;"> 3.014451 </td>
-   <td style="text-align:right;"> 0.9399298 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> energy </td>
-   <td style="text-align:right;"> 3.399777 </td>
-   <td style="text-align:right;"> 0.8608341 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> sociability </td>
-   <td style="text-align:right;"> 2.988136 </td>
-   <td style="text-align:right;"> 1.0608567 </td>
-   <td style="text-align:right;"> 5605 </td>
-  </tr>
-</tbody>
-</table>
+|facet         | facet_mean|  facet_sd|    n|
+|:-------------|----------:|---------:|----:|
+|assertiveness |   3.014451| 0.9399298| 5605|
+|energy        |   3.399777| 0.8608341| 5605|
+|sociability   |   2.988136| 1.0608567| 5605|
 
 </div>
 

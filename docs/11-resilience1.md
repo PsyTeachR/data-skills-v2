@@ -7,7 +7,7 @@ By the end of this chapter you should be able to:
 
 * Explain what resilience is
 * Convert variables to different data types using `as.factor()` and `as.character()`
-* Beging to problem solve how to reshape data to long-form
+* Begin to problem solve how to reshape data to long-form
 
 
 ## Activity 1: Resilience
@@ -62,25 +62,13 @@ Once you've done all this, it's time to download the files we need and then uplo
 * Then, on the server in the Files tab (bottom right), click `Upload > Choose file` then navigate to the folder on your computer where the zip file is saved, select it, click `Open`, then `OK`.
 * If you're working on your own machine, you will need to unzip the files before you can use them. There is a short walkthrough via YouTube for how to do this on [Windows](https://www.youtube.com/watch?v=r9hpiyzOOTY) and [Mac](https://www.youtube.com/watch?v=PGp1daVIBcs). You need to unzip the files into your project folder. If you need help with this, come to office hours or a GTA session.
 
-The data we're working with is simulated data for an experiment where people have completed a resilience questionnaire and also take part in treatment condition. They either are in the control group where they are asked to do a colouring book every night, or they're in an intervention group where they're asked to complete CBT exercises every night. There are 890 participants in total.
+The data we're working with is simulated data for an experiment where people have completed a resilience questionnaire and also take part in a treatment condition. They either are in the control group where they are asked to do a colouring book every night, or they're in an intervention group where they're asked to complete CBT exercises every night. There are 890 participants in total.
 
 The zip file contains three files:
 
 * `demographic_data` contains the participant ID, age, gender, and treatment condition (1 = control, 2 = intervention).
 * `questionnaire_data` contains the participant ID and then their responses to each question on the Brief Resilience Scale.
 * `scoring.csv` contains the scoring information for the questionnaire as some of the items are reverse-scored (also known as backward scoring).
-
-Is `demographic_data` in wide-form or long-form? <select class='webex-select'><option value='blank'></option><option value='answer'>wide-form</option><option value=''>long-form</option></select>
-Is `questionnaire_data` in wide-form or long-form? <select class='webex-select'><option value='blank'></option><option value='answer'>wide-form</option><option value=''>long-form</option></select>
-
-
-<div class='webex-solution'><button>Explain these answers</button>
-
-
-They're both in wide-form at the moment because each dataset has a single row for each participant, with multiple columns for each bit of information.
-
-
-</div>
 
 
 ## Activity 4: Loading the data
@@ -117,7 +105,22 @@ demo_data <- read_csv("demographic_data.csv")
 q_data <- read_csv("questionnaire_data.csv")
 scoring <- read_csv("scoring.csv")
 ```
-` r unhide()`
+
+</div>
+
+
+Is `demographic_data` in wide-form or long-form? <select class='webex-select'><option value='blank'></option><option value='answer'>wide-form</option><option value=''>long-form</option></select>
+Is `questionnaire_data` in wide-form or long-form? <select class='webex-select'><option value='blank'></option><option value='answer'>wide-form</option><option value=''>long-form</option></select>
+
+
+<div class='webex-solution'><button>Explain these answers</button>
+
+
+They're both in wide-form at the moment because each dataset has a single row for each participant, with multiple columns for each bit of information.
+
+
+</div>
+
 
 ## Activity 5: Check the data
 
@@ -185,7 +188,7 @@ q_cleaned <- q_data %>%
 
 ## Activity 7: Join and reshape the data
 
-We can now do out first join and join together the demographic and questionnaire data so we've got a single wide-form dataset. In this code we create an object named `dat_wide` that joins together `demo_cleaned` and `q_cleaned`.
+We can now do our first join and join together the demographic and questionnaire data so we've got a single wide-form dataset. In this code we create an object named `dat_wide` that joins together `demo_cleaned` and `q_cleaned`.
 
 
 ```r
@@ -287,33 +290,17 @@ Now that we've got the mean scores, we can look at group differences.For example
 ```r
 dat_scores %>%
   group_by(gender) %>%
-  summarise(group_score = mean(resilience_score, na.rm = TRUE))
+  summarise(group_score = mean(resilience_score, na.rm = TRUE)) %>%
+  ungroup()
 ```
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> gender </th>
-   <th style="text-align:right;"> group_score </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> man </td>
-   <td style="text-align:right;"> 3.000816 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> non-binary </td>
-   <td style="text-align:right;"> 3.098810 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> woman </td>
-   <td style="text-align:right;"> 3.017898 </td>
-  </tr>
-</tbody>
-</table>
+|gender     | group_score|
+|:----------|-----------:|
+|man        |    3.000816|
+|non-binary |    3.098810|
+|woman      |    3.017898|
 
 </div>
 
@@ -323,29 +310,16 @@ Or for the treatment conditions:
 ```r
 dat_scores %>%
   group_by(treatment) %>%
-  summarise(group_score = mean(resilience_score, na.rm = TRUE))
+  summarise(group_score = mean(resilience_score, na.rm = TRUE))%>%
+  ungroup()
 ```
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> treatment </th>
-   <th style="text-align:right;"> group_score </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> control </td>
-   <td style="text-align:right;"> 2.810133 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> intervention </td>
-   <td style="text-align:right;"> 3.197737 </td>
-  </tr>
-</tbody>
-</table>
+|treatment    | group_score|
+|:------------|-----------:|
+|control      |    2.810133|
+|intervention |    3.197737|
 
 </div>
 

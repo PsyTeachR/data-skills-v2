@@ -100,18 +100,9 @@ dat_complete %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:right;"> 685 </td>
-  </tr>
-</tbody>
-</table>
+|   n|
+|---:|
+| 685|
 
 </div>
 
@@ -135,7 +126,7 @@ Our study is going to look at whether resilience scores change depending on the 
 
 * However, `age` isn't necessary for our analysis. When writing up a research report, you would normally report the age and gender stats of your sample but we can make a note of any missing data rather than having to delete the entire participant. For example:
 
-*There were 890 participants in total (mean age = 28.9217687, SD = 6.6229404, missing = 8)*
+*There were 890 participants in total (mean age = 28.92, SD = 6.62, missing = 8)*
 
 
 </div>
@@ -174,7 +165,7 @@ dat_scores <- dat %>%
 
 In addition to using the data that is contained in our original datasets, we can also create new variables using `mutate()` combined with other functions.
 
-Let's imagine that for some reason, there is an error in the software used to record the data and age has been recorded incorrectly and each participant is actually 1 year older than the values we have.
+Let's imagine that for some reason, there is an error in the software used to record the data and age has been recorded incorrectly. Each participant is actually 1 year older than the values we have.
 
 We can create a new column using `mutate()`. 
 
@@ -190,7 +181,7 @@ dat_scores <- dat_scores %>%
 
 We can also create new variables using a combination of `mutate()` and `case_when()`. `case_when()` is a very useful and powerful function that allows you to create new variables based on multiple conditions and values.
 
-For example, we can create a new categorical variable assigns participants to the "Younger" category if their `age_corrected` is less than or equal (`<=`) to 30, and "Older" if `age_corrected` is more than (`>`) 30. This categorisation is not based on any scientifically motivated split, it's just around  the age I stopped being able to go out more than once a week.
+For example, we can create a new categorical variable that assigns participants to the "Younger" category if their `age_corrected` is less than or equal (`<=`) to 30, and "Older" if `age_corrected` is more than (`>`) 30. This categorisation is not based on any scientifically motivated split, it's just around  the age I stopped being able to go out more than once a week.
 
 * You can read `~` as `then`, i.e., if age is less than or equal to 30, then write "Younger".
 * You can have as many conditions as you like, just separate them with commas.
@@ -294,28 +285,11 @@ dat_scores %>%
 
 <div class="kable-table">
 
-<table>
- <thead>
-  <tr>
-   <th style="text-align:left;"> age_category </th>
-   <th style="text-align:right;"> n </th>
-  </tr>
- </thead>
-<tbody>
-  <tr>
-   <td style="text-align:left;"> Older </td>
-   <td style="text-align:right;"> 334 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> Younger </td>
-   <td style="text-align:right;"> 351 </td>
-  </tr>
-  <tr>
-   <td style="text-align:left;"> NA </td>
-   <td style="text-align:right;"> 7 </td>
-  </tr>
-</tbody>
-</table>
+|age_category |   n|
+|:------------|---:|
+|Older        | 334|
+|Younger      | 351|
+|NA           |   7|
 
 </div>
 
@@ -331,6 +305,7 @@ The software we used to store the data really has gone wrong and we've also disc
 
 * Create a new variable named `gender_corrected` using `mutate()` and `case_when()`
 * If `gender` equals `man`, `gender_corrected` should say `woman`
+* If `gender` equals `woman`, `gender_corrected` should say `man`
 * Everything else can stay the same
 * You have to use both the single and double equal signs to get this to work.
 * Remember to make it a factor once you're done
