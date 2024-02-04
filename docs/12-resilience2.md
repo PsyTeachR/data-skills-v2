@@ -192,7 +192,7 @@ For example, we can create a new categorical variable that assigns participants 
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
-                                  .default = NA, ))
+                                  .default = NA))
 ```
 
 The new variable `age_category` will be created as a `character` variable but we want it to be stored as a factor. 
@@ -207,7 +207,7 @@ The new variable `age_category` will be created as a `character` variable but we
 dat_scores <- dat_scores %>%
   mutate(age_category = case_when(age_corrected <= 30 ~ "Younger",
                                   age_corrected > 30 ~ "Older", 
-                                  .default = NA, ),
+                                  .default = NA),
          variable_name = function_to_create_factors(variable_to_factorise))
 ```
 

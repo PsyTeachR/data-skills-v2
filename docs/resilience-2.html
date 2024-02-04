@@ -294,7 +294,7 @@ Explain this answer
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
 <span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
-<span>                                  .default <span class="op">=</span> <span class="cn">NA</span>, <span class="op">)</span><span class="op">)</span></span></code></pre></div>
+<span>                                  .default <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>The new variable <code>age_category</code> will be created as a <code>character</code> variable but we want it to be stored as a factor.</p>
 <ul>
 <li>Add on a line of code to the above to overwrite the new variable as a factor.</li>
@@ -307,7 +307,7 @@ Hint
 <code class="sourceCode R"><span><span class="va">dat_scores</span> <span class="op">&lt;-</span> <span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html">mutate</a></span><span class="op">(</span>age_category <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html">case_when</a></span><span class="op">(</span><span class="va">age_corrected</span> <span class="op">&lt;=</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Younger"</span>,</span>
 <span>                                  <span class="va">age_corrected</span> <span class="op">&gt;</span> <span class="fl">30</span> <span class="op">~</span> <span class="st">"Older"</span>, </span>
-<span>                                  .default <span class="op">=</span> <span class="cn">NA</span>, <span class="op">)</span>,</span>
+<span>                                  .default <span class="op">=</span> <span class="cn">NA</span><span class="op">)</span>,</span>
 <span>         variable_name <span class="op">=</span> <span class="fu">function_to_create_factors</span><span class="op">(</span><span class="va">variable_to_factorise</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="webex-solution">
