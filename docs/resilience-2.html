@@ -478,13 +478,13 @@ Solution
 <span></span>
 <span><span class="co"># gender split</span></span>
 <span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">gender</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/count.html">count</a></span><span class="op">(</span><span class="va">gender_corrected</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># mean age, sd and missing</span></span>
 <span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">age</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
-<span>    missing <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">age</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
+<span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/summarise.html">summarise</a></span><span class="op">(</span>mean_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/mean.html">mean</a></span><span class="op">(</span><span class="va">age_corrected</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    sd_age <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/stats/sd.html">sd</a></span><span class="op">(</span><span class="va">age_corrected</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>,</span>
+<span>    missing <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html">is.na</a></span><span class="op">(</span><span class="va">age_corrected</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># number in each condition</span></span>
 <span><span class="va">dat_scores</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html">%&gt;%</a></span></span>
@@ -566,7 +566,7 @@ Solution
 <span class="header-section-number">12.9.3</span> Write-up<a class="anchor" aria-label="anchor" href="#write-up"><i class="fas fa-link"></i></a>
 </h3>
 <p><strong>To get the same numbers, report all numbers to 2 decimal places, rounding up at .5</strong>.</p>
-<p>After participants were excluded for having missing data in the resilience scores, in total there were <input class="webex-solveme nospaces" size="3" data-answer='["692"]'> participants (<input class="webex-solveme nospaces" size="3" data-answer='["348"]'> men, <input class="webex-solveme nospaces" size="3" data-answer='["322"]'> women, <input class="webex-solveme nospaces" size="2" data-answer='["22"]'> non-binary, mean age = <input class="webex-solveme nospaces" size="4" data-answer='["28.9"]'>, SD = <input class="webex-solveme nospaces" size="3" data-answer='["6.6"]'>, missing = <input class="webex-solveme nospaces" size="1" data-answer='["7"]'>).</p>
+<p>After participants were excluded for having missing data in the resilience scores, in total there were <input class="webex-solveme nospaces" size="3" data-answer='["692"]'> participants (<input class="webex-solveme nospaces" size="3" data-answer='["348"]'> men, <input class="webex-solveme nospaces" size="3" data-answer='["322"]'> women, <input class="webex-solveme nospaces" size="2" data-answer='["22"]'> non-binary, mean age = <input class="webex-solveme nospaces" size="4" data-answer='["29.9"]'>, SD = <input class="webex-solveme nospaces" size="3" data-answer='["6.6"]'>, missing = <input class="webex-solveme nospaces" size="1" data-answer='["7"]'>).</p>
 <p><input class="webex-solveme nospaces" size="3" data-answer='["324"]'> participants were randomly assigned to the control condition and <input class="webex-solveme nospaces" size="3" data-answer='["368"]'> were randomly assigned to the treatment condition.</p>
 <p>Collapsing across both treatment conditions, the overall mean resilience score was <input class="webex-solveme nospaces" size="4" data-answer='["3.03"]'> (SD = <input class="webex-solveme nospaces" size="4" data-answer='["0.44",".44"]'>, min = <input class="webex-solveme nospaces" size="4" data-answer='["1.83"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["4.33"]'>).</p>
 <p>When analysed by treatment group, participants in the control condition (mean = <input class="webex-solveme nospaces" size="4" data-answer='["2.84"]'>, SD = <input class="webex-solveme nospaces" size="4" data-answer='["0.39",".39"]'>, min = <input class="webex-solveme nospaces" size="4" data-answer='["1.83"]'>, max = <input class="webex-solveme nospaces" size="4" data-answer='["3.83"]'>) self-reported <select class="webex-select"><option value="blank"></option>
@@ -826,7 +826,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-02-04.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-02-09.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

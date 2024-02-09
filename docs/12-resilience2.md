@@ -395,13 +395,13 @@ dat_scores %>%
 
 # gender split
 dat_scores %>%
-  count(gender)
+  count(gender_corrected)
 
 # mean age, sd and missing
 dat_scores %>%
-  summarise(mean_age = mean(age, na.rm = TRUE),
-    sd_age = sd(age, na.rm = TRUE),
-    missing = sum(is.na(age)))
+  summarise(mean_age = mean(age_corrected, na.rm = TRUE),
+    sd_age = sd(age_corrected, na.rm = TRUE),
+    missing = sum(is.na(age_corrected)))
 
 # number in each condition
 dat_scores %>%
@@ -496,7 +496,7 @@ ggplot(dat_scores, aes(x = treatment, y = resilience_score, fill = treatment)) +
 
 **To get the same numbers, report all numbers to 2 decimal places, rounding up at .5**.
 
-After participants were excluded for having missing data in the resilience scores, in total there were <input class='webex-solveme nospaces' size='3' data-answer='["692"]'/> participants (<input class='webex-solveme nospaces' size='3' data-answer='["348"]'/> men, <input class='webex-solveme nospaces' size='3' data-answer='["322"]'/> women, <input class='webex-solveme nospaces' size='2' data-answer='["22"]'/> non-binary, mean age = <input class='webex-solveme nospaces' size='4' data-answer='["28.9"]'/>, SD = <input class='webex-solveme nospaces' size='3' data-answer='["6.6"]'/>, missing = <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/>). 
+After participants were excluded for having missing data in the resilience scores, in total there were <input class='webex-solveme nospaces' size='3' data-answer='["692"]'/> participants (<input class='webex-solveme nospaces' size='3' data-answer='["348"]'/> men, <input class='webex-solveme nospaces' size='3' data-answer='["322"]'/> women, <input class='webex-solveme nospaces' size='2' data-answer='["22"]'/> non-binary, mean age = <input class='webex-solveme nospaces' size='4' data-answer='["29.9"]'/>, SD = <input class='webex-solveme nospaces' size='3' data-answer='["6.6"]'/>, missing = <input class='webex-solveme nospaces' size='1' data-answer='["7"]'/>). 
 
 <input class='webex-solveme nospaces' size='3' data-answer='["324"]'/> participants were randomly assigned to the control condition and <input class='webex-solveme nospaces' size='3' data-answer='["368"]'/> were randomly assigned to the treatment condition.
 

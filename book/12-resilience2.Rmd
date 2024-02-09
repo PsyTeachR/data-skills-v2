@@ -324,13 +324,13 @@ dat_scores %>%
 
 # gender split
 dat_scores %>%
-  count(gender)
+  count(gender_corrected)
 
 # mean age, sd and missing
 dat_scores %>%
-  summarise(mean_age = mean(age, na.rm = TRUE),
-    sd_age = sd(age, na.rm = TRUE),
-    missing = sum(is.na(age)))
+  summarise(mean_age = mean(age_corrected, na.rm = TRUE),
+    sd_age = sd(age_corrected, na.rm = TRUE),
+    missing = sum(is.na(age_corrected)))
 
 # number in each condition
 dat_scores %>%
@@ -414,7 +414,7 @@ ggplot(dat_scores, aes(x = treatment, y = resilience_score, fill = treatment)) +
 
 **To get the same numbers, report all numbers to 2 decimal places, rounding up at .5**.
 
-After participants were excluded for having missing data in the resilience scores, in total there were `r fitb(692)` participants (`r fitb(348)` men, `r fitb(322)` women, `r fitb(22)` non-binary, mean age = `r fitb(28.90)`, SD = `r fitb(6.60)`, missing = `r fitb(7)`). 
+After participants were excluded for having missing data in the resilience scores, in total there were `r fitb(692)` participants (`r fitb(348)` men, `r fitb(322)` women, `r fitb(22)` non-binary, mean age = `r fitb(29.90)`, SD = `r fitb(6.60)`, missing = `r fitb(7)`). 
 
 `r fitb(324)` participants were randomly assigned to the control condition and `r fitb(368)` were randomly assigned to the treatment condition.
 
