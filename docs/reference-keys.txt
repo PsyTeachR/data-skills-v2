@@ -250,6 +250,17 @@ activity-7-big-data
 activity-8-rnorm
 activity-9-simulate-a-dataset
 finished-11
+project-analysis
+step-1-import-and-initial-data-wrangling
+initial-sample-size
+separate-the-data
+create-new-demographic-categories
+demographic-exclusion-criteria
+transform-and-score-the-dass-data
+join-it-together
+missing-data
+analysis-and-visualisation
+finished-12
 installing-r
 installing-base-r
 installing-rstudio
