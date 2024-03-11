@@ -1,13 +1,12 @@
 # Project analysis
 
-We've spent the last 6 months giving you the skills you need to be able to deal with your own data. Now's the time to show us what you've learned. In this chapter we're going to describe the steps you will need to go through when analysing your data but, aside from a few lines that will help you deal with the initial questionnaire data and a couple of hints we're not going to give you any code solutions. 
+We've spent the last 6 months giving you the skills you need to be able to deal with your own data. Now's the time to show us what you've learned. In this chapter we're going to describe the steps you will need to go through when analysing your data but, aside from a few lines that will help you deal with the initial questionnaire data and a couple of hints, we're not going to give you any code solutions. 
 
 For everything else, you have done it before, so use this book to help you. Remember, you don't need to write the code from memory, you just need to find the relevant examples and then copy and paste and change what needs changing to make it work for you. Additionally, data skills homework 3 is a version of this analysis, so if you can do that, you can do this, and vice versa.
 
 We suggest that you problem-solve the code as a group, however, make sure that you all have a separate copy of the final working code. You can attend into GTA sessions in week 9 and 10 to help you as well.
 
 ## Step 1: Import and initial data wrangling
-
 
 To help get you on your way, we've done a bit of the initial wrangling for you. Download the data files into your working directory, create a new Markdown, then run all the below code without changing anything. I would also encourage you to open up the Excel files to see what's in them as it will help your understanding of the analysis.
 
@@ -56,7 +55,11 @@ The first thing you want to do is to `count()` the number of participants in `da
 
 ## Separate the data
 
-It's easier and generally safer to separate the demographic and DASS data until we're done cleaning it all. At the end, we'll join it back up but for now, create two new objects, one named `demo_dat` and one named `dass_dat`. `demo_dat` should contain all the demographic variables including `ResponseId`. `dass_dat` should contain all the DASS variables as well as `ResponseId`.
+It's easier and generally safer to separate the demographic and DASS data until we're done cleaning it all. At the end, we'll join it back up but for now, create two new objects, one named `demo_dat` and one named `dass_dat`. 
+
+`demo_dat` should contain all the demographic variables including `ResponseId`. 
+
+`dass_dat` should contain all the DASS variables as well as `ResponseId`.
 
 ## Create new demographic categories
 
@@ -66,14 +69,14 @@ You may also not need to create any new categories in which case skip this step.
 
 ## Demographic exclusion criteria
 
-Now implement any exclusion criteria you specified, for example, if you decided to set an age range or exclude particular. You also want to think about if you want to keep people who said "Prefer not to say" or "Other" or who didn't answer any of the demographic variables. I suggest saving this as a new object `demo_cleaned` rather than over-writing `demo_dat` it as it will make it easier to check and make any changes.
+Now implement any exclusion criteria you specified, for example, if you decided to set an age range or exclude particular groups. You also want to think about if you want to keep people who said "Prefer not to say" or "Other" or who didn't answer any of the demographic variables. I suggest saving this as a new object `demo_cleaned` rather than over-writing `demo_dat` it as it will make it easier to check and make any changes.
 
 ## Transform and score the DASS data
 
 We can now move to the DASS data. You need to do the following, in this order:
 
 * Transform `dass_dat` to long-form
-* Join his long-form DASS data with `dass_scoring`
+* Join this long-form DASS data with `dass_scoring`
 * Filter the dataset to only keep the scores from the scale you are using as your DV, e.g., anxiety.
 * Group and summarise the data to produce an overall score for each participant. You only want it to calculate a score if there is no missing data, so *don't* use `na.rm = TRUE`. Also remember that the DASS score should be a `sum` score, not a mean. There should be one row of data for each participant and there should be two columns, `ResponseId` and then a column for the score. 
 * Finally, create a new column using `mutate()` named `final_score` that multiples their score by 2 (which is how the DASS is scored).
@@ -104,7 +107,7 @@ You're now ready to analyse your data. You need the following:
 
 ## Finished
 
-And you're done! I wish that I could adequately convey how impressive what you've just done is. I wish that I could show you how amazing your skills are compared to most other psychology undergraduates in the UK and across the world. But no-one ever believe me so I'm going to [leave you with this](https://www.tiktok.com/@chelseaparlettpelleriti/video/7016838746108710149?_r=1&_t=8ZtxKOe3sHe)
+And you're done! I wish that I could adequately convey how impressive what you've just done is. I wish that I could show you how amazing your skills are compared to most other psychology undergraduates in the UK and across the world. But no-one ever believes me so I'll just [leave you with this](https://www.tiktok.com/@chelseaparlettpelleriti/video/7016838746108710149?_r=1&_t=8ZtxKOe3sHe)
 
 
 

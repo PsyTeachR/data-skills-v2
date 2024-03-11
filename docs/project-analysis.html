@@ -112,7 +112,7 @@
 <h1>
 <span class="header-section-number">16</span> Project analysis<a class="anchor" aria-label="anchor" href="#project-analysis"><i class="fas fa-link"></i></a>
 </h1>
-<p>We've spent the last 6 months giving you the skills you need to be able to deal with your own data. Now's the time to show us what you've learned. In this chapter we're going to describe the steps you will need to go through when analysing your data but, aside from a few lines that will help you deal with the initial questionnaire data and a couple of hints we're not going to give you any code solutions.</p>
+<p>We've spent the last 6 months giving you the skills you need to be able to deal with your own data. Now's the time to show us what you've learned. In this chapter we're going to describe the steps you will need to go through when analysing your data but, aside from a few lines that will help you deal with the initial questionnaire data and a couple of hints, we're not going to give you any code solutions.</p>
 <p>For everything else, you have done it before, so use this book to help you. Remember, you don't need to write the code from memory, you just need to find the relevant examples and then copy and paste and change what needs changing to make it work for you. Additionally, data skills homework 3 is a version of this analysis, so if you can do that, you can do this, and vice versa.</p>
 <p>We suggest that you problem-solve the code as a group, however, make sure that you all have a separate copy of the final working code. You can attend into GTA sessions in week 9 and 10 to help you as well.</p>
 <div id="step-1-import-and-initial-data-wrangling" class="section level2" number="16.1">
@@ -167,7 +167,9 @@
 <h2>
 <span class="header-section-number">16.3</span> Separate the data<a class="anchor" aria-label="anchor" href="#separate-the-data"><i class="fas fa-link"></i></a>
 </h2>
-<p>It's easier and generally safer to separate the demographic and DASS data until we're done cleaning it all. At the end, we'll join it back up but for now, create two new objects, one named <code>demo_dat</code> and one named <code>dass_dat</code>. <code>demo_dat</code> should contain all the demographic variables including <code>ResponseId</code>. <code>dass_dat</code> should contain all the DASS variables as well as <code>ResponseId</code>.</p>
+<p>It's easier and generally safer to separate the demographic and DASS data until we're done cleaning it all. At the end, we'll join it back up but for now, create two new objects, one named <code>demo_dat</code> and one named <code>dass_dat</code>.</p>
+<p><code>demo_dat</code> should contain all the demographic variables including <code>ResponseId</code>.</p>
+<p><code>dass_dat</code> should contain all the DASS variables as well as <code>ResponseId</code>.</p>
 </div>
 <div id="create-new-demographic-categories" class="section level2" number="16.4">
 <h2>
@@ -180,7 +182,7 @@
 <h2>
 <span class="header-section-number">16.5</span> Demographic exclusion criteria<a class="anchor" aria-label="anchor" href="#demographic-exclusion-criteria"><i class="fas fa-link"></i></a>
 </h2>
-<p>Now implement any exclusion criteria you specified, for example, if you decided to set an age range or exclude particular. You also want to think about if you want to keep people who said "Prefer not to say" or "Other" or who didn't answer any of the demographic variables. I suggest saving this as a new object <code>demo_cleaned</code> rather than over-writing <code>demo_dat</code> it as it will make it easier to check and make any changes.</p>
+<p>Now implement any exclusion criteria you specified, for example, if you decided to set an age range or exclude particular groups. You also want to think about if you want to keep people who said "Prefer not to say" or "Other" or who didn't answer any of the demographic variables. I suggest saving this as a new object <code>demo_cleaned</code> rather than over-writing <code>demo_dat</code> it as it will make it easier to check and make any changes.</p>
 </div>
 <div id="transform-and-score-the-dass-data" class="section level2" number="16.6">
 <h2>
@@ -189,7 +191,7 @@
 <p>We can now move to the DASS data. You need to do the following, in this order:</p>
 <ul>
 <li>Transform <code>dass_dat</code> to long-form</li>
-<li>Join his long-form DASS data with <code>dass_scoring</code>
+<li>Join this long-form DASS data with <code>dass_scoring</code>
 </li>
 <li>Filter the dataset to only keep the scores from the scale you are using as your DV, e.g., anxiety.</li>
 <li>Group and summarise the data to produce an overall score for each participant. You only want it to calculate a score if there is no missing data, so <em>don't</em> use <code>na.rm = TRUE</code>. Also remember that the DASS score should be a <code>sum</code> score, not a mean. There should be one row of data for each participant and there should be two columns, <code>ResponseId</code> and then a column for the score.</li>
@@ -228,7 +230,7 @@
 <h2>
 <span class="header-section-number">16.10</span> Finished<a class="anchor" aria-label="anchor" href="#finished-12"><i class="fas fa-link"></i></a>
 </h2>
-<p>And you're done! I wish that I could adequately convey how impressive what you've just done is. I wish that I could show you how amazing your skills are compared to most other psychology undergraduates in the UK and across the world. But no-one ever believe me so I'm going to <a href="https://www.tiktok.com/@chelseaparlettpelleriti/video/7016838746108710149?_r=1&amp;_t=8ZtxKOe3sHe">leave you with this</a></p>
+<p>And you're done! I wish that I could adequately convey how impressive what you've just done is. I wish that I could show you how amazing your skills are compared to most other psychology undergraduates in the UK and across the world. But no-one ever believes me so I'll just <a href="https://www.tiktok.com/@chelseaparlettpelleriti/video/7016838746108710149?_r=1&amp;_t=8ZtxKOe3sHe">leave you with this</a></p>
 
 </div>
 </div>
@@ -472,7 +474,7 @@ $( document ).ready(function() {
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-02-15.</p>
+    <p>"<strong>Data Skills</strong>" was written by Emily Nordmann. It was last built on 2024-03-11.</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
